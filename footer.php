@@ -18,7 +18,7 @@
 	
 	<!-- Protocol Relative jQuery fall back if Google CDN offline -->
 	<script>
-		window.jQuery || document.write('<script src="<?php bloginfo('template_url'); ?>/js/jquery-1.8.1.min.js"><\/script>')
+		window.jQuery || document.write('<script src="<?php bloginfo('template_url'); ?>/js/jquery-1.8.2.min.js"><\/script>')
 	</script>
 
 </body>

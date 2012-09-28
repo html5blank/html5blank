@@ -38,7 +38,7 @@ Custom functions, support, custom post types and more.
 		if(!is_admin()){
    
    		wp_deregister_script( 'jquery' ); // Unregister WordPress jQuery
-		wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js', 'jquery', '1.8.1'); // Load Google CDN jQuery
+		wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js', 'jquery', '1.8.2'); // Load Google CDN jQuery
 		wp_enqueue_script('jquery'); // Enqueue it!
 		
 		wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', 'jquery', '2.6.2'); // Modernizr with version Number at the end
