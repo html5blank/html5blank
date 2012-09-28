@@ -57,6 +57,14 @@ Custom functions, support, custom post types and more.
 		}
 	}
 	
+	// Loading Conditional Scripts
+	function conditional_scripts() {
+		if (is_page('pagenamehere')) {
+			wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', 'jquery', '1.0.0'); // Our Script for Conditional loading
+			wp_enqueue_script('scriptname'); // Enqueue it!
+		}
+	}
+	
 	// Theme Stylesheets using Enqueue
 	function html5blank_styles() {
 
@@ -183,6 +191,7 @@ Custom functions, support, custom post types and more.
 
    // Actions
    add_action('init', 'html5blank_scripts'); // Add Custom Scripts
+   add_action('wp_print_scripts', 'conditional_scripts'); // Add Conditional Page Scripts
    add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
    add_action( 'init', 'register_html5_menu' ); // Add HTML5 Blank Menu
    add_action( 'init', 'create_post_type_html5' ); // Add our HTML5 Blank Custom Post Type
