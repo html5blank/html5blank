@@ -6,7 +6,8 @@
 * Conditional page loads script added to functions.php
 * Remove WordPress Admin bar by default
 * Remove 'text/css' from enqueued stylesheet
-* Updated logo to new HTML5 Blank branding
+* Updated screenshot.png logo to new HTML5 Blank branding
+* CSS change, :focus changed to input:focus as FireFox was adding focus styles to any element
 
 ### 1.0.1 (27 September, 2012)
 
