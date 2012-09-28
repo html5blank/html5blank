@@ -105,7 +105,7 @@ Tags: 			Blank, HTML5, CSS3
 	body {
 		font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; /* Serve Helvetica Neue, with Helvetica fallbacks to Arial */
 		font-size:11px;
-		font-weight:400; /* 300 and below looks strangely thin with webkit and antialiased */
+		font-weight:300; /* Better supported than 'lighter' attribute */
 		line-height:18px;
 		-webkit-font-smoothing:antialiased; /* Antialiased font for great smoothing */
 		-moz-font-smoothing:antialiased;
