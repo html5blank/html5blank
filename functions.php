@@ -1,7 +1,7 @@
 <?php
 /*
 Author: Todd Motto
-URL: http://www.toddmotto.com/html5wp/
+URL: toddmotto.com/html5blank/
 
 Custom functions, support, custom post types and more.
 */
@@ -26,6 +26,13 @@ Custom functions, support, custom post types and more.
 	add_image_size( 'small', 120, '', true ); // Small Thumbnail
 	add_image_size( 'custom-size', 700, 200, true ); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 	
+   }
+   
+   // Add Support for Custom Backgrounds
+   add_theme_support( 'custom-background', array(
+   		'default-color' => $default_background_color,
+   		)
+   	  );
    }
    
 /* =============================================================================
