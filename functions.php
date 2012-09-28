@@ -184,6 +184,11 @@ Custom functions, support, custom post types and more.
 	function html5wp_view_article($more) {
 		return '... <a class="view-article" href="'. get_permalink($post->ID) . '">' . 'View Article' . '</a>';
 	}
+	
+	// Remove Admin bar
+	function remove_admin_bar(){
+	    return false;
+	}
 
 /* =============================================================================
    Actions + Filters + ShortCodes
@@ -222,6 +227,7 @@ Custom functions, support, custom post types and more.
    add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> injected ID
    add_filter('page_css_class', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> Page ID's
    add_filter('excerpt_more', 'html5wp_view_article'); // Add 'View Article' button instead of [...] for Excerpts
+   add_filter( 'show_admin_bar' , 'remove_admin_bar'); // Remove Admin bar
    
    // Shortcodes
    add_shortcode('html5_shortcode_demo', 'html5_shortcode_demo'); // You can place [html5_shortcode_demo] in Pages, Posts now.
