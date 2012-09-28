@@ -1,4 +1,4 @@
-### HEAD
+### [HTML5 Blank](http://www.toddmotto.com/html5blank/) Changelog
 
 ### 1.0.2 (28 September, 2012)
 
