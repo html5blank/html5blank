@@ -189,6 +189,11 @@ Custom functions, support, custom post types and more.
 	function remove_admin_bar(){
 	    return false;
 	}
+	
+	// Remove 'text/css' from our enqueued stylesheet
+	function html5_style_remove($tag) {
+		return preg_replace('~\s+type=["\'][^"\']++["\']~', '', $tag);
+	}
 
 /* =============================================================================
    Actions + Filters + ShortCodes
@@ -228,6 +233,7 @@ Custom functions, support, custom post types and more.
    add_filter('page_css_class', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> Page ID's
    add_filter('excerpt_more', 'html5wp_view_article'); // Add 'View Article' button instead of [...] for Excerpts
    add_filter( 'show_admin_bar' , 'remove_admin_bar'); // Remove Admin bar
+   add_filter('style_loader_tag', 'html5_style_remove'); // Remove 'text/css' from enqueued stylesheet
    
    // Shortcodes
    add_shortcode('html5_shortcode_demo', 'html5_shortcode_demo'); // You can place [html5_shortcode_demo] in Pages, Posts now.

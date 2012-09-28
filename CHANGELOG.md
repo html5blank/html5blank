@@ -4,6 +4,8 @@
 
 * Update CDN and local jQuery fallbacks from 1.8.1 to 1.8.2
 * Conditional page loads script added to functions.php
+* Remove WordPress Admin bar by default
+* Remove 'text/css' from enqueued stylesheet
 
 ### 1.0.1 (27 September, 2012)
 
