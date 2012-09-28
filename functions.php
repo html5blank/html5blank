@@ -1,7 +1,7 @@
 <?php
 /*
 Author: Todd Motto
-URL: toddmotto.com/html5blank/
+URL: html5blank.com
 
 Custom functions, support, custom post types and more.
 */

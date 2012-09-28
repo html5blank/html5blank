@@ -93,14 +93,6 @@ Tags: 			Blank, HTML5, CSS3
 	    font-weight:normal;
 	    font-style:normal;
 	}
-
-	/* Custom Selection Styles */
-	::selection {background:#D31245;color:#FFF;text-shadow:none;}
-	::-webkit-selection {background:#D31245;color:#FFF;text-shadow:none;}
-	::-moz-selection {background:#D31245;color:#FFF;text-shadow:none;}
-	
-	/* Input focus styles */
-	input:focus {outline:0;border:1px solid #0091BD;} /* Gets rid of blue glow on field focus, adds border color instead */
 	
 	body {
 		font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; /* Serve Helvetica Neue, with Helvetica fallbacks to Arial */
@@ -149,6 +141,18 @@ Tags: 			Blank, HTML5, CSS3
    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
     /* Style adjustments for high resolution devices */
 }
+
+/* =============================================================================
+   Non-Semantic Classes
+   ========================================================================== */
+   
+   /* Custom Selection Styles */
+   ::selection {background:#D31245;color:#FFF;text-shadow:none;}
+   ::-webkit-selection {background:#D31245;color:#FFF;text-shadow:none;}
+   ::-moz-selection {background:#D31245;color:#FFF;text-shadow:none;}
+   
+   /* Input focus styles */
+   input:focus {outline:0;border:1px solid #0091BD;} /* Gets rid of blue glow on field focus, adds border color instead */
 
 /* ==========================================================================
    Print styles
