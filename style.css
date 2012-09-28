@@ -100,7 +100,7 @@ Tags: 			Blank, HTML5, CSS3
 	::-moz-selection {background:#D31245;color:#FFF;text-shadow:none;}
 	
 	/* Input focus styles */
-	:focus {outline:0;border:1px solid #0091BD;} /* Gets rid of blue glow on field focus, adds border color instead */
+	input:focus {outline:0;border:1px solid #0091BD;} /* Gets rid of blue glow on field focus, adds border color instead */
 	
 	body {
 		font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; /* Serve Helvetica Neue, with Helvetica fallbacks to Arial */
