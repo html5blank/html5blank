@@ -10,6 +10,7 @@
 * CSS change, :focus changed to input:focus as FireFox was adding focus styles to any element
 * Second CSS change, new Chrome updates renders fonts thicker, reduced font-weight on body from 400 to 300
 * Move toddmotto.com/html5blank/ to new html5blank.com domain
+* Favicon support for theme directory favicon.ico
 
 ## 1.0.1 (27 September, 2012)
 
