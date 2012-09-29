@@ -4,6 +4,7 @@
 
 * Update CDN and local jQuery fallbacks from 1.8.1 to 1.8.2
 * Conditional page loads script added to functions.php
+* Added Custom Background support into functions.php
 * Remove WordPress Admin bar by default
 * Remove 'text/css' from enqueued stylesheet
 * Updated screenshot.png logo to new HTML5 Blank branding
