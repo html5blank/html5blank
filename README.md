@@ -2,10 +2,8 @@
 
 HTML5 Blank is a powerful shell for rapidly deploying your WordPress projects. Get developing in minutes, with the robust, preloaded shell. HTML5 Blank.
 
-Licensed under GPL.
-
-* Project: [https://github.com/toddmotto/HTML5-Blank-WordPress-Theme](https://github.com/toddmotto/HTML5-Blank-WordPress-Theme)
-* Web: [http://html5blank.com](http://html5blank.com)
+* Project: [github.com/html5-blank](https://github.com/toddmotto/HTML5-Blank-WordPress-Theme)
+* Web: [html5blank.com](http://html5blank.com)
 * Twitter: [@toddmotto](http://twitter.com/toddmotto)
 
 
@@ -15,7 +13,7 @@ Download the latest version from [html5blank.com](http://html5blank.com)
 
 ## Get involved! Make HTML5 Blank better
 
-There are a few ways to get involved, submit a Pull Request, or submit a comment on the website - [http://html5blank.com](http://html5blank.com)
+There are a few ways to get involved, submit a Pull Request, or submit a comment on the website - [html5blank.com](http://html5blank.com)
 
 ## Features
 
@@ -69,5 +67,3 @@ There are a few ways to get involved, submit a Pull Request, or submit a comment
 * Category support for showing the Category of post
 * Author support showing the author
 * Demo Custom Page Template for expansion
-
-## 
