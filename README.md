@@ -45,7 +45,7 @@ There are a few ways to get involved, submit a Pull Request, or submit a comment
 * Enqueue Scripts functions setup
 * Enqueue Styles functions setup
 * Dynamic WordPress Menu Navigation Support, preloaded with 3 Dynamic menus
-* Cleaned up dynamic nav output (Remove outer <div>)
+* Cleaned up dynamic nav output (Remove outer 'div')
 * Remove all injected classes from nav items, ID's, Page ID's
 * Custom Post Type x1 preloaded for demonstration, supporting: Category, Tags, Post Thumbnails, Excerpts
 * Dynamic Sidebar with x2 Widget Areas, and sidebar.php setup
