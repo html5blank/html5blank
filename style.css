@@ -23,7 +23,7 @@ Tags: 			Blank, HTML5, CSS3
 	body {margin:0;font-size:1em;line-height:1;}
 	p {padding:7px 0 0 0;}
 	
-	h1,h2,h3,h4,h5,h6 {text-decoration:none;padding:0;color:#444;margin:0;font-family:Georgia, Times, Serif;font-weight:700;}
+	h1,h2,h3,h4,h5,h6 {text-decoration:none;padding:0;color:#444;margin:0;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;font-weight:700;}
 	
 	a {color:#D31145;text-decoration:none;}
 	a:focus {outline:0;}
