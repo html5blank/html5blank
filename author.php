@@ -2,12 +2,16 @@
 	
 	<?php if (have_posts()): the_post(); ?>
 	
-	<h2>Author Archives for <?php echo get_the_author() ; ?></h2>
+	<h1>Author Archives for <?php echo get_the_author(); ?></h1>
 
-	<?php if ( get_the_author_meta( 'description' ) ) : ?>
-	<?php echo get_avatar( get_the_author_meta( 'user_email' ) ); ?>
-	<h3>About <?php echo get_the_author() ; ?></h3>
+	<?php if ( get_the_author_meta('description')) : ?>
+	
+	<?php echo get_avatar(get_the_author_meta('user_email')); ?>
+	
+		<h2>About <?php echo get_the_author() ; ?></h2>
+	
 	<?php the_author_meta( 'description' ); ?>
+	
 	<?php endif; ?>
 	
 	<!-- Section -->

@@ -1,27 +1,25 @@
 <?php get_header(); ?>
 	
-	<?php if (have_posts()): ?>
-	
 	<!-- Section -->
 	<section>
 	
-	<?php while (have_posts()) : the_post(); ?>
+	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 	
 		<!-- Article -->
-		<article>
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		
 			<!-- Post Thumbnail -->
 			<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" >
-					<?php the_post_thumbnail(); ?>
+				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+					<?php the_post_thumbnail(); // Fullsize image for the single post ?>
 				</a>
 			<?php endif; ?>
 			<!-- /Post Thumbnail -->
 			
 			<!-- Post Title -->
-			<h2>
-				<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-			</h2>
+			<h1>
+				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+			</h1>
 			<!-- /Post Title -->
 			
 			<!-- Post Date + Time -->
@@ -29,7 +27,7 @@
 			<span class="time"><?php the_time(); ?></span>
 			<!-- /Post Date + Time -->
 			
-			<?php comments_popup_link('Leave your thoughts', '1 Comment', '% Comments'); // Comments ?>
+			<?php comments_popup_link('Leave your thoughts', '1 Comment', '% Comments'); ?>
 			
 			<?php the_content(); // Dynamic Content ?>
 			
@@ -50,15 +48,21 @@
 		
 	<?php endwhile; ?>
 	
-	</section>
-	<!-- /Section -->
-	
 	<?php else: ?>
 	
-	<h2>Sorry, nothing to display!</h2>
+		<!-- Article -->
+		<article>
+			
+			<h1>Sorry, nothing to display.</h1>
+			
+		</article>
+		<!-- /Article -->
 	
 	<?php endif; ?>
 	
-<?php get_sidebar(); // Get Sidebar (sidebar.php) ?>
+	</section>
+	<!-- /Section -->
+	
+<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

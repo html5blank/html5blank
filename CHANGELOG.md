@@ -1,5 +1,25 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.1.0 (29 September, 2012)
+
+* Core template files restructure
+* Semantic HTML enhancements
+* Google analytics (optimised) dynamically loaded through functions.php in footer
+* jQuery protocol relative fallback dynamically loaded through functions.php in footer
+* Hardcoded footer.php content (analytics and jquery) removed as it's dynamically loaded now
+* The Loop 'if, while, the' all inline, now inside parent section element
+* Pagination links brought inside section element, outside of The Loop after our article
+* Section elements brought outside The Loop to hold all page content
+* The Loop 'else' content wrapper in article tag for markup/layout consistencies
+* Post ID and Post Class added to article elements
+* Category support for 'the category' title
+* Enhanced Default Template page and Template Demo Page (page.php and template-demo.php)
+* Threaded comments support
+* Few obvious annotations removed
+* Small typo in annotation 'function.php' changed to 'functions.php'
+* Update theme default logo with new branding
+* CSS tweak for default hyperlink color change to match Logo blue
+
 ## 1.0.2 (28 September, 2012)
 
 * Update CDN and local jQuery fallbacks from 1.8.1 to 1.8.2

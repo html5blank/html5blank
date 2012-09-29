@@ -65,6 +65,33 @@ Custom functions, support, custom post types and more.
 		}
 	}
 	
+	// Load Optimised Google Analytics in the footer
+	function add_google_analytics() { 
+		echo "<!-- Optimised Asynchronous Google Analytics -->";
+		echo "<script>";  // Change the UA-XXXXXXXX-X to your Account ID
+		echo "var _gaq=[['_setAccount','UA-XXXXXXXX-X'],['_trackPageview']];
+			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+			g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+			s.parentNode.insertBefore(g,s)}(document,'script'));";
+		echo "</script>";
+	}
+	
+	// jQuery Fallbacks load in the footer
+	function add_jquery_fallback() {
+		echo "<!-- Protocol Relative jQuery fall back if Google CDN offline -->";
+		echo "<script>";
+		echo "window.jQuery || document.write('<script src='".get_bloginfo('template_url')."/js/jquery-1.8.2.min.js'><\/script>')";
+		echo "</script>";
+	}
+	
+	// Threaded Comments
+	function enable_threaded_comments(){
+		if (!is_admin()) {
+			if (is_singular() AND comments_open() AND (get_option('thread_comments') == 1))
+			wp_enqueue_script('comment-reply');
+		}
+	}
+	
 	// Theme Stylesheets using Enqueue
 	function html5blank_styles() {
 
@@ -202,6 +229,9 @@ Custom functions, support, custom post types and more.
    // Actions
    add_action('init', 'html5blank_scripts'); // Add Custom Scripts
    add_action('wp_print_scripts', 'conditional_scripts'); // Add Conditional Page Scripts
+   add_action('wp_footer', 'add_google_analytics'); // Google Analytics optimised in footer
+   add_action('wp_footer', 'add_jquery_fallback'); // jQuery fallbacks loaded through footer
+   add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
    add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
    add_action( 'init', 'register_html5_menu' ); // Add HTML5 Blank Menu
    add_action( 'init', 'create_post_type_html5' ); // Add our HTML5 Blank Custom Post Type
