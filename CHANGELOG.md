@@ -11,6 +11,7 @@
 * CSS change, new Chrome updates renders fonts thicker, reduced font-weight on body from 400 to 300
 * CSS change, create non-semantic section below media queries, moved text-selection colors etc
 * CSS change, default font-family for h1-h6 Helvetica Neue with Helvetica/Arial fallbacks (previous Georgia)
+* CSS header theme details updated to new URL
 * Move toddmotto.com/html5blank/ to new html5blank.com domain
 * Favicon support for theme directory favicon.ico
 * Apple touch icon support, drag into root folder
