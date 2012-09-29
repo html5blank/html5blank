@@ -13,31 +13,27 @@ Licensed under GPL.
 
 Download the latest version from [html5blank.com](http://html5blank.com)
 
-## Licensing
-
-Information and documents provided in this project is provided "as is" without warranty of any kind.
-
-## Contribute
+## Get involved! Make HTML5 Blank better
 
 There are a few ways to get involved, submit a Pull Request, or submit a comment on the website - [http://html5blank.com](http://html5blank.com)
 
-### Features
+## Features
 
-## HTML5
+### HTML5
 * Basic Semantic HTML5 Markup
 * W3C Valid Code Foundations
 * Responsive Ready, ViewPort meta data
 * HTML Class support for IE7, IE8, IE9 Conditionals (HTML5 Boilerplate)
 * Clean, neatly organised code, with PHP annotations
 
-## jQuery + JavaScript
+### jQuery + JavaScript
 * Replaced built-in WordPress enqueue with Google CDN
 * Protocol relative jQuery if Google CDN offline (HTML5 Boilerplate)
 * Modernizr feature detection, HTML5 element support for legacy, progressive enhancement (HTML5 Boilerplate)
 * DOM Ready JavaScript file setup (scripts.js) for instant JavaScript development
 * JavaScript files enqueued using WordPress functions into wp_head
 
-## CSS3
+### CSS3
 * HTML5 Boilerplate reset
 * Media Queries framework for instant development using @media
 * @font-face empty framework with Fonts folder setup ready for new custom fonts
@@ -47,7 +43,7 @@ There are a few ways to get involved, submit a Pull Request, or submit a comment
 * Replaced focus styles to avoid blue blur in field elements, replaced with border
 * Stylesheet enqueued using WordPress functions into wp_head
 
-## Preloaded Functions (functions.php)
+### Preloaded Functions (functions.php)
 * Enqueue Scripts functions setup
 * Enqueue Styles functions setup
 * Dynamic WordPress Menu Navigation Support, preloaded with 3 Dynamic menus
@@ -64,7 +60,7 @@ There are a few ways to get involved, submit a Pull Request, or submit a comment
 * All functions annotated, categorised into sections, filters, actions, shortcodes etc.
 * Space for development, neatly organised code with Modules/External files
 
-## Theme Files and Functionality
+### Theme Files and Functionality
 * Built in Pagination, no plugins (strips out prev + next post and gives page numbers)
 * Optimised Google Analytics in footer (HTML5 Boilerplate)
 * Widget Area Sidebar support, functions in place to get developing
@@ -73,3 +69,5 @@ There are a few ways to get involved, submit a Pull Request, or submit a comment
 * Category support for showing the Category of post
 * Author support showing the author
 * Demo Custom Page Template for expansion
+
+## 
