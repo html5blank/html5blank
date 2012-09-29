@@ -1,4 +1,4 @@
-### [HTML5 Blank](http://www.toddmotto.com/html5blank/) Changelog
+### [HTML5 Blank](http://html5blank.com) Changelog
 
 ## 1.0.2 (28 September, 2012)
 
@@ -12,6 +12,7 @@
 * Move toddmotto.com/html5blank/ to new html5blank.com domain
 * Favicon support for theme directory favicon.ico
 * Apple touch icon support, drag into root folder
+* LICENSE.md and README.md added and fully updated
 
 ## 1.0.1 (27 September, 2012)
 
