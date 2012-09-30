@@ -153,6 +153,26 @@ Tags: 			Blank, HTML5, CSS3
    
    /* Input focus styles */
    input:focus {outline:0;border:1px solid #0091BD;} /* Gets rid of blue glow on field focus, adds border color instead */
+   
+/* =============================================================================
+   WordPress Core CSS Styles
+   ========================================================================== */
+   
+   .alignnone {margin:5px 20px 20px 0;}
+   .aligncenter,div.aligncenter {display:block;margin:5px auto 5px auto;}
+   .alignright {float:right;margin:5px 0 20px 20px;}
+   .alignleft {float:left;margin:5px 20px 20px 0;}
+   .aligncenter {display:block;margin:5px auto 5px auto;}
+   a img.alignright {float:right;margin:5px 0 20px 20px;}
+   a img.alignnone {margin:5px 20px 20px 0;}
+   a img.alignleft {float:left;margin:5px 20px 20px 0;}
+   a img.aligncenter {display:block;margin-left:auto;margin-right:auto;}
+   .wp-caption {background:#FFF;border:1px solid #F0F0F0;max-width:96%;padding:5px 3px 10px;text-align:center;}
+   .wp-caption.alignnone {margin:5px 20px 20px 0;}
+   .wp-caption.alignleft {margin:5px 20px 20px 0;}
+   .wp-caption.alignright {margin:5px 0 20px 20px;}
+   .wp-caption img {border:0 none;height:auto;margin:0;max-width:98.5%;padding:0;width:auto;}
+   .wp-caption p.wp-caption-text {font-size:11px;line-height:17px;margin:0;padding:0 4px 5px;}
 
 /* ==========================================================================
    Print styles

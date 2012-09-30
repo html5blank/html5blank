@@ -6,6 +6,7 @@
 * Enhanced 404 page with return home link
 * Semantic HTML enhancements
 * Added 'published by the_author' hooks as a default
+* Suggested include of WordPress Core CSS styles, now added
 
 ## 1.1.0 (29 September, 2012)
 
