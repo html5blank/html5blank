@@ -22,12 +22,12 @@
 			</h1>
 			<!-- /Post Title -->
 			
-			<!-- Post Date + Time -->
+			<!-- Post Details -->
 			<span class="date"><?php the_date(); ?></span>
 			<span class="time"><?php the_time(); ?></span>
-			<!-- /Post Date + Time -->
-			
-			<?php comments_popup_link('Leave your thoughts', '1 Comment', '% Comments'); ?>
+			<span class="author">Published by <?php the_author_posts_link(); ?></span>
+			<span class="comments"><?php comments_popup_link('Leave your thoughts', '1 Comment', '% Comments'); ?></span>
+			<!-- /Post Details -->
 			
 			<?php the_content(); // Dynamic Content ?>
 			
