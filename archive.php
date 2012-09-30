@@ -3,7 +3,7 @@
 	<!-- Section -->
 	<section>
 	
-	<h1>Archives</h1>
+		<h1>Archives</h1>
 	
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 	
@@ -24,13 +24,12 @@
 			</h2>
 			<!-- /Post Title -->
 			
-			<!-- Post Date + Time -->
+			<!-- Post Details -->
 			<span class="date"><?php the_date(); ?></span>
 			<span class="time"><?php the_time(); ?></span>
-			<!-- /Post Date + Time -->
-			
 			<span class="author">Published by <?php the_author_posts_link(); ?></span>
 			<span class="comments"><?php comments_popup_link('Leave your thoughts', '1 Comment', '% Comments'); ?></span>
+			<!-- /Post Details -->
 			
 			<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
 			
