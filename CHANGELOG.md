@@ -1,5 +1,12 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.1.1 (30 September, 2012)
+
+* Enhanced author template
+* Enhanced 404 page with return home link
+* Semantic HTML enhancements
+* Added 'published by the_author' hooks as a default
+
 ## 1.1.0 (29 September, 2012)
 
 * Core template files restructure
