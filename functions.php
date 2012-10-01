@@ -120,6 +120,11 @@ Custom functions, support, custom post types and more.
 	function my_css_attributes_filter($var) {
 		return is_array($var) ? array() : '';
 	}
+
+	// Remove invalid rel attribute values in the categorylist
+	function remove_category_rel_from_category_list($thelist){
+	     return str_replace('rel="category tag"', 'rel="tag"', $thelist);
+	}
 	
 	// Add page slug to body class, love this - Credit: Starkers Wordpress Theme
 	function add_slug_to_body_class( $classes ) {
@@ -261,6 +266,7 @@ Custom functions, support, custom post types and more.
    add_filter('nav_menu_css_class', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> injected classes
    add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> injected ID
    add_filter('page_css_class', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> Page ID's
+   add_filter('the_category', 'remove_category_rel_from_category_list'); // Remove invalid rel attribute
    add_filter('excerpt_more', 'html5wp_view_article'); // Add 'View Article' button instead of [...] for Excerpts
    add_filter( 'show_admin_bar' , 'remove_admin_bar'); // Remove Admin bar
    add_filter('style_loader_tag', 'html5_style_remove'); // Remove 'text/css' from enqueued stylesheet

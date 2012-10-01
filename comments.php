@@ -1,7 +1,7 @@
 <div id="comments">
 	<?php if (post_password_required()) : ?>
 	<p>Post is password protected. Enter the password to view any comments.</p>
-</div>
+</div> <!-- END: comments if password protected -->
 
 	<?php return; endif; ?>
 
@@ -20,3 +20,5 @@
 <?php endif; ?>
 
 <?php comment_form(); ?>
+
+</div> <!-- END: comments if not password protected -->
