@@ -231,7 +231,7 @@ Custom functions, support, custom post types and more.
    Actions + Filters + ShortCodes
    ========================================================================== */
 
-   // Actions
+   // Add Actions
    add_action('init', 'html5blank_scripts'); // Add Custom Scripts
    add_action('wp_print_scripts', 'conditional_scripts'); // Add Conditional Page Scripts
    add_action('wp_footer', 'add_google_analytics'); // Google Analytics optimised in footer
@@ -258,7 +258,7 @@ Custom functions, support, custom post types and more.
    remove_action( 'wp_head', 'rel_canonical');
    remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
    
-   // Filters
+   // Add Filters
    add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
    add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sidebar
    add_filter('widget_text', 'shortcode_unautop'); // Remove <p> tags in Dynamic Sidebars (better!)
@@ -272,6 +272,9 @@ Custom functions, support, custom post types and more.
    add_filter('excerpt_more', 'html5wp_view_article'); // Add 'View Article' button instead of [...] for Excerpts
    add_filter('show_admin_bar' , 'remove_admin_bar'); // Remove Admin bar
    add_filter('style_loader_tag', 'html5_style_remove'); // Remove 'text/css' from enqueued stylesheet
+   
+   // Remove Filters
+   remove_filter ('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
    
    // Shortcodes
    add_shortcode('html5_shortcode_demo', 'html5_shortcode_demo'); // You can place [html5_shortcode_demo] in Pages, Posts now.
