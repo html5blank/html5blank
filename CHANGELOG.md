@@ -6,7 +6,7 @@
 * Merged pull request to remove 'rel' attribute from categories
 * Filter added to remove autop paragraph function from Excerpts (Manual only)
 * Filter added to allow shortcodes to execute inside Excerpts (Manual only)
-* Filter removed to strip autop tags altogether from Excerpts
+* Filter added to strip autop tags altogether from Excerpts
 
 ## 1.1.1 (30 September, 2012)
 
