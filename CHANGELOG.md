@@ -2,8 +2,8 @@
 
 ## 1.1.2 (02 October, 2012)
 
-* Pull request for comments.php code changes
-* Pull request to remove 'rel' attribute from categories
+* Merged pull request for comments.php code changes
+* Merged pull request to remove 'rel' attribute from categories
 * Filter added to remove autop paragraph function from Excerpts (Manual only)
 * Filter added to allow shortcodes to execute inside Excerpts (Manual only)
 * Filter removed to strip autop tags altogether from Excerpts
