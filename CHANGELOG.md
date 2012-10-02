@@ -1,5 +1,12 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.1.2 (02 October, 2012)
+
+* Pull request for comments.php code changes
+* Pull request to remove 'rel' attribute from categories
+* Filter added to remove autop paragraph function from Excerpts (Manual only)
+* Filter added to allow shortcodes to execute inside Excerpts (Manual only)
+
 ## 1.1.1 (30 September, 2012)
 
 * Enhanced author template
