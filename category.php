@@ -3,7 +3,7 @@
 	<!-- Section -->
 	<section>
 	
-		<h1>Categories for <?php the_category(); ?></h1>
+		<h1><?php _e( 'Categories for', 'html5blank' ); the_category(); ?></h1>
 	
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 	
@@ -27,8 +27,8 @@
 			<!-- Post Details -->
 			<span class="date"><?php the_date(); ?></span>
 			<span class="time"><?php the_time(); ?></span>
-			<span class="author">Published by <?php the_author_posts_link(); ?></span>
-			<span class="comments"><?php comments_popup_link('Leave your thoughts', '1 Comment', '% Comments'); ?></span>
+			<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
+			<span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
 			<!-- /Post Details -->
 			
 			<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
@@ -47,7 +47,7 @@
 		<!-- Article -->
 		<article>
 			
-			<h2>Sorry, nothing to display.</h2>
+			<h2>html5blank</h2>
 			
 		</article>
 		<!-- /Article -->
