@@ -33,6 +33,9 @@ Custom functions, support, custom post types and more.
 		'default-color' => $default_background_color,
    		)
    	  );
+
+	// Localisation Support
+	load_theme_textdomain( 'html5blank', get_template_directory() . '/languages' );
    }
    
 /* =============================================================================
@@ -103,9 +106,9 @@ Custom functions, support, custom post types and more.
 	function register_html5_menu() {
 	  register_nav_menus(
 	    array( // Using array to specify more menus if needed
-	      'header-menu' => __( 'Header Menu' ), // Main Navigation
-	      'sidebar-menu' => __( 'Sidebar Menu' ), // Sidebar Navigation
-	      'extra-menu' => __( 'Extra Menu' ) // Extra Navigation if needed (duplicate as many as you need!)
+	      'header-menu' => __( 'Header Menu', 'html5blank' ), // Main Navigation
+	      'sidebar-menu' => __( 'Sidebar Menu', 'html5blank' ), // Sidebar Navigation
+	      'extra-menu' => __( 'Extra Menu', 'html5blank' ) // Extra Navigation if needed (duplicate as many as you need!)
 	    )
 	  );
 	}
@@ -148,7 +151,9 @@ Custom functions, support, custom post types and more.
 	
 		// Define Sidebar Widget Area 1
 		register_sidebar(array(
-			'name' => 'Widget Area 1',
+			'name' => __( 'Widget Area 1', 'html5blank' ),
+		    'description' => __( 'Discription for this widget-area...', 'html5blank' ),
+			'id' => 'widget-area-1',
 			'before_widget' => '<div id="%1$s" class="%2$s">',
 			'after_widget' => '</div>',
 			'before_title' => '<h3>',
@@ -157,7 +162,9 @@ Custom functions, support, custom post types and more.
 		
 		// Define Sidebar Widget Area 2
 		register_sidebar(array(
-			'name' => 'Widget Area 2',
+			'name' => __( 'Widget Area 2', 'html5blank' ),
+			'description' => __( 'Discription for this widget-area...', 'html5blank' ),
+			'id' => 'widget-area-2',
 			'before_widget' => '<div id="%1$s" class="%2$s">',
 			'after_widget' => '</div>',
 			'before_title' => '<h3>',
@@ -214,7 +221,7 @@ Custom functions, support, custom post types and more.
 	
 	// Custom View Article link to Post
 	function html5wp_view_article($more) {
-		return '... <a class="view-article" href="'. get_permalink($post->ID) . '">' . 'View Article' . '</a>';
+		return '... <a class="view-article" href="'. get_permalink($post->ID) . '">' . __( 'View Article', 'html5blank' ) . '</a>';
 	}
 	
 	// Remove Admin bar
@@ -293,18 +300,18 @@ Custom functions, support, custom post types and more.
 	        register_post_type( 'html5-blank', // Register Custom Post Type
 	                array(
 	                        'labels' => array(
-	                                'name' => __( 'HTML5 Blank Custom Post' ), // Rename these to suit
-									'singular_name' => __( 'HTML5 Blank Custom Post' ),
-									'add_new' => __( 'Add New' ),
-									'add_new_item' => __( 'Add New HTML5 Blank Custom Post' ),
-									'edit' => __( 'Edit' ),
-									'edit_item' => __( 'Edit HTML5 Blank Custom Post' ),
-									'new_item' => __( 'New HTML5 Blank Custom Post' ),
-									'view' => __( 'View HTML5 Blank Custom Post' ),
-									'view_item' => __( 'View HTML5 Blank Custom Post' ),
-									'search_items' => __( 'Search HTML5 Blank Custom Post' ),
-									'not_found' => __( 'No HTML5 Blank Custom Posts found' ),
-									'not_found_in_trash' => __( 'No HTML5 Blank Custom Posts found in Trash' ),
+	                                'name' => __( 'HTML5 Blank Custom Post', 'html5blank' ), // Rename these to suit
+									'singular_name' => __( 'HTML5 Blank Custom Post', 'html5blank' ),
+									'add_new' => __( 'Add New', 'html5blank' ),
+									'add_new_item' => __( 'Add New HTML5 Blank Custom Post', 'html5blank' ),
+									'edit' => __( 'Edit', 'html5blank' ),
+									'edit_item' => __( 'Edit HTML5 Blank Custom Post', 'html5blank' ),
+									'new_item' => __( 'New HTML5 Blank Custom Post', 'html5blank' ),
+									'view' => __( 'View HTML5 Blank Custom Post', 'html5blank' ),
+									'view_item' => __( 'View HTML5 Blank Custom Post', 'html5blank' ),
+									'search_items' => __( 'Search HTML5 Blank Custom Post', 'html5blank' ),
+									'not_found' => __( 'No HTML5 Blank Custom Posts found', 'html5blank' ),
+									'not_found_in_trash' => __( 'No HTML5 Blank Custom Posts found in Trash', 'html5blank' ),
 	                        ),
 	                'public' => true,
 	                'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages

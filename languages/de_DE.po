@@ -1,0 +1,171 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: HTML5 Blank WordPress Theme\n"
+"POT-Creation-Date: 2012-10-03 02:30+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Jürgen Rabe <webmaster@head-graphics.com>\n"
+"Language-Team: Jürgen Rabe | www.egado.de <rabe@egado.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.3\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../404.php:9
+msgid "Page not found"
+msgstr "Fehler 404 – Die Seite wurde leider nicht gefunden."
+
+#: ../404.php:10
+msgid "Return home?"
+msgstr "Zurück zur Startseite?"
+
+#: ../archive.php:6
+msgid "Archives"
+msgstr "Archive"
+
+#: ../archive.php:30 ../author.php:42 ../category.php:30 ../index.php:30
+#: ../search.php:30 ../single.php:28 ../tag.php:30
+msgid "Published by"
+msgstr "Veröffentlicht von"
+
+#: ../archive.php:31 ../author.php:43 ../category.php:31 ../index.php:31
+#: ../search.php:31 ../single.php:29 ../tag.php:31
+msgid "Leave your thoughts"
+msgstr "Schreibe einen Kommentar"
+
+#: ../archive.php:31 ../author.php:43 ../category.php:31 ../index.php:31
+#: ../search.php:31 ../single.php:29 ../tag.php:31
+msgid "1 Comment"
+msgstr "1 Kommentar"
+
+#: ../archive.php:31 ../author.php:43 ../category.php:31 ../index.php:31
+#: ../search.php:31 ../single.php:29 ../tag.php:31
+msgid "% Comments"
+msgstr "% Kommentare"
+
+#: ../archive.php:50 ../author.php:62 ../index.php:50 ../page.php:31
+#: ../single.php:56 ../tag.php:50 ../template-demo.php:33
+msgid "Sorry, nothing to display."
+msgstr "Nichts gefunden, was den Suchkriterien entspricht."
+
+#: ../author.php:8
+msgid "Author Archives for "
+msgstr "Autor-Archiv für "
+
+#: ../category.php:6
+msgid "Categories for"
+msgstr "Kategorie-Archiv für"
+
+#: ../comments.php:3
+msgid "Post is password protected. Enter the password to view any comments."
+msgstr ""
+"Dieser Artikel ist passwortgeschützt. Um die Kommentare sehen zu können muss "
+"das Passwort eingegeben werden."
+
+#: ../comments.php:18
+msgid "Comments are closed here."
+msgstr "Kommentare sind geschlossen."
+
+#: ../functions.php:109
+msgid "Header Menu"
+msgstr "Kopfbereichs-Menü"
+
+#: ../functions.php:110
+msgid "Sidebar Menu"
+msgstr "Seitenleisten-Menü"
+
+#: ../functions.php:111
+msgid "Extra Menu"
+msgstr "Zusatz-Menü"
+
+#: ../functions.php:154
+msgid "Widget Area 1"
+msgstr "Widget-Bereich 1"
+
+#: ../functions.php:155 ../functions.php:166
+msgid "Discription for this widget-area..."
+msgstr "Beschreibung für diesen Widget-Bereich…"
+
+#: ../functions.php:165
+msgid "Widget Area 2"
+msgstr "Widget-Bereich 2"
+
+#: ../functions.php:224
+msgid "View Article"
+msgstr "Artikel ansehen"
+
+#: ../functions.php:303 ../functions.php:304
+msgid "HTML5 Blank Custom Post"
+msgstr "HTML5 Blank Custom Post-Type"
+
+#: ../functions.php:305
+msgid "Add New"
+msgstr "Neuen Artikel erstellen"
+
+#: ../functions.php:306
+msgid "Add New HTML5 Blank Custom Post"
+msgstr "Neuen HTML5 Blank Custom Post erstellen"
+
+#: ../functions.php:307
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: ../functions.php:308
+msgid "Edit HTML5 Blank Custom Post"
+msgstr "HTML5 Blank Custom Post bearbeiten"
+
+#: ../functions.php:309
+msgid "New HTML5 Blank Custom Post"
+msgstr "Neuer HTML5 Blank Custom Post"
+
+#: ../functions.php:310 ../functions.php:311
+msgid "View HTML5 Blank Custom Post"
+msgstr "HTML5 Blank Custom Post ansehen"
+
+#: ../functions.php:312
+msgid "Search HTML5 Blank Custom Post"
+msgstr "HTML5 Blank Custom Post suchen"
+
+#: ../functions.php:313
+msgid "No HTML5 Blank Custom Posts found"
+msgstr "Keine HTML5 Blank Custom Posts gefunden"
+
+#: ../functions.php:314
+msgid "No HTML5 Blank Custom Posts found in Trash"
+msgstr "Keine HTML5 Blank Custom Posts im Papierkorb gefunden"
+
+#: ../index.php:6
+msgid "Latest Posts"
+msgstr "Letzte Artikel"
+
+#: ../search.php:6
+msgid "Search Results for"
+msgstr "Suchergebnisse für"
+
+#: ../search.php:50
+msgid "No results found for "
+msgstr "Die Suche ergab keine Treffer für "
+
+#: ../searchform.php:5
+msgid "Search"
+msgstr "Suchen"
+
+#: ../single.php:36
+msgid "Tags: "
+msgstr "Stichwörter: "
+
+#: ../single.php:38
+msgid "Categorised in: "
+msgstr "Kategorisiert in:"
+
+#: ../single.php:40
+msgid "This post was written by "
+msgstr "Dieser Artikel wurde verfasst von "
+
+#: ../tag.php:6
+msgid "Tag Archive: "
+msgstr "Stichword-Archiv: "

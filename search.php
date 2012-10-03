@@ -3,7 +3,7 @@
 	<!-- Section -->
 	<section>
 	
-		<h1>Search Results for <?php echo get_search_query(); ?></h1>
+		<h1><?php _e( 'Search Results for', 'html5blank' ); echo get_search_query(); ?></h1>
 	
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 	
@@ -27,8 +27,8 @@
 			<!-- Post Details -->
 			<span class="date"><?php the_date(); ?></span>
 			<span class="time"><?php the_time(); ?></span>
-			<span class="author">Published by <?php the_author_posts_link(); ?></span>
-			<span class="comments"><?php comments_popup_link('Leave your thoughts', '1 Comment', '% Comments'); ?></span>
+			<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
+			<span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
 			<!-- /Post Details -->
 			
 			<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
@@ -47,7 +47,7 @@
 		<!-- Article -->
 		<article>
 			
-			<h1>No results found for <?php echo get_search_query(); ?></h1>
+			<h1><?php _e( 'No results found for ', 'html5blank' ); echo get_search_query(); ?></h1>
 			
 		</article>
 		<!-- /Article -->
