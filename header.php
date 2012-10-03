@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;">
 	<meta name="description" content="<?php bloginfo('description'); ?>">
 	
-	<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/favicon.ico">
+	<link rel="shortcut icon" href="<?php get_template_directory_uri(); ?>/favicon.ico">
 		
 	<!-- CSS + jQuery + JavaScript -->
 	<?php wp_head(); ?>
@@ -27,8 +27,8 @@
 		
 			<!-- Logo -->
 			<div id="logo">
-				<a href="<?php bloginfo('url'); ?>">
-					<img src="<?php bloginfo('template_url'); ?>/img/logo.png" alt="Logo">
+				<a href="<?php echo home_url(); ?>">
+					<img src="<?php get_template_directory_uri(); ?>/img/logo.png" alt="Logo">
 				</a>
 			</div>
 			<!-- /Logo -->
