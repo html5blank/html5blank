@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: HTML5 Blank WordPress Theme\n"
-"POT-Creation-Date: 2012-10-03 02:06+0100\n"
+"POT-Creation-Date: 2012-10-03 14:58+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Jürgen Rabe <webmaster@head-graphics.com>\n"
 "Language-Team: Jürgen Rabe | www.egado.de <rabe@egado.de>\n"
@@ -27,33 +27,29 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: ../archive.php:30 ../author.php:42 ../category.php:30 ../index.php:30
-#: ../search.php:30 ../single.php:28 ../tag.php:30
+#: ../author.php:8
+msgid "Author Archives for "
+msgstr ""
+
+#: ../author.php:42 ../loop.php:23 ../single.php:28
 msgid "Published by"
 msgstr ""
 
-#: ../archive.php:31 ../author.php:43 ../category.php:31 ../index.php:31
-#: ../search.php:31 ../single.php:29 ../tag.php:31
+#: ../author.php:43 ../loop.php:24 ../single.php:29
 msgid "Leave your thoughts"
 msgstr ""
 
-#: ../archive.php:31 ../author.php:43 ../category.php:31 ../index.php:31
-#: ../search.php:31 ../single.php:29 ../tag.php:31
+#: ../author.php:43 ../loop.php:24 ../single.php:29
 msgid "1 Comment"
 msgstr ""
 
-#: ../archive.php:31 ../author.php:43 ../category.php:31 ../index.php:31
-#: ../search.php:31 ../single.php:29 ../tag.php:31
+#: ../author.php:43 ../loop.php:24 ../single.php:29
 msgid "% Comments"
 msgstr ""
 
-#: ../archive.php:50 ../author.php:62 ../index.php:50 ../page.php:31
-#: ../single.php:56 ../tag.php:50 ../template-demo.php:33
+#: ../author.php:62 ../loop.php:45 ../page.php:31 ../single.php:56
+#: ../template-demo.php:33
 msgid "Sorry, nothing to display."
-msgstr ""
-
-#: ../author.php:8
-msgid "Author Archives for "
 msgstr ""
 
 #: ../category.php:6
@@ -140,12 +136,13 @@ msgstr ""
 msgid "Latest Posts"
 msgstr ""
 
-#: ../search.php:6
-msgid "Search Results for"
+#: ../loop.php:43
+#, php-format
+msgid "%s results for "
 msgstr ""
 
-#: ../search.php:50
-msgid "No results found for "
+#: ../search.php:6
+msgid "Search Results for"
 msgstr ""
 
 #: ../searchform.php:5
