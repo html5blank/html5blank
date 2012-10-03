@@ -1,20 +1,19 @@
 <?php
 /*
-	Author: Todd Motto
-	URL: html5blank.com
-	
-	Custom functions, support, custom post types and more.
+   Author: Todd Motto | @toddmotto
+   URL: html5blank.com | @html5blank
+   Custom functions, support, custom post types and more.
 */
 
 /* =============================================================================
-	External Modules/Files
-	========================================================================== */
+   External Modules/Files
+   ========================================================================== */
 
 	// Load any external files you have here
 
 /* =============================================================================
-	Theme Support
-	========================================================================== */
+   Theme Support
+   ========================================================================== */
 
 	if (!isset($content_width))
 	    $content_width = 900;
@@ -42,8 +41,8 @@
 	}
 
 /* =============================================================================
-	Functions
-	========================================================================== */
+   Functions
+   ========================================================================== */
 
 	// Load Custom Theme Scripts using Enqueue
 	function html5blank_scripts()
@@ -251,8 +250,8 @@
 	}
 
 /* =============================================================================
-	Actions + Filters + ShortCodes
-	========================================================================== */
+   Actions + Filters + ShortCodes
+   ========================================================================== */
 
 	// Add Actions
 	add_action('init', 'html5blank_scripts'); // Add Custom Scripts
@@ -307,8 +306,8 @@
 	// [html5_shortcode_demo] [html5_shortcode_demo_2] Here's the page title! [/html5_shortcode_demo_2] [/html5_shortcode_demo]
 
 /* =============================================================================
-	Custom Post Types
-	========================================================================== */
+   Custom Post Types
+   ========================================================================== */
 
 	function create_post_type_html5() // Create 1 Custom Post type for a Demo, called HTML5-Blank
 	{
