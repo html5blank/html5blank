@@ -1,5 +1,13 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.2.0 (03 October, 2012)
+
+* Merged pull request from J-Rabe
+* Localisation-support for all theme strings and empty *.pot for further translations
+* German translation added by J-Rabe
+* Functions.php includes new function 'load_theme_textdomain' for language support
+* Loop.php created to handle the Loop core, with get_template_part inclusion for relevant files
+
 ## 1.1.2 (02 October, 2012)
 
 * Merged pull request for comments.php code changes
