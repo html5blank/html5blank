@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: HTML5 Blank WordPress Theme\n"
-"POT-Creation-Date: 2012-10-03 14:58+0100\n"
+"POT-Creation-Date: 2012-10-03 15:34+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Jürgen Rabe <webmaster@head-graphics.com>\n"
 "Language-Team: Jürgen Rabe | www.egado.de <rabe@egado.de>\n"
@@ -47,7 +47,7 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: ../author.php:62 ../loop.php:45 ../page.php:31 ../single.php:56
+#: ../author.php:62 ../loop.php:42 ../page.php:31 ../single.php:56
 #: ../template-demo.php:33
 msgid "Sorry, nothing to display."
 msgstr ""
@@ -136,13 +136,9 @@ msgstr ""
 msgid "Latest Posts"
 msgstr ""
 
-#: ../loop.php:43
-#, php-format
-msgid "%s results for "
-msgstr ""
-
 #: ../search.php:6
-msgid "Search Results for"
+#, php-format
+msgid "%s Search Results for "
 msgstr ""
 
 #: ../searchform.php:5
@@ -164,3 +160,6 @@ msgstr ""
 #: ../tag.php:6
 msgid "Tag Archive: "
 msgstr ""
+
+#~ msgid "%s results for "
+#~ msgstr "%s Ergebnisse für "
