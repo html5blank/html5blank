@@ -27,7 +27,7 @@
 		
 			<!-- Logo -->
 			<div id="logo">
-				<a href="<?php bloginfo('url'); ?>">
+				<a href="<?php echo home_url(); ?>">
 					<img src="<?php bloginfo('template_url'); ?>/img/logo.png" alt="Logo">
 				</a>
 			</div>
