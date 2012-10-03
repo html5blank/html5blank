@@ -39,11 +39,7 @@
 
 	<!-- Article -->
 	<article>
-		<?php if ( is_search() ) { // If the search results are showing ?> 
-			<h2><?php echo sprintf( __( '%s results for ', 'html5blank' ), $wp_query->found_posts ); echo get_search_query(); ?></h2>
-		<?php  } else { // If anything else then the search results are showing ?>
-			<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
-		<?php } ?>
+		<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
 	</article>
 	<!-- /Article -->
 

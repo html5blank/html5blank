@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: HTML5 Blank WordPress Theme\n"
-"POT-Creation-Date: 2012-10-03 14:58+0100\n"
+"POT-Creation-Date: 2012-10-03 15:34+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Jürgen Rabe <webmaster@head-graphics.com>\n"
 "Language-Team: Jürgen Rabe | www.egado.de <rabe@egado.de>\n"
@@ -47,7 +47,7 @@ msgstr "1 Kommentar"
 msgid "% Comments"
 msgstr "% Kommentare"
 
-#: ../author.php:62 ../loop.php:45 ../page.php:31 ../single.php:56
+#: ../author.php:62 ../loop.php:42 ../page.php:31 ../single.php:56
 #: ../template-demo.php:33
 msgid "Sorry, nothing to display."
 msgstr "Nichts gefunden, was den Suchkriterien entspricht."
@@ -138,14 +138,10 @@ msgstr "Keine HTML5 Blank Custom Posts im Papierkorb gefunden"
 msgid "Latest Posts"
 msgstr "Letzte Artikel"
 
-#: ../loop.php:43
-#, php-format
-msgid "%s results for "
-msgstr "%s Ergebnisse für "
-
 #: ../search.php:6
-msgid "Search Results for"
-msgstr "Suchergebnisse für"
+#, php-format
+msgid "%s Search Results for "
+msgstr "%s Suchergebnisse für "
 
 #: ../searchform.php:5
 msgid "Search"
@@ -166,3 +162,6 @@ msgstr "Dieser Artikel wurde verfasst von "
 #: ../tag.php:6
 msgid "Tag Archive: "
 msgstr "Stichword-Archiv: "
+
+#~ msgid "%s results for "
+#~ msgstr "%s Ergebnisse für "
