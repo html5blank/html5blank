@@ -5,13 +5,13 @@
 	
 	<?php if (have_posts()): the_post(); ?>
 	
-		<h1>Author Archives for <?php echo get_the_author(); ?></h1>
+		<h1><?php _e( 'Author Archives for ', 'html5blank' ); echo get_the_author(); ?></h1>
 
 	<?php if ( get_the_author_meta('description')) : ?>
 	
 	<?php echo get_avatar(get_the_author_meta('user_email')); ?>
 	
-		<h2>About <?php echo get_the_author() ; ?></h2>
+		<h2><?php e_( 'About', 'html5blank' ); echo get_the_author() ; ?></h2>
 	
 	<?php the_author_meta('description'); ?>
 	
@@ -39,8 +39,8 @@
 			<!-- Post Details -->
 			<span class="date"><?php the_date(); ?></span>
 			<span class="time"><?php the_time(); ?></span>
-			<span class="author">Published by <?php the_author_posts_link(); ?></span>
-			<span class="comments"><?php comments_popup_link('Leave your thoughts', '1 Comment', '% Comments'); ?></span>
+			<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
+			<span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
 			<!-- /Post Details -->
 			
 			<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
@@ -59,7 +59,7 @@
 		<!-- Article -->
 		<article>
 			
-			<h1>Sorry, nothing to display.</h1>
+			<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
 			
 		</article>
 		<!-- /Article -->
