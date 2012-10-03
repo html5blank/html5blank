@@ -18,4 +18,4 @@
 	
 <?php get_sidebar(); ?>
 
-<?php get_footer(); ?>w
+<?php get_footer(); ?>
