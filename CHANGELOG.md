@@ -7,6 +7,9 @@
 * German translation added by J-Rabe
 * Functions.php includes new function 'load_theme_textdomain' for language support
 * Loop.php created to handle the Loop core, with get_template_part inclusion for relevant files
+* Loop.php includes conditional result for search results
+* Swapped bloginfo('template_url'); for echo get_template_directory_uri(); on Logo + Favicon
+* home_url instead of bloginfo('home')
 
 ## 1.1.2 (02 October, 2012)
 
