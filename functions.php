@@ -16,6 +16,8 @@ Custom functions, support, custom post types and more.
    Theme Support
    ========================================================================== */
    
+   if ( ! isset( $content_width ) ) $content_width = 900;
+   
    if ( function_exists( 'add_theme_support' ) ) {
    	
    	// Add Menu Support
