@@ -35,7 +35,9 @@ Custom functions, support, custom post types and more.
 		'default-color' => $default_background_color,
    		)
    	  );
-
+	// Enables post and comment RSS feed links to head 
+	add_theme_support( 'automatic-feed-links' );
+	  
 	// Localisation Support
 	load_theme_textdomain( 'html5blank', get_template_directory() . '/languages' );
    }
