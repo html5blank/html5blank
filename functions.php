@@ -19,11 +19,13 @@
  * ========================================================================
  */
 
-if (!isset($content_width)) {
+if (!isset($content_width))
+{
     $content_width = 900;
 }
 
-if (function_exists('add_theme_support')) {
+if (function_exists('add_theme_support'))
+{
     // Add Menu Support
     add_theme_support('menus');
 
@@ -167,7 +169,7 @@ if (function_exists('register_sidebar')) {
     // Define Sidebar Widget Area 1
     register_sidebar(array(
         'name' => __('Widget Area 1', 'html5blank'),
-        'description' => __('Discription for this widget-area...', 'html5blank'),
+        'description' => __('Description for this widget-area...', 'html5blank'),
         'id' => 'widget-area-1',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget' => '</div>',
@@ -178,7 +180,7 @@ if (function_exists('register_sidebar')) {
     // Define Sidebar Widget Area 2
     register_sidebar(array(
         'name' => __('Widget Area 2', 'html5blank'),
-        'description' => __('Discription for this widget-area...', 'html5blank'),
+        'description' => __('Description for this widget-area...', 'html5blank'),
         'id' => 'widget-area-2',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget' => '</div>',
@@ -280,9 +282,9 @@ remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the ext
 remove_action('wp_head', 'feed_links', 2); // Display the links to the general feeds: Post and Comment Feed
 remove_action('wp_head', 'rsd_link'); // Display the link to the Really Simple Discovery service endpoint, EditURI link
 remove_action('wp_head', 'wlwmanifest_link'); // Display the link to the Windows Live Writer manifest file.
-remove_action('wp_head', 'index_rel_link'); // index link
-remove_action('wp_head', 'parent_post_rel_link', 10, 0); // prev link
-remove_action('wp_head', 'start_post_rel_link', 10, 0); // start link
+remove_action('wp_head', 'index_rel_link'); // Index link
+remove_action('wp_head', 'parent_post_rel_link', 10, 0); // Prev link
+remove_action('wp_head', 'start_post_rel_link', 10, 0); // Start link
 remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0); // Display relational links for the posts adjacent to the current post.
 remove_action('wp_head', 'wp_generator'); // Display the XHTML generator that is generated on the wp_head hook, WP version
 remove_action('wp_head', 'start_post_rel_link', 10, 0);
