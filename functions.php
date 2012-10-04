@@ -84,9 +84,9 @@ function add_google_analytics()
     $google = "<!-- Optimised Asynchronous Google Analytics -->";
     $google .= "<script>"; // Change the UA-XXXXXXXX-X to your Account ID
     $google .= "var _gaq=[['_setAccount','UA-XXXXXXXX-X'],['_trackPageview']];
-			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-			g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-			s.parentNode.insertBefore(g,s)}(document,'script'));";
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));";
     $google .= "</script>";
     echo $google;
 }
@@ -94,10 +94,11 @@ function add_google_analytics()
 // jQuery Fallbacks load in the footer
 function add_jquery_fallback()
 {
-    echo "<!-- Protocol Relative jQuery fall back if Google CDN offline -->";
-    echo "<script>";
-    echo "window.jQuery || document.write('<script src='" . get_bloginfo('template_url') . "/js/jquery-1.8.2.min.js'><\/script>')";
-    echo "</script>";
+    $jqueryfallback = "<!-- Protocol Relative jQuery fall back if Google CDN offline -->";
+    $jqueryfallback .= "<script>";
+    $jqueryfallback .= "window.jQuery || document.write('<script src='" . get_bloginfo('template_url') . "/js/jquery-1.8.2.min.js'><\/script>')";
+    $jqueryfallback .= "</script>";
+    echo $jqueryfallback;
 }
 
 // Threaded Comments
