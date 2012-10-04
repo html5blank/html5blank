@@ -79,13 +79,14 @@ function conditional_scripts()
 // Load Optimised Google Analytics in the footer
 function add_google_analytics()
 {
-    echo "<!-- Optimised Asynchronous Google Analytics -->";
-    echo "<script>"; // Change the UA-XXXXXXXX-X to your Account ID
-    echo "var _gaq=[['_setAccount','UA-XXXXXXXX-X'],['_trackPageview']];
+    $google = "<!-- Optimised Asynchronous Google Analytics -->";
+    $google .= "<script>"; // Change the UA-XXXXXXXX-X to your Account ID
+    $google .= "var _gaq=[['_setAccount','UA-XXXXXXXX-X'],['_trackPageview']];
 			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
 			g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
 			s.parentNode.insertBefore(g,s)}(document,'script'));";
-    echo "</script>";
+    $google .= "</script>";
+    echo $google;
 }
 
 // jQuery Fallbacks load in the footer
