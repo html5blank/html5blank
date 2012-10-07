@@ -35,7 +35,7 @@
 			
 			<!-- Nav -->
 			<nav>
-				<?php wp_nav_menu(array('theme_location' => 'header-menu', 'items_wrap' => '<ul>%3$s</ul>')); ?>
+				<?php html5blank_nav(); ?>
 			</nav>
 			<!-- /Nav -->
 			
