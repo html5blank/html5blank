@@ -1,5 +1,9 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.2.1 (07 October, 2012)
+
+* Custom callback for wp_nav_menu, now in functions.php with html5blank_nav(); in header.php
+
 ## 1.2.0 (03 October, 2012)
 
 * Merged pull request from J-Rabe
