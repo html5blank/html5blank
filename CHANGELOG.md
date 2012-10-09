@@ -1,5 +1,11 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.2.2 (09 October, 2012)
+
+* Modified function - jQuery CDN fallback to get_template_directory_uri() instead of bloginfo('template_url')
+* Add Support for Custom Header
+* Tweaked support for Custom Background, added default color and placeholder background image
+
 ## 1.2.1 (07 October, 2012)
 
 * Custom callback for wp_nav_menu, now in functions.php with html5blank_nav(); in header.php
