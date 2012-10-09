@@ -121,8 +121,7 @@ function add_jquery_fallback()
 {
     $jqueryfallback = "<!-- Protocol Relative jQuery fall back if Google CDN offline -->";
     $jqueryfallback .= "<script>";
-    #$jqueryfallback .= "window.jQuery || document.write('<script src='" . get_bloginfo('template_url') . "/js/jquery-1.8.2.min.js'><\/script>')";
-    $jqueryfallback .= "window.jQuery || document.write('<script src=\"" . get_bloginfo('template_url') . "/js/jquery-1.8.2.min.js\"><\/script>')";
+    $jqueryfallback .= "window.jQuery || document.write('<script src=\"" . get_template_directory_uri() . "/js/jquery-1.8.2.min.js\"><\/script>')";
     $jqueryfallback .= "</script>";
     echo $jqueryfallback;
 }
