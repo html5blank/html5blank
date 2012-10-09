@@ -38,7 +38,7 @@ if (function_exists('add_theme_support'))
 
     // Add Support for Custom Backgrounds
     add_theme_support('custom-background', array(
-        'default-color' => $default_background_color
+        'default-color' => 'FFF'
     ));
     // Enables post and comment RSS feed links to head
     add_theme_support('automatic-feed-links');
