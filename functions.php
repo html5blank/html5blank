@@ -21,7 +21,7 @@
 
 if (!isset($content_width))
 {
-    $content_width = 900;
+	$content_width = 900;
 }
 
 if (function_exists('add_theme_support'))
@@ -38,7 +38,7 @@ if (function_exists('add_theme_support'))
 
     // Add Support for Custom Backgrounds
     add_theme_support('custom-background', array(
-        'default-color' => $default_background_color
+        'default-color' => 'FFF'
     ));
     // Enables post and comment RSS feed links to head
     add_theme_support('automatic-feed-links');
@@ -139,6 +139,8 @@ function enable_threaded_comments()
 // Theme Stylesheets using Enqueue
 function html5blank_styles()
 {
+    wp_register_style('html5blankreset', get_template_directory_uri() . '/css/reset.css', array(), '1.0', 'all');
+    wp_enqueue_style('html5blankreset'); // Enqueue it!
     wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('html5blank'); // Enqueue it!
 }
