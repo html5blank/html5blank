@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: HTML5 Blank WordPress Theme\n"
-"POT-Creation-Date: 2012-10-03 15:34+0100\n"
+"POT-Creation-Date: 2012-10-09 20:52+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Jürgen Rabe <webmaster@head-graphics.com>\n"
 "Language-Team: Jürgen Rabe | www.egado.de <rabe@egado.de>\n"
@@ -66,71 +66,75 @@ msgstr ""
 msgid "Comments are closed here."
 msgstr "Kommentare sind geschlossen."
 
-#: ../functions.php:109
+#: ../footer.php:6
+msgid "Powered by"
+msgstr "Angetrieben von"
+
+#: ../functions.php:151
 msgid "Header Menu"
 msgstr "Kopfbereichs-Menü"
 
-#: ../functions.php:110
+#: ../functions.php:152
 msgid "Sidebar Menu"
 msgstr "Seitenleisten-Menü"
 
-#: ../functions.php:111
+#: ../functions.php:153
 msgid "Extra Menu"
 msgstr "Zusatz-Menü"
 
-#: ../functions.php:154
+#: ../functions.php:199
 msgid "Widget Area 1"
 msgstr "Widget-Bereich 1"
 
-#: ../functions.php:155 ../functions.php:166
-msgid "Discription for this widget-area..."
+#: ../functions.php:200 ../functions.php:211
+msgid "Description for this widget-area..."
 msgstr "Beschreibung für diesen Widget-Bereich…"
 
-#: ../functions.php:165
+#: ../functions.php:210
 msgid "Widget Area 2"
 msgstr "Widget-Bereich 2"
 
-#: ../functions.php:224
+#: ../functions.php:275
 msgid "View Article"
 msgstr "Artikel ansehen"
 
-#: ../functions.php:303 ../functions.php:304
+#: ../functions.php:362 ../functions.php:363
 msgid "HTML5 Blank Custom Post"
 msgstr "HTML5 Blank Custom Post-Type"
 
-#: ../functions.php:305
+#: ../functions.php:364
 msgid "Add New"
 msgstr "Neuen Artikel erstellen"
 
-#: ../functions.php:306
+#: ../functions.php:365
 msgid "Add New HTML5 Blank Custom Post"
 msgstr "Neuen HTML5 Blank Custom Post erstellen"
 
-#: ../functions.php:307
+#: ../functions.php:366
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: ../functions.php:308
+#: ../functions.php:367
 msgid "Edit HTML5 Blank Custom Post"
 msgstr "HTML5 Blank Custom Post bearbeiten"
 
-#: ../functions.php:309
+#: ../functions.php:368
 msgid "New HTML5 Blank Custom Post"
 msgstr "Neuer HTML5 Blank Custom Post"
 
-#: ../functions.php:310 ../functions.php:311
+#: ../functions.php:369 ../functions.php:370
 msgid "View HTML5 Blank Custom Post"
 msgstr "HTML5 Blank Custom Post ansehen"
 
-#: ../functions.php:312
+#: ../functions.php:371
 msgid "Search HTML5 Blank Custom Post"
 msgstr "HTML5 Blank Custom Post suchen"
 
-#: ../functions.php:313
+#: ../functions.php:372
 msgid "No HTML5 Blank Custom Posts found"
 msgstr "Keine HTML5 Blank Custom Posts gefunden"
 
-#: ../functions.php:314
+#: ../functions.php:373
 msgid "No HTML5 Blank Custom Posts found in Trash"
 msgstr "Keine HTML5 Blank Custom Posts im Papierkorb gefunden"
 
