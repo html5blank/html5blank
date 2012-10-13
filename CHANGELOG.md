@@ -1,5 +1,9 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.2.3 (13 October, 2012)
+
+* Responsive Thumbnail support, added a function which removes width and height dynamic attributes from thumbnail
+
 ## 1.2.2 (09 October, 2012)
 
 * Modified function - jQuery CDN fallback to get_template_directory_uri() instead of bloginfo('template_url')
