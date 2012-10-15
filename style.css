@@ -84,19 +84,19 @@ License URI:	http://opensource.org/licenses/mit-license.php
    General Styles
    ========================================================================== */
    
-   /* Font Face Setup, add fonts to /fonts/ folder and link up below with filenames */
-   @font-face {
-	    font-family:'Font-Name';
-	    src:url('fonts/font-name.eot');
-	    src:url('fonts/font-name.eot?#iefix') format('embedded-opentype'),
-	        url('fonts/font-name.woff') format('woff'),
-	        url('fonts/font-name.ttf') format('truetype'),
-	        url('fonts/font-name.svg#font-name') format('svg');
-	    font-weight:normal;
-	    font-style:normal;
-	}
+   	/* Font Face Setup, add fonts to /fonts/ folder and link up below with filenames */
+	@font-face {
+		font-family:'Font-Name';
+		src:url('fonts/font-name.eot');
+		src:url('fonts/font-name.eot?#iefix') format('embedded-opentype'),
+		url('fonts/font-name.woff') format('woff'),
+		url('fonts/font-name.ttf') format('truetype'),
+		url('fonts/font-name.svg#font-name') format('svg');
+	    	font-weight:normal;
+	    	font-style:normal;
+  	 }
 	
-	body {
+   	body {
 		font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; /* Serve Helvetica Neue, with Helvetica fallbacks to Arial */
 		font-size:11px;
 		font-weight:300; /* Better supported than 'lighter' attribute */
@@ -116,32 +116,32 @@ License URI:	http://opensource.org/licenses/mit-license.php
    /* Add your site structure here */
 
 /* =============================================================================
-   Media Queries
+   Mobile First Media Queries
    ========================================================================== */
 
    /* 320px and greater */
    @media only screen and (min-width: 320px) {
-	   /* Styles here */
+	/* Styles here */
    }
    
    /* 480px and greater */
    @media only screen and (min-width: 480px) {
-	   /* Styles here */
+	/* Styles here */
    }
    
    /* 768px and greater */
    @media only screen and (min-width: 768px) {
-	   /* Styles here */
+	/* Styles here */
    }
    
    /* 1024px and greater */
    @media only screen and (min-width: 1024px) {
-	   /* Styles here */
+	/* Styles here */
    }
    
    /* Retina screens */
    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
-    /* Style adjustments for high resolution devices */
+	/* Style adjustments for high resolution devices */
 }
 
 /* =============================================================================
