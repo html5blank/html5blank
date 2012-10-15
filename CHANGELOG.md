@@ -2,6 +2,7 @@
 
 ## 1.2.4 (15 October, 2012)
 
+* Custom Comments callback - wp_list_comments('type=comment&callback=html5blankcomments'); editable comments now in functions.php
 * Changed date format from the_date to the_time('F j, Y')
 * Changed time format from the_time to the_time('g:i a')
 * Changes above show the exact same when parsed, but have been changed due to the way WordPress works, which only shows one 'Date' for posts created on the same day. [More here](http://codex.wordpress.org/Function_Reference/the_date).
