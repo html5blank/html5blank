@@ -1,5 +1,11 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.2.4 (15 October, 2012)
+
+* Changed date format from the_date to the_time('F j, Y')
+* Changed time format from the_time to the_time('g:i a')
+* Changes above show the exact same when parsed, but have been changed due to the way WordPress works, which only shows one 'Date' for posts created on the same day. [More here](http://codex.wordpress.org/Function_Reference/the_date).
+
 ## 1.2.3 (13 October, 2012)
 
 * Responsive Thumbnail support, added a function which removes width and height dynamic attributes from thumbnail
