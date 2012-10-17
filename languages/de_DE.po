@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: HTML5 Blank WordPress Theme\n"
-"POT-Creation-Date: 2012-10-09 20:52+0100\n"
+"POT-Creation-Date: 2012-10-18 00:53+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Jürgen Rabe <webmaster@head-graphics.com>\n"
 "Language-Team: Jürgen Rabe | www.egado.de <rabe@egado.de>\n"
@@ -31,23 +31,23 @@ msgstr "Archive"
 msgid "Author Archives for "
 msgstr "Autor-Archiv für "
 
-#: ../author.php:42 ../loop.php:23 ../single.php:28
+#: ../author.php:41 ../loop.php:22 ../single.php:27
 msgid "Published by"
 msgstr "Veröffentlicht von"
 
-#: ../author.php:43 ../loop.php:24 ../single.php:29
+#: ../author.php:42 ../loop.php:23 ../single.php:28
 msgid "Leave your thoughts"
 msgstr "Schreibe einen Kommentar"
 
-#: ../author.php:43 ../loop.php:24 ../single.php:29
+#: ../author.php:42 ../loop.php:23 ../single.php:28
 msgid "1 Comment"
 msgstr "1 Kommentar"
 
-#: ../author.php:43 ../loop.php:24 ../single.php:29
+#: ../author.php:42 ../loop.php:23 ../single.php:28
 msgid "% Comments"
 msgstr "% Kommentare"
 
-#: ../author.php:62 ../loop.php:42 ../page.php:31 ../single.php:56
+#: ../author.php:61 ../loop.php:41 ../page.php:31 ../single.php:55
 #: ../template-demo.php:33
 msgid "Sorry, nothing to display."
 msgstr "Nichts gefunden, was den Suchkriterien entspricht."
@@ -68,73 +68,91 @@ msgstr "Kommentare sind geschlossen."
 
 #: ../footer.php:6
 msgid "Powered by"
-msgstr "Angetrieben von"
+msgstr "Betrieben mit"
 
-#: ../functions.php:151
+#: ../functions.php:174
+#, php-format
+msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
+msgstr "<cite class=\"fn\">%s</cite> <span class=\"says\">sagt:</span>"
+
+#: ../functions.php:177
+msgid "Your comment is awaiting moderation."
+msgstr "Dein Kommentar muss noch moderiert werden – Bitte hab etwas Geduld."
+
+#: ../functions.php:184
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s um %2$s"
+
+#: ../functions.php:184
+msgid "(Edit)"
+msgstr "(Bearbeiten)"
+
+#: ../functions.php:209
 msgid "Header Menu"
 msgstr "Kopfbereichs-Menü"
 
-#: ../functions.php:152
+#: ../functions.php:210
 msgid "Sidebar Menu"
 msgstr "Seitenleisten-Menü"
 
-#: ../functions.php:153
+#: ../functions.php:211
 msgid "Extra Menu"
 msgstr "Zusatz-Menü"
 
-#: ../functions.php:199
+#: ../functions.php:257
 msgid "Widget Area 1"
 msgstr "Widget-Bereich 1"
 
-#: ../functions.php:200 ../functions.php:211
+#: ../functions.php:258 ../functions.php:269
 msgid "Description for this widget-area..."
 msgstr "Beschreibung für diesen Widget-Bereich…"
 
-#: ../functions.php:210
+#: ../functions.php:268
 msgid "Widget Area 2"
 msgstr "Widget-Bereich 2"
 
-#: ../functions.php:275
+#: ../functions.php:333
 msgid "View Article"
 msgstr "Artikel ansehen"
 
-#: ../functions.php:362 ../functions.php:363
+#: ../functions.php:438 ../functions.php:439
 msgid "HTML5 Blank Custom Post"
 msgstr "HTML5 Blank Custom Post-Type"
 
-#: ../functions.php:364
+#: ../functions.php:440
 msgid "Add New"
 msgstr "Neuen Artikel erstellen"
 
-#: ../functions.php:365
+#: ../functions.php:441
 msgid "Add New HTML5 Blank Custom Post"
 msgstr "Neuen HTML5 Blank Custom Post erstellen"
 
-#: ../functions.php:366
+#: ../functions.php:442
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: ../functions.php:367
+#: ../functions.php:443
 msgid "Edit HTML5 Blank Custom Post"
 msgstr "HTML5 Blank Custom Post bearbeiten"
 
-#: ../functions.php:368
+#: ../functions.php:444
 msgid "New HTML5 Blank Custom Post"
 msgstr "Neuer HTML5 Blank Custom Post"
 
-#: ../functions.php:369 ../functions.php:370
+#: ../functions.php:445 ../functions.php:446
 msgid "View HTML5 Blank Custom Post"
 msgstr "HTML5 Blank Custom Post ansehen"
 
-#: ../functions.php:371
+#: ../functions.php:447
 msgid "Search HTML5 Blank Custom Post"
 msgstr "HTML5 Blank Custom Post suchen"
 
-#: ../functions.php:372
+#: ../functions.php:448
 msgid "No HTML5 Blank Custom Posts found"
 msgstr "Keine HTML5 Blank Custom Posts gefunden"
 
-#: ../functions.php:373
+#: ../functions.php:449
 msgid "No HTML5 Blank Custom Posts found in Trash"
 msgstr "Keine HTML5 Blank Custom Posts im Papierkorb gefunden"
 
@@ -151,15 +169,15 @@ msgstr "%s Suchergebnisse für "
 msgid "Search"
 msgstr "Suchen"
 
-#: ../single.php:36
+#: ../single.php:35
 msgid "Tags: "
 msgstr "Stichwörter: "
 
-#: ../single.php:38
+#: ../single.php:37
 msgid "Categorised in: "
 msgstr "Kategorisiert in: "
 
-#: ../single.php:40
+#: ../single.php:39
 msgid "This post was written by "
 msgstr "Dieser Artikel wurde verfasst von "
 
