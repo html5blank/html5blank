@@ -70,7 +70,7 @@ msgstr ""
 
 #: ../functions.php:174
 #, php-format
-msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
+msgid "<span class=\"fn\">%s</span> <span class=\"says\">says:</span>"
 msgstr ""
 
 #: ../functions.php:177
