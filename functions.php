@@ -126,7 +126,7 @@ function add_google_analytics()
     $google .= "var _gaq=[['_setAccount','UA-XXXXXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));";
+            s.parentNode.insertBefore(g,s)})(document,'script');";
     $google .= "</script>";
     echo $google;
 }
