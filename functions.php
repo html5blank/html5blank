@@ -360,6 +360,26 @@ function html5blankgravatar ($avatar_defaults)
     return $avatar_defaults;
 }
 
+// Custom Posts Output Count
+function html5blank_custom_post_count($query)
+{
+    switch ( $query->query_vars['post_type'] )
+    {
+        case 'html5-blank':  // Post Type named 'html5-blank', rename this to your post type
+            $query->query_vars['posts_per_page'] = 30; // Change how many posts are viewed per page
+            break;
+
+        default:
+            break;
+    }
+    return $query;
+}
+
+if( !is_admin() )
+{
+    add_filter('pre_get_posts', 'html5blank_custom_post_count');
+}
+
 /*
  * ========================================================================
  * Actions + Filters + ShortCodes
