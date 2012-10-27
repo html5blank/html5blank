@@ -1,5 +1,9 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.2.5 (27 October, 2012)
+
+* Custom Post Types output count (per page) control - html5blank_custom_post_count in functions.php, which allows you to specify the custom post output count per page. Overrides the 'Blog pages show at most' inside Settings > Reading.
+
 ## 1.2.4 (15 October, 2012)
 
 * Custom Comments callback - wp_list_comments('type=comment&callback=html5blankcomments'); editable comments now in functions.php
