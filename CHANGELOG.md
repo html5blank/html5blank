@@ -1,5 +1,9 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.2.6 (09 November, 2012)
+
+* Added Bloginfo shortcode, allowing for dynamic bloginfo calls [bloginfo key=""] as shortcodes in dashboard
+
 ## 1.2.5 (27 October, 2012)
 
 * Custom Post Types output count (per page) control - html5blank_custom_post_count in functions.php, which allows you to specify the custom post output count per page. Overrides the 'Blog pages show at most' inside Settings > Reading.
