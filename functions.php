@@ -435,6 +435,7 @@ add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
 
 // Shortcodes
+add_shortcode('bloginfo', 'html5_blank_bloginfo_shortcode'); // Use bloginfo settings in editor
 add_shortcode('html5_shortcode_demo', 'html5_shortcode_demo'); // You can place [html5_shortcode_demo] in Pages, Posts now.
 add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [html5_shortcode_demo_2] in Pages, Posts now.
 
@@ -490,6 +491,15 @@ function create_post_type_html5()
  *  Shortcodes
  * ========================================================================
  */
+
+// Bloginfo Shortcode
+function html5_blank_bloginfo_shortcode($atts)
+{
+   extract(shortcode_atts(array(
+       'key' => '',
+   ), $atts));
+   return get_bloginfo($key);
+}
 
 // Shortcode Demo with Nested Capability
 function html5_shortcode_demo($atts, $content = null)
