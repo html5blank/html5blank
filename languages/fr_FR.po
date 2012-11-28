@@ -1,10 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: HTML5 Blank WordPress Theme\n"
-"POT-Creation-Date: 2012-10-05 10:38+0100\n"
+"POT-Creation-Date: 2012-10-05 10:41+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: FxB <fx@fxbenard.com>\n"
-"Language-Team: Jürgen Rabe | www.egado.de <rabe@egado.de>\n"
+"Language-Team: FxB <fx@fxbenard.com>\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,108 +18,133 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:9
+#, fuzzy
 msgid "Page not found"
-msgstr ""
+msgstr "La page est introuvable !"
 
 #: 404.php:10
+#, fuzzy
 msgid "Return home?"
-msgstr ""
+msgstr "<a href=\"%s\">Accueil</a>"
 
 #: archive.php:6
+#, fuzzy
 msgid "Archives"
-msgstr ""
+msgstr "Archives"
 
 #: author.php:8
+#, fuzzy
 msgid "Author Archives for "
-msgstr ""
+msgstr "Désactiver les archives de l'auteur"
 
 #: author.php:42 loop.php:23 single.php:28
+#, fuzzy
 msgid "Published by"
-msgstr ""
+msgstr "Envoyé par"
 
 #: author.php:43 loop.php:24 single.php:29
+#, fuzzy
 msgid "Leave your thoughts"
-msgstr ""
+msgstr "Laissez votre commentaire"
 
 #: author.php:43 loop.php:24 single.php:29
+#, fuzzy
 msgid "1 Comment"
-msgstr ""
+msgstr "1 commentaire"
 
 #: author.php:43 loop.php:24 single.php:29
+#, fuzzy
 msgid "% Comments"
-msgstr ""
+msgstr "% commentaires"
 
 #: author.php:62 loop.php:42 page.php:31 single.php:56 template-demo.php:33
+#, fuzzy
 msgid "Sorry, nothing to display."
-msgstr ""
+msgstr "Choisissez les taxinomies à afficher:"
 
 #: category.php:6
+#, fuzzy
 msgid "Categories for"
-msgstr ""
+msgstr "ou pour %s"
 
 #: comments.php:3
+#, fuzzy
 msgid "Post is password protected. Enter the password to view any comments."
 msgstr ""
+"Cet article est protégé par un mot de passe. Veuillez le saisir pour pouvoir "
+"lire ses commentaires."
 
 #: comments.php:18
 msgid "Comments are closed here."
 msgstr ""
 
 #: footer.php:6
+#, fuzzy
 msgid "Powered by"
-msgstr ""
+msgstr "Propulsé par"
 
 #: functions.php:114
+#, fuzzy
 msgid "Header Menu"
-msgstr ""
+msgstr "Nom du menu"
 
 #: functions.php:115
+#, fuzzy
 msgid "Sidebar Menu"
-msgstr ""
+msgstr "Nom du menu"
 
 #: functions.php:116
+#, fuzzy
 msgid "Extra Menu"
-msgstr ""
+msgstr "Nom du menu"
 
 #: functions.php:163
+#, fuzzy
 msgid "Widget Area 1"
-msgstr ""
+msgstr "Zone principale de widgets"
 
 #: functions.php:164 functions.php:175
+#, fuzzy
 msgid "Discription for this widget-area..."
-msgstr ""
+msgstr "Une zone facultative de widgets pour le pied de page de votre site"
 
 #: functions.php:174
+#, fuzzy
 msgid "Widget Area 2"
-msgstr ""
+msgstr "Zone principale de widgets"
 
 #: functions.php:237
+#, fuzzy
 msgid "View Article"
-msgstr ""
+msgstr "Choisissez un article"
 
 #: functions.php:319 functions.php:320
+#, fuzzy
 msgid "HTML5 Blank Custom Post"
-msgstr ""
+msgstr "Spécifications d'article personnalisé invalides"
 
 #: functions.php:321
+#, fuzzy
 msgid "Add New"
-msgstr ""
+msgstr "Ajouter Nouvel"
 
 #: functions.php:322
 msgid "Add New HTML5 Blank Custom Post"
 msgstr ""
 
 #: functions.php:323
+#, fuzzy
 msgid "Edit"
-msgstr ""
+msgstr "Modifier"
 
 #: functions.php:324
 msgid "Edit HTML5 Blank Custom Post"
 msgstr ""
 
 #: functions.php:325
+#, fuzzy
 msgid "New HTML5 Blank Custom Post"
-msgstr ""
+msgstr "Créer un nouveau type d'article personnalisé"
 
 #: functions.php:326 functions.php:327
 msgid "View HTML5 Blank Custom Post"
@@ -137,33 +163,39 @@ msgid "No HTML5 Blank Custom Posts found in Trash"
 msgstr ""
 
 #: index.php:6
+#, fuzzy
 msgid "Latest Posts"
-msgstr ""
+msgstr "Les derniers articles"
 
 #: search.php:6
-#, php-format
+#, fuzzy, php-format
 msgid "%s Search Results for "
-msgstr ""
+msgstr "Résultats de recherche pour"
 
 #: searchform.php:5
+#, fuzzy
 msgid "Search"
-msgstr ""
+msgstr "Rechercher"
 
 #: single.php:36
+#, fuzzy
 msgid "Tags: "
-msgstr ""
+msgstr "Mots-clefs&nbsp;:"
 
 #: single.php:38
+#, fuzzy
 msgid "Categorised in: "
-msgstr ""
+msgstr "Connexion"
 
 #: single.php:40
+#, fuzzy
 msgid "This post was written by "
-msgstr ""
+msgstr "Cet article a été écrit par"
 
 #: tag.php:6
+#, fuzzy
 msgid "Tag Archive: "
-msgstr ""
+msgstr "Archive de mot-clef"
 
 #~ msgid "%s results for "
 #~ msgstr "%s Ergebnisse für "
