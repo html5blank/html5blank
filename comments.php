@@ -10,7 +10,7 @@
 	<h2><?php comments_number(); ?></h2>
 
 	<ul>
-		<?php wp_list_comments(); ?>
+		<?php wp_list_comments('type=comment&callback=html5blankcomments'); // Custom callback in functions.php ?>
 	</ul>
 
 <?php elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) : ?>

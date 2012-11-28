@@ -9,6 +9,9 @@
 	
 	<!-- Meta -->
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	
 	<meta name="description" content="<?php bloginfo('description'); ?>">
 	
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
@@ -35,7 +38,7 @@
 			
 			<!-- Nav -->
 			<nav>
-				<?php wp_nav_menu(array('theme_location' => 'header-menu', 'items_wrap' => '<ul>%3$s</ul>')); ?>
+				<?php html5blank_nav(); ?>
 			</nav>
 			<!-- /Nav -->
 			

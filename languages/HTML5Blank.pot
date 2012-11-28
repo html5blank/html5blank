@@ -1,18 +1,18 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: HTML5 Blank WordPress Theme\n"
-"POT-Creation-Date: 2012-10-05 10:38+0100\n"
-"PO-Revision-Date: \n"
+"Project-Id-Version: HTML5Blank\n"
+"POT-Creation-Date: 2012-11-28 18:04+0100\n"
+"PO-Revision-Date: 2012-11-28 18:05+0100\n"
 "Last-Translator: FxB <fx@fxbenard.com>\n"
-"Language-Team: Jürgen Rabe | www.egado.de <rabe@egado.de>\n"
+"Language-Team: Todd Motto\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.3\n"
-"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: __;_e;_n;_x;esc_html_e;esc_html__;esc_attr_e;"
-"esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c\n"
+"esc_attr__;_ex:1,2c;_n:1,2;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c\n"
 "X-Poedit-Basepath: ../\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -32,23 +32,23 @@ msgstr ""
 msgid "Author Archives for "
 msgstr ""
 
-#: author.php:42 loop.php:23 single.php:28
+#: author.php:41 loop.php:22 single.php:27
 msgid "Published by"
 msgstr ""
 
-#: author.php:43 loop.php:24 single.php:29
+#: author.php:42 loop.php:23 single.php:28
 msgid "Leave your thoughts"
 msgstr ""
 
-#: author.php:43 loop.php:24 single.php:29
+#: author.php:42 loop.php:23 single.php:28
 msgid "1 Comment"
 msgstr ""
 
-#: author.php:43 loop.php:24 single.php:29
+#: author.php:42 loop.php:23 single.php:28
 msgid "% Comments"
 msgstr ""
 
-#: author.php:62 loop.php:42 page.php:31 single.php:56 template-demo.php:33
+#: author.php:61 loop.php:41 page.php:31 single.php:55 template-demo.php:33
 msgid "Sorry, nothing to display."
 msgstr ""
 
@@ -68,71 +68,89 @@ msgstr ""
 msgid "Powered by"
 msgstr ""
 
-#: functions.php:114
+#: functions.php:174
+#, php-format
+msgid "<span class=\"fn\">%s</span> <span class=\"says\">says:</span>"
+msgstr ""
+
+#: functions.php:177
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:184
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: functions.php:184
+msgid "(Edit)"
+msgstr ""
+
+#: functions.php:209
 msgid "Header Menu"
 msgstr ""
 
-#: functions.php:115
+#: functions.php:210
 msgid "Sidebar Menu"
 msgstr ""
 
-#: functions.php:116
+#: functions.php:211
 msgid "Extra Menu"
 msgstr ""
 
-#: functions.php:163
+#: functions.php:257
 msgid "Widget Area 1"
 msgstr ""
 
-#: functions.php:164 functions.php:175
-msgid "Discription for this widget-area..."
+#: functions.php:258 functions.php:269
+msgid "Description for this widget-area..."
 msgstr ""
 
-#: functions.php:174
+#: functions.php:268
 msgid "Widget Area 2"
 msgstr ""
 
-#: functions.php:237
+#: functions.php:333
 msgid "View Article"
 msgstr ""
 
-#: functions.php:319 functions.php:320
+#: functions.php:459 functions.php:460
 msgid "HTML5 Blank Custom Post"
 msgstr ""
 
-#: functions.php:321
+#: functions.php:461
 msgid "Add New"
 msgstr ""
 
-#: functions.php:322
+#: functions.php:462
 msgid "Add New HTML5 Blank Custom Post"
 msgstr ""
 
-#: functions.php:323
+#: functions.php:463
 msgid "Edit"
 msgstr ""
 
-#: functions.php:324
+#: functions.php:464
 msgid "Edit HTML5 Blank Custom Post"
 msgstr ""
 
-#: functions.php:325
+#: functions.php:465
 msgid "New HTML5 Blank Custom Post"
 msgstr ""
 
-#: functions.php:326 functions.php:327
+#: functions.php:466 functions.php:467
 msgid "View HTML5 Blank Custom Post"
 msgstr ""
 
-#: functions.php:328
+#: functions.php:468
 msgid "Search HTML5 Blank Custom Post"
 msgstr ""
 
-#: functions.php:329
+#: functions.php:469
 msgid "No HTML5 Blank Custom Posts found"
 msgstr ""
 
-#: functions.php:330
+#: functions.php:470
 msgid "No HTML5 Blank Custom Posts found in Trash"
 msgstr ""
 
@@ -149,21 +167,18 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: single.php:36
+#: single.php:35
 msgid "Tags: "
 msgstr ""
 
-#: single.php:38
+#: single.php:37
 msgid "Categorised in: "
 msgstr ""
 
-#: single.php:40
+#: single.php:39
 msgid "This post was written by "
 msgstr ""
 
 #: tag.php:6
 msgid "Tag Archive: "
 msgstr ""
-
-#~ msgid "%s results for "
-#~ msgstr "%s Ergebnisse für "
