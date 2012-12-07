@@ -10,6 +10,7 @@
 * Upgraded jQuery to 1.8.3
 * Split stylesheets with separate call for Normalize as reset
 * Global Box Sizing and Font-Smoothing on all elements
+* Merge French translation from 'fxbenard'
 
 ## 1.2.4 (15 October, 2012)
 
