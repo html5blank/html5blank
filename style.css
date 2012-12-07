@@ -1,188 +1,130 @@
 /*
-Theme Name: 	HTML5 Blank
-Theme URI: 	http://html5blank.com
-Description: 	HTML5 Blank WordPress Theme
-Version: 	1.2.6
-Author: 	Todd Motto (@toddmotto)
-Author URI: 	http://www.toddmotto.com
-Tags: 		Blank, HTML5, CSS3
+Theme Name: HTML5 Blank
+Theme URI: http://html5blank.com
+Description: HTML5 Blank WordPress Theme
+Version: 1.2.5
+Author: Todd Motto (@toddmotto)
+Author URI: http://www.toddmotto.com
+Tags: Blank, HTML5, CSS3
 
-License:	MIT
-License URI:	http://opensource.org/licenses/mit-license.php
+License: MIT
+License URI: http://opensource.org/licenses/mit-license.php
 */
-
-/* =============================================================================
-   HTML5 Reset
-   ========================================================================== */
-
-	article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {display:block;}
-	audio, canvas, video {display:inline-block;*display:inline;*zoom:1;}
-	audio:not([controls]) {display:none;}
-	[hidden] {display:none;}
-	
-	html {font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
-	html, button, input, select, textarea {font-family:sans-serif;color:#222;}
-	body {margin:0;font-size:1em;line-height:1;}
-	p {padding:7px 0 0 0;}
-	
-	h1,h2,h3,h4,h5,h6 {text-decoration:none;padding:0;color:#444;margin:0;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;font-weight:700;}
-	
-	a {color:#266E9E;text-decoration:none;}
-	a:focus {outline:0;}
-	a:hover, a:active {outline:0;}
-	
-	abbr[title] {border-bottom:1px dotted;}
-	b, strong {font-weight:bold;}
-	.clear {clear:both;}
-	dfn {font-style:italic;}
-	hr {display:block;height:1px;border:0;border-top:1px solid #CCC;margin:1em 0;padding:0;}
-	ins {background:#FF9;color:#000;text-decoration:none;}
-	mark {background:#FF0;color:#000;font-style:italic;font-weight:bold;}
-	pre, code, kbd, samp {font-family:monospace,serif;_font-family:'courier new',monospace;font-size:1em;}
-	pre {white-space:pre;white-space:pre-wrap;word-wrap:break-word;}
-	q {quotes:none;}
-	q:before, q:after {content:"";content:none;}
-	small {font-size:90%;}
-	blockquote {background-color:#EEE;border:1px solid #DDD;margin:10px 0;padding:10px 30px;border-radius:3px;}
-	
-	sub, sup {font-size:75%;line-height:0;position:relative;vertical-align:baseline;}
-	sup {top:-0.5em;}
-	sub {bottom:-0.25em;}
-	
-	ul {margin:0;padding:0;list-style:none;}
-	ol {margin:15px;}
-	
-	dd {margin:0 0 0 40px;}
-	nav ul, nav ol {list-style:none;list-style-image:none;margin:0;padding:0;}
-	
-	img {border:0;-ms-interpolation-mode:bicubic;vertical-align:middle;}
-	
-	svg:not(:root) {overflow:hidden;}
-	
-	figure {margin:0;}
-	
-	form {margin:0;}
-	fieldset {border:0;margin:0;padding:0;}
-	label {cursor:pointer;}
-	legend {border:0;*margin-left:-7px;padding:0;white-space:normal;}
-	button, input, select, textarea {font-size:100%;margin:0;vertical-align:baseline;*vertical-align:middle;}
-	button, input {line-height:normal;}
-	button, input[type="button"], input[type="reset"], input[type="submit"] {cursor:pointer;-webkit-appearance:none;*overflow:visible;}
-	button[disabled], input[disabled] { cursor: default; }
-	input[type="checkbox"], input[type="radio"] {box-sizing:border-box;padding:0;*width:13px;*height:13px;}
-	input[type="search"] {-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}
-	input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button {-webkit-appearance:none;}
-	button::-moz-focus-inner, input::-moz-focus-inner {border:0;padding:0;}
-	textarea {overflow:auto;vertical-align:top;resize:vertical;}
-	input:valid, textarea:valid {}
-	input:invalid, textarea:invalid {background-color:#F0DDDD;}
-	
-	table {border-collapse:collapse;border-spacing:0;}
-	td {vertical-align:top;}
 
 /* =============================================================================
    General Styles
    ========================================================================== */
    
-   	/* Font Face Setup, add fonts to /fonts/ folder and link up below with filenames */
-	@font-face {
-		font-family:'Font-Name';
-		src:url('fonts/font-name.eot');
-		src:url('fonts/font-name.eot?#iefix') format('embedded-opentype'),
+/* Font Face Setup, add fonts to /fonts/ folder and sync filenames */
+@font-face {
+	font-family:'Font-Name';
+	src:url('fonts/font-name.eot');
+	src:url('fonts/font-name.eot?#iefix') format('embedded-opentype'),
 		url('fonts/font-name.woff') format('woff'),
 		url('fonts/font-name.ttf') format('truetype'),
 		url('fonts/font-name.svg#font-name') format('svg');
-	    	font-weight:normal;
-	    	font-style:normal;
-  	 }
-	
-   	body {
-		font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; /* Serve Helvetica Neue, with Helvetica fallbacks to Arial */
-		font-size:11px;
-		font-weight:300; /* Better supported than 'lighter' attribute */
-		line-height:18px;
-		-webkit-font-smoothing:antialiased; /* Antialiased font for great smoothing */
-		-moz-font-smoothing:antialiased;
-		-o-font-smoothing:antialiased;
-		font-smoothing:antialiased;
-		text-rendering:optimizeLegibility; /* Optimise legibility for some CSS3 kerning */
-		color:#444; /* Lighter on the eyes than #000 Black */
-	}
+    font-weight:normal;
+    font-style:normal;
+}
+
+/* Global Box Sizing and Font-Smoothing */	 
+*, *:after, *:before {
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-font-smoothing:antialiased;
+	-moz-font-smoothing:antialiased;
+	-o-font-smoothing:antialiased;
+	font-smoothing:antialiased;
+	text-rendering:optimizeLegibility;
+}
+
+body {
+	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; /* Serve Helvetica Neue, with Helvetica fallbacks to Arial */
+	font-size:11px;
+	font-weight:300; /* Better supported than 'lighter' attribute */
+	line-height:18px;
+	color:#444; /* Lighter on the eyes than #000 Black */
+}
 	
 /* =============================================================================
    Structure
    ========================================================================== */
    
-   /* Add your site structure here */
+/* Fluid First approach - http://www.toddmotto.com/fluid-first-creating-a-future-proof-fluid-and-responsive-website 
+  Responsive, fluid, 1280px width - perfect start.
+*/
+
+.wrapper {max-width:1280px;width:95%;margin:0 auto;position:relative;}
 
 /* =============================================================================
-   Mobile First Media Queries
+   Media Queries
    ========================================================================== */
 
-   /* 320px and greater */
-   @media only screen and (min-width: 320px) {
-	/* Styles here */
-   }
-   
-   /* 480px and greater */
-   @media only screen and (min-width: 480px) {
-	/* Styles here */
-   }
-   
-   /* 768px and greater */
-   @media only screen and (min-width: 768px) {
-	/* Styles here */
-   }
-   
-   /* 1024px and greater */
-   @media only screen and (min-width: 1024px) {
-	/* Styles here */
-   }
-   
-   /* Retina screens */
-   @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
-	/* Style adjustments for high resolution devices */
+/* 320px and greater */
+@media only screen and (min-width: 320px) {
+
+}
+
+/* 480px and greater */
+@media only screen and (min-width: 480px) {
+
+}
+
+/* 768px and greater */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* 1024px and greater */
+@media only screen and (min-width: 1024px) {
+
+}
+
+/* Retina screens */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+
 }
 
 /* =============================================================================
    Non-Semantic Classes
    ========================================================================== */
    
-   /* Custom Selection Styles */
-   ::selection {background:#D31245;color:#FFF;text-shadow:none;}
-   ::-webkit-selection {background:#D31245;color:#FFF;text-shadow:none;}
-   ::-moz-selection {background:#D31245;color:#FFF;text-shadow:none;}
-   
-   /* Input focus styles */
-   input:focus {outline:0;border:1px solid #0091BD;} /* Gets rid of blue glow on field focus, adds border color instead */
+/* Custom Selection Styles */
+::selection {background:#D31245;color:#FFF;text-shadow:none;}
+::-webkit-selection {background:#D31245;color:#FFF;text-shadow:none;}
+::-moz-selection {background:#D31245;color:#FFF;text-shadow:none;}
+
+/* Input focus styles */
+input:focus {outline:0;border:1px solid #0091BD;} /* Gets rid of blue glow on field focus, adds border color instead */
    
 /* =============================================================================
    WordPress Core CSS Styles
    ========================================================================== */
    
-   .alignnone {margin:5px 20px 20px 0;}
-   .aligncenter,div.aligncenter {display:block;margin:5px auto 5px auto;}
-   .alignright {float:right;margin:5px 0 20px 20px;}
-   .alignleft {float:left;margin:5px 20px 20px 0;}
-   .aligncenter {display:block;margin:5px auto 5px auto;}
-   a img.alignright {float:right;margin:5px 0 20px 20px;}
-   a img.alignnone {margin:5px 20px 20px 0;}
-   a img.alignleft {float:left;margin:5px 20px 20px 0;}
-   a img.aligncenter {display:block;margin-left:auto;margin-right:auto;}
-   .wp-caption {background:#FFF;border:1px solid #F0F0F0;max-width:96%;padding:5px 3px 10px;text-align:center;}
-   .wp-caption.alignnone {margin:5px 20px 20px 0;}
-   .wp-caption.alignleft {margin:5px 20px 20px 0;}
-   .wp-caption.alignright {margin:5px 0 20px 20px;}
-   .wp-caption img {border:0 none;height:auto;margin:0;max-width:98.5%;padding:0;width:auto;}
-   .wp-caption p.wp-caption-text,.gallery-caption {font-size:11px;line-height:17px;margin:0;padding:0 4px 5px;}
-   .sticky {}
-   .bypostauthor {}
+.alignnone {margin:5px 20px 20px 0;}
+.aligncenter,div.aligncenter {display:block;margin:5px auto 5px auto;}
+.alignright {float:right;margin:5px 0 20px 20px;}
+.alignleft {float:left;margin:5px 20px 20px 0;}
+.aligncenter {display:block;margin:5px auto 5px auto;}
+a img.alignright {float:right;margin:5px 0 20px 20px;}
+a img.alignnone {margin:5px 20px 20px 0;}
+a img.alignleft {float:left;margin:5px 20px 20px 0;}
+a img.aligncenter {display:block;margin-left:auto;margin-right:auto;}
+.wp-caption {background:#FFF;border:1px solid #F0F0F0;max-width:96%;padding:5px 3px 10px;text-align:center;}
+.wp-caption.alignnone {margin:5px 20px 20px 0;}
+.wp-caption.alignleft {margin:5px 20px 20px 0;}
+.wp-caption.alignright {margin:5px 0 20px 20px;}
+.wp-caption img {border:0 none;height:auto;margin:0;max-width:98.5%;padding:0;width:auto;}
+.wp-caption p.wp-caption-text,.gallery-caption {font-size:11px;line-height:17px;margin:0;padding:0 4px 5px;}
+.sticky {}
+.bypostauthor {}
 
 /* ==========================================================================
    Print styles
    ========================================================================== */
 
-   @media print {
+@media print {
 	* {background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important;}
 	a,a:visited {text-decoration:underline;}
 	a[href]:after {content:" (" attr(href) ")";}
@@ -195,4 +137,4 @@ License URI:	http://opensource.org/licenses/mit-license.php
 	@page {margin:0.5cm;}
 	p,h2,h3 {orphans:3;widows:3;}
 	h2,h3 {page-break-after:avoid;}
-   }
+}

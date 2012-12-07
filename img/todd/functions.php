@@ -34,26 +34,7 @@ if (function_exists('add_theme_support'))
     add_image_size('large', 700, '', true); // Large Thumbnail
     add_image_size('medium', 250, '', true); // Medium Thumbnail
     add_image_size('small', 120, '', true); // Small Thumbnail
-    add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
-
-    // Add Support for Custom Backgrounds - Uncomment below if you're going to use
-    /*add_theme_support('custom-background', array(
-	'default-color' => 'FFF',
-	'default-image' => get_template_directory_uri() . '/img/bg.jpg'
-    ));*/
-
-    // Add Support for Custom Header - Uncomment below if you're going to use
-    /*add_theme_support('custom-header', array(
-	'default-image'			=> get_template_directory_uri() . '/img/headers/default.jpg',
-	'header-text'			=> false,
-	'default-text-color'		=> '000',
-	'width'				=> 1000,
-	'height'			=> 198,
-	'random-default'		=> false,
-	'wp-head-callback'		=> $wphead_cb,
-	'admin-head-callback'		=> $adminhead_cb,
-	'admin-preview-callback'	=> $adminpreview_cb
-    ));*/
+    add_image_size('custom-size', 860, 300, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 
     // Enables post and comment RSS feed links to head
     add_theme_support('automatic-feed-links');
@@ -98,11 +79,14 @@ function html5blank_scripts()
 {
     if (!is_admin()) {
         wp_deregister_script('jquery'); // Deregister WordPress jQuery
-        wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js', array(), '1.8.2'); // Load Google CDN jQuery
+        wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js', array(), '1.8.2'); // Load Google CDN jQuery
         wp_enqueue_script('jquery'); // Enqueue it!
 
-        wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array('jquery'), '2.6.2'); // Modernizr with version Number at the end
+        wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.min.js', array('jquery'), '2.6.2'); // Modernizr with version Number at the end
         wp_enqueue_script('modernizr'); // Enqueue it!
+        
+        wp_register_script('tweets', get_template_directory_uri() . '/js/tweets.min.js', array('jquery'), '1.0.0'); // Modernizr with version Number at the end
+        wp_enqueue_script('tweets'); // Enqueue it!
 
         wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // HTML5 Blank script with version number
         wp_enqueue_script('html5blankscripts'); // Enqueue it!
@@ -118,12 +102,22 @@ function conditional_scripts()
     }
 }
 
+// Theme Stylesheets using Enqueue
+function html5blank_styles()
+{
+    wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0', 'all');
+    wp_enqueue_style('normalize'); // Enqueue it!
+    
+    wp_register_style('main', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
+    wp_enqueue_style('main'); // Enqueue it!
+}
+
 // Load Optimised Google Analytics in the footer
 function add_google_analytics()
 {
     $google = "<!-- Optimised Asynchronous Google Analytics -->";
     $google .= "<script>"; // Change the UA-XXXXXXXX-X to your Account ID
-    $google .= "var _gaq=[['_setAccount','UA-XXXXXXXX-X'],['_trackPageview']];
+    $google .= "var _gaq=[['_setAccount','UA-20440416-10'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));";
@@ -136,7 +130,7 @@ function add_jquery_fallback()
 {
     $jqueryfallback = "<!-- Protocol Relative jQuery fall back if Google CDN offline -->";
     $jqueryfallback .= "<script>";
-    $jqueryfallback .= "window.jQuery || document.write('<script src=\"" . get_template_directory_uri() . "/js/jquery-1.8.3.min.js\"><\/script>')";
+    $jqueryfallback .= "window.jQuery || document.write('<script src=\"" . get_template_directory_uri() . "/js/jquery-1.8.2.min.js\"><\/script>')";
     $jqueryfallback .= "</script>";
     echo $jqueryfallback;
 }
@@ -171,18 +165,15 @@ function html5blankcomments($comment, $args, $depth)
 	<?php endif; ?>
 	<div class="comment-author vcard">
 	<?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, $args['180'] ); ?>
-	<?php printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) ?>
+	<?php printf(__('<span class="fn">%s</span>'), get_comment_author_link()) ?>
 	</div>
 <?php if ($comment->comment_approved == '0') : ?>
 	<em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
-	<br />
+	<br>
 <?php endif; ?>
 
 	<div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
-		<?php
-			/* translators: 1: date, 2: time */
-			printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','' );
-		?>
+		<?php printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','' ); ?>
 	</div>
 
 	<?php comment_text() ?>
@@ -194,13 +185,6 @@ function html5blankcomments($comment, $args, $depth)
 	</div>
 	<?php endif; ?>
 <?php }
-
-// Theme Stylesheets using Enqueue
-function html5blank_styles()
-{
-    wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
-    wp_enqueue_style('html5blank'); // Enqueue it!
-}
 
 // Register HTML5 Blank's Navigation
 function register_html5_menu()
@@ -301,7 +285,7 @@ function html5wp_pagination()
 // Custom Excerpts
 function html5wp_index($length) // Create 20 Word Callback for Index page Excerpts, call using html5wp_excerpt('html5wp_index');
 {
-    return 20;
+    return 30;
 }
 
 // Create 40 Word Callback for Custom Post Excerpts, call using html5wp_excerpt('html5wp_custom_post');
@@ -355,9 +339,29 @@ function remove_thumbnail_dimensions( $html )
 // Custom Gravatar in Settings > Discussion
 function html5blankgravatar ($avatar_defaults)
 {
-    $myavatar = get_template_directory_uri() . '/img/gravatar.jpg';
+    $myavatar = get_template_directory_uri() . '/img/default.png';
     $avatar_defaults[$myavatar] = "Custom Gravatar";
     return $avatar_defaults;
+}
+
+// Custom Posts Output Count
+function html5blank_custom_post_count($query)
+{
+    switch ( $query->query_vars['post_type'] )
+    {
+        case 'html5-blank':  // Post Type named 'html5-blank', rename this to your post type
+            $query->query_vars['posts_per_page'] = 30; // Change how many posts are viewed per page
+            break;
+
+        default:
+            break;
+    }
+    return $query;
+}
+
+if( !is_admin() )
+{
+    add_filter('pre_get_posts', 'html5blank_custom_post_count');
 }
 
 /*

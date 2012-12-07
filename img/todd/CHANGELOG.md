@@ -1,15 +1,8 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
-## 1.2.5 (09 December, 2012)
+## 1.2.5 (27 October, 2012)
 
-* Added SVG support in scripts.js for SVG graphics
-* Shorten DOM ready function call to shorthand
-* Removed web app capable meta tag, kept viewport
-* CSS3 Media Queries JavaScript polyfill added to header.php
-* Included default .wrapper style for fluid-first responsive approach
-* Upgraded jQuery to 1.8.3
-* Split stylesheets with separate call for Normalize as reset
-* Global Box Sizing and Font-Smoothing on all elements
+* Custom Post Types output count (per page) control - html5blank_custom_post_count in functions.php, which allows you to specify the custom post output count per page. Overrides the 'Blog pages show at most' inside Settings > Reading.
 
 ## 1.2.4 (15 October, 2012)
 

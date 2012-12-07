@@ -17,171 +17,173 @@ msgstr ""
 
 #: ../404.php:9
 msgid "Page not found"
-msgstr ""
+msgstr "Fehler 404 – Die Seite wurde leider nicht gefunden."
 
 #: ../404.php:10
 msgid "Return home?"
-msgstr ""
+msgstr "Zurück zur Startseite?"
 
 #: ../archive.php:6
 msgid "Archives"
-msgstr ""
+msgstr "Archive"
 
 #: ../author.php:8
 msgid "Author Archives for "
-msgstr ""
+msgstr "Autor-Archiv für "
 
 #: ../author.php:41 ../loop.php:22 ../single.php:27
 msgid "Published by"
-msgstr ""
+msgstr "Veröffentlicht von"
 
 #: ../author.php:42 ../loop.php:23 ../single.php:28
 msgid "Leave your thoughts"
-msgstr ""
+msgstr "Schreibe einen Kommentar"
 
 #: ../author.php:42 ../loop.php:23 ../single.php:28
 msgid "1 Comment"
-msgstr ""
+msgstr "1 Kommentar"
 
 #: ../author.php:42 ../loop.php:23 ../single.php:28
 msgid "% Comments"
-msgstr ""
+msgstr "% Kommentare"
 
 #: ../author.php:61 ../loop.php:41 ../page.php:31 ../single.php:55
 #: ../template-demo.php:33
 msgid "Sorry, nothing to display."
-msgstr ""
+msgstr "Nichts gefunden, was den Suchkriterien entspricht."
 
 #: ../category.php:6
 msgid "Categories for"
-msgstr ""
+msgstr "Kategorie-Archiv für"
 
 #: ../comments.php:3
 msgid "Post is password protected. Enter the password to view any comments."
 msgstr ""
+"Dieser Artikel ist passwortgeschützt. Um die Kommentare sehen zu können muss "
+"das Passwort eingegeben werden."
 
 #: ../comments.php:18
 msgid "Comments are closed here."
-msgstr ""
+msgstr "Kommentare sind geschlossen."
 
 #: ../footer.php:6
 msgid "Powered by"
-msgstr ""
+msgstr "Betrieben mit"
 
 #: ../functions.php:174
 #, php-format
 msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
-msgstr ""
+msgstr "<cite class=\"fn\">%s</cite> <span class=\"says\">sagt:</span>"
 
 #: ../functions.php:177
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "Dein Kommentar muss noch moderiert werden – Bitte hab etwas Geduld."
 
 #: ../functions.php:184
 #, php-format
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s um %2$s"
 
 #: ../functions.php:184
 msgid "(Edit)"
-msgstr ""
+msgstr "(Bearbeiten)"
 
 #: ../functions.php:209
 msgid "Header Menu"
-msgstr ""
+msgstr "Kopfbereichs-Menü"
 
 #: ../functions.php:210
 msgid "Sidebar Menu"
-msgstr ""
+msgstr "Seitenleisten-Menü"
 
 #: ../functions.php:211
 msgid "Extra Menu"
-msgstr ""
+msgstr "Zusatz-Menü"
 
 #: ../functions.php:257
 msgid "Widget Area 1"
-msgstr ""
+msgstr "Widget-Bereich 1"
 
 #: ../functions.php:258 ../functions.php:269
 msgid "Description for this widget-area..."
-msgstr ""
+msgstr "Beschreibung für diesen Widget-Bereich…"
 
 #: ../functions.php:268
 msgid "Widget Area 2"
-msgstr ""
+msgstr "Widget-Bereich 2"
 
 #: ../functions.php:333
 msgid "View Article"
-msgstr ""
+msgstr "Artikel ansehen"
 
 #: ../functions.php:438 ../functions.php:439
 msgid "HTML5 Blank Custom Post"
-msgstr ""
+msgstr "HTML5 Blank Custom Post-Type"
 
 #: ../functions.php:440
 msgid "Add New"
-msgstr ""
+msgstr "Neuen Artikel erstellen"
 
 #: ../functions.php:441
 msgid "Add New HTML5 Blank Custom Post"
-msgstr ""
+msgstr "Neuen HTML5 Blank Custom Post erstellen"
 
 #: ../functions.php:442
 msgid "Edit"
-msgstr ""
+msgstr "Bearbeiten"
 
 #: ../functions.php:443
 msgid "Edit HTML5 Blank Custom Post"
-msgstr ""
+msgstr "HTML5 Blank Custom Post bearbeiten"
 
 #: ../functions.php:444
 msgid "New HTML5 Blank Custom Post"
-msgstr ""
+msgstr "Neuer HTML5 Blank Custom Post"
 
 #: ../functions.php:445 ../functions.php:446
 msgid "View HTML5 Blank Custom Post"
-msgstr ""
+msgstr "HTML5 Blank Custom Post ansehen"
 
 #: ../functions.php:447
 msgid "Search HTML5 Blank Custom Post"
-msgstr ""
+msgstr "HTML5 Blank Custom Post suchen"
 
 #: ../functions.php:448
 msgid "No HTML5 Blank Custom Posts found"
-msgstr ""
+msgstr "Keine HTML5 Blank Custom Posts gefunden"
 
 #: ../functions.php:449
 msgid "No HTML5 Blank Custom Posts found in Trash"
-msgstr ""
+msgstr "Keine HTML5 Blank Custom Posts im Papierkorb gefunden"
 
 #: ../index.php:6
 msgid "Latest Posts"
-msgstr ""
+msgstr "Letzte Artikel"
 
 #: ../search.php:6
 #, php-format
 msgid "%s Search Results for "
-msgstr ""
+msgstr "%s Suchergebnisse für "
 
 #: ../searchform.php:5
 msgid "Search"
-msgstr ""
+msgstr "Suchen"
 
 #: ../single.php:35
 msgid "Tags: "
-msgstr ""
+msgstr "Stichwörter: "
 
 #: ../single.php:37
 msgid "Categorised in: "
-msgstr ""
+msgstr "Kategorisiert in: "
 
 #: ../single.php:39
 msgid "This post was written by "
-msgstr ""
+msgstr "Dieser Artikel wurde verfasst von "
 
 #: ../tag.php:6
 msgid "Tag Archive: "
-msgstr ""
+msgstr "Stichword-Archiv: "
 
 #~ msgid "%s results for "
 #~ msgstr "%s Ergebnisse für "
