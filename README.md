@@ -2,10 +2,9 @@
 
 HTML5 Blank is a powerful shell for rapidly deploying your WordPress projects. Get developing in minutes, with the robust, preloaded shell. HTML5 Blank.
 
-* Project: [github.com/toddmotto/HTML5-Blank-WordPress-Theme](https://github.com/toddmotto/HTML5-Blank-WordPress-Theme)
+* Project: [github.com/toddmotto/html5blank](https://github.com/toddmotto/html5blank)
 * Web: [html5blank.com](http://html5blank.com)
 * Twitter: [@toddmotto](http://twitter.com/toddmotto), [@html5blank](http://twitter.com/html5blank)
-
 
 ## Getting Started with HTML5 Blank
 
