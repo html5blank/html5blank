@@ -1,17 +1,5 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
-## 1.2.5 (09 December, 2012)
-
-* Added SVG support in scripts.js for SVG graphics
-* Shorten DOM ready function call to shorthand
-* Removed web app capable meta tag, kept viewport
-* CSS3 Media Queries JavaScript polyfill added to header.php
-* Included default .wrapper style for fluid-first responsive approach
-* Upgraded jQuery to 1.8.3
-* Split stylesheets with separate call for Normalize as reset
-* Global Box Sizing and Font-Smoothing on all elements
-* Merge French translation from 'fxbenard'
-
 ## 1.2.4 (15 October, 2012)
 
 * Custom Comments callback - wp_list_comments('type=comment&callback=html5blankcomments'); editable comments now in functions.php

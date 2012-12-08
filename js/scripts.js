@@ -1,13 +1,9 @@
 // DOM Ready
-$(function() {
+$(document).ready(function() {
+	// jQuery Code
 	
-	// Start using SVG!
-	// http://www.toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script
-    	if(!Modernizr.svg) {
-	    $('img[src*="svg"]').attr('src', function () {
-	        return $(this).attr('src').replace('.svg', '.png');
-	    });
-	}
+	
+	
 	
 	// Responsive Projects, iPhone/iPad URL bar hides itself on pageload
 	if (navigator.userAgent.indexOf('iPhone') != -1) {
@@ -19,5 +15,4 @@ $(function() {
 	function hideURLbar() {
 	    window.scrollTo(0, 0);
 	}
-	
 });

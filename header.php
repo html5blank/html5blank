@@ -9,12 +9,15 @@
 	
 	<!-- Meta -->
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	
 	<meta name="description" content="<?php bloginfo('description'); ?>">
+	
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 		
 	<!-- CSS + jQuery + JavaScript -->
 	<?php wp_head(); ?>
-<!--[if lte IE 8]><script src="<?php echo get_template_directory_uri(); ?>/js/mediaqueries.min.js"></script><![endif]-->
 	
 </head>
 <body <?php body_class(); ?>>
