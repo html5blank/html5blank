@@ -19,4 +19,5 @@ $(function() {
 	function hideURLbar() {
 	    window.scrollTo(0, 0);
 	}
+	
 });
