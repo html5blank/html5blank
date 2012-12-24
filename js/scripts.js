@@ -1,5 +1,18 @@
 // DOM Ready
 $(function() {
+
+	// www.conditionizr.com
+	// Legacy content and retina scripts and styles
+	$('head').conditionizr({
+		ieLessThan : {
+			active: true,
+			version: '9',
+			scripts: false,
+			styles: false,
+			classes: true,
+			customScript: 'WORDPRESS_THEME_DIRECTORY_HERE/js/mediaqueries.min.js'
+		}
+	});
 	
 	// SVG Modernizr detect and PNG replace
 	// toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script

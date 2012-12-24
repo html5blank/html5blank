@@ -98,13 +98,16 @@ function html5blank_scripts()
 {
     if (!is_admin()) {
         wp_deregister_script('jquery'); // Deregister WordPress jQuery
-        wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js', array(), '1.8.3'); // Load Google CDN jQuery
+        wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js', array(), '1.8.3'); // Google CDN jQuery
         wp_enqueue_script('jquery'); // Enqueue it!
 
-        wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.min.js', array('jquery'), '2.6.2'); // Modernizr with version Number at the end
+        wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.min.js', array('jquery'), '2.6.2'); // Modernizr
         wp_enqueue_script('modernizr'); // Enqueue it!
+        
+        wp_register_script('conditionizr', get_template_directory_uri() . '/js/conditionizr.min.js', array('jquery'), '1.0.0'); // Conditionizr
+        wp_enqueue_script('conditionizr'); // Enqueue it!
 
-        wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // HTML5 Blank script with version number
+        wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('html5blankscripts'); // Enqueue it!
     }
 }
@@ -113,7 +116,7 @@ function html5blank_scripts()
 function conditional_scripts()
 {
     if (is_page('pagenamehere')) {
-        wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), '1.0.0'); // Our Script for Conditional loading
+        wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), '1.0.0'); // Conditional (pages/posts) script
         wp_enqueue_script('scriptname'); // Enqueue it!
     }
 }
@@ -129,10 +132,11 @@ function html5blank_styles()
 }
 
 // Load Optimised Google Analytics in the footer
+// Change the UA-XXXXXXXX-X to your Account ID
 function add_google_analytics()
 {
     $google = "<!-- Optimised Asynchronous Google Analytics -->";
-    $google .= "<script>"; // Change the UA-XXXXXXXX-X to your Account ID
+    $google .= "<script>";
     $google .= "var _gaq=[['_setAccount','UA-XXXXXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
