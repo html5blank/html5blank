@@ -3,8 +3,12 @@
 ## 1.2.6 (24 December, 2012)
 
 * [Conditionizr](http://conditionizr.com) legacy script and style loader added
-* Conditional header.php statements removed in place of Conditionizr support
-* Shortened ViewPort meta tag with user scalable active
+	* Conditional statements removed from HTML tag (HTML classes added dynamically with Conditionizr)
+	* Conditional statement for mediaqueries.min.js removed (added dynamically with Conditionizr, included inside scripts.js)
+	* conditionizr.min.js and conditionizr.js enqueued
+	* /css/conditionizr/ added with browser styles
+	* /js/conditionizr/ added with browser scripts
+* Shortened ViewPort meta tag with user scalable enabled
 
 ## 1.2.5 (09 December, 2012)
 
