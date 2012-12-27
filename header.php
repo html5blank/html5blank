@@ -4,7 +4,7 @@ No more Conditional statements
 Conditionizr legacy, retina scripts and style loading
 conditionizr.com/docs.php
 -->
-<html>
+<html <?php language_attributes(); ?> class="no-js">
 <head>
 	<meta charset="UTF-8">
 	<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
