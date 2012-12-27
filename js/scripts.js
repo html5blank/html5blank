@@ -19,7 +19,9 @@ $(function() {
 	function supportsSVG() {
 		return !! document.createElementNS && !! document.createElementNS('http://www.w3.org/2000/svg','svg').createSVGRect;	
 	}
-	if (!supportsSVG()) {
+	if (supportsSVG()) {
+		document.documentElement.className = ' svg';
+	} else {
 		document.documentElement.className = ' no-svg';
 		var imgs = document.getElementsByTagName('img'),
 			dotSVG = /.*\.svg$/;
