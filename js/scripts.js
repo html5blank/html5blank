@@ -25,7 +25,7 @@ $(function() {
 		document.documentElement.className = ' no-svg';
 		var imgs = document.getElementsByTagName('img'),
 			dotSVG = /.*\.svg$/;
-		for(var i = 0; i != imgs.length; ++i) {
+		for (var i = 0; i != imgs.length; ++i) {
 			if(imgs[i].src.match(dotSVG)) {
 				imgs[i].src = imgs[i].src.slice(0, -3) + "png";
 			}
