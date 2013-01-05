@@ -10,7 +10,7 @@ conditionizr.com/docs.php
 	<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
 	
 	<!-- Meta -->
-	<meta name="viewport" content="width=device-width,initial-scale=1.0;">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<meta name="description" content="<?php bloginfo('description'); ?>">
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 		
