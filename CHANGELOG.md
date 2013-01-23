@@ -4,6 +4,7 @@
 
 * Update to jQuery 1.9.0
 * Removed [Conditionizr](http://conditionizr.com)
+* Remove Apple Touch Icons
 
 ## 1.2.6 (24 December, 2012)
 
