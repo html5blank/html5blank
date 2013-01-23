@@ -1,5 +1,10 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.2.7 (23 January, 2013)
+
+* Update to jQuery 1.9.0
+* Removed [Conditionizr](http://conditionizr.com)
+
 ## 1.2.6 (24 December, 2012)
 
 * [Conditionizr](http://conditionizr.com) legacy script and style loader added
