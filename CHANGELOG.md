@@ -1,5 +1,9 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.2.8 ()
+
+* Added Google Analytics DNS Prefetch to header.php to reduce [DNS latency](//www.chromium.org/developers/design-documents/dns-prefetching)
+
 ## 1.2.7 (23 January, 2013)
 
 * Update to jQuery 1.9.0
