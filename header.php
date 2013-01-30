@@ -5,6 +5,10 @@
 <!--[if gt IE 8]><!--><html <?php language_attributes(); ?> class="no-js"><!--<![endif]--> 
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
+	
+	<!-- DNS Prefetch -->
+	<link rel="dns-prefetch" href="//www.google-analytics.com">
+	
 	<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
 	
 	<!-- Meta -->
