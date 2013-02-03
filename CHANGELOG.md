@@ -1,5 +1,9 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.2.9 (03 February, 2013)
+
+* Readded [//conditionizr.com](Conditionizr), the raw JavaScript version 50% faster, previously removed to work on jQuery-free Conditionizr
+
 ## 1.2.8 (30 January, 2013)
 
 * Added Google Analytics DNS Prefetch to header.php to reduce [DNS latency](//www.chromium.org/developers/design-documents/dns-prefetching)
