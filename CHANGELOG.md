@@ -2,8 +2,10 @@
 
 ## 1.3.0 (09 February, 2013)
 
+* Remove jquery.min.js 'local' fallback from /js/ folder, simply fallback to another CDN (CloudFlare), see footer.php, saves code and maintenance across all sites
+* Remove Google Analytics and jQuery fallback from functions.php injection, added manually in footer.php
 * Setup Conditionizr to supply an HTML5Shim to Less Than IE9 browsers
-* Updates Conditionizt to v1.2.0, enhanced retina detection and unlimited 'customScript', for polyfill usage (e.g. using respond.js and html5shim together)
+* Updates Conditioniz to v1.2.0, enhanced retina detection and unlimited 'customScript', for polyfill usage (e.g. using respond.js and html5shim together)
 
 ## 1.2.9 (03 February, 2013)
 
