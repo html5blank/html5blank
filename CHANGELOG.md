@@ -1,5 +1,10 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.3.0 (09 February, 2013)
+
+* Setup Conditionizr to supply an HTML5Shim to Less Than IE9 browsers
+* Updates Conditionizt to v1.2.0, enhanced retina detection and unlimited 'customScript', for polyfill usage (e.g. using respond.js and html5shim together)
+
 ## 1.2.9 (03 February, 2013)
 
 * Readded [//conditionizr.com](Conditionizr), the raw JavaScript version 50% faster, previously removed to work on jQuery-free Conditionizr
