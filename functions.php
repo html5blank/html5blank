@@ -131,30 +131,6 @@ function html5blank_styles()
     wp_enqueue_style('html5blank'); // Enqueue it!
 }
 
-// Load Optimised Google Analytics in the footer
-// Change the UA-XXXXXXXX-X to your Account ID
-function add_google_analytics()
-{
-    $google = "<!-- Google Analytics -->";
-    $google .= "<script>";
-    $google .= "var _gaq=[['_setAccount','UA-XXXXXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));";
-    $google .= "</script>";
-    echo $google;
-}
-
-// jQuery Fallbacks load in the footer
-function add_jquery_fallback()
-{
-    $jqueryfallback = "<!-- Protocol Relative jQuery fall back if Google CDN offline -->";
-    $jqueryfallback .= "<script>";
-    $jqueryfallback .= "window.jQuery || document.write('<script src=\"" . get_template_directory_uri() . "/js/jquery-1.9.0.min.js\"><\/script>')";
-    $jqueryfallback .= "</script>";
-    echo $jqueryfallback;
-}
-
 // Register HTML5 Blank's Navigation
 function register_html5_menu()
 {
@@ -377,8 +353,6 @@ function html5blankcomments($comment, $args, $depth)
 // Add Actions
 add_action('init', 'html5blank_scripts'); // Add Custom Scripts
 add_action('wp_print_scripts', 'conditional_scripts'); // Add Conditional Page Scripts
-add_action('wp_footer', 'add_google_analytics'); // Google Analytics optimised in footer
-add_action('wp_footer', 'add_jquery_fallback'); // jQuery fallbacks loaded through footer
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
