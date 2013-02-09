@@ -15,6 +15,28 @@
 		
 	<!-- CSS + jQuery + JavaScript -->
 	<?php wp_head(); ?>
+	<script>
+	conditionizr({
+		debug      : true,
+		scriptSrc  : 'js/conditionizr/',
+		styleSrc   : 'css/conditionizr/',
+		ieLessThan : { active: true, version: '9', scripts: true, styles: true, classes: true, customScript: 'none'},
+		chrome     : { scripts: true, styles: true, classes: true, customScript: 'none' },
+		safari     : { scripts: true, styles: true, classes: true, customScript: 'none' },
+		opera      : { scripts: true, styles: true, classes: true, customScript: 'none' },
+		firefox    : { scripts: true, styles: true, classes: true, customScript: 'none' },
+		ie10       : { scripts: true, styles: true, classes: true, customScript: 'none' },
+		ie9        : { scripts: true, styles: true, classes: true, customScript: 'none' },
+		ie8        : { scripts: true, styles: true, classes: true, customScript: 'none' },
+		ie7        : { scripts: true, styles: true, classes: true, customScript: 'none' },
+		ie6        : { scripts: true, styles: true, classes: true, customScript: 'none' },
+		retina     : { scripts: true, styles: true, classes: true, customScript: 'none' },
+		mac    : true,
+		win    : true,
+		x11    : true,
+		linux  : true
+	});
+	</script>
 	
 </head>
 <body <?php body_class(); ?>>

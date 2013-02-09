@@ -1,5 +1,5 @@
 /*
-	conditionizr v2.0.0
+	conditionizr v2.1.0
 	conditionizr.com
 	
 	by Todd Motto & Mark Goodyear
@@ -11,7 +11,7 @@
 	Conditionizr, the conditional free legacy, retina, script and style loader.
 	
 */
-;var conditionizr = function (options) {
+; var conditionizr = function (options) {
 
 	document.documentElement.id = 'conditionizr';
 	
@@ -19,17 +19,17 @@
 		debug     : false,
 		scriptSrc : 'js/conditionizr/',
 		styleSrc  : 'css/conditionizr/',
-		ieLessThan: { active: false, version: '9', scripts: false, styles: false, classes: true, customScript: 'none' },
-		chrome    : { scripts: false, styles: false, classes: true, customScript: 'none' },
-		safari    : { scripts: false, styles: false, classes: true, customScript: 'none' },
-		opera     : { scripts: false, styles: false, classes: true, customScript: 'none' },
-		firefox   : { scripts: false, styles: false, classes: true, customScript: 'none' },
-		ie10      : { scripts: false, styles: false, classes: true, customScript: 'none' },
-		ie9       : { scripts: false, styles: false, classes: true, customScript: 'none' },
-		ie8       : { scripts: false, styles: false, classes: true, customScript: 'none' },
-		ie7       : { scripts: false, styles: false, classes: true, customScript: 'none' },
-		ie6       : { scripts: false, styles: false, classes: true, customScript: 'none' },
-		retina    : { scripts: false, styles: false, classes: true, customScript: 'none' },
+		ieLessThan: { active: false, version: '9', scripts: false, styles: false, classes: true, customScript: false },
+		chrome    : { scripts: false, styles: false, classes: true, customScript: false },
+		safari    : { scripts: false, styles: false, classes: true, customScript: false },
+		opera     : { scripts: false, styles: false, classes: true, customScript: false },
+		firefox   : { scripts: false, styles: false, classes: true, customScript: false },
+		ie10      : { scripts: false, styles: false, classes: true, customScript: false },
+		ie9       : { scripts: false, styles: false, classes: true, customScript: false },
+		ie8       : { scripts: false, styles: false, classes: true, customScript: false },
+		ie7       : { scripts: false, styles: false, classes: true, customScript: false },
+		ie6       : { scripts: false, styles: false, classes: true, customScript: false },
+		retina    : { scripts: false, styles: false, classes: true, customScript: false },
 		mac       : true,
 		win       : true,
 		x11       : true,
@@ -78,10 +78,14 @@
 				head.appendChild(linkTag);
 			}
 			
-			if (resourceType === 'customScript' && val != 'none') {
-				var customScriptTag = document.createElement('script');
-				customScriptTag.src = browserSettings.customScript;
-				head.appendChild(customScriptTag);
+			if (resourceType === 'customScript' && val ) {
+				var strip = browserSettings.customScript.replace(/\s/g, '');
+				var customSplit = strip.split(',');
+				for(var i = 0; i < customSplit.length; i++) {
+					var customScriptTag = document.createElement('script');
+					customScriptTag.src = customSplit[i];
+					head.appendChild(customScriptTag);
+				}
 			}
 		
 		}
@@ -110,7 +114,7 @@
 		var rv = -1;
 		if (navigator.appName == 'Microsoft Internet Explorer') {
 			var ua = navigator.userAgent;
-			var re = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+			var re = new RegExp('MSIE ([0-9]{1,}[\.0-9]{0,})');
 			
 			if (re.exec(ua) != null) {
 				rv = parseFloat(RegExp.$1);
@@ -150,7 +154,11 @@
 		
 	}
 	
-	if (window.devicePixelRatio >= 2) {
+	if (window.devicePixelRatio >= 2 || (
+		window.matchMedia('(min-resolution: 2dppx)').matches ||
+		window.matchMedia('(-moz-device-pixel-ratio: 2)').matches ||
+		window.matchMedia('(-o-device-pixel-ratio: 2/1)').matches
+	)) {
 	
 		var browserSettings = settings.retina;
 		var theBrowser = 'retina';
