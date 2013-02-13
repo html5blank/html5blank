@@ -1,21 +1,89 @@
 /*
-Theme Name: HTML5 Blank
-Theme URI: http://html5blank.com
-Description: HTML5 Blank WordPress Theme
-Version: 1.2.9
-Author: Todd Motto (@toddmotto)
-Author URI: http://www.toddmotto.com
-Tags: Blank, HTML5, CSS3
-
-License: MIT
-License URI: http://opensource.org/licenses/mit-license.php
+	Theme Name: HTML5 Blank
+	Theme URI: http://html5blank.com
+	Description: HTML5 Blank WordPress Theme
+	Version: 1.3.1
+	Author: Todd Motto (@toddmotto)
+	Author URI: http://www.toddmotto.com
+	Tags: Blank, HTML5, CSS3
+	
+	License: MIT
+	License URI: http://opensource.org/licenses/mit-license.php
 */
 
-/* =============================================================================
-   General Styles
-   ========================================================================== */
-   
-/* Font Face Setup, add fonts to /fonts/ folder and sync filenames */
+/*------------------------------------*\
+    $MAIN
+\*------------------------------------*/
+
+*,
+*:after,
+*:before {
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-font-smoothing:antialiased;
+	-moz-font-smoothing:antialiased;
+	-o-font-smoothing:antialiased;
+	font-smoothing:antialiased;
+	text-rendering:optimizeLegibility;
+}
+body {
+	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size:11px;
+	font-weight:300;
+	line-height:18px;
+	color:#444;
+}
+.clear {
+	clear:both;
+	display:block;
+}
+img {
+	max-width:100%;
+	vertical-align:bottom;
+}
+a {
+	color:#444;
+	text-decoration:none;
+}
+a:hover {
+	color:#444;
+}
+a:focus {
+	outline:0;
+}
+a:hover,
+a:active {
+	outline:0;
+}
+
+/*------------------------------------*\
+    $STRUCTURE
+\*------------------------------------*/
+
+.wrapper {
+	max-width:1280px;
+	width:95%;
+	margin:0 auto;
+	position:relative;
+}
+
+/*------------------------------------*\
+    $PAGES
+\*------------------------------------*/
+
+
+
+/*------------------------------------*\
+    $IMAGES
+\*------------------------------------*/
+
+
+
+/*------------------------------------*\
+	$TYPOGRAPHY
+\*------------------------------------*/
+
 @font-face {
 	font-family:'Font-Name';
 	src:url('fonts/font-name.eot');
@@ -27,114 +95,185 @@ License URI: http://opensource.org/licenses/mit-license.php
     font-style:normal;
 }
 
-/* Global Box Sizing and Font-Smoothing */	 
-*, *:after, *:before {
-	box-sizing:border-box;
-	-webkit-box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	-webkit-font-smoothing:antialiased;
-	-moz-font-smoothing:antialiased;
-	-o-font-smoothing:antialiased;
-	font-smoothing:antialiased;
-	text-rendering:optimizeLegibility;
-}
+/*------------------------------------*\
+    $RESPONSIVE
+\*------------------------------------*/
 
-body {
-	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; /* Serve Helvetica Neue, with Helvetica fallbacks to Arial */
-	font-size:11px;
-	font-weight:300; /* Better supported than 'lighter' attribute */
-	line-height:18px;
-	color:#444; /* Lighter on the eyes than #000 Black */
-}
-
-/* =============================================================================
-   Structure
-   ========================================================================== */
-   
-/* Fluid First approach - http://www.toddmotto.com/fluid-first-creating-a-future-proof-fluid-and-responsive-website 
-  Responsive, fluid, 1280px width - perfect start.
-*/
-
-.wrapper {max-width:1280px;width:95%;margin:0 auto;position:relative;}
-
-/* =============================================================================
-   Media Queries
-   ========================================================================== */
-
-/* 320px and greater */
 @media only screen and (min-width: 320px) {
 
 }
-
-/* 480px and greater */
 @media only screen and (min-width: 480px) {
 
 }
-
-/* 768px and greater */
 @media only screen and (min-width: 768px) {
 
 }
-
-/* 1024px and greater */
 @media only screen and (min-width: 1024px) {
 
 }
+@media only screen and (min-width: 1140px) {
 
-/* Retina screens */
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+}
+@media only screen and (min-width: 1280px) {
+
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+	   only screen and (min-resolution: 144dpi) {
 
 }
 
-/* =============================================================================
-   Non-Semantic Classes
-   ========================================================================== */
-   
-/* Custom Selection Styles */
-::selection {background:#D31245;color:#FFF;text-shadow:none;}
-::-webkit-selection {background:#D31245;color:#FFF;text-shadow:none;}
-::-moz-selection {background:#D31245;color:#FFF;text-shadow:none;}
+/*------------------------------------*\
+    $MISC
+\*------------------------------------*/
 
-/* Input focus styles */
-input:focus {outline:0;border:1px solid #0091BD;} /* Gets rid of blue glow on field focus, adds border color instead */
+::selection {
+	background:#04A4CC;
+	color:#FFF;
+	text-shadow:none;
+}
+::-webkit-selection {
+	background:#04A4CC;
+	color:#FFF;
+	text-shadow:none;
+}
+::-moz-selection {
+	background:#04A4CC;
+	color:#FFF;
+	text-shadow:none;
+}
+input:focus {
+	outline:0;
+	border:1px solid #04A4CC;
+}
    
-/* =============================================================================
-   WordPress Core CSS Styles
-   ========================================================================== */
+/*------------------------------------*\
+    $WORDPRESS CORE
+\*------------------------------------*/
    
-.alignnone {margin:5px 20px 20px 0;}
-.aligncenter,div.aligncenter {display:block;margin:5px auto 5px auto;}
-.alignright {float:right;margin:5px 0 20px 20px;}
-.alignleft {float:left;margin:5px 20px 20px 0;}
-.aligncenter {display:block;margin:5px auto 5px auto;}
-a img.alignright {float:right;margin:5px 0 20px 20px;}
-a img.alignnone {margin:5px 20px 20px 0;}
-a img.alignleft {float:left;margin:5px 20px 20px 0;}
-a img.aligncenter {display:block;margin-left:auto;margin-right:auto;}
-.wp-caption {background:#FFF;border:1px solid #F0F0F0;max-width:96%;padding:5px 3px 10px;text-align:center;}
-.wp-caption.alignnone {margin:5px 20px 20px 0;}
-.wp-caption.alignleft {margin:5px 20px 20px 0;}
-.wp-caption.alignright {margin:5px 0 20px 20px;}
-.wp-caption img {border:0 none;height:auto;margin:0;max-width:98.5%;padding:0;width:auto;}
-.wp-caption p.wp-caption-text,.gallery-caption {font-size:11px;line-height:17px;margin:0;padding:0 4px 5px;}
-.sticky {}
-.bypostauthor {}
+.alignnone {
+	margin:5px 20px 20px 0;
+}
+.aligncenter,
+div.aligncenter {
+	display:block;
+	margin:5px auto 5px auto;
+}
+.alignright {
+	float:right;
+	margin:5px 0 20px 20px;
+}
+.alignleft {
+	float:left;
+	margin:5px 20px 20px 0;
+}
+.aligncenter {
+	display:block;
+	margin:5px auto 5px auto;
+}
+a img.alignright {
+	float:right;
+	margin:5px 0 20px 20px;
+}
+a img.alignnone {
+	margin:5px 20px 20px 0;
+}
+a img.alignleft {
+	float:left;
+	margin:5px 20px 20px 0;
+}
+a img.aligncenter {
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+}
+.wp-caption {
+	background:#FFF;
+	border:1px solid #F0F0F0;
+	max-width:96%;
+	padding:5px 3px 10px;
+	text-align:center;
+}
+.wp-caption.alignnone {
+	margin:5px 20px 20px 0;
+}
+.wp-caption.alignleft {
+	margin:5px 20px 20px 0;
+}
+.wp-caption.alignright {
+	margin:5px 0 20px 20px;
+}
+.wp-caption img {
+	border:0 none;
+	height:auto;
+	margin:0;
+	max-width:98.5%;
+	padding:0;
+	width:auto;
+}
+.wp-caption .wp-caption-text,
+.gallery-caption {
+	font-size:11px;
+	line-height:17px;
+	margin:0;
+	padding:0 4px 5px;
+}
+.sticky {
+	
+}
+.bypostauthor {
+	
+}
 
-/* ==========================================================================
-   Print styles
-   ========================================================================== */
+/*------------------------------------*\
+    $PRINT
+\*------------------------------------*/
 
 @media print {
-	* {background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important;}
-	a,a:visited {text-decoration:underline;}
-	a[href]:after {content:" (" attr(href) ")";}
-	abbr[title]:after {content:" (" attr(title) ")";}
-	.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after {content:"";}
-	pre,blockquote {border:1px solid #999;page-break-inside:avoid;}
-	thead {display:table-header-group;}
-	tr,img {page-break-inside:avoid;}
-	img {max-width:100% !important;}
-	@page {margin:0.5cm;}
-	p,h2,h3 {orphans:3;widows:3;}
-	h2,h3 {page-break-after:avoid;}
+	* {
+		background:transparent !important;
+		color:#000 !important;
+		box-shadow:none !important;
+		text-shadow:none !important;
+	}
+	a,
+	a:visited {
+		text-decoration:underline;
+	}
+	a[href]:after {
+		content:" (" attr(href) ")";
+	}
+	abbr[title]:after {
+		content:" (" attr(title) ")";
+	}
+	.ir a:after,
+	a[href^="javascript:"]:after,
+	a[href^="#"]:after {
+		content:"";
+	}
+	pre,blockquote {
+		border:1px solid #999;
+		page-break-inside:avoid;
+	}
+	thead {
+		display:table-header-group;
+	}
+	tr,img {
+		page-break-inside:avoid;
+	}
+	img {
+		max-width:100% !important;
+	}
+	@page {
+		margin:0.5cm;
+	}
+	p,
+	h2,
+	h3 {
+		orphans:3;
+		widows:3;
+	}
+	h2,
+	h3 {
+		page-break-after:avoid;
+	}
 }
