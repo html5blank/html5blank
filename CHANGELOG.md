@@ -10,6 +10,7 @@
 * Update jQuery to version 1.9.1, Google CDN and CloudFlare CDN
 * Update Conditionizr to CDNJS CloudFlare v2.1.1
 * Removed mediaqueries.min.js, do we really need older browsers to be responsive, HTML5Shiv (built-in Modernizr) is enough
+* Updated scripts.js to ride off Modernizr.svg feature detect and remove custom script detect
 
 ## 1.3.0 (09 February, 2013)
 
