@@ -1,5 +1,16 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.3.1 (13 February, 2013)
+
+* Restructured CSS file, better architecture
+* Focused CSS document on a more OOCSS approach (part of restructure)
+* Split CSS into; Main, Structure, Pages, Images, Typography, Responsive, Misc, Print
+* Moved away from single-line CSS formatting to multiple-line formatting for clearer code
+* CSS indentation formatting, new lines for shared selectors
+* Update jQuery to version 1.9.1, Google CDN and CloudFlare CDN
+* Update Conditionizr to CDNJS CloudFlare v2.1.1
+* Removed mediaqueries.min.js, do we really need older browsers to be responsive, HTML5Shiv (built-in Modernizr) is enough
+
 ## 1.3.0 (09 February, 2013)
 
 * Remove jquery.min.js 'local' fallback from /js/ folder, simply fallback to another CDN (CloudFlare), see footer.php, saves code and maintenance across all sites

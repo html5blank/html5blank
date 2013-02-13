@@ -17,7 +17,7 @@
 	<?php wp_head(); ?>
 	<script>
 	conditionizr({
-		debug      : true,
+		debug      : false,
 		scriptSrc  : 'js/conditionizr/',
 		styleSrc   : 'css/conditionizr/',
 		ieLessThan : { active: true, version: '9', scripts: true, styles: true, classes: true, customScript: '//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js'},
