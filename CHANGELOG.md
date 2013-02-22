@@ -1,5 +1,11 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.3.2 (22 February, 2013)
+
+* Optimise body CSS declaration to shorthand
+* Remove inner wrapper inside header element, wrapper now wraps all content
+* Added header and footer classes to elements to encourage class styling over element declaration (i.e. header {} always use .header {} class etc.)
+
 ## 1.3.1 (13 February, 2013)
 
 * Restructured CSS file, better architecture

@@ -1,5 +1,5 @@
 	<!-- Footer -->
-	<footer>
+	<footer class="footer">
 		
 		<!-- Copyright -->
 		<p class="copyright">

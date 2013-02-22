@@ -20,7 +20,7 @@
 		debug      : false,
 		scriptSrc  : 'js/conditionizr/',
 		styleSrc   : 'css/conditionizr/',
-		ieLessThan : { active: true, version: '9', scripts: true, styles: true, classes: true, customScript: '//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js'},
+		ieLessThan : {active: true, version: '9', scripts: true, styles: true, classes: true, customScript: '//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js'},
 		chrome     : { scripts: true, styles: true, classes: true, customScript: false },
 		safari     : { scripts: true, styles: true, classes: true, customScript: false },
 		opera      : { scripts: true, styles: true, classes: true, customScript: false },
@@ -41,34 +41,28 @@
 </head>
 <body <?php body_class(); ?>>
 
-	<!-- Header -->
-	<header>
-	
-		<!-- Wrapper -->
-		<div class="wrapper">
-		
-			<!-- Logo -->
-			<div id="logo">
-				<a href="<?php echo home_url(); ?>">
-					<!-- SVG Logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-					<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo">
-				</a>
-			</div>
-			<!-- /Logo -->
-			
-			<!-- Nav -->
-			<nav>
-				<?php html5blank_nav(); ?>
-			</nav>
-			<!-- /Nav -->
-			
-			<br class="clear">
-			
-		</div>
-		<!-- /Wrapper -->
-	
-	</header>
-	<!-- /Header -->
-	
 	<!-- Wrapper -->
 	<div class="wrapper">
+
+		<!-- Header -->
+		<header class="header">
+			
+				<!-- Logo -->
+				<div class="logo">
+					<a href="<?php echo home_url(); ?>">
+						<!-- SVG Logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
+						<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo">
+					</a>
+				</div>
+				<!-- /Logo -->
+				
+				<!-- Nav -->
+				<nav>
+					<?php html5blank_nav(); ?>
+				</nav>
+				<!-- /Nav -->
+				
+				<br class="clear">
+		
+		</header>
+		<!-- /Header -->
