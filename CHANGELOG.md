@@ -1,5 +1,9 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.3.3 (03 March, 2013)
+
+* Hook up Conditionizr to theme Directory using WordPress theme URI hooks
+
 ## 1.3.2 (22 February, 2013)
 
 * Optimise body CSS declaration to shorthand

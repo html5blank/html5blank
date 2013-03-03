@@ -18,8 +18,8 @@
 	<script>
 	conditionizr({
 		debug      : false,
-		scriptSrc  : 'js/conditionizr/',
-		styleSrc   : 'css/conditionizr/',
+		scriptSrc  : '<?php echo get_template_directory_uri(); ?>js/conditionizr/',
+		styleSrc   : '<?php echo get_template_directory_uri(); ?>css/conditionizr/',
 		ieLessThan : {active: true, version: '9', scripts: true, styles: true, classes: true, customScript: '//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js'},
 		chrome     : { scripts: true, styles: true, classes: true, customScript: false },
 		safari     : { scripts: true, styles: true, classes: true, customScript: false },
