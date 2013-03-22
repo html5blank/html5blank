@@ -1,6 +1,4 @@
-<?php /* Template Name: Demo Page Template */ ?>
-
-<?php get_header(); ?>
+<?php /* Template Name: Demo Page Template */ get_header(); ?>
 	
 	<!-- Section -->
 	<section>

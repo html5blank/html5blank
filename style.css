@@ -2,7 +2,7 @@
 	Theme Name: HTML5 Blank
 	Theme URI: http://html5blank.com
 	Description: HTML5 Blank WordPress Theme
-	Version: 1.3.3
+	Version: 1.3.4
 	Author: Todd Motto (@toddmotto)
 	Author URI: http://www.toddmotto.com
 	Tags: Blank, HTML5, CSS3
@@ -12,7 +12,7 @@
 */
 
 /*------------------------------------*\
-    $MAIN
+    MAIN
 \*------------------------------------*/
 
 *,
@@ -22,8 +22,6 @@
 	-webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	-webkit-font-smoothing:antialiased;
-	-moz-font-smoothing:antialiased;
-	-o-font-smoothing:antialiased;
 	font-smoothing:antialiased;
 	text-rendering:optimizeLegibility;
 }
@@ -59,7 +57,7 @@ input:focus {
 }
 
 /*------------------------------------*\
-    $STRUCTURE
+    STRUCTURE
 \*------------------------------------*/
 
 .wrapper {
@@ -70,19 +68,19 @@ input:focus {
 }
 
 /*------------------------------------*\
-    $PAGES
+    PAGES
 \*------------------------------------*/
 
 
 
 /*------------------------------------*\
-    $IMAGES
+    IMAGES
 \*------------------------------------*/
 
 
 
 /*------------------------------------*\
-	$TYPOGRAPHY
+	TYPOGRAPHY
 \*------------------------------------*/
 
 @font-face {
@@ -97,34 +95,34 @@ input:focus {
 }
 
 /*------------------------------------*\
-    $RESPONSIVE
+    RESPONSIVE
 \*------------------------------------*/
 
-@media only screen and (min-width: 320px) {
+@media only screen and (min-width:320px) {
 
 }
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width:480px) {
 
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width:768px) {
 
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width:1024px) {
 
 }
-@media only screen and (min-width: 1140px) {
+@media only screen and (min-width:1140px) {
 
 }
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width:1280px) {
 
 }
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-	   only screen and (min-resolution: 144dpi) {
+@media only screen and (-webkit-min-device-pixel-ratio:1.5),
+	   only screen and (min-resolution:144dpi) {
 
 }
 
 /*------------------------------------*\
-    $MISC
+    MISC
 \*------------------------------------*/
 
 ::selection {
@@ -144,7 +142,7 @@ input:focus {
 }
    
 /*------------------------------------*\
-    $WORDPRESS CORE
+    WORDPRESS CORE
 \*------------------------------------*/
    
 .alignnone {
@@ -222,7 +220,7 @@ a img.aligncenter {
 }
 
 /*------------------------------------*\
-    $PRINT
+    PRINT
 \*------------------------------------*/
 
 @media print {

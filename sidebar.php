@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-<aside id="sidebar">
+<aside class="sidebar">
 
 	<?php get_template_part('searchform'); ?>
     		

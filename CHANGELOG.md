@@ -1,5 +1,14 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.3.4 (22 March, 2013)
+* Update Conditionizr to version 2.2.0
+* Replaced &lt;aside&gt; id with a class for better CSS
+* Better naming conventions for search form, more class focused
+* Removed JavaScript onfocus/onblur events in search input
+* Replaced onfocus/onblur events with HTML5 placeholder for 'Search' (this is fine for non-supporting browsers as the search button indicates it's a search input)
+* Search &lt;input&gt; has been replaced to a &lt;button&gt; for more flexibility, allows HTML content
+* Removed font-smoothing from Opera and Mozilla as no longer supported
+
 ## 1.3.3 (03 March, 2013)
 
 * Hook up Conditionizr to theme Directory using WordPress theme URI hooks
