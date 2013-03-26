@@ -8,7 +8,7 @@
 		<?php get_template_part('loop'); ?>
 		
 		<!-- Pagination -->
-		<div id="pagination">
+		<div class="pagination">
 			<?php html5wp_pagination(); ?>
 		</div>
 		<!-- /Pagination -->

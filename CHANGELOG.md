@@ -1,6 +1,23 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.3.5 (26 March, 2013)
+
+* Update jQuery CDN to use $_SERVER['SERVER_PORT'] to server HTTPS if needed
+* Edit Google Analytics string to cater for SSL/HTTPS (footer.php)
+* Added Spanish language translation file to /languages/ from Carlos Pinar
+* Indent <head> and <body> elements for better code readability
+* Add X-UA-Compatible meta tag to <head> to force Chrome Frame/latest document mode in IE (edge)
+* Format the <head> by grouping similar elements
+* Enhance footer.php indentation
+* Change footer.php fallback text
+* Removed HTML comments from comments.php and changed ID to class
+* Improve Conditionizr formatting in header.php
+* Set Conditionizr scripts/styles to _false_ by default (classes true)
+* Change pagination ID to class for better CSS
+* Improve indentation in 404.php for child element
+
 ## 1.3.4 (22 March, 2013)
+
 * Update Conditionizr to version 2.2.0
 * Replaced &lt;aside&gt; id with a class for better CSS
 * Better naming conventions for search form, more class focused
