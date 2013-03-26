@@ -5,9 +5,9 @@
 * Update jQuery CDN to use $_SERVER['SERVER_PORT'] to server HTTPS if needed
 * Edit Google Analytics string to cater for SSL/HTTPS (footer.php)
 * Added Spanish language translation file to /languages/ from Carlos Pinar
-* Indent <head> and <body> elements for better code readability
-* Add X-UA-Compatible meta tag to <head> to force Chrome Frame/latest document mode in IE (edge)
-* Format the <head> by grouping similar elements
+* Indent &lt;head&gt; and &lt;body&gt; elements for better code readability
+* Add X-UA-Compatible meta tag to &lt;head&gt; to force Chrome Frame/latest document mode in IE (edge)
+* Format the &lt;head&gt; by grouping similar elements
 * Enhance footer.php indentation
 * Change footer.php fallback text
 * Removed HTML comments from comments.php and changed ID to class
