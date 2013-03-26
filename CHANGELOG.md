@@ -16,6 +16,7 @@
 * Change pagination ID to class for better CSS
 * Improve indentation in 404.php for child element
 * Update screenshot.png
+* Update default HTML5 Blank logo and gravatar
 
 ## 1.3.4 (22 March, 2013)
 
