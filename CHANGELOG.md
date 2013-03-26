@@ -15,6 +15,7 @@
 * Set Conditionizr scripts/styles to _false_ by default (classes true)
 * Change pagination ID to class for better CSS
 * Improve indentation in 404.php for child element
+* Update screenshot.png
 
 ## 1.3.4 (22 March, 2013)
 
