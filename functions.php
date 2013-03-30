@@ -87,7 +87,7 @@ function html5blank_nav()
 	);
 }
 
-// Protocol relative URLs for enqueued scripts
+// Protocol relative URLs for enqueued scripts/styles
 function html5blank_protocol_relative($url)
 {
 	if(is_admin()) return $url;
