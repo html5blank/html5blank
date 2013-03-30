@@ -2,6 +2,7 @@
 
 ## 1.3.6 (30 March, 2013)
 
+* Protocol relative jQuery and Conditionizr URLs
 * Added French language translation file to /languages/ from [Kevin Plattret](https://twitter.com/kevinplattret)
 * Fixed search form bug by adding name="s" attribute
 
