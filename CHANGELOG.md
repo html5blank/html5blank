@@ -1,5 +1,10 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.3.6 (30 March, 2013)
+
+* Added French language translation file to /languages/ from [Kevin Plattret](https://twitter.com/kevinplattret)
+* Fixed search form bug by adding name="s" attribute
+
 ## 1.3.5 (26 March, 2013)
 
 * Update jQuery CDN to use $_SERVER['SERVER_PORT'] to server HTTPS if needed
