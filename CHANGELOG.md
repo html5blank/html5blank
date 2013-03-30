@@ -7,6 +7,7 @@
 * Added French language translation file to /languages/ from [Kevin Plattret](https://twitter.com/kevinplattret)
 * Fixed search form bug by adding name="s" attribute
 * Neater comments for headings in functions.php (same as style.css)
+* Add date ordered contributors to ReadMe.
 
 ## 1.3.5 (26 March, 2013)
 
