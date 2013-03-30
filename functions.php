@@ -5,19 +5,15 @@
  *  Custom functions, support, custom post types and more.
  */
 
-/*
- * ========================================================================
- * External Modules/Files
- * ========================================================================
- */
+/*------------------------------------*\
+	External Modules/Files
+\*------------------------------------*/
 
-	// Load any external files you have here
+// Load any external files you have here
 
-/*
- * ========================================================================
- * Theme Support
- * ========================================================================
- */
+/*------------------------------------*\
+	Theme Support
+\*------------------------------------*/
 
 if (!isset($content_width))
 {
@@ -62,11 +58,9 @@ if (function_exists('add_theme_support'))
     load_theme_textdomain('html5blank', get_template_directory() . '/languages');
 }
 
-/*
- * ========================================================================
- * Functions
- * ========================================================================
- */
+/*------------------------------------*\
+	Functions
+\*------------------------------------*/
 
 // HTML5 Blank navigation
 function html5blank_nav()
@@ -93,7 +87,14 @@ function html5blank_nav()
 	);
 }
 
-// Load Custom Theme Scripts using Enqueue
+// Protocol relative URLs for enqueued scripts
+function html5blank_protocol_relative($url)
+{
+	if(is_admin()) return $url;
+	return str_replace(array('http:','https:'), '', $url, $c=1);
+}
+
+// Load HTML5 Blank scripts
 function html5blank_scripts()
 {
     if (!is_admin()) {
@@ -112,7 +113,7 @@ function html5blank_scripts()
     }
 }
 
-// Loading Conditional Scripts
+// Load HTML5 Blank conditional scripts
 function conditional_scripts()
 {
     if (is_page('pagenamehere')) {
@@ -121,7 +122,7 @@ function conditional_scripts()
     }
 }
 
-// Theme Stylesheets using Enqueue
+// Load HTML5 Blank styles
 function html5blank_styles()
 {
     wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0', 'all');
@@ -131,7 +132,7 @@ function html5blank_styles()
     wp_enqueue_style('html5blank'); // Enqueue it!
 }
 
-// Register HTML5 Blank's Navigation
+// Register HTML5 Blank Navigation
 function register_html5_menu()
 {
     register_nav_menus(array( // Using array to specify more menus if needed
@@ -257,7 +258,7 @@ function html5wp_excerpt($length_callback = '', $more_callback = '')
 }
 
 // Custom View Article link to Post
-function html5wp_view_article($more)
+function html5_blank_view_article($more)
 {
     global $post;
     return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'html5blank') . '</a>';
@@ -278,7 +279,7 @@ function html5_style_remove($tag)
 // Remove thumbnail width and height dimensions that prevent fluid images in the_thumbnail
 function remove_thumbnail_dimensions( $html )
 {
-    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
+    $html = preg_replace('/(width|height)=\"\d*\"\s/', "", $html);
     return $html;
 }
 
@@ -329,7 +330,6 @@ function html5blankcomments($comment, $args, $depth)
 
 	<div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
 		<?php
-			/* translators: 1: date, 2: time */
 			printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','' );
 		?>
 	</div>
@@ -344,11 +344,9 @@ function html5blankcomments($comment, $args, $depth)
 	<?php endif; ?>
 <?php }
 
-/*
- * ========================================================================
- * Actions + Filters + ShortCodes
- * ========================================================================
- */
+/*------------------------------------*\
+	Actions + Filters + ShortCodes
+\*------------------------------------*/
 
 // Add Actions
 add_action('init', 'html5blank_scripts'); // Add Custom Scripts
@@ -376,6 +374,8 @@ remove_action('wp_head', 'rel_canonical');
 remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 
 // Add Filters
+add_filter('script_loader_src', 'html5blank_protocol_relative'); // Protocol relative URLs for enqueued scripts
+add_filter('style_loader_src' , 'html5blank_protocol_relative'); // Protocol relative URLs for enqueued styles
 add_filter('avatar_defaults', 'html5blankgravatar'); // Custom Gravatar in Settings > Discussion
 add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
 add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sidebar
@@ -387,7 +387,7 @@ add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <di
 add_filter('the_category', 'remove_category_rel_from_category_list'); // Remove invalid rel attribute
 add_filter('the_excerpt', 'shortcode_unautop'); // Remove auto <p> tags in Excerpt (Manual Excerpts only)
 add_filter('the_excerpt', 'do_shortcode'); // Allows Shortcodes to be executed in Excerpt (Manual Excerpts only)
-add_filter('excerpt_more', 'html5wp_view_article'); // Add 'View Article' button instead of [...] for Excerpts
+add_filter('excerpt_more', 'html5_blank_view_article'); // Add 'View Article' button instead of [...] for Excerpts
 add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
 add_filter('style_loader_tag', 'html5_style_remove'); // Remove 'text/css' from enqueued stylesheet
 add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
@@ -403,11 +403,9 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 // Shortcodes above would be nested like this -
 // [html5_shortcode_demo] [html5_shortcode_demo_2] Here's the page title! [/html5_shortcode_demo_2] [/html5_shortcode_demo]
 
-/*
- * ========================================================================
- * Custom Post Types
- * ========================================================================
- */
+/*------------------------------------*\
+	Custom Post Types
+\*------------------------------------*/
 
 // Create 1 Custom Post type for a Demo, called HTML5-Blank
 function create_post_type_html5()
@@ -447,11 +445,9 @@ function create_post_type_html5()
     ));
 }
 
-/*
- * ========================================================================
- *  Shortcodes
- * ========================================================================
- */
+/*------------------------------------*\
+	ShortCode Functions
+\*------------------------------------*/
 
 // Shortcode Demo with Nested Capability
 function html5_shortcode_demo($atts, $content = null)

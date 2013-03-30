@@ -3,8 +3,10 @@
 ## 1.3.6 (30 March, 2013)
 
 * Protocol relative jQuery and Conditionizr URLs
+* Protocol relative URLs for all enqueued scripts and styles
 * Added French language translation file to /languages/ from [Kevin Plattret](https://twitter.com/kevinplattret)
 * Fixed search form bug by adding name="s" attribute
+* Neater comments for headings in functions.php (same as style.css)
 
 ## 1.3.5 (26 March, 2013)
 
