@@ -1,5 +1,9 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.3.7 (01 April, 2013)
+
+* Added Portuguese (Brazil) language translation file to /languages/ from [Wesllei Henrique](https://github.com/wesllei)
+
 ## 1.3.6 (30 March, 2013)
 
 * Protocol relative jQuery and Conditionizr URLs
