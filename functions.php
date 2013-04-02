@@ -94,21 +94,25 @@ function html5blank_protocol_relative($url)
 	return str_replace(array('http:','https:'), '', $url, $c=1);
 }
 
-// Load HTML5 Blank scripts
-function html5blank_scripts()
+// Load HTML5 Blank scripts (header.php)
+function html5blank_header_scripts()
+{
+    if (!is_admin()) {
+        wp_register_script('conditionizr', '//cdnjs.cloudflare.com/ajax/libs/conditionizr.js/2.2.0/conditionizr.min.js', array(), '2.2.0'); // Conditionizr
+        wp_enqueue_script('conditionizr'); // Enqueue it!
+        
+        wp_register_script('modernizr', '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js', array(), '2.6.2'); // Modernizr
+        wp_enqueue_script('modernizr'); // Enqueue it!
+    }
+}
+
+// Load HTML5 Blank scripts (footer.php)
+function html5blank_footer_scripts()
 {
     if (!is_admin()) {
         wp_deregister_script('jquery'); // Deregister WordPress jQuery
-        wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', array(), '1.9.1'); // Google CDN jQuery
-        wp_enqueue_script('jquery'); // Enqueue it!
         
-        wp_register_script('conditionizr', '//cdnjs.cloudflare.com/ajax/libs/conditionizr.js/2.2.0/conditionizr.js', array(), '2.2.0'); // Conditionizr
-        wp_enqueue_script('conditionizr'); // Enqueue it!
-        
-        wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.min.js', array('jquery'), '2.6.2'); // Modernizr
-        wp_enqueue_script('modernizr'); // Enqueue it!
-
-        wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
+        wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0'); // Custom scripts
         wp_enqueue_script('html5blankscripts'); // Enqueue it!
     }
 }
@@ -349,7 +353,8 @@ function html5blankcomments($comment, $args, $depth)
 \*------------------------------------*/
 
 // Add Actions
-add_action('init', 'html5blank_scripts'); // Add Custom Scripts
+add_action('init', 'html5blank_header_scripts'); // Add Custom Scripts to wp_head
+add_action('wp_footer', 'html5blank_footer_scripts'); // Add Custom Scripts to wp_footer
 add_action('wp_print_scripts', 'conditional_scripts'); // Add Conditional Page Scripts
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet

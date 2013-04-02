@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html <?php language_attributes(); ?> class="no-js">
 	<head>
 		<meta charset="<?php bloginfo('charset'); ?>">
@@ -12,7 +12,7 @@
 		<link rel="dns-prefetch" href="//www.google-analytics.com">
 		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 			
-		<!-- CSS + jQuery + JavaScript -->
+		<!-- CSS + JavaScript -->
 		<?php wp_head(); ?>
 		<script>
 		conditionizr({

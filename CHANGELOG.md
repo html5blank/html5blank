@@ -1,5 +1,17 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.3.8
+
+* Load Modernizr from CloudFlare CDN (same as Conditionizr)
+* Load only Conditionizr and Modernizr through the &lt;head&gt;, with Conditionizr call too.
+* Load jQuery CDN (Google) in footer, with jQuery CDN fallback (CloudFlare)
+* Separated WordPress script enqueue to load Conditionizr, Modernizr in head: 'function html5blank_header_scripts()'
+* Hard-coded jQuery and CDN fallback into footer.php above custom theme scripts, more reliable fallback method
+* Load custom theme scripts in footer: 'function html5blank_footer_scripts()'
+* Loading scripts before closing &lt;/body&gt; tag is best practice and not seen often in WordPress sites
+* Lowercase &lt;!doctype html&gt; in header.php
+* Remove empty line at end of functions.php
+
 ## 1.3.7 (01 April, 2013)
 
 * Added Portuguese (Brazil) language translation file to /languages/ from [Wesllei Henrique](https://github.com/wesllei)
