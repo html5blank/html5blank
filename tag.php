@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 	
 	<!-- Section -->
-	<section>
+	<section role="main">
 	
 		<h1><?php _e( 'Tag Archive: ', 'html5blank' ); echo single_tag_title('', false); ?></h1>
 	
