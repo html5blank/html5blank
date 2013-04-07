@@ -1,6 +1,12 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
-## 1.3.8
+## 1.3.9 (07 April, 2013)
+
+* Added WAI-ARIA landmark roles to enrich semantics and improve accessibility. [Stacey Cordoni](https://github.com/staceycordoni) [#32](https://github.com/toddmotto/html5blank/pull/32)
+* Added WAI-ARIA 'role=button' to search form &lt;button&gt;
+* Upgrade search input type from 'type=text' to 'type=search' for better use of HTML5 alongside WAI-ARIA
+
+## 1.3.8 (02 April, 2013)
 
 * Load Modernizr from CloudFlare CDN (same as Conditionizr)
 * Load only Conditionizr and Modernizr through the &lt;head&gt;, with Conditionizr call too.
