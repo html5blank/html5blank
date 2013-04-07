@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 	
 	<!-- Section -->
-	<section>
+	<section role="main">
 	
 		<h1><?php _e( 'Categories for', 'html5blank' ); the_category(); ?></h1>
 	

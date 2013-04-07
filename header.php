@@ -43,7 +43,7 @@
 		<div class="wrapper">
 	
 			<!-- Header -->
-			<header class="header">
+			<header class="header" role="banner">
 				
 					<!-- Logo -->
 					<div class="logo">
@@ -55,7 +55,7 @@
 					<!-- /Logo -->
 					
 					<!-- Nav -->
-					<nav class="nav">
+					<nav class="nav" role="navigation">
 						<?php html5blank_nav(); ?>
 					</nav>
 					<!-- /Nav -->
