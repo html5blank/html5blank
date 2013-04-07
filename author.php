@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 	<!-- Section -->
-	<section>
+	<section role="main">
 	
 	<?php if (have_posts()): the_post(); ?>
 	

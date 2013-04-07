@@ -1,7 +1,7 @@
 <?php /* Template Name: Demo Page Template */ get_header(); ?>
 	
 	<!-- Section -->
-	<section>
+	<section role="main">
 	
 		<h1><?php the_title(); ?></h1>
 	
