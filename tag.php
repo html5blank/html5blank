@@ -1,20 +1,16 @@
 <?php get_header(); ?>
 	
-	<!-- Section -->
+	<!-- section -->
 	<section role="main">
 	
 		<h1><?php _e( 'Tag Archive: ', 'html5blank' ); echo single_tag_title('', false); ?></h1>
 	
 		<?php get_template_part('loop'); ?>
 		
-		<!-- Pagination -->
-		<div class="pagination">
-			<?php html5wp_pagination(); ?>
-		</div>
-		<!-- /Pagination -->
+		<?php get_template_part('pagination'); ?>
 	
 	</section>
-	<!-- /Section -->
+	<!-- /section -->
 	
 <?php get_sidebar(); ?>
 

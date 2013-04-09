@@ -1,5 +1,18 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.4.0 (09 April, 2013)
+
+* Move pagination into it's own file (pagination.php) and include in necessary template files
+* Enhanced clearfix in CSS to micro clearfix hack (works by using parent element for clear)
+* Change all HTML structural comments to lower case for cleaner look
+* Add apple-touch-icon-precomposed to &lt;head&gt;
+* Moved favicon.ico to 'img/icons'
+* Moved new apple touch icon to 'img/icons'
+* Remove Conditionizr default &lt;head&gt; setup and add config URL (cleaner code from install) please see [conditionizr](http://conditionizr.com/docs.html) for configuration
+* Reordered some meta, links in &lt;head&gt; for better readability/consistency
+* Add a few structural (but empty) classes into CSS for fast styling upon install
+* Few CSS comments added to label areas/components better
+
 ## 1.3.9 (07 April, 2013)
 
 * Added WAI-ARIA landmark roles to enrich semantics and improve accessibility. [Stacey Cordoni](https://github.com/staceycordoni) [#32](https://github.com/toddmotto/html5blank/pull/32)

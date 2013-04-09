@@ -1,20 +1,16 @@
 <?php get_header(); ?>
 	
-	<!-- Section -->
+	<!-- section -->
 	<section role="main">
 	
 		<h1><?php _e( 'Categories for', 'html5blank' ); the_category(); ?></h1>
 	
 		<?php get_template_part('loop'); ?>
 		
-		<!-- Pagination -->
-		<div class="pagination">
-			<?php html5wp_pagination(); ?>
-		</div>
-		<!-- /Pagination -->
+		<?php get_template_part('pagination'); ?>
 	
 	</section>
-	<!-- /Section -->
+	<!-- /section -->
 	
 <?php get_sidebar(); ?>
 
