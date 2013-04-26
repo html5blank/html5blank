@@ -19,10 +19,10 @@
 		<!-- css + javascript -->
 		<?php wp_head(); ?>
 		<script>
-		(function(){
+		!function(){
 			// configure legacy, retina, touch requirements @ conditionizr.com
-			conditionizr();
-		})();
+			conditionizr()
+		}()
 		</script>
 	</head>
 	<body <?php body_class(); ?>>

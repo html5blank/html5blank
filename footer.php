@@ -13,8 +13,7 @@
 		
 		</div>
 		<!-- /wrapper -->
-		
-		<!-- jquery cdn and custom scripts -->
+
 		<?php wp_footer(); ?>
 		
 		<!-- analytics -->

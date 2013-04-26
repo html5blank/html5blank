@@ -4,7 +4,7 @@
 
 * Removed protocol-relative scripts/styles function as causes some disruption on some local development environments
 * Removed hard-coded jQuery from footer as was causing issues with plugins that relied on jQuery being enqueued
-* Removed jQuery CDN fallback, jQuery 1.9.1 will still be enqueued in the footer with theme scripts loaded under
+* Removed jQuery CDN fallback, jQuery 1.9.1 and theme scripts will be enqueued in the &lt;head&gt; from now on to avoid conflicts with WordPress jQuery checks/detects
 
 ## 1.4.0 (09 April, 2013)
 
