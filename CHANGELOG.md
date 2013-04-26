@@ -1,5 +1,11 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.4.1 (26 April, 2013)
+
+* Removed protocol-relative scripts/styles function as causes some disruption on some local development environments
+* Removed hard-coded jQuery from footer as was causing issues with plugins that relied on jQuery being enqueued
+* Removed jQuery CDN fallback, jQuery 1.9.1 will still be enqueued in the footer with theme scripts loaded under
+
 ## 1.4.0 (09 April, 2013)
 
 * Move pagination into it's own file (pagination.php) and include in necessary template files

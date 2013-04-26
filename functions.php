@@ -87,13 +87,6 @@ function html5blank_nav()
 	);
 }
 
-// Protocol relative URLs for enqueued scripts/styles
-function html5blank_protocol_relative($url)
-{
-	if(is_admin()) return $url;
-	return str_replace(array('http:','https:'), '', $url, $c=1);
-}
-
 // Load HTML5 Blank scripts (header.php)
 function html5blank_header_scripts()
 {
@@ -111,14 +104,16 @@ function html5blank_footer_scripts()
 {
     if (!is_admin()) {
         wp_deregister_script('jquery'); // Deregister WordPress jQuery
-        
+        wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', array(), '1.9.1'); // Google CDN jQuery
+        wp_enqueue_script('jquery'); // Enqueue it!
+
         wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0'); // Custom scripts
         wp_enqueue_script('html5blankscripts'); // Enqueue it!
     }
 }
 
 // Load HTML5 Blank conditional scripts
-function conditional_scripts()
+function html5blank_conditional_scripts()
 {
     if (is_page('pagenamehere')) {
         wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), '1.0.0'); // Conditional script(s)
@@ -355,7 +350,7 @@ function html5blankcomments($comment, $args, $depth)
 // Add Actions
 add_action('init', 'html5blank_header_scripts'); // Add Custom Scripts to wp_head
 add_action('wp_footer', 'html5blank_footer_scripts'); // Add Custom Scripts to wp_footer
-add_action('wp_print_scripts', 'conditional_scripts'); // Add Conditional Page Scripts
+add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditional Page Scripts
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
@@ -379,8 +374,6 @@ remove_action('wp_head', 'rel_canonical');
 remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 
 // Add Filters
-add_filter('script_loader_src', 'html5blank_protocol_relative'); // Protocol relative URLs for enqueued scripts
-add_filter('style_loader_src' , 'html5blank_protocol_relative'); // Protocol relative URLs for enqueued styles
 add_filter('avatar_defaults', 'html5blankgravatar'); // Custom Gravatar in Settings > Discussion
 add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
 add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sidebar

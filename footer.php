@@ -15,8 +15,6 @@
 		<!-- /wrapper -->
 		
 		<!-- jquery cdn and custom scripts -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"><\/script>');</script>
 		<?php wp_footer(); ?>
 		
 		<!-- analytics -->
