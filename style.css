@@ -2,7 +2,7 @@
 	Theme Name: HTML5 Blank
 	Theme URI: http://html5blank.com
 	Description: HTML5 Blank WordPress Theme
-	Version: 1.4.1
+	Version: 1.4.2
 	Author: Todd Motto (@toddmotto)
 	Author URI: http://toddmotto.com
 	Tags: Blank, HTML5, CSS3
@@ -25,6 +25,10 @@
 	-webkit-font-smoothing:antialiased;
 	font-smoothing:antialiased;
 	text-rendering:optimizeLegibility;
+}
+/* html element 62.5% font-size for REM use */
+html {
+	font-size:62.5%;
 }
 body {
 	font:300 11px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;

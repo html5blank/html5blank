@@ -1,5 +1,10 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.4.2 (15 June, 2013)
+
+* Add _font-size:62.5%;_ to the HTML element in CSS for _rem_ (relative-ems) sizing
+* Update jQuery 1.9.1 to 1.10.1
+
 ## 1.4.1 (26 April, 2013)
 
 * Removed protocol-relative scripts/styles function as causes some disruption on some local development environments
