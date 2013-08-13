@@ -11,7 +11,7 @@
 	
 	<?php echo get_avatar(get_the_author_meta('user_email')); ?>
 	
-		<h2><?php e_( 'About', 'html5blank' ); echo get_the_author() ; ?></h2>
+		<h2><?php _e( 'About', 'html5blank' ); echo get_the_author() ; ?></h2>
 	
 	<?php the_author_meta('description'); ?>
 	
