@@ -1,14 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: HTML5 Blank WordPress Theme\n"
-"POT-Creation-Date: 2012-10-18 00:53+0100\n"
+"POT-Creation-Date: 2013-09-18 00:25+0100\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Jürgen Rabe <webmaster@head-graphics.com>\n"
+"Last-Translator: Jürgen Rabe | www.egado.de <rabe@egado.de>\n"
 "Language-Team: Jürgen Rabe | www.egado.de <rabe@egado.de>\n"
+"Language: German\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.3\n"
+"X-Generator: Poedit 1.5.5\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: .\n"
@@ -19,7 +20,7 @@ msgstr ""
 msgid "Page not found"
 msgstr "Fehler 404 – Die Seite wurde leider nicht gefunden."
 
-#: ../404.php:10
+#: ../404.php:11
 msgid "Return home?"
 msgstr "Zurück zur Startseite?"
 
@@ -30,6 +31,10 @@ msgstr "Archive"
 #: ../author.php:8
 msgid "Author Archives for "
 msgstr "Autor-Archiv für "
+
+#: ../author.php:14
+msgid "About "
+msgstr "Über "
 
 #: ../author.php:41 ../loop.php:22 ../single.php:27
 msgid "Published by"
@@ -47,8 +52,8 @@ msgstr "1 Kommentar"
 msgid "% Comments"
 msgstr "% Kommentare"
 
-#: ../author.php:61 ../loop.php:41 ../page.php:31 ../single.php:55
-#: ../template-demo.php:33
+#: ../author.php:61 ../loop.php:39 ../page.php:31 ../single.php:53
+#: ../template-demo.php:31
 msgid "Sorry, nothing to display."
 msgstr "Nichts gefunden, was den Suchkriterien entspricht."
 
@@ -70,89 +75,89 @@ msgstr "Kommentare sind geschlossen."
 msgid "Powered by"
 msgstr "Betrieben mit"
 
-#: ../functions.php:174
+#: ../functions.php:133
+msgid "Header Menu"
+msgstr "Kopfbereichs-Menü"
+
+#: ../functions.php:134
+msgid "Sidebar Menu"
+msgstr "Seitenleisten-Menü"
+
+#: ../functions.php:135
+msgid "Extra Menu"
+msgstr "Zusatz-Menü"
+
+#: ../functions.php:181
+msgid "Widget Area 1"
+msgstr "Widget-Bereich 1"
+
+#: ../functions.php:182 ../functions.php:193
+msgid "Description for this widget-area..."
+msgstr "Beschreibung für diesen Widget-Bereich…"
+
+#: ../functions.php:192
+msgid "Widget Area 2"
+msgstr "Widget-Bereich 2"
+
+#: ../functions.php:258
+msgid "View Article"
+msgstr "Artikel ansehen"
+
+#: ../functions.php:319
 #, php-format
 msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
 msgstr "<cite class=\"fn\">%s</cite> <span class=\"says\">sagt:</span>"
 
-#: ../functions.php:177
+#: ../functions.php:322
 msgid "Your comment is awaiting moderation."
 msgstr "Dein Kommentar muss noch moderiert werden – Bitte hab etwas Geduld."
 
-#: ../functions.php:184
+#: ../functions.php:328
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s um %2$s"
 
-#: ../functions.php:184
+#: ../functions.php:328
 msgid "(Edit)"
 msgstr "(Bearbeiten)"
 
-#: ../functions.php:209
-msgid "Header Menu"
-msgstr "Kopfbereichs-Menü"
-
-#: ../functions.php:210
-msgid "Sidebar Menu"
-msgstr "Seitenleisten-Menü"
-
-#: ../functions.php:211
-msgid "Extra Menu"
-msgstr "Zusatz-Menü"
-
-#: ../functions.php:257
-msgid "Widget Area 1"
-msgstr "Widget-Bereich 1"
-
-#: ../functions.php:258 ../functions.php:269
-msgid "Description for this widget-area..."
-msgstr "Beschreibung für diesen Widget-Bereich…"
-
-#: ../functions.php:268
-msgid "Widget Area 2"
-msgstr "Widget-Bereich 2"
-
-#: ../functions.php:333
-msgid "View Article"
-msgstr "Artikel ansehen"
-
-#: ../functions.php:438 ../functions.php:439
+#: ../functions.php:411 ../functions.php:412
 msgid "HTML5 Blank Custom Post"
 msgstr "HTML5 Blank Custom Post-Type"
 
-#: ../functions.php:440
+#: ../functions.php:413
 msgid "Add New"
 msgstr "Neuen Artikel erstellen"
 
-#: ../functions.php:441
+#: ../functions.php:414
 msgid "Add New HTML5 Blank Custom Post"
 msgstr "Neuen HTML5 Blank Custom Post erstellen"
 
-#: ../functions.php:442
+#: ../functions.php:415
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: ../functions.php:443
+#: ../functions.php:416
 msgid "Edit HTML5 Blank Custom Post"
 msgstr "HTML5 Blank Custom Post bearbeiten"
 
-#: ../functions.php:444
+#: ../functions.php:417
 msgid "New HTML5 Blank Custom Post"
 msgstr "Neuer HTML5 Blank Custom Post"
 
-#: ../functions.php:445 ../functions.php:446
+#: ../functions.php:418 ../functions.php:419
 msgid "View HTML5 Blank Custom Post"
 msgstr "HTML5 Blank Custom Post ansehen"
 
-#: ../functions.php:447
+#: ../functions.php:420
 msgid "Search HTML5 Blank Custom Post"
 msgstr "HTML5 Blank Custom Post suchen"
 
-#: ../functions.php:448
+#: ../functions.php:421
 msgid "No HTML5 Blank Custom Posts found"
 msgstr "Keine HTML5 Blank Custom Posts gefunden"
 
-#: ../functions.php:449
+#: ../functions.php:422
 msgid "No HTML5 Blank Custom Posts found in Trash"
 msgstr "Keine HTML5 Blank Custom Posts im Papierkorb gefunden"
 
@@ -165,19 +170,23 @@ msgstr "Letzte Artikel"
 msgid "%s Search Results for "
 msgstr "%s Suchergebnisse für "
 
-#: ../searchform.php:5
+#: ../searchform.php:3
+msgid "To search, type and hit enter."
+msgstr "Suchbegriff…"
+
+#: ../searchform.php:4
 msgid "Search"
 msgstr "Suchen"
 
-#: ../single.php:35
+#: ../single.php:33
 msgid "Tags: "
 msgstr "Stichwörter: "
 
-#: ../single.php:37
+#: ../single.php:35
 msgid "Categorised in: "
 msgstr "Kategorisiert in: "
 
-#: ../single.php:39
+#: ../single.php:37
 msgid "This post was written by "
 msgstr "Dieser Artikel wurde verfasst von "
 
