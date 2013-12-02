@@ -1,5 +1,14 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.4.3 (02 December, 2013)
+
+* Update [conditionizr](http://conditionizr.com) to version 4.0.0
+* Update jQuery to v1.10.2
+* Update Google Analytics snippet to _new_ universal snippet
+* Improved SVG script
+* Removed empty conditionizr asset directories for `js` and `css`
+* Remove redundant Modernizr file, loading from CDN
+
 ## 1.4.2 (15 June, 2013)
 
 * Add _font-size:62.5%;_ to the HTML element in CSS for _rem_ (relative-ems) sizing
