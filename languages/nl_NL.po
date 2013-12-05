@@ -60,7 +60,7 @@ msgstr "Categoriën voor"
 #: ../comments.php:3
 msgid "Post is password protected. Enter the password to view any comments."
 msgstr ""
-"Dit post is beveiligd met een wachtwoord. Gelieve uw wachtwoord in te voeren "
+"Dit bericht is beveiligd met een wachtwoord. Gelieve uw wachtwoord in te voeren "
 
 #: ../comments.php:18
 msgid "Comments are closed here."
@@ -68,25 +68,25 @@ msgstr "Commententaren zijn gesloten."
 
 #: ../footer.php:6
 msgid "Powered by"
-msgstr "Propulsé par"
+msgstr "Aangedreven door"
 
 #: ../functions.php:174
 #, php-format
 msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
-msgstr "<cite class=\"fn\">%s</cite> <span class=\"says\">dit:</span>"
+msgstr "<cite class=\"fn\">%s</cite> <span class=\"says\">zegt:</span>"
 
 #: ../functions.php:177
 msgid "Your comment is awaiting moderation."
-msgstr "Votre commentaire est en attente de modération."
+msgstr "Uw reactie is in afwachting van moderatie."
 
 #: ../functions.php:184
 #, php-format
 msgid "%1$s at %2$s"
-msgstr "%1$s à %2$s"
+msgstr "%1$s bij %2$s"
 
 #: ../functions.php:184
 msgid "(Edit)"
-msgstr "(Éditer)"
+msgstr "(Aanpassen)"
 
 #: ../functions.php:209
 msgid "Header Menu"
@@ -94,7 +94,7 @@ msgstr "Hoofdmenu"
 
 #: ../functions.php:210
 msgid "Sidebar Menu"
-msgstr "Sidebar Menu"
+msgstr "zijbalk Menu"
 
 #: ../functions.php:211
 msgid "Extra Menu"
@@ -118,27 +118,27 @@ msgstr "Bekijk Artikel"
 
 #: ../functions.php:438 ../functions.php:439
 msgid "HTML5 Blank Custom Post"
-msgstr "Article personnalisé"
+msgstr "Persoonlijk Bericht"
 
 #: ../functions.php:440
 msgid "Add New"
-msgstr "Ajouter nouveau"
+msgstr "Voeg een nieuw toe"
 
 #: ../functions.php:441
 msgid "Add New HTML5 Blank Custom Post"
-msgstr "Ajouter un article personnalisé"
+msgstr "Voeg een nieuw persoonlijk bericht toe"
 
 #: ../functions.php:442
 msgid "Edit"
-msgstr "Éditer"
+msgstr "Bewerken"
 
 #: ../functions.php:443
 msgid "Edit HTML5 Blank Custom Post"
-msgstr "Éditer l'article personnalisé"
+msgstr "Bewerk het persoonlijk bericht"
 
 #: ../functions.php:444
 msgid "New HTML5 Blank Custom Post"
-msgstr "Nouvel article personnalisé"
+msgstr "Nieuw persoonlijk bericht"
 
 #: ../functions.php:445 ../functions.php:446
 msgid "View HTML5 Blank Custom Post"
