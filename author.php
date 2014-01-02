@@ -13,7 +13,7 @@
 	
 		<h2><?php _e( 'About ', 'html5blank' ); echo get_the_author() ; ?></h2>
 	
-	<?php the_author_meta('description'); ?>
+		<?php echo wpautop( get_the_author_meta('description') ); ?>
 	
 	<?php endif; ?>
 	
