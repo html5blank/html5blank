@@ -1,0 +1,376 @@
+/*
+  Theme Name: HTML5 Blank
+  Theme URI: http://html5blank.com
+  Description: HTML5 Blank WordPress Theme
+  Version: 1.4.3
+  Author: Todd Motto (@toddmotto)
+  Author URI: http://toddmotto.com
+  Tags: Blank, HTML5, CSS3, Sass
+
+  License: MIT
+  License URI: http://opensource.org/licenses/mit-license.php
+*/
+
+// ----------------------------------------------------------------------------
+//  Variables, Mixins, Silent Classes
+// ----------------------------------------------------------------------------
+
+@import '_vars';
+@import '_mixins';
+
+// Silent Classes
+%float-left {
+  float: left;
+}
+
+%float-right {
+  float: right;
+}
+
+%align-left-margin {
+  margin: 5px 20px 20px 0;
+}
+
+%align-right-margin {
+  margin: 5px 0 20px 20px;
+}
+
+
+// ----------------------------------------------------------------------------
+//  Main
+// ----------------------------------------------------------------------------
+
+// Global box-sizing
+*,
+*:after,
+*:before {
+  @include box-sizing(border-box)
+  // -webkit-font-smoothing:antialiased;
+  // font-smoothing:antialiased;
+  // text-rendering:optimizeLegibility;
+}
+
+
+// HTML & Body
+html {
+  font-size: 62.5%; // html element 62.5% font-size for REM use
+}
+
+body {
+  color: $c-dark;
+  font: 300 11px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+
+// Clearing
+.clear {
+  *zoom: 1;
+
+  &:after,
+  &:before {
+    content: ' ';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+
+// Images
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+
+// Links
+a {
+  color: $c-blue;
+  text-decoration: none;
+
+  &:hover {
+    color: $c-blue;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  a:hover,
+  a:active {
+    outline: 0;
+  }
+}
+
+
+// Input Focus
+input:focus {
+  border: 1px solid $c-blue;
+  outline: 0;
+}
+
+
+// ----------------------------------------------------------------------------
+//  Structure: Wrapper
+// ----------------------------------------------------------------------------
+
+.wrapper {
+  margin: 0 auto;
+  max-width: $max-width;
+  position: relative;
+  width: 95%;
+}
+
+
+// ----------------------------------------------------------------------------
+//  Structure: Header
+// ----------------------------------------------------------------------------
+
+.header {
+
+}
+
+// Logo
+.logo {
+
+}
+
+.logo-img {
+
+}
+
+// Navigation
+
+.nav {
+
+}
+
+
+// ----------------------------------------------------------------------------
+//  Structure: Sidebar
+// ----------------------------------------------------------------------------
+
+.sidebar {
+
+}
+
+
+// ----------------------------------------------------------------------------
+//  Structure: Footer
+// ----------------------------------------------------------------------------
+
+.footer {
+
+}
+
+
+// ----------------------------------------------------------------------------
+//  Pages
+// ----------------------------------------------------------------------------
+
+
+
+// ----------------------------------------------------------------------------
+//  Images
+// ----------------------------------------------------------------------------
+
+
+
+// ----------------------------------------------------------------------------
+//  Typography
+// ----------------------------------------------------------------------------
+
+// Custom Fonts
+@font-face {
+  font-family:'Font-Name';
+  src:url('fonts/font-name.eot');
+  src:url('fonts/font-name.eot?#iefix') format('embedded-opentype'),
+    url('fonts/font-name.woff') format('woff'),
+    url('fonts/font-name.ttf') format('truetype'),
+    url('fonts/font-name.svg#font-name') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+// Text Selection
+@include select-text($c-blue, $c-white, none);
+
+
+// ----------------------------------------------------------------------------
+//  Responsive
+// ----------------------------------------------------------------------------
+
+@media only screen and (min-width: $break-mini) {
+
+}
+
+@media only screen and (min-width: $break-tiny) {
+
+}
+
+@media only screen and (min-width: $break-portrait) {
+
+}
+
+@media only screen and (min-width: $break-normal) {
+
+}
+
+@media only screen and (min-width: $break-large) {
+
+}
+
+@media only screen and (min-width: $break-xlarge) {
+
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:1.5),
+     only screen and (min-resolution:144dpi) {
+
+}
+
+
+// ----------------------------------------------------------------------------
+//  Wordpress Core
+// ----------------------------------------------------------------------------
+
+.alignnone {
+  @extend %align-left-margin;
+}
+
+.aligncenter {
+  display: block;
+  margin: auto;
+}
+
+div.aligncenter {
+  margin: 5px auto;
+}
+
+.alignright {
+  @extend %align-right-margin;
+  @extend %float-right;
+}
+
+.alignleft {
+  @extend %align-left-margin;
+  @extend %float-left;
+}
+
+a img {
+  &.alignright {
+    @extend %align-right-margin;
+    @extend %float-right;
+  }
+
+  &.alignnone {
+    @extend %align-left-margin;
+  }
+
+  &.alignleft {
+    @extend %align-left-margin;
+    @extend %float-left;
+  }
+}
+
+.wp-caption {
+  background: $c-white;
+  border: 1px solid $c-off-white;
+  max-width: 96%;
+  padding: 5px 3px 10px;
+  text-align: center;
+
+  &.alignnone {
+    @extend %align-left-margin;
+  }
+
+  &.alignleft {
+    @extend %align-left-margin;
+  }
+
+  &.alignright {
+    @extend %align-right-margin;
+  }
+
+  img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+  }
+
+  .wp-caption-text,
+  .gallery-caption {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+  }
+}
+
+.sticky {
+
+}
+
+.bypostauthor {
+
+}
+
+
+// ----------------------------------------------------------------------------
+//  Print
+// ----------------------------------------------------------------------------
+
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+  pre,blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr,img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  @page {
+    margin: 0.5cm;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

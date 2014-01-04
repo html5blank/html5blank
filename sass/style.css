@@ -1,0 +1,167 @@
+/*
+  Theme Name: HTML5 Blank
+  Theme URI: http://html5blank.com
+  Description: HTML5 Blank WordPress Theme
+  Version: 1.4.3
+  Author: Todd Motto (@toddmotto)
+  Author URI: http://toddmotto.com
+  Tags: Blank, HTML5, CSS3, Sass
+
+  License: MIT
+  License URI: http://opensource.org/licenses/mit-license.php
+*/
+.alignleft, a img.alignleft {
+  float: left; }
+
+.alignright, a img.alignright {
+  float: right; }
+
+.alignnone, .alignleft, a img.alignnone, a img.alignleft, .wp-caption.alignnone, .wp-caption.alignleft {
+  margin: 5px 20px 20px 0; }
+
+.alignright, a img.alignright, .wp-caption.alignright {
+  margin: 5px 0 20px 20px; }
+
+*,
+*:after,
+*:before {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  color: #444444;
+  font: 300 11px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+.clear {
+  *zoom: 1; }
+  .clear:after, .clear:before {
+    content: ' ';
+    display: table; }
+  .clear:after {
+    clear: both; }
+
+img {
+  max-width: 100%;
+  vertical-align: bottom; }
+
+a {
+  color: #04a4cc;
+  text-decoration: none; }
+  a:hover {
+    color: #04a4cc; }
+  a:focus {
+    outline: 0; }
+  a a:hover,
+  a a:active {
+    outline: 0; }
+
+input:focus {
+  border: 1px solid #04a4cc;
+  outline: 0; }
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1280px;
+  position: relative;
+  width: 95%; }
+
+@font-face {
+  font-family: 'Font-Name';
+  src: url("fonts/font-name.eot");
+  src: url("fonts/font-name.eot?#iefix") format("embedded-opentype"), url("fonts/font-name.woff") format("woff"), url("fonts/font-name.ttf") format("truetype"), url("fonts/font-name.svg#font-name") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+::-moz-selection {
+  background: #04a4cc;
+  color: white;
+  text-shadow: none; }
+
+::-webkit-selection {
+  background: #04a4cc;
+  color: white;
+  text-shadow: none; }
+
+::selection {
+  background: #04a4cc;
+  color: white;
+  text-shadow: none; }
+
+.aligncenter {
+  display: block;
+  margin: auto; }
+
+div.aligncenter {
+  margin: 5px auto; }
+
+.wp-caption {
+  background: white;
+  border: 1px solid #f0f0f0;
+  max-width: 96%;
+  padding: 5px 3px 10px;
+  text-align: center; }
+  .wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto; }
+  .wp-caption .wp-caption-text,
+  .wp-caption .gallery-caption {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px; }
+
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important; }
+
+  a,
+  a:visited {
+    text-decoration: underline; }
+
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: ""; }
+
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+
+  thead {
+    display: table-header-group; }
+
+  tr, img {
+    page-break-inside: avoid; }
+
+  img {
+    max-width: 100% !important; }
+
+  @page {
+    margin: 0.5cm; }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+
+  h2,
+  h3 {
+    page-break-after: avoid; } }
