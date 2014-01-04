@@ -199,10 +199,6 @@ div.aligncenter {
 	float:left;
 	margin:5px 20px 20px 0;
 }
-.aligncenter {
-	display:block;
-	margin:5px auto 5px auto;
-}
 a img.alignright {
 	float:right;
 	margin:5px 0 20px 20px;
