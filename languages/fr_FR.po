@@ -1,18 +1,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: HTML5 Blank WordPress Theme\n"
-"POT-Creation-Date: 2013-03-28 18:10+0000\n"
+"POT-Creation-Date: 2014-01-08 00:08+0100\n"
 "PO-Revision-Date: \n"
-"Last-Translator: \n"
+"Last-Translator: Antoine Lorence <antoine.lorence@gmail.com>\n"
 "Language-Team: Kevin Plattret <kevin@plattret.me>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.6.3\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: .\n"
-"Language: Français\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: ..\n"
 
@@ -20,7 +20,7 @@ msgstr ""
 msgid "Page not found"
 msgstr "Page non trouvée"
 
-#: ../404.php:10
+#: ../404.php:11
 msgid "Return home?"
 msgstr "Retour à la page d'accueil ?"
 
@@ -31,6 +31,10 @@ msgstr "Archives"
 #: ../author.php:8
 msgid "Author Archives for "
 msgstr "Archives de l'auteur "
+
+#: ../author.php:14
+msgid "About "
+msgstr "À propos"
 
 #: ../author.php:41 ../loop.php:22 ../single.php:27
 msgid "Published by"
@@ -48,14 +52,14 @@ msgstr "1 Commentaire"
 msgid "% Comments"
 msgstr "% Comentaires"
 
-#: ../author.php:61 ../loop.php:41 ../page.php:31 ../single.php:55
-#: ../template-demo.php:33
+#: ../author.php:61 ../loop.php:39 ../page.php:31 ../single.php:53
+#: ../template-demo.php:31
 msgid "Sorry, nothing to display."
 msgstr "Désolé, aucun contenu disponible."
 
 #: ../category.php:6
-msgid "Categories for"
-msgstr "Catégories pour"
+msgid "Categories for "
+msgstr "Catégories pour "
 
 #: ../comments.php:3
 msgid "Post is password protected. Enter the password to view any comments."
@@ -71,89 +75,89 @@ msgstr "Les commentaires sont fermés."
 msgid "Powered by"
 msgstr "Propulsé par"
 
-#: ../functions.php:174
+#: ../functions.php:133
+msgid "Header Menu"
+msgstr "Menu d'entête"
+
+#: ../functions.php:134
+msgid "Sidebar Menu"
+msgstr "Menu de barre latérale"
+
+#: ../functions.php:135
+msgid "Extra Menu"
+msgstr "Menu supplémentaire"
+
+#: ../functions.php:181
+msgid "Widget Area 1"
+msgstr "Zone de widget 1"
+
+#: ../functions.php:182 ../functions.php:193
+msgid "Description for this widget-area..."
+msgstr "Description pour cette zone à widget..."
+
+#: ../functions.php:192
+msgid "Widget Area 2"
+msgstr "Zone de widget 2"
+
+#: ../functions.php:258
+msgid "View Article"
+msgstr "Voir l'article"
+
+#: ../functions.php:319
 #, php-format
 msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
 msgstr "<cite class=\"fn\">%s</cite> <span class=\"says\">dit:</span>"
 
-#: ../functions.php:177
+#: ../functions.php:322
 msgid "Your comment is awaiting moderation."
 msgstr "Votre commentaire est en attente de modération."
 
-#: ../functions.php:184
+#: ../functions.php:328
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s à %2$s"
 
-#: ../functions.php:184
+#: ../functions.php:328
 msgid "(Edit)"
 msgstr "(Éditer)"
 
-#: ../functions.php:209
-msgid "Header Menu"
-msgstr "Menu d'entête"
-
-#: ../functions.php:210
-msgid "Sidebar Menu"
-msgstr "Menu de barre latérale"
-
-#: ../functions.php:211
-msgid "Extra Menu"
-msgstr "Menu supplémentaire"
-
-#: ../functions.php:257
-msgid "Widget Area 1"
-msgstr "Zone à widget 1"
-
-#: ../functions.php:258 ../functions.php:269
-msgid "Description for this widget-area..."
-msgstr "Description pour cette zone à widget..."
-
-#: ../functions.php:268
-msgid "Widget Area 2"
-msgstr "Zone à widget 2"
-
-#: ../functions.php:333
-msgid "View Article"
-msgstr "Voir l'article"
-
-#: ../functions.php:438 ../functions.php:439
+#: ../functions.php:411 ../functions.php:412
 msgid "HTML5 Blank Custom Post"
 msgstr "Article personnalisé"
 
-#: ../functions.php:440
+#: ../functions.php:413
 msgid "Add New"
 msgstr "Ajouter nouveau"
 
-#: ../functions.php:441
+#: ../functions.php:414
 msgid "Add New HTML5 Blank Custom Post"
 msgstr "Ajouter un article personnalisé"
 
-#: ../functions.php:442
+#: ../functions.php:415
 msgid "Edit"
 msgstr "Éditer"
 
-#: ../functions.php:443
+#: ../functions.php:416
 msgid "Edit HTML5 Blank Custom Post"
 msgstr "Éditer l'article personnalisé"
 
-#: ../functions.php:444
+#: ../functions.php:417
 msgid "New HTML5 Blank Custom Post"
 msgstr "Nouvel article personnalisé"
 
-#: ../functions.php:445 ../functions.php:446
+#: ../functions.php:418 ../functions.php:419
 msgid "View HTML5 Blank Custom Post"
 msgstr "Voir l'article personnalisé"
 
-#: ../functions.php:447
+#: ../functions.php:420
 msgid "Search HTML5 Blank Custom Post"
 msgstr "Rechercher un article personnalisé"
 
-#: ../functions.php:448
+#: ../functions.php:421
 msgid "No HTML5 Blank Custom Posts found"
 msgstr "Aucun article personnalisé trouvé"
 
-#: ../functions.php:449
+#: ../functions.php:422
 msgid "No HTML5 Blank Custom Posts found in Trash"
 msgstr "Aucun article personnalisé trouvé dans la corbeille"
 
@@ -166,19 +170,23 @@ msgstr "Articles récents"
 msgid "%s Search Results for "
 msgstr "%s Résultats de recherche pour "
 
-#: ../searchform.php:5
+#: ../searchform.php:3
+msgid "To search, type and hit enter."
+msgstr "Rechercher"
+
+#: ../searchform.php:4
 msgid "Search"
 msgstr "Rechercher"
 
-#: ../single.php:35
+#: ../single.php:33
 msgid "Tags: "
 msgstr "Tags : "
 
-#: ../single.php:37
+#: ../single.php:35
 msgid "Categorised in: "
 msgstr "Classés dans :"
 
-#: ../single.php:39
+#: ../single.php:37
 msgid "This post was written by "
 msgstr "Cet article a été écrit par "
 
