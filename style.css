@@ -19,9 +19,8 @@
 *,
 *:after,
 *:before {
-	box-sizing:border-box;
-	-webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
+	box-sizing:border-box;
 	-webkit-font-smoothing:antialiased;
 	font-smoothing:antialiased;
 	text-rendering:optimizeLegibility;
@@ -198,10 +197,6 @@ div.aligncenter {
 .alignleft {
 	float:left;
 	margin:5px 20px 20px 0;
-}
-.aligncenter {
-	display:block;
-	margin:5px auto 5px auto;
 }
 a img.alignright {
 	float:right;
