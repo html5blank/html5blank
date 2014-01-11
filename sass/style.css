@@ -55,8 +55,7 @@ a {
     color: #04a4cc; }
   a:focus {
     outline: 0; }
-  a a:hover,
-  a a:active {
+  a:hover, a:active {
     outline: 0; }
 
 input:focus {

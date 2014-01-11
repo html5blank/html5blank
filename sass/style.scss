@@ -98,8 +98,12 @@ a {
     outline: 0;
   }
 
-  a:hover,
-  a:active {
+// &:visited {
+//   add styling
+// }
+
+  &:hover,
+  &:active {
     outline: 0;
   }
 }
