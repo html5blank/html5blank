@@ -90,7 +90,7 @@ function html5blank_nav()
 // Load HTML5 Blank scripts (header.php)
 function html5blank_header_scripts()
 {
-    if (!is_admin()) {
+    if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
     	wp_deregister_script('jquery'); // Deregister WordPress jQuery
     	wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', array(), '1.9.1'); // Google CDN jQuery
