@@ -1,0 +1,198 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: HTML5 Blank WordPress Theme\n"
+"POT-Creation-Date: 2013-09-18 00:26+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Sallay Arnold <arnold@sallay.info>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.5\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"Language: hu_HU\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../404.php:9
+msgid "Page not found"
+msgstr "A keresett oldal nem található"
+
+#: ../404.php:11
+msgid "Return home?"
+msgstr "Vissza a főoldalra?"
+
+#: ../archive.php:6
+msgid "Archives"
+msgstr "Archívum"
+
+#: ../author.php:8
+msgid "Author Archives for "
+msgstr "Szerkesztői archívum - "
+
+#: ../author.php:14
+msgid "About "
+msgstr "Rólunk "
+
+#: ../author.php:41 ../loop.php:22 ../single.php:27
+msgid "Published by"
+msgstr "Közzétette "
+
+#: ../author.php:42 ../loop.php:23 ../single.php:28
+msgid "Leave your thoughts"
+msgstr "Hozzászólás"
+
+#: ../author.php:42 ../loop.php:23 ../single.php:28
+msgid "1 Comment"
+msgstr "1 Hozzászólás"
+
+#: ../author.php:42 ../loop.php:23 ../single.php:28
+msgid "% Comments"
+msgstr "% Hozzászólás"
+
+#: ../author.php:61 ../loop.php:39 ../page.php:31 ../single.php:53
+#: ../template-demo.php:31
+msgid "Sorry, nothing to display."
+msgstr "Nincs tartalom."
+
+#: ../category.php:6
+msgid "Categories for"
+msgstr "Kategória: "
+
+#: ../comments.php:3
+msgid "Post is password protected. Enter the password to view any comments."
+msgstr ""
+"A tartalom jelszóval védett. A jelszó megadása után minden hozzászólás "
+"látható lesz."
+
+#: ../comments.php:18
+msgid "Comments are closed here."
+msgstr "Hozzászólás zárolva."
+
+#: ../footer.php:6
+msgid "Powered by"
+msgstr "Motor:"
+
+#: ../functions.php:133
+msgid "Header Menu"
+msgstr "Fejléc Menü"
+
+#: ../functions.php:134
+msgid "Sidebar Menu"
+msgstr "Oldalsáv Menü"
+
+#: ../functions.php:135
+msgid "Extra Menu"
+msgstr "Extra Menü"
+
+#: ../functions.php:181
+msgid "Widget Area 1"
+msgstr "Widget rész 1"
+
+#: ../functions.php:182 ../functions.php:193
+msgid "Description for this widget-area..."
+msgstr "A widhet rész leírása..."
+
+#: ../functions.php:192
+msgid "Widget Area 2"
+msgstr "Widget rész 2"
+
+#: ../functions.php:258
+msgid "View Article"
+msgstr "Tartalom Megtekintése"
+
+#: ../functions.php:319
+#, php-format
+msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
+msgstr "<cite class=\"fn\">%s</cite> <span class=\"says\">:</span>"
+
+#: ../functions.php:322
+msgid "Your comment is awaiting moderation."
+msgstr "A hozzászólás moderálásra vár."
+
+#: ../functions.php:328
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s - %2$s"
+
+#: ../functions.php:328
+msgid "(Edit)"
+msgstr "(Szerkesztés)"
+
+#: ../functions.php:411 ../functions.php:412
+msgid "HTML5 Blank Custom Post"
+msgstr "HTML5 Blank Egyedi Tartalom"
+
+#: ../functions.php:413
+msgid "Add New"
+msgstr "Új hozzáadása"
+
+#: ../functions.php:414
+msgid "Add New HTML5 Blank Custom Post"
+msgstr "Új egyedi HTML5 Blank tartalom hozzáadása"
+
+#: ../functions.php:415
+msgid "Edit"
+msgstr "Szerkesztés"
+
+#: ../functions.php:416
+msgid "Edit HTML5 Blank Custom Post"
+msgstr "HTML5 Blank egyedi tartalom szerkesztése"
+
+#: ../functions.php:417
+msgid "New HTML5 Blank Custom Post"
+msgstr "Új HTML5 Blank egyedi tartalom"
+
+#: ../functions.php:418 ../functions.php:419
+msgid "View HTML5 Blank Custom Post"
+msgstr "HTML5 Blank egyedi tartalom megtekintése"
+
+#: ../functions.php:420
+msgid "Search HTML5 Blank Custom Post"
+msgstr "HTML5 Blank egyedi tartalomak keresése"
+
+#: ../functions.php:421
+msgid "No HTML5 Blank Custom Posts found"
+msgstr "Nincs HTML5 Blank egyedi tartalom"
+
+#: ../functions.php:422
+msgid "No HTML5 Blank Custom Posts found in Trash"
+msgstr "Nincs HTML5 Blank egyedi tartalom a kukában"
+
+#: ../index.php:6
+msgid "Latest Posts"
+msgstr "Legfrissebb bejegyzések"
+
+#: ../search.php:6
+#, php-format
+msgid "%s Search Results for "
+msgstr "%s Találatok "
+
+#: ../searchform.php:3
+msgid "To search, type and hit enter."
+msgstr "Keresési feltétel, majd [Enter]."
+
+#: ../searchform.php:4
+msgid "Search"
+msgstr "Keresés"
+
+#: ../single.php:33
+msgid "Tags: "
+msgstr "Címkék: "
+
+#: ../single.php:35
+msgid "Categorised in: "
+msgstr "Kategória: "
+
+#: ../single.php:37
+msgid "This post was written by "
+msgstr "Írta: "
+
+#: ../tag.php:6
+msgid "Tag Archive: "
+msgstr "Archívim: "
+
+#~ msgid "%s results for "
+#~ msgstr "%s Ergebnisse für "
