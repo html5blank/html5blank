@@ -1,0 +1,194 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: HTML5 Blank\n"
+"POT-Creation-Date: 2014-07-10 20:15+0200\n"
+"PO-Revision-Date: 2014-07-10 20:40+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: he_IL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:10
+msgid "Page not found"
+msgstr "דף לא נמצא"
+
+#: 404.php:12
+msgid "Return home?"
+msgstr "חזור לדף הבית?"
+
+#: archive.php:7
+msgid "Archives"
+msgstr "ארכיון"
+
+#: author.php:9
+msgid "Author Archives for "
+msgstr "מחבר ארכיון עבור"
+
+#: author.php:15
+msgid "About "
+msgstr "אוֹדוֹת"
+
+#: author.php:42 loop.php:22 single.php:28
+msgid "Published by"
+msgstr "פורסם על ידי"
+
+#: author.php:43 loop.php:23 single.php:29
+msgid "Leave your thoughts"
+msgstr "השאר את המחשבות שלך"
+
+#: author.php:43 loop.php:23 single.php:29
+msgid "1 Comment"
+msgstr "תגובה 1"
+
+#: author.php:43 loop.php:23 single.php:29
+msgid "% Comments"
+msgstr "% תגובות"
+
+#: author.php:62 loop.php:39 page.php:32 single.php:54 template-demo.php:32
+msgid "Sorry, nothing to display."
+msgstr "אין שום דבר שניתן להציג"
+
+#: category.php:7
+msgid "Categories for "
+msgstr "קטגוריות עבור"
+
+#: comments.php:3
+msgid "Post is password protected. Enter the password to view any comments."
+msgstr "הודעה מוגנת בסיסמא. הזן את הסיסמה כדי להציג הערות."
+
+#: comments.php:18
+msgid "Comments are closed here."
+msgstr "תגובות סגורות כאן."
+
+#: footer.php:6
+msgid "Powered by"
+msgstr "מופעל על ידי"
+
+#: functions.php:129
+msgid "Header Menu"
+msgstr "תפריט כותרת עליונה"
+
+#: functions.php:130
+msgid "Sidebar Menu"
+msgstr "תפריט הסרגל הצידי"
+
+#: functions.php:131
+msgid "Extra Menu"
+msgstr "תפריט נוסף"
+
+#: functions.php:177
+msgid "Widget Area 1"
+msgstr "פינת יישומון 1"
+
+#: functions.php:178 functions.php:189
+msgid "Description for this widget-area..."
+msgstr "תיאור עבור יישומון-אזור זה ..."
+
+#: functions.php:188
+msgid "Widget Area 2"
+msgstr "פינת יישומון 2"
+
+#: functions.php:254
+msgid "View Article"
+msgstr "מאמר צפה"
+
+#: functions.php:315
+#, fuzzy, php-format
+msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
+msgstr "<cite class=\"fn\">%</cite> <span class=\"says\">אומר:</span>"
+
+#: functions.php:318
+msgid "Your comment is awaiting moderation."
+msgstr "התגובה שלך מחכה לאישור."
+
+#: functions.php:324
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s ב %2$s"
+
+#: functions.php:324
+msgid "(Edit)"
+msgstr "(עריכה)"
+
+#: functions.php:406 functions.php:407
+msgid "HTML5 Blank Custom Post"
+msgstr "פוסט מותאם אישית HTML5 Blank"
+
+#: functions.php:408
+msgid "Add New"
+msgstr "הוסף חדש"
+
+#: functions.php:409
+msgid "Add New HTML5 Blank Custom Post"
+msgstr "הוסף פוסט מותאם אישית HTML5 Blank"
+
+#: functions.php:410
+msgid "Edit"
+msgstr "ערוך"
+
+#: functions.php:411
+msgid "Edit HTML5 Blank Custom Post"
+msgstr "ערוך פוסט מותאם אישית HTML5 Blank"
+
+#: functions.php:412
+msgid "New HTML5 Blank Custom Post"
+msgstr "הוסף פוסט מותאם אישית HTML5 Blank חדש"
+
+#: functions.php:413 functions.php:414
+msgid "View HTML5 Blank Custom Post"
+msgstr "הצג פוסט מותאם אישית HTML5 Blank"
+
+#: functions.php:415
+msgid "Search HTML5 Blank Custom Post"
+msgstr "חפש פוסט מותאם אישית HTML5 Blank"
+
+#: functions.php:416
+msgid "No HTML5 Blank Custom Posts found"
+msgstr "אין פוסט מותאם אישית HTML5 Blank שנמצא"
+
+#: functions.php:417
+msgid "No HTML5 Blank Custom Posts found in Trash"
+msgstr "אין פוסט מותאם אישית HTML5 Blank שנמצא בפח"
+
+#: index.php:7
+msgid "Latest Posts"
+msgstr "פוסטים האחרונים"
+
+#: search.php:7
+#, php-format
+msgid "%s Search Results for "
+msgstr "% s תוצאות חיפוש עבור"
+
+#: searchform.php:3
+msgid "To search, type and hit enter."
+msgstr "לחיפוש, כתוב טקסט ולחץ על מקש ENTER"
+
+#: searchform.php:4
+msgid "Search"
+msgstr "חפש"
+
+#: single.php:34
+msgid "Tags: "
+msgstr "תגים:"
+
+#: single.php:36
+msgid "Categorised in: "
+msgstr "מסווג ב:"
+
+#: single.php:38
+msgid "This post was written by "
+msgstr "פוסט זה נכתב על ידי"
+
+#: tag.php:7
+msgid "Tag Archive: "
+msgstr "ארכיון תגים"
