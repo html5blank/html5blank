@@ -38,7 +38,11 @@
 				<!-- /Post title -->
 
 				<!-- post details -->
-				<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
+				<span class="date">
+					<time datetime="<?php the_time('Y-m-d'); ?> <?php the_time('H:i'); ?>">
+						<?php the_date(); ?> <?php the_time(); ?>
+					</time>
+				</span>
 				<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
 				<span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
 				<!-- /post details -->
