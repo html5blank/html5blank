@@ -2,7 +2,7 @@
 	Theme Name: HTML5 Blank
 	Theme URI: http://html5blank.com
 	Description: HTML5 Blank WordPress Theme
-	Version: 1.4.3
+	Version: 1.5.0
 	Author: Todd Motto (@toddmotto)
 	Author URI: http://toddmotto.com
 	Tags: Blank, HTML5, CSS3
@@ -19,55 +19,64 @@
 *,
 *:after,
 *:before {
-	-moz-box-sizing:border-box;
-	box-sizing:border-box;
-	-webkit-font-smoothing:antialiased;
-	font-smoothing:antialiased;
-	text-rendering:optimizeLegibility;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
+
 /* html element 62.5% font-size for REM use */
 html {
-	font-size:62.5%;
+	font-size: 62.5%;
 }
+
 body {
-	font:300 11px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	color:#444;
+	font: 11px / 1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	color: #444;
 }
+
 /* clear */
 .clear:before,
 .clear:after {
-    content:' ';
-    display:table;
+    content: " ";
+    display: table;
 }
 
 .clear:after {
-    clear:both;
+    clear: both;
 }
+
 .clear {
-    *zoom:1;
+    *zoom: 1;
 }
+
 img {
-	max-width:100%;
-	vertical-align:bottom;
+	max-width: 100%;
+	vertical-align: bottom;
 }
+
 a {
-	color:#444;
-	text-decoration:none;
+	color: #444;
+	text-decoration: none;
 }
+
 a:hover {
-	color:#444;
+	color: #444;
 }
+
 a:focus {
-	outline:0;
+	outline: 0;
 }
+
 a:hover,
 a:active {
-	outline:0;
+	outline: 0;
 }
+
 input:focus {
-	outline:0;
-	border:1px solid #04A4CC;
+	outline: 0;
+	border: 1px solid #04A4CC;
 }
+
 
 /*------------------------------------*\
     STRUCTURE
@@ -75,34 +84,41 @@ input:focus {
 
 /* wrapper */
 .wrapper {
-	max-width:1280px;
-	width:95%;
-	margin:0 auto;
-	position:relative;
+	max-width: 1280px;
+	width: 95%;
+	margin: 0 auto;
+	position: relative;
 }
+
 /* header */
 .header {
 
 }
+
 /* logo */
 .logo {
 
 }
+
 .logo-img {
 
 }
+
 /* nav */
 .nav {
 
 }
+
 /* sidebar */
 .sidebar {
 
 }
+
 /* footer */
 .footer {
 
 }
+
 
 /*------------------------------------*\
     PAGES
@@ -121,15 +137,16 @@ input:focus {
 \*------------------------------------*/
 
 @font-face {
-	font-family:'Font-Name';
-	src:url('fonts/font-name.eot');
-	src:url('fonts/font-name.eot?#iefix') format('embedded-opentype'),
-		url('fonts/font-name.woff') format('woff'),
-		url('fonts/font-name.ttf') format('truetype'),
-		url('fonts/font-name.svg#font-name') format('svg');
-    font-weight:normal;
-    font-style:normal;
+	font-family: "Font-Name";
+	src: url("fonts/font-name.eot");
+	src: url("fonts/font-name.eot?#iefix") format("embedded-opentype"),
+		url("fonts/font-name.woff") format("woff"),
+		url("fonts/font-name.ttf") format("truetype"),
+		url("fonts/font-name.svg#font-name") format("svg");
+    font-weight: normal;
+    font-style: normal;
 }
+
 
 /*------------------------------------*\
     RESPONSIVE
@@ -153,101 +170,115 @@ input:focus {
 @media only screen and (min-width:1280px) {
 
 }
+
 @media only screen and (-webkit-min-device-pixel-ratio:1.5),
 	   only screen and (min-resolution:144dpi) {
 
 }
 
+
 /*------------------------------------*\
     MISC
 \*------------------------------------*/
 
-::selection {
-	background:#04A4CC;
-	color:#FFF;
-	text-shadow:none;
-}
-::-webkit-selection {
-	background:#04A4CC;
-	color:#FFF;
-	text-shadow:none;
-}
 ::-moz-selection {
-	background:#04A4CC;
-	color:#FFF;
-	text-shadow:none;
+	background: #04A4CC;
+	color: #FFF;
+	text-shadow: none;
 }
+
+::selection {
+	background: #04A4CC;
+	color: #FFF;
+	text-shadow: none;
+}
+
 
 /*------------------------------------*\
     WORDPRESS CORE
 \*------------------------------------*/
 
 .alignnone {
-	margin:5px 20px 20px 0;
+	margin: 5px 20px 20px 0;
 }
+
 .aligncenter,
 div.aligncenter {
-	display:block;
-	margin:5px auto 5px auto;
+	display: block;
+	margin: 5px auto 5px auto;
 }
+
 .alignright {
-	float:right;
-	margin:5px 0 20px 20px;
+	float: right;
+	margin: 5px 0 20px 20px;
 }
+
 .alignleft {
-	float:left;
-	margin:5px 20px 20px 0;
+	float: left;
+	margin: 5px 20px 20px 0;
 }
+
 a img.alignright {
-	float:right;
-	margin:5px 0 20px 20px;
+	float: right;
+	margin: 5px 0 20px 20px;
 }
+
 a img.alignnone {
-	margin:5px 20px 20px 0;
+	margin: 5px 20px 20px 0;
 }
+
 a img.alignleft {
-	float:left;
-	margin:5px 20px 20px 0;
+	float: left;
+	margin: 5px 20px 20px 0;
 }
+
 a img.aligncenter {
-	display:block;
-	margin-left:auto;
-	margin-right:auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
+
 .wp-caption {
-	background:#FFF;
-	border:1px solid #F0F0F0;
-	max-width:96%;
-	padding:5px 3px 10px;
-	text-align:center;
+	background: #FFF;
+	border: 1px solid #F0F0F0;
+	max-width: 96%;
+	padding: 5px 3px 10px;
+	text-align: center;
 }
+
 .wp-caption.alignnone {
-	margin:5px 20px 20px 0;
+	margin: 5px 20px 20px 0;
 }
+
 .wp-caption.alignleft {
-	margin:5px 20px 20px 0;
+	margin: 5px 20px 20px 0;
 }
+
 .wp-caption.alignright {
-	margin:5px 0 20px 20px;
+	margin: 5px 0 20px 20px;
 }
+
 .wp-caption img {
-	border:0 none;
-	height:auto;
-	margin:0;
-	max-width:98.5%;
-	padding:0;
-	width:auto;
+	border: 0 none;
+	height: auto;
+	margin: 0;
+	max-width: 98.5%;
+	padding: 0;
+	width: auto;
 }
+
 .wp-caption .wp-caption-text,
 .gallery-caption {
-	font-size:11px;
-	line-height:17px;
-	margin:0;
-	padding:0 4px 5px;
+	font-size: 11px;
+	line-height: 17px;
+	margin: 0;
+	padding: 0 4px 5px;
 }
+
 .sticky {
 
 }
+
 .bypostauthor {
 
 }
@@ -258,50 +289,63 @@ a img.aligncenter {
 
 @media print {
 	* {
-		background:transparent !important;
-		color:#000 !important;
-		box-shadow:none !important;
-		text-shadow:none !important;
+		background: transparent !important;
+		color: #000 !important;
+		box-shadow: none !important;
+		text-shadow: none !important;
 	}
+
 	a,
 	a:visited {
-		text-decoration:underline;
+		text-decoration: underline;
 	}
+
 	a[href]:after {
-		content:" (" attr(href) ")";
+		content: " (" attr(href) ")";
 	}
+
 	abbr[title]:after {
-		content:" (" attr(title) ")";
+		content: " (" attr(title) ")";
 	}
+
 	.ir a:after,
 	a[href^="javascript:"]:after,
 	a[href^="#"]:after {
-		content:"";
+		content: "";
 	}
-	pre,blockquote {
-		border:1px solid #999;
-		page-break-inside:avoid;
+
+	pre,
+	blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
 	}
+
 	thead {
-		display:table-header-group;
+		display: table-header-group;
 	}
-	tr,img {
-		page-break-inside:avoid;
-	}
+
+	tr,
 	img {
-		max-width:100% !important;
+		page-break-inside: avoid;
 	}
+
+	img {
+		max-width: 100% !important;
+	}
+
 	@page {
-		margin:0.5cm;
+		margin: 0.5cm;
 	}
+
 	p,
 	h2,
 	h3 {
-		orphans:3;
-		widows:3;
+		orphans: 3;
+		widows: 3;
 	}
+
 	h2,
 	h3 {
-		page-break-after:avoid;
+		page-break-after: avoid;
 	}
 }
