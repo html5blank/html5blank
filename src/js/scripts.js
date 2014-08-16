@@ -1,11 +1,8 @@
-(function ($, root, undefined) {
-	
+(function( root, $, undefined ) {
+	"use strict";
+
 	$(function () {
-		
-		'use strict';
-		
 		// DOM ready, take it away
-		
 	});
-	
-})(jQuery, this);
+
+} ( this, jQuery ));
