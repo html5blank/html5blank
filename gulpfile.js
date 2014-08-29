@@ -27,14 +27,14 @@ var libs = 'library';
 //========================================================================== //
 
 // WATCH PATH
-var jsWatch = 'library/js/**/*.js';
+var jsWatch = 'js/**/*.js';
 // GENERAL PATH
-var jsPath = 'library/js';
+var jsPath = 'js';
 // MINIFY PATHS
-var jsMinSrc = 'library/js/min/scripts.min.js';
-var jsMinDest = 'library/js/min';
+var jsMinSrc = 'js/min/scripts.min.js';
+var jsMinDest = 'js/min';
 // CONCAT PATHS
-var jsConcatSrc =  'library/js/*.js';
+var jsConcatSrc =  'js/*.js';
 var jsConcatDest = 'scripts.min.js';
 
 // ==========================================================================//
@@ -42,15 +42,15 @@ var jsConcatDest = 'scripts.min.js';
 //========================================================================== //
 
 // WATCH PATH
-var sassWatch = 'library/scss/**/*.scss';
+var sassWatch = 'sass/**/*.scss';
 // SASS COMPILE
-var sassCompile = 'library/scss/*.scss'
+var sassCompile = 'sass/*.scss'
 //SASS PATH
-var sassPath = 'library/scss';
+var sassPath = 'sass';
 // CSS PATH
-var cssPath = 'library/css';
+var cssPath = 'css';
 // CONFIG.RB PATH
-var configPath = 'library/scss/config.rb';
+var configPath = 'sass/config.rb';
 
 
 // ==========================================================================//
@@ -65,8 +65,8 @@ var phpSrc = '**/*.php';
 //    1.5 --- IMAGE PATHS                                                    //
 //========================================================================== //
 
-var imgRawPath = 'library/img';
-var imgPath = 'library/img';
+var imgRawPath = 'img';
+var imgPath = 'img';
 
 // ==========================================================================//
 //    1.6 --- PLUGIN SETTINGS                                                //

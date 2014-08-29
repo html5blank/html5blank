@@ -11,14 +11,16 @@
 	License URI: http://opensource.org/licenses/mit-license.php
 */
 
-@import "sass/style";
+@import "css/style.css";
 
 
 
 /*
 DO NOT EDIT THESE!
+
 They only serve to keep theme check happy!
- */
+
+*/
 
 .sticky {}
 .gallery-caption {}
