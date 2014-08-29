@@ -40,6 +40,7 @@
   "devDependencies": {
     "gulp": "^3.6.0",
     "gulp-autoprefixer": "^0.0.7",
+    "gulp-concat": "^2.3.4",
     "gulp-jshint": "^1.8.4",
     "gulp-livereload": "^1.2.0",
     "gulp-load-plugins": "^0.5.0",
