@@ -27,9 +27,9 @@ gulp.task( "jshint", function () {
 gulp.task( "jsconcat", function () {
    /** Combine all `js` files exclude those in the `min` folder */
     return gulp.src ("src/js/{!(min)/*.js,*.js}")
-        .pipe($.concat("src/js/{!(min)/*.js,*.js}"))
+        .pipe($.concat('scripts.min.js'))
         .pipe($.uglify())
-        .pipe($.gulp.dest("src/js/min/scripts.js"))
+        .pipe(gulp.dest("src/js/min"))
 });
 
 /** Livereload */
