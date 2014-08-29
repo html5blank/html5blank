@@ -23,6 +23,15 @@ gulp.task( "jshint", function () {
 		.pipe($.jshint.reporter( "fail" ));
 });
 
+/** JSConcat */
+gulp.task( "jsconcat", function () {
+   /** Combine all `js` files exclude those in the `min` folder */
+    return gulp.src ("src/js/{!(min)/*.js,*.js}")
+        .pipe($.concat("src/js/{!(min)/*.js,*.js}"))
+        .pipe($.uglify())
+        .pipe($.gulp.dest("src/js/min/scripts.js"))
+});
+
 /** Livereload */
 gulp.task( "watch", [ "styles" ], function() {
 	var server = $.livereload();
