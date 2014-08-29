@@ -1,6 +1,6 @@
 {
   "name": "Html5-Blank",
-  "version": "0.0.0",
+  "version": "1.4.3",
   "description": "Powerful shell for rapidly deploying your WordPress projects.",
   "main": "gulpfile.js",
   "dependencies": {
@@ -18,6 +18,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "license": "MIT"
 }

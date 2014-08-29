@@ -2,10 +2,11 @@
 @import 'compass';
 
 // Importing base Html5-blank styles
-@import "partials/_normalize";
-@import "partials/_reset";
+@import "partials/normalize";
+@import "partials/reset";
 
 // Write your styles here!
+
 body {
-  background-color: pink;  
+  background-color: pink;
 }
