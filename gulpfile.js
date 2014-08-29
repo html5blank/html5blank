@@ -8,10 +8,8 @@ var uglify = require('gulp-uglify');
 var compass = require('gulp-compass');
 var plumber = require('gulp-plumber');
 var concat = require('gulp-concat');
-var livereload = require('gulp-livereload');
 var stylish = require('jshint-stylish');
 var jshint = require('gulp-jshint');
-var connect = require('gulp-connect');
 var changed = require('gulp-changed');
 
 
@@ -87,8 +85,6 @@ var compassSettings = {
 gulp.task('watch', function(){
     gulp.watch(jsWatch, [ 'js-lint', 'js-process']);
     gulp.watch(sassWatch, ['sass']);
-    gulp.watch(htmlSrc, ['html-reload']);
-    gulp.watch(phpSrc, ['php-reload']);
 });
 
 // ==========================================================================//
@@ -125,33 +121,6 @@ gulp.task('sass', function() {
         .pipe(changed(sassWatch))
         .pipe(compass(compassSettings))
         .pipe(gulp.dest(cssPath))
-        .pipe(livereload())
-});
-
-
-// ==========================================================================//
-//    0.1 --- HTML AND PHP RELOAD                                            //
-//========================================================================== //
-
-gulp.task('html-reload', function(){
-    return gulp.src(htmlSrc)
-        .pipe(changed(htmlSrc))
-        .pipe(livereload())
-});
-
-gulp.task('php-reload', function(){
-    return gulp.src(phpSrc)
-        .pipe(changed(phpSrc))
-        .pipe(livereload())
-});
-
-
-// ==========================================================================//
-//    3.0 --- CONNECT SERVER                                                 //
-//========================================================================== //
-
-gulp.task('connect', function() {
-  connect.server();
 });
 
 // ==========================================================================//
@@ -160,5 +129,4 @@ gulp.task('connect', function() {
 
 gulp.task('default', ['sass', 'js-lint', 'js-process', 'watch'] );
 gulp.task('js-debug', ['js-lint'] );
-gulp.task('serve', ['connect', 'sass', 'js-lint', 'js-process', 'watch'] );
 gulp.task('production', ['sass', 'js-process']);

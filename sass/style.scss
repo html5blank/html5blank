@@ -1,2 +1,11 @@
+// Importing Compass for gulp-compass
+@import 'compass';
+
+// Importing base Html5-blank styles
 @import "partials/_normalize";
 @import "partials/_reset";
+
+// Write your styles here!
+body {
+  background-color: pink;  
+}
