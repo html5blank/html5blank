@@ -11,6 +11,7 @@ var concat = require('gulp-concat');
 var stylish = require('jshint-stylish');
 var jshint = require('gulp-jshint');
 var changed = require('gulp-changed');
+var livereload = require('gulp-livereload');
 
 // ==========================================================================//
 //    1.2 --- JAVASCRIPT PATHS                                               //
@@ -77,7 +78,7 @@ var compassSettings = {
 
 //WATCH
 gulp.task('watch', function(){
-    gulp.watch(jsWatch, [ 'js-lint', 'js-process']);
+    gulp.watch(jsWatch, [ 'js-lint', 'js-process',]);
     gulp.watch(sassWatch, ['sass']);
 });
 
@@ -102,6 +103,7 @@ gulp.task('js-process', function() {
         .pipe(concat(jsConcatDest))
         .pipe(uglify())
         .pipe(gulp.dest(jsMinDest))
+        .pipe(livereload())
 });
 
 // ==========================================================================//
@@ -115,6 +117,8 @@ gulp.task('sass', function() {
         .pipe(changed(sassWatch))
         .pipe(compass(compassSettings))
         .pipe(gulp.dest(cssPath))
+        .pipe(livereload())
+
 });
 
 // ==========================================================================//
