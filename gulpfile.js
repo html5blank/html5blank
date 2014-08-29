@@ -8,10 +8,19 @@ var gulp = require( "gulp" ),
 gulp.task( "styles", function() {
 	return gulp.src( "src/css/style.css" )
 		.pipe( $.autoprefixer( "last 2 version" ) )
-        .on( "error", function( e ) {
-            console.error( e );
-        })
+		.on( "error", function( e ) {
+			console.error( e );
+		})
 		.pipe( gulp.dest( "src" ) );
+});
+
+/** JSHint */
+gulp.task( "jshint", function () {
+	/** Test all `js` files exclude those in the `lib` folder */
+	return gulp.src( "src/js/{!(lib)/*.js,*.js}" )
+		.pipe($.jshint())
+		.pipe($.jshint.reporter( "jshint-stylish" ))
+		.pipe($.jshint.reporter( "fail" ));
 });
 
 /** Livereload */
