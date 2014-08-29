@@ -1,0 +1,25 @@
+{
+  "name": "GulpBoilderplate",
+  "version": "0.0.0",
+  "description": "A generic gulp template",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.8.6"
+  },
+  "devDependencies": {
+    "gulp-changed": "^0.4.1",
+    "gulp-compass": "^1.1.9",
+    "gulp-concat": "^2.3.4",
+    "gulp-connect": "^2.0.6",
+    "gulp-jshint": "^1.8.0",
+    "gulp-livereload": "^2.1.0",
+    "gulp-plumber": "^0.6.4",
+    "gulp-uglify": "^0.3.1",
+    "jshint-stylish": "^0.4.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
