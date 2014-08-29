@@ -34,7 +34,7 @@ var jsPath = 'js';
 var jsMinSrc = 'js/min/scripts.min.js';
 var jsMinDest = 'js/min';
 // CONCAT PATHS
-var jsConcatSrc =  'js/*.js';
+var jsConcatSrc =  'js/*/*.js';
 var jsConcatDest = 'scripts.min.js';
 
 // ==========================================================================//
