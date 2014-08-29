@@ -32,8 +32,11 @@ var jsPath = 'js';
 var jsMinSrc = 'js/min/scripts.min.js';
 var jsMinDest = 'js/min';
 // CONCAT PATHS
-var jsConcatSrc =  'js/*/*.js';
+var jsConcatSrc =  'js/*.js';
 var jsConcatDest = 'scripts.min.js';
+// LINT SOURCE
+var jsLintSrc = 'js/scripts.js';
+
 
 // ==========================================================================//
 //    1.3 --- SASS/CSS PATHS                                                 //
@@ -94,7 +97,8 @@ gulp.task('watch', function(){
 
 //LINT JS
 gulp.task('js-lint', function() {
-    gulp.src(jsConcatSrc)
+    gulp.src(jsLintSrc)
+        .pipe(plumber())
         .pipe(changed(jsConcatSrc))
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish'))
