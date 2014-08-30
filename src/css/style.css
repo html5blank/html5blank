@@ -1,18 +1,5 @@
-/*
-	Theme Name: HTML5 Blank
-	Theme URI: http://html5blank.com
-	Description: HTML5 Blank WordPress Theme
-	Version: 1.5.0
-	Author: Todd Motto (@toddmotto)
-	Author URI: http://toddmotto.com
-	Tags: Blank, HTML5, CSS3
-
-	License: MIT
-	License URI: http://opensource.org/licenses/mit-license.php
-*/
-
 /*------------------------------------*\
-    MAIN
+	MAIN
 \*------------------------------------*/
 
 /* global box-sizing */
@@ -36,16 +23,16 @@ body {
 /* clear */
 .clear:before,
 .clear:after {
-    content: " ";
-    display: table;
+	content: " ";
+	display: table;
 }
 
 .clear:after {
-    clear: both;
+	clear: both;
 }
 
 .clear {
-    *zoom: 1;
+	*zoom: 1;
 }
 
 img {
@@ -78,7 +65,7 @@ input:focus {
 
 
 /*------------------------------------*\
-    STRUCTURE
+	STRUCTURE
 \*------------------------------------*/
 
 /* wrapper */
@@ -120,13 +107,13 @@ input:focus {
 
 
 /*------------------------------------*\
-    PAGES
+	PAGES
 \*------------------------------------*/
 
 
 
 /*------------------------------------*\
-    IMAGES
+	IMAGES
 \*------------------------------------*/
 
 
@@ -142,13 +129,13 @@ input:focus {
 		url("fonts/font-name.woff") format("woff"),
 		url("fonts/font-name.ttf") format("truetype"),
 		url("fonts/font-name.svg#font-name") format("svg");
-    font-weight: normal;
-    font-style: normal;
+	font-weight: normal;
+	font-style: normal;
 }
 
 
 /*------------------------------------*\
-    RESPONSIVE
+	RESPONSIVE
 \*------------------------------------*/
 
 @media only screen and (min-width:320px) {
@@ -177,7 +164,7 @@ input:focus {
 
 
 /*------------------------------------*\
-    MISC
+	MISC
 \*------------------------------------*/
 
 ::selection {
@@ -188,7 +175,7 @@ input:focus {
 
 
 /*------------------------------------*\
-    WORDPRESS CORE
+	WORDPRESS CORE
 \*------------------------------------*/
 
 .alignnone {
@@ -277,7 +264,7 @@ a img.aligncenter {
 }
 
 /*------------------------------------*\
-    PRINT
+	PRINT
 \*------------------------------------*/
 
 @media print {
