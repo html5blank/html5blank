@@ -10,7 +10,12 @@ Powerful shell for rapidly deploying your WordPress projects.
 
 ## Getting Started with HTML5 Blank
 
-Download the latest version from [html5blank.com](http://html5blank.com)
+* Download the latest version from [html5blank.com](http://html5blank.com)
+* Uncompress to the wordpress themes folder
+* In CLI, call: `npm install` and then `bower install` (you'll need gulp install as well)
+* `gulp watch` will enable `livereload` and development version
+* `gulp build` for distribute version with minified `js` and `css` files
+
 
 ## Get involved! Make HTML5 Blank better
 
