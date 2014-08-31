@@ -42,8 +42,21 @@ gulp.task( "copy", function() {
 		.pipe( gulp.dest( "dist" ) );
 });
 
-/** CSS and preprocessors - DEV */
-gulp.task( "stylesDev", function() {
+/** CSS Preprocessors */
+gulp.task( "sass", function () {
+	return gulp.src( "src/css/sass/style.scss" )
+		.pipe( $.rubySass({
+			style: "expanded",
+			precision: 10
+		}))
+		.on( "error", function( e ) {
+			console.error( e );
+		})
+		.pipe( gulp.dest( "src/css" ) );
+});
+
+/** CSS - DEV */
+gulp.task( "stylesDev", [ "sass" ], function() {
 	return gulp.src([
 			"src/css/banner.css",
 			"src/css/style.css"
@@ -56,7 +69,7 @@ gulp.task( "stylesDev", function() {
 		.pipe( gulp.dest( "src" ) );
 });
 
-/** CSS and preprocessors - PRODUCTION */
+/** CSS - PRODUCTION */
 gulp.task( "stylesProduction", function() {
 	return gulp.src( cssminSrc )
 		.pipe( $.concat( "style.css" ))
@@ -107,14 +120,17 @@ gulp.task( "watch", [ "templateDev", "stylesDev", "jshint" ], function() {
 	gulp.watch([
 		"src/js/**/*.js",
 		"src/*.php",
-		"src/*.css",
+		"src/*.css"
 	]).on( "change", function( file ) {
 		console.log( file.path );
 		server.changed( file.path );
 	});
 
 	/** Watch for autoprefix */
-	gulp.watch( "src/css/*.css", [ "stylesDev" ] );
+	gulp.watch( [
+		"src/css/*.css",
+		"src/css/sass/**/*.scss"
+	], [ "stylesDev" ] );
 
 	/** Watch for JSHint */
 	gulp.watch( "src/js/{!(lib)/*.js,*.js}", ["jshint"] );
@@ -124,6 +140,7 @@ gulp.task( "watch", [ "templateDev", "stylesDev", "jshint" ], function() {
 gulp.task( "build", [
 	"clean",
 	"templateProduction",
+	"sass",
 	"stylesProduction",
 	"jshint",
 	"copy",

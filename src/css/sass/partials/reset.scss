@@ -1,0 +1,61 @@
+/**
+ * partials/reset
+ * ---
+ * Reset file
+ * NOTE: also `normalize.css` is used
+ */
+
+
+// Global box-sizing
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+html {
+  // `font-size` for REM use
+  font-size: 62.5%;
+  // Cancel hightlight color when tapping in iOS
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-color;
+  background-color: $body-bg;
+}
+
+img {
+  // Don't allow <IMG> to be larger then its container
+  max-width: 100%;
+  // Omit space caused by default style, between images lines
+  vertical-align: middle;
+}
+
+a {
+  color: $text-color;
+  text-decoration: none;
+
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {}
+}
+
+input[type="text"],
+input[type="search"] {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+// Text selection
+::selection {
+  background-color: $selection-bg;
+  color: $body-bg;
+  text-shadow: none;
+}

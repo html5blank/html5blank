@@ -1,351 +1,280 @@
+/*!
+ * Theme Name: HTML5 Blank
+ * Theme URI: http://html5blank.com
+ * Description: HTML5 Blank WordPress Theme
+ * Version: 1.5.0
+ * Author: Todd Motto (@toddmotto)
+ * Author URI: http://toddmotto.com
+ * Tags: Blank, HTML5, CSS3
+ *
+ * License: MIT
+ * License URI: http://opensource.org/licenses/mit-license.php
+ */
+/**
+ * styles.scss
+ * ---
+ * Main `sass` file. Import here `sass` files
+ */
+/**
+ * modules/variables
+ * ---
+ */
+/**
+ * Typography
+ */
+/**
+ * Colors
+ */
+/**
+ * Grid
+ */
+/**
+ * modules/mixins
+ * ---
+ */
+/**
+ * modules/fonts
+ * ---
+ * Declare fonts here
+ */
 /*
-	Theme Name: HTML5 Blank
-	Theme URI: http://html5blank.com
-	Description: HTML5 Blank WordPress Theme
-	Version: 1.5.0
-	Author: Todd Motto (@toddmotto)
-	Author URI: http://toddmotto.com
-	Tags: Blank, HTML5, CSS3
-
-	License: MIT
-	License URI: http://opensource.org/licenses/mit-license.php
+@font-face {
+  font-family: "Font-Name";
+  src: url("fonts/font-name.eot");
+  src: url("fonts/font-name.eot?#iefix") format("embedded-opentype"),
+    url("fonts/font-name.woff") format("woff"),
+    url("fonts/font-name.ttf") format("truetype"),
+    url("fonts/font-name.svg#font-name") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 */
-
-/*------------------------------------*\
-    MAIN
-\*------------------------------------*/
-
-/* global box-sizing */
+/**
+ * partials/reset
+ * ---
+ * Reset file
+ * NOTE: also `normalize.css` is used
+ */
 *,
 *:after,
 *:before {
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-/* html element 62.5% font-size for REM use */
 html {
-	font-size: 62.5%;
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
-	font: 11px / 1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight: 300;
-	color: #444;
-}
-
-/* clear */
-.clear:before,
-.clear:after {
-    content: " ";
-    display: table;
-}
-
-.clear:after {
-    clear: both;
-}
-
-.clear {
-    *zoom: 1;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Open Sans", sans-serif;
+  font-size: 140%;
+  line-height: 1.5;
+  color: #444444;
+  background-color: white;
 }
 
 img {
-	max-width: 100%;
-	vertical-align: bottom;
+  max-width: 100%;
+  vertical-align: middle;
 }
 
 a {
-	color: #444;
-	text-decoration: none;
+  color: #444444;
+  text-decoration: none;
+}
+a:focus, a:hover {
+  text-decoration: underline;
 }
 
-a:hover {
-	color: #444;
+input[type="text"],
+input[type="search"] {
+  font-size: inherit;
+  line-height: inherit;
 }
-
-a:focus {
-	outline: 0;
-}
-
-a:hover,
-a:active {
-	outline: 0;
-}
-
-input:focus {
-	outline: 0;
-	border: 1px solid #04A4CC;
-}
-
-
-/*------------------------------------*\
-    STRUCTURE
-\*------------------------------------*/
-
-/* wrapper */
-.wrapper {
-	max-width: 1280px;
-	width: 95%;
-	margin: 0 auto;
-	position: relative;
-}
-
-/* header */
-.header {
-
-}
-
-/* logo */
-.logo {
-
-}
-
-.logo-img {
-
-}
-
-/* nav */
-.nav {
-
-}
-
-/* sidebar */
-.sidebar {
-
-}
-
-/* footer */
-.footer {
-
-}
-
-
-/*------------------------------------*\
-    PAGES
-\*------------------------------------*/
-
-
-
-/*------------------------------------*\
-    IMAGES
-\*------------------------------------*/
-
-
-
-/*------------------------------------*\
-	TYPOGRAPHY
-\*------------------------------------*/
-
-@font-face {
-	font-family: "Font-Name";
-	src: url("fonts/font-name.eot");
-	src: url("fonts/font-name.eot?#iefix") format("embedded-opentype"),
-		url("fonts/font-name.woff") format("woff"),
-		url("fonts/font-name.ttf") format("truetype"),
-		url("fonts/font-name.svg#font-name") format("svg");
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-/*------------------------------------*\
-    RESPONSIVE
-\*------------------------------------*/
-
-@media only screen and (min-width:320px) {
-
-}
-@media only screen and (min-width:480px) {
-
-}
-@media only screen and (min-width:768px) {
-
-}
-@media only screen and (min-width:1024px) {
-
-}
-@media only screen and (min-width:1140px) {
-
-}
-@media only screen and (min-width:1280px) {
-
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio:1.5),
-	   only screen and (min-resolution:144dpi) {
-
-}
-
-
-/*------------------------------------*\
-    MISC
-\*------------------------------------*/
 
 ::-moz-selection {
-	background: #04A4CC;
-	color: #FFF;
-	text-shadow: none;
+  background-color: #04a4cc;
+  color: white;
+  text-shadow: none;
 }
 
 ::selection {
-	background: #04A4CC;
-	color: #FFF;
-	text-shadow: none;
+  background-color: #04a4cc;
+  color: white;
+  text-shadow: none;
 }
 
-
-/*------------------------------------*\
-    WORDPRESS CORE
-\*------------------------------------*/
-
+/**
+ * partials/wordpress
+ * ---
+ * Wordpess core classes
+ */
+/**
+ * Alignment
+ */
 .alignnone {
-	margin: 5px 20px 20px 0;
+  margin: 5px 15px 15px 0;
 }
 
-.aligncenter,
-div.aligncenter {
-	display: block;
-	margin: 5px auto 5px auto;
+.aligncenter {
+  display: block;
+  margin: 5px auto;
 }
 
 .alignright {
-	float: right;
-	margin: 5px 0 20px 20px;
+  float: right;
+  margin: 5px 0 20px 20px;
+  margin: 5px 0 15px 15px;
 }
 
 .alignleft {
-	float: left;
-	margin: 5px 20px 20px 0;
+  float: left;
+  margin: 5px 15px 15px 0;
 }
 
-a img.alignright {
-	float: right;
-	margin: 5px 0 20px 20px;
-}
-
-a img.alignnone {
-	margin: 5px 20px 20px 0;
-}
-
-a img.alignleft {
-	float: left;
-	margin: 5px 20px 20px 0;
-}
-
-a img.aligncenter {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
+/**
+ * Gallery & images
+ */
 .wp-caption {
-	background: #FFF;
-	border: 1px solid #F0F0F0;
-	max-width: 96%;
-	padding: 5px 3px 10px;
-	text-align: center;
+  background: white;
+  border: thin solid #F0F0F0;
+  max-width: 95%;
+  padding: 5px 5px;
+  text-align: center;
 }
-
-.wp-caption.alignnone {
-	margin: 5px 20px 20px 0;
-}
-
-.wp-caption.alignleft {
-	margin: 5px 20px 20px 0;
-}
-
-.wp-caption.alignright {
-	margin: 5px 0 20px 20px;
-}
-
 .wp-caption img {
-	border: 0 none;
-	height: auto;
-	margin: 0;
-	max-width: 98.5%;
-	padding: 0;
-	width: auto;
+  width: auto;
+  max-width: 98.5%;
+  height: auto;
+  border: 0 none;
+  padding: 0;
+  margin: 0;
 }
 
 .wp-caption .wp-caption-text,
 .gallery-caption {
-	font-size: 11px;
-	line-height: 17px;
-	margin: 0;
-	padding: 0 4px 5px;
+  margin: 0;
+  padding: 0 5px 5px;
+  font-size: 140%;
+  line-height: 1.5;
 }
 
-.sticky {
-
+/**
+ * partials/utils
+ * ---
+ * Utils classes
+ */
+.clear:before, .clear:after {
+  content: " ";
+  display: table;
+}
+.clear:after {
+  clear: both;
 }
 
-.bypostauthor {
-
+.reset-box {
+  padding: 0;
+  margin: 0;
 }
 
-/*------------------------------------*\
-    PRINT
-\*------------------------------------*/
+/**
+ * partials/wrapper
+ * ---
+ */
+.wrapper {
+  max-width: 1280px;
+  padding: 0 15px;
+  margin: 0 auto;
+  position: relative;
+}
 
+/**
+ * partial/header
+ * ---
+ */
+/**
+ * partials/nav
+ * ---
+ * Menus
+ */
+/**
+ * partials/sidebar
+ * ---
+ */
+/**
+ * partials/footer
+ * ---
+ */
+/**
+ * partials/print
+ * ---
+ * Print version
+ * (from https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css)
+ */
 @media print {
-	* {
-		background: transparent !important;
-		color: #000 !important;
-		box-shadow: none !important;
-		text-shadow: none !important;
-	}
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
 
-	a,
-	a:visited {
-		text-decoration: underline;
-	}
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
 
-	a[href]:after {
-		content: " (" attr(href) ")";
-	}
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
 
-	abbr[title]:after {
-		content: " (" attr(title) ")";
-	}
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
 
-	.ir a:after,
-	a[href^="javascript:"]:after,
-	a[href^="#"]:after {
-		content: "";
-	}
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
 
-	pre,
-	blockquote {
-		border: 1px solid #999;
-		page-break-inside: avoid;
-	}
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
 
-	thead {
-		display: table-header-group;
-	}
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */
+  }
 
-	tr,
-	img {
-		page-break-inside: avoid;
-	}
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
 
-	img {
-		max-width: 100% !important;
-	}
+  img {
+    max-width: 100% !important;
+  }
 
-	@page {
-		margin: 0.5cm;
-	}
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
 
-	p,
-	h2,
-	h3 {
-		orphans: 3;
-		widows: 3;
-	}
-
-	h2,
-	h3 {
-		page-break-after: avoid;
-	}
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 }
