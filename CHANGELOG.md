@@ -1,10 +1,13 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
-## 1.5.0 (...)
+## 1.5.0 (10 September, 2014)
 
 * Dates are configure from admin and more semantic
 * Starting using Gulp
 * Starting using Bower
+* Starting using SCSS
+* Now you can build `dev` and `production` version
+* Now you can automaticly minify your code
 
 ## 1.4.3 (02 December, 2013)
 
