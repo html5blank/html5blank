@@ -1,5 +1,11 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## 1.5.0 (...)
+
+* Dates are configure from admin and more semantic
+* Starting using Gulp
+* Starting using Bower
+
 ## 1.4.3 (02 December, 2013)
 
 * Update [conditionizr](http://conditionizr.com) to version 4.0.0

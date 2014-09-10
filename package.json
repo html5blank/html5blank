@@ -1,0 +1,135 @@
+{
+  "name": "HTML5Blank",
+  "description": "Powerful shell for rapidly deploying your WordPress projects",
+  "license": "MIT",
+  "version": "1.5.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toddmotto/html5blank.git"
+  },
+  "author": "Todd Motto",
+  "contributors": [
+    {
+      "name": "toddmotto",
+      "url": "https://github.com/toddmotto"
+    },
+    {
+      "name": "J-Rabe",
+      "url": "https://github.com/J-Rabe"
+    },
+    {
+      "name": "scottaohara",
+      "url": "https://github.com/scottaohara"
+    },
+    {
+      "name": "Munnday",
+      "url": "https://github.com/Munnday"
+    },
+    {
+      "name": "FreDeRoover",
+      "url": "https://github.com/FreDeRoover"
+    },
+    {
+      "name": "beat84",
+      "url": "https://github.com/beat84"
+    },
+    {
+      "name": "floq-design",
+      "url": "https://github.com/floq-design"
+    },
+    {
+      "name": "georgestephanis",
+      "url": "https://github.com/georgestephanis"
+    },
+    {
+      "name": "oriSomething",
+      "url": "https://github.com/oriSomething"
+    },
+    {
+      "name": "itsduc",
+      "url": "https://github.com/itsduc"
+    },
+    {
+      "name": "alorence",
+      "url": "https://github.com/alorence"
+    },
+    {
+      "name": "elkebirmed",
+      "url": "https://github.com/elkebirmed"
+    },
+    {
+      "name": "lregla",
+      "url": "https://github.com/lregla"
+    },
+    {
+      "name": "staceycordoni",
+      "url": "https://github.com/staceycordoni"
+    },
+    {
+      "name": "cle-ment",
+      "url": "https://github.com/cle-ment"
+    },
+    {
+      "name": "fxbenard",
+      "url": "https://github.com/fxbenard"
+    },
+    {
+      "name": "CoeusCC",
+      "url": "https://github.com/CoeusCC"
+    },
+    {
+      "name": "ssteinerx",
+      "url": "https://github.com/ssteinerx"
+    },
+    {
+      "name": "matchboxhq",
+      "url": "https://github.com/matchboxhq"
+    },
+    {
+      "name": "chrisdl",
+      "url": "https://github.com/chrisdl"
+    },
+    {
+      "name": "toxicdog",
+      "url": "https://github.com/toxicdog"
+    },
+    {
+      "name": "grischka",
+      "url": "https://github.com/grischka"
+    },
+    {
+      "name": "fanuneza",
+      "url": "https://github.com/fanuneza"
+    },
+    {
+      "name": "anthonycreek",
+      "url": "https://github.com/anthonycreek"
+    },
+    {
+      "name": "Grsmto",
+      "url": "https://github.com/Grsmto"
+    },
+    {
+      "name": "weslleih",
+      "url": "https://github.com/weslleih"
+    }
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "del": "^0.1.2",
+    "gulp": "^3.6.0",
+    "gulp-autoprefixer": "^0.0.7",
+    "gulp-concat": "^2.3.4",
+    "gulp-csso": "^0.2.9",
+    "gulp-jshint": "^1.8.4",
+    "gulp-livereload": "^1.2.0",
+    "gulp-load-plugins": "^0.5.0",
+    "gulp-ruby-sass": "^0.7.1",
+    "gulp-template": "^1.0.0",
+    "gulp-uglify": "^1.0.0",
+    "jshint-stylish": "^0.4.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}

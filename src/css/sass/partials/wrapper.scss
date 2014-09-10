@@ -1,0 +1,12 @@
+/**
+ * partials/wrapper
+ * ---
+ */
+
+
+.wrapper {
+  max-width: $wrapper-width;
+  padding: 0 $margin-horizontal-large;
+  margin: 0 auto;
+  position: relative;
+}
