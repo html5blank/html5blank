@@ -1,4 +1,5 @@
 /* jshint node: true */
+/* global $: true */
 "use strict";
 
 var gulp = require( "gulp" ),
@@ -15,15 +16,23 @@ var gulp = require( "gulp" ),
 		/** Page scripts */
 		"src/js/scripts.js"
 	],
-	/** @type {Array} CSS source files to concatenate and minify */
-	cssminSrc = [
-		/** The banner of `style.css` */
-		"src/css/banner.css",
-		/** Normalize */
-		"src/bower_components/normalize.css/normalize.css",
-		/** Theme style */
-		"src/css/style.css"
-	],
+	/** @type {Object of Array} CSS source files to concatenate and minify */
+	cssminSrc = {
+		development: [
+			/** The banner of `style.css` */
+			"src/css/banner.css",
+			/** Theme style */
+			"src/css/style.css"
+		],
+		production: [
+			/** The banner of `style.css` */
+			"src/css/banner.css",
+			/** Normalize */
+			"src/bower_components/normalize.css/normalize.css",
+			/** Theme style */
+			"src/css/style.css"
+		]
+	},
 	/** @type {String} Used inside task for set the mode to 'development' or 'production' */
 	env = (function() {
 		/** @type {String} Default value of env */
@@ -74,27 +83,19 @@ gulp.task( "sass", function () {
 		.pipe( gulp.dest( "src/css" ) );
 });
 
-/** CSS - DEV */
-gulp.task( "stylesDev", [ "sass" ], function() {
-	return gulp.src([
-			"src/css/banner.css",
-			"src/css/style.css"
-		])
-		.pipe( $.concat( "style.css" ))
-		.pipe( $.autoprefixer( "last 2 version" ) )
-		.on( "error", function( e ) {
-			console.error( e );
-		})
-		.pipe( gulp.dest( "src" ) );
-});
+/** STYLES */
+gulp.task( "styles", [ "sass" ], function() {
+	console.log( "`styles` task run in `" + env + "` environment" );
 
-/** CSS - PRODUCTION */
-gulp.task( "stylesProduction", function() {
-	return gulp.src( cssminSrc )
+	var stream = gulp.src( cssminSrc[ env ] )
 		.pipe( $.concat( "style.css" ))
-		.pipe( $.autoprefixer( "last 2 version" ) )
-		.pipe( $.csso() )
-		.on( "error", function( e ) {
+		.pipe( $.autoprefixer( "last 2 version" ) );
+
+	if ( env === "production" ) {
+		stream = stream.pipe( $.csso() );
+	}
+
+	return stream.on( "error", function( e ) {
 			console.error( e );
 		})
 		.pipe( gulp.dest( "src" ) );
@@ -111,6 +112,8 @@ gulp.task( "jshint", function () {
 
 /** Templates */
 gulp.task( "template", function() {
+	console.log( "`template` task run in `" + env + "` environment" );
+
     var is_debug = ( env === "production" ? "false" : "true" );
 
     return gulp.src( "src/dev-templates/is-debug.php" )
@@ -132,7 +135,7 @@ gulp.task( "envProduction", function() {
 });
 
 /** Livereload */
-gulp.task( "watch", [ "template", "stylesDev", "jshint" ], function() {
+gulp.task( "watch", [ "template", "styles", "jshint" ], function() {
 	var server = $.livereload();
 
 	/** Watch for livereoad */
@@ -149,7 +152,7 @@ gulp.task( "watch", [ "template", "stylesDev", "jshint" ], function() {
 	gulp.watch( [
 		"src/css/*.css",
 		"src/css/sass/**/*.scss"
-	], [ "stylesDev" ] );
+	], [ "styles" ] );
 
 	/** Watch for JSHint */
 	gulp.watch( "src/js/{!(lib)/*.js,*.js}", ["jshint"] );
@@ -160,8 +163,7 @@ gulp.task( "build", [
 	"envProduction",
 	"clean",
 	"template",
-	"sass",
-	"stylesProduction",
+	"styles",
 	"jshint",
 	"copy",
 	"uglify"
