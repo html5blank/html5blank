@@ -109,18 +109,13 @@ gulp.task( "jshint", function () {
 		.pipe( $.jshint.reporter( "fail" ) );
 });
 
-/** Templates - DEV */
-gulp.task( "templateDev", function() {
-	return gulp.src( "src/dev-templates/is-debug.php" )
-		.pipe( $.template({ is_debug: "true" }) )
-		.pipe( gulp.dest( "src/modules" ) );
-});
+/** Templates */
+gulp.task( "template", function() {
+    var is_debug = ( env === "production" ? "false" : "true" );
 
-/** Templates - PRODUCTION */
-gulp.task( "templateProduction", function() {
-	return gulp.src( "src/dev-templates/is-debug.php" )
-		.pipe( $.template({ is_debug: "false" }) )
-		.pipe( gulp.dest( "src/modules" ) );
+    return gulp.src( "src/dev-templates/is-debug.php" )
+        .pipe( $.template({ is_debug: is_debug }) )
+        .pipe( gulp.dest( "src/modules" ) );
 });
 
 /** Uglify */
@@ -137,7 +132,7 @@ gulp.task( "envProduction", function() {
 });
 
 /** Livereload */
-gulp.task( "watch", [ "templateDev", "stylesDev", "jshint" ], function() {
+gulp.task( "watch", [ "template", "stylesDev", "jshint" ], function() {
 	var server = $.livereload();
 
 	/** Watch for livereoad */
@@ -164,7 +159,7 @@ gulp.task( "watch", [ "templateDev", "stylesDev", "jshint" ], function() {
 gulp.task( "build", [
 	"envProduction",
 	"clean",
-	"templateProduction",
+	"template",
 	"sass",
 	"stylesProduction",
 	"jshint",
