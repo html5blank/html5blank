@@ -1,5 +1,9 @@
 ### [HTML5 Blank](http://html5blank.com) Changelog
 
+## MASTER
+
+* Remove deprecated actions: (index_rel_link, parent_post_rel_link, start_post_rel_link, adjacent_posts_rel_link, adjacent_posts_rel_link_wp_head)
+
 ## 1.5.0 (10 September, 2014)
 
 * Dates are configure from admin and more semantic
