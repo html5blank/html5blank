@@ -23,7 +23,26 @@ var gulp = require( "gulp" ),
 		"src/bower_components/normalize.css/normalize.css",
 		/** Theme style */
 		"src/css/style.css"
-	];
+	],
+	/** @type {String} Used inside task for set the mode to 'development' or 'production' */
+	env = (function() {
+		/** @type {String} Default value of env */
+		var env = "development";
+
+		/** Test if there was a different value from CLI to env
+			Example: gulp styles --env=production
+			When ES6 will be default. `find` will replace `some`  */
+		process.argv.some(function( key ) {
+			var matches = key.match( /^\-{2}env\=([A-Za-z]+)$/ );
+
+			if ( matches && matches.length === 2 ) {
+				env = matches[1];
+				return true;
+			}
+		});
+
+		return env;
+	} ());
 
 /** Clean */
 gulp.task( "clean", require( "del" ).bind( null, [ ".tmp", "dist" ] ) );
@@ -112,6 +131,11 @@ gulp.task( "uglify", function() {
 		.pipe( gulp.dest( "dist/js" ) );
 });
 
+/** `env` to 'production' */
+gulp.task( "envProduction", function() {
+	env = "production";
+});
+
 /** Livereload */
 gulp.task( "watch", [ "templateDev", "stylesDev", "jshint" ], function() {
 	var server = $.livereload();
@@ -138,6 +162,7 @@ gulp.task( "watch", [ "templateDev", "stylesDev", "jshint" ], function() {
 
 /** Build */
 gulp.task( "build", [
+	"envProduction",
 	"clean",
 	"templateProduction",
 	"sass",
@@ -146,5 +171,5 @@ gulp.task( "build", [
 	"copy",
 	"uglify"
 ], function () {
-  console.log("Build is finished");
+	console.log("Build is finished");
 });
