@@ -13,7 +13,9 @@
 
 				<?php the_content(); ?>
 
-				<?php comments_template( '', true ); // Remove if you don't want comments ?>
+				<div id="comments">
+					<?php comments_template( '', true ); // Remove if you don't want comments ?>
+				</div>
 
 				<br class="clear">
 
