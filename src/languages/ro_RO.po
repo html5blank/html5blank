@@ -54,8 +54,8 @@ msgid "Sorry, nothing to display."
 msgstr "Ne pare rău, nu există nici un rezultat.."
 
 #: ../category.php:6
-msgid "Categories for"
-msgstr "Categorii pentru"
+msgid "Category:"
+msgstr "Categorie:"
 
 #: ../comments.php:3
 msgid "Post is password protected. Enter the password to view any comments."

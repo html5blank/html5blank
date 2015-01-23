@@ -57,7 +57,7 @@ msgid "Sorry, nothing to display."
 msgstr ""
 
 #: ../category.php:6
-msgid "Categories for"
+msgid "Category:"
 msgstr ""
 
 #: ../comments.php:3

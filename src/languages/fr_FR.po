@@ -58,8 +58,8 @@ msgid "Sorry, nothing to display."
 msgstr "Désolé, aucun contenu disponible."
 
 #: ../category.php:6
-msgid "Categories for "
-msgstr "Catégories pour "
+msgid "Category:"
+msgstr "Catégorie:"
 
 #: ../comments.php:3
 msgid "Post is password protected. Enter the password to view any comments."
