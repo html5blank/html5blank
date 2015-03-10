@@ -143,7 +143,7 @@ function html5blank_styles()
         wp_register_style('normalize', get_template_directory_uri() . '/bower_components/normalize.css/normalize.css', array(), '3.0.1');
 
         // Custom CSS
-        wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array('normalize'), '1.0');
+        wp_register_style('html5blank', get_template_directory_uri() . '/css/style.css', array('normalize'), '1.0');
 
         // Register CSS
         wp_enqueue_style('html5blank');

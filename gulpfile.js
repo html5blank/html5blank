@@ -87,18 +87,25 @@ gulp.task( "sass", function () {
 gulp.task( "styles", [ "sass" ], function() {
 	console.log( "`styles` task run in `" + env + "` environment" );
 
-	var stream = gulp.src( cssminSrc[ env ] )
-		.pipe( $.concat( "style.css" ))
-		.pipe( $.autoprefixer( "last 2 version" ) );
-
 	if ( env === "production" ) {
+		var destcss = 'src';
+		var stream = gulp.src( cssminSrc[ env ] )
+			.pipe( $.concat( "style.css" ))
+			.pipe( $.autoprefixer( "last 2 version" ) );
 		stream = stream.pipe( $.csso() );
+	} else {
+		var destcss = 'src/css';
+		var stream = gulp.src( cssminSrc[ env ] )
+			.pipe( $.sourcemaps.init( {loadMaps: true} ) )
+			.pipe( $.autoprefixer( "last 2 version" ) )
+			.pipe( $.sourcemaps.write() )
+			.pipe( $.concat( "style.css" ));
 	}
 
 	return stream.on( "error", function( e ) {
 			console.error( e );
 		})
-		.pipe( gulp.dest( "src" ) );
+		.pipe( gulp.dest( destcss ) );
 });
 
 /** JSHint */
