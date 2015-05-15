@@ -28,12 +28,21 @@ var gulp = require( "gulp" ),
 /** Clean */
 gulp.task( "clean", require( "del" ).bind( null, [ ".tmp", "dist" ] ) );
 
+/** Images optimization */
+gulp.task("images", function () {
+	return gulp.src( "src/img/**/*.{jpg,png,svg,gif,webp,ico}" )
+	.pipe( $.imagemin({
+		progressive: true,
+		optimizationLevel : 8
+	}))
+	.pipe(gulp.dest("dist/img"));
+});
+
 /** Copy */
 gulp.task( "copy", function() {
 	return gulp.src([
 			"src/*.{php,png,css}",
 			"src/modules/*.php",
-			"src/img/**/*.{jpg,png,svg,gif,webp,ico}",
 			"src/fonts/*.{woff,woff2,ttf,otf,eot,svg}",
 			"src/languages/*.{po,mo,pot}"
 		], {
@@ -144,6 +153,7 @@ gulp.task( "build", [
 	"stylesProduction",
 	"jshint",
 	"copy",
+	"images",
 	"uglify"
 ], function () {
   console.log("Build is finished");
