@@ -55,7 +55,7 @@ if (function_exists('add_theme_support'))
     add_theme_support('automatic-feed-links');
     
     // Enable HTML5 support
-    //add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
+    //add_theme_support('html5', array('comment-list', 'comment-form', 'search-form', 'gallery', 'caption'));
 
     // Localisation Support
     load_theme_textdomain('html5blank', get_template_directory() . '/languages');
