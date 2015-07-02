@@ -128,7 +128,7 @@ function html5blank_header_scripts()
 // Load HTML5 Blank conditional scripts
 function html5blank_conditional_scripts()
 {
-	$pageslug = ''; // enter page slug here
+    $pageslug = ''; // enter page slug here
     if (is_page($pageslug)) {
         wp_register_script($pageslug . '-script', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), '1.0.0'); // Conditional script(s)
         wp_enqueue_script($pageslug . '-script'); // Enqueue it!
