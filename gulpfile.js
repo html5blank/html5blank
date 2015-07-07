@@ -170,3 +170,6 @@ gulp.task( "build", [
 ], function () {
 	console.log("Build is finished");
 });
+
+/** Gulp default task */
+gulp.task( "default", ["watch"] );
