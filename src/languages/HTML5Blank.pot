@@ -191,9 +191,5 @@ msgstr ""
 msgid "Tag Archive: "
 msgstr ""
 
-#: ../searchform.php:3
-msgid "To search, type and hit enter."
-msgstr ""
-
 #~ msgid "%s results for "
 #~ msgstr "%s Ergebnisse für "
