@@ -165,6 +165,14 @@ function register_html5_menu()
     ));
 }
 
+// Allow SVG uploads in wordpress
+// Author URL: https://css-tricks.com/snippets/wordpress/allow-svg-through-wordpress-media-uploader/
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
 // Remove the <div> surrounding the dynamic navigation to cleanup markup
 function my_wp_nav_menu_args($args = '')
 {
