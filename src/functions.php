@@ -56,6 +56,19 @@ if (function_exists('add_theme_support'))
 
     // Localisation Support
     load_theme_textdomain('html5blank', get_template_directory() . '/languages');
+
+
+    // Add HTML5 support for comments, search form, gallery, and caption. Wordpress 3.6+
+    add_theme_support('html5', array(
+            'comment-list', 
+            'comment-form', 
+            'search-form', 
+            'gallery', 
+            'caption'
+    ));
+
+    // Title Tag Theme Support. Wordpress v4.1+
+    add_theme_support('title-tag');
 }
 
 /*------------------------------------*\
