@@ -116,7 +116,6 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "bower": "^1.7.7",
     "del": "^0.1.2",
     "gulp": "^3.6.0",
     "gulp-autoprefixer": "^0.0.7",
