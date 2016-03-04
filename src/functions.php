@@ -53,6 +53,18 @@ if (function_exists('add_theme_support'))
 
     // Enables post and comment RSS feed links to head
     add_theme_support('automatic-feed-links');
+    
+    // Added HTML5 theme support
+    add_theme_support( 'html5', array(
+	    'search-form',
+	    'comment-form',
+	    'comment-list',
+	    'gallery',
+	    'caption',
+	) );
+	
+	// Added Title Tag theme support
+	add_theme_support( 'title-tag' );
 
     // Localisation Support
     load_theme_textdomain('html5blank', get_template_directory() . '/languages');
