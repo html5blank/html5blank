@@ -27,6 +27,7 @@
 
 		<!-- wrapper -->
 		<div class="wrapper">
+			<a class="screen-reader-text show-on-focus" href="#main-content"><?php esc_html_e( 'Skip to content', 'html5blank' ); ?></a>
 
 			<!-- header -->
 			<header class="header clear" role="banner">
@@ -48,3 +49,6 @@
 
 			</header>
 			<!-- /header -->
+			
+			<!-- wrap-inner -->
+			<div class="wrap-inner" id="main-content">
