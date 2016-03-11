@@ -1,4 +1,5 @@
 .DS_Store
 node_modules
 src/bower_components
+src/css/maps
 .sass-cache
