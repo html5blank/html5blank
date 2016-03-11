@@ -53,7 +53,10 @@ var gulp = require( "gulp" ),
 		return env;
 	} ()),
     /** Libsass  */
-    sass = require( "gulp-sass" );
+    sass = require( "gulp-sass" ),
+    /** SourceMap Generator */
+    sourcemaps = require('gulp-sourcemaps');
+
 
 /** Clean */
 gulp.task( "clean", require( "del" ).bind( null, [ ".tmp", "dist" ] ) );
@@ -75,7 +78,9 @@ gulp.task( "copy", function() {
 /** CSS Preprocessors */
 gulp.task( "sass", function () {
 	return gulp.src( "src/css/sass/style.scss" )
+		.pipe(sourcemaps.init())
 		.pipe( sass() )
+		.pipe(sourcemaps.write('./maps'))
 		.on( "error", function( e ) {
 			console.error( e );
 		})
