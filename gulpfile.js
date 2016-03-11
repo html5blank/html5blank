@@ -51,7 +51,9 @@ var gulp = require( "gulp" ),
 		});
 
 		return env;
-	} ());
+	} ()),
+    /** Libsass  */
+    sass = require( "gulp-sass" );
 
 /** Clean */
 gulp.task( "clean", require( "del" ).bind( null, [ ".tmp", "dist" ] ) );
@@ -73,10 +75,7 @@ gulp.task( "copy", function() {
 /** CSS Preprocessors */
 gulp.task( "sass", function () {
 	return gulp.src( "src/css/sass/style.scss" )
-		.pipe( $.rubySass({
-			style: "expanded",
-			precision: 10
-		}))
+		.pipe( sass() )
 		.on( "error", function( e ) {
 			console.error( e );
 		})
@@ -150,7 +149,7 @@ gulp.task( "watch", [ "template", "styles", "jshint" ], function() {
 
 	/** Watch for autoprefix */
 	gulp.watch( [
-		"src/css/*.css",
+        "src/css/*.css",
 		"src/css/sass/**/*.scss"
 	], [ "styles" ] );
 

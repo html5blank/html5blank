@@ -124,7 +124,7 @@
     "gulp-jshint": "^1.8.4",
     "gulp-livereload": "^1.2.0",
     "gulp-load-plugins": "^0.5.0",
-    "gulp-ruby-sass": "^0.7.1",
+    "gulp-sass": "^2.2.0",
     "gulp-template": "^1.0.0",
     "gulp-uglify": "^1.0.0",
     "jshint-stylish": "^0.4.0"
