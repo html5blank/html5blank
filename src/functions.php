@@ -46,7 +46,7 @@ if ( function_exists( 'add_theme_support' ) ) {
 	'random-default'         => false,
 	'wp-head-callback'       => $wphead_cb,
 	'admin-head-callback'    => $adminhead_cb,
-	'admin-preview-callback' => $adminpreview_cb
+	'admin-preview-callback' => $adminpreview_cb,
 	) );*/
 
 	// Enables post and comment RSS feed links to head
@@ -79,7 +79,7 @@ function html5blank_nav() {
 		'link_after'      => '',
 		'items_wrap'      => '<ul>%3$s</ul>',
 		'depth'           => 0,
-		'walker'          => ''
+		'walker'          => '',
 		)
 	);
 }
@@ -105,7 +105,8 @@ function html5blank_header_scripts() {
 				array(
 					'conditionizr',
 					'modernizr',
-					'jquery' ),
+					'jquery',
+				),
 				'1.0.0' );
 
 			// Enqueue Scripts
@@ -208,7 +209,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'before_widget' => '<div id="%1$s" class="%2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3>',
-		'after_title' => '</h3>'
+		'after_title' => '</h3>',
 	) );
 
 	// Define Sidebar Widget Area 2
@@ -219,7 +220,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'before_widget' => '<div id="%1$s" class="%2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3>',
-		'after_title' => '</h3>'
+		'after_title' => '</h3>',
 	) );
 }
 
@@ -240,7 +241,7 @@ function html5wp_pagination() {
 		'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
 		'format' => '?paged=%#%',
 		'current' => max( 1, get_query_var( 'paged' ) ),
-		'total' => $wp_query->max_num_pages
+		'total' => $wp_query->max_num_pages,
 	) );
 }
 
@@ -427,7 +428,7 @@ function create_post_type_html5() {
 			'view_item' => __( 'View HTML5 Blank Custom Post', 'html5blank' ),
 			'search_items' => __( 'Search HTML5 Blank Custom Post', 'html5blank' ),
 			'not_found' => __( 'No HTML5 Blank Custom Posts found', 'html5blank' ),
-			'not_found_in_trash' => __( 'No HTML5 Blank Custom Posts found in Trash', 'html5blank' )
+			'not_found_in_trash' => __( 'No HTML5 Blank Custom Posts found in Trash', 'html5blank' ),
 		),
 		'public' => true,
 		'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
@@ -436,13 +437,13 @@ function create_post_type_html5() {
 			'title',
 			'editor',
 			'excerpt',
-			'thumbnail'
+			'thumbnail',
 		), // Go to Dashboard Custom HTML5 Blank post for supports
 		'can_export' => true, // Allows export in Tools > Export
 		'taxonomies' => array(
 			'post_tag',
-			'category'
-		) // Add Category and Post Tags support
+			'category',
+		), // Add Category and Post Tags support
 	) );
 }
 
