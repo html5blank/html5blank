@@ -5,7 +5,7 @@
 
 	<?php return; endif; ?>
 
-<?php if ( have_comments()) : ?>
+<?php if ( have_comments() ) : ?>
 
 	<h2><?php comments_number(); ?></h2>
 
