@@ -86,7 +86,7 @@ function html5blank_nav() {
 
 // Load HTML5 Blank scripts (header.php)
 function html5blank_header_scripts() {
-	if ( $GLOBALS['pagenow'] !== 'wp-login.php' && ! is_admin() ) {
+	if ( 'wp-login.php' !== $GLOBALS['pagenow'] && ! is_admin() ) {
 		if ( HTML5_DEBUG ) {
 			// jQuery
 			wp_deregister_script( 'jquery' );
@@ -329,10 +329,10 @@ function html5blankcomments( $comment, $args, $depth ) {
 	<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
 	<?php endif; ?>
 	<div class="comment-author vcard">
-	<?php if ( $args['avatar_size'] !== 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
+	<?php if ( 0 !== $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
 	<?php printf( __( '<cite class="fn">%s</cite> <span class="says">says:</span>' ), get_comment_author_link() ) ?>
 	</div>
-<?php if ( $comment->comment_approved === 0 ) : ?>
+<?php if ( 0 === $comment->comment_approved ) : ?>
 	<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ) ?></em>
 	<br />
 <?php endif; ?>
