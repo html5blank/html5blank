@@ -17,13 +17,11 @@ require_once "modules/is-debug.php";
 	Theme Support
 \*------------------------------------*/
 
-if ( ! isset( $content_width ) )
-{
+if ( ! isset( $content_width ) ) {
 	$content_width = 900;
 }
 
-if ( function_exists( 'add_theme_support' ) )
-{
+if ( function_exists( 'add_theme_support' ) ) {
 
 	// Add Thumbnail Theme Support
 	add_theme_support( 'post-thumbnails' );
@@ -63,8 +61,7 @@ if ( function_exists( 'add_theme_support' ) )
 \*------------------------------------*/
 
 // HTML5 Blank navigation
-function html5blank_nav()
-{
+function html5blank_nav() {
 	wp_nav_menu(
 	array(
 		'theme_location'  => 'header-menu',
@@ -88,8 +85,7 @@ function html5blank_nav()
 }
 
 // Load HTML5 Blank scripts (header.php)
-function html5blank_header_scripts()
-{
+function html5blank_header_scripts() {
 	if ( $GLOBALS['pagenow'] != 'wp-login.php' && ! is_admin() ) {
 		if ( HTML5_DEBUG ) {
 			// jQuery
@@ -126,8 +122,7 @@ function html5blank_header_scripts()
 }
 
 // Load HTML5 Blank conditional scripts
-function html5blank_conditional_scripts()
-{
+function html5blank_conditional_scripts() {
 	if ( is_page( 'pagenamehere' ) ) {
 		// Conditional script(s)
 		wp_register_script( 'scriptname', get_template_directory_uri() . '/js/scriptname.js', array( 'jquery' ), '1.0.0' );
@@ -136,8 +131,7 @@ function html5blank_conditional_scripts()
 }
 
 // Load HTML5 Blank styles
-function html5blank_styles()
-{
+function html5blank_styles() {
 	if ( HTML5_DEBUG ) {
 		// normalize-css
 		wp_register_style( 'normalize', get_template_directory_uri() . '/bower_components/normalize.css/normalize.css', array(), '3.0.1' );
@@ -156,8 +150,7 @@ function html5blank_styles()
 }
 
 // Register HTML5 Blank Navigation
-function register_html5_menu()
-{
+function register_html5_menu() {
 	register_nav_menus( array( // Using array to specify more menus if needed
 		'header-menu' => __( 'Header Menu', 'html5blank' ), // Main Navigation
 		'sidebar-menu' => __( 'Sidebar Menu', 'html5blank' ), // Sidebar Navigation
@@ -166,32 +159,28 @@ function register_html5_menu()
 }
 
 // Remove the <div> surrounding the dynamic navigation to cleanup markup
-function my_wp_nav_menu_args( $args = '' )
-{
+function my_wp_nav_menu_args( $args = '' ) {
 	$args['container'] = false;
 	return $args;
 }
 
 // Remove Injected classes, ID's and Page ID's from Navigation <li> items
-function my_css_attributes_filter( $var )
-{
+function my_css_attributes_filter( $var ) {
 	return is_array( $var ) ? array() : '';
 }
 
 // Remove invalid rel attribute values in the categorylist
-function remove_category_rel_from_category_list( $thelist )
-{
+function remove_category_rel_from_category_list( $thelist ) {
 	return str_replace( 'rel="category tag"', 'rel="tag"', $thelist );
 }
 
 // Add page slug to body class, love this - Credit: Starkers Wordpress Theme
-function add_slug_to_body_class( $classes )
-{
+function add_slug_to_body_class( $classes ) {
 	global $post;
 	if ( is_home() ) {
 		$key = array_search( 'blog', $classes );
 		if ( $key > -1 ) {
-			unset( $classes[$key]);
+			unset( $classes[ $key ] );
 		}
 	} elseif ( is_page() ) {
 		$classes[] = sanitize_html_class( $post->post_name );
@@ -210,8 +199,7 @@ function remove_width_attribute( $html ) {
 
 
 // If Dynamic Sidebar Exists
-if ( function_exists( 'register_sidebar' ) )
-{
+if ( function_exists( 'register_sidebar' ) ) {
 	// Define Sidebar Widget Area 1
 	register_sidebar( array(
 		'name' => __( 'Widget Area 1', 'html5blank' ),
@@ -236,8 +224,7 @@ if ( function_exists( 'register_sidebar' ) )
 }
 
 // Remove wp_head() injected Recent Comment styles
-function my_remove_recent_comments_style()
-{
+function my_remove_recent_comments_style() {
 	global $wp_widget_factory;
 	remove_action( 'wp_head', array(
 		$wp_widget_factory->widgets['WP_Widget_Recent_Comments'],
@@ -246,8 +233,7 @@ function my_remove_recent_comments_style()
 }
 
 // Pagination for paged posts, Page 1, Page 2, Page 3, with Next and Previous Links, No plugin
-function html5wp_pagination()
-{
+function html5wp_pagination() {
 	global $wp_query;
 	$big = 999999999;
 	echo paginate_links( array(
@@ -259,20 +245,19 @@ function html5wp_pagination()
 }
 
 // Custom Excerpts
-function html5wp_index( $length ) // Create 20 Word Callback for Index page Excerpts, call using html5wp_excerpt( 'html5wp_index' );
-{
+
+// Create 20 Word Callback for Index page Excerpts, call using html5wp_excerpt( 'html5wp_index' );
+function html5wp_index( $length ) {
 	return 20;
 }
 
 // Create 40 Word Callback for Custom Post Excerpts, call using html5wp_excerpt( 'html5wp_custom_post' );
-function html5wp_custom_post( $length )
-{
+function html5wp_custom_post( $length ) {
 	return 40;
 }
 
 // Create the Custom Excerpts callback
-function html5wp_excerpt( $length_callback = '', $more_callback = '' )
-{
+function html5wp_excerpt( $length_callback = '', $more_callback = '' ) {
 	global $post;
 	if ( function_exists( $length_callback ) ) {
 		add_filter( 'excerpt_length', $length_callback );
@@ -288,42 +273,36 @@ function html5wp_excerpt( $length_callback = '', $more_callback = '' )
 }
 
 // Custom View Article link to Post
-function html5_blank_view_article( $more )
-{
+function html5_blank_view_article( $more ) {
 	global $post;
 	return '... <a class="view-article" href="' . get_permalink( $post->ID ) . '">' . __( 'View Article', 'html5blank' ) . '</a>';
 }
 
 // Remove Admin bar
-function remove_admin_bar()
-{
+function remove_admin_bar() {
 	return false;
 }
 
 // Remove 'text/css' from our enqueued stylesheet
-function html5_style_remove( $tag )
-{
+function html5_style_remove( $tag ) {
 	return preg_replace( '~\s+type=["\'][^"\']++["\']~', '', $tag );
 }
 
 // Remove thumbnail width and height dimensions that prevent fluid images in the_thumbnail
-function remove_thumbnail_dimensions( $html )
-{
+function remove_thumbnail_dimensions( $html ) {
 	$html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
 	return $html;
 }
 
 // Custom Gravatar in Settings > Discussion
-function html5blankgravatar ( $avatar_defaults )
-{
+function html5blankgravatar ( $avatar_defaults ) {
 	$myavatar = get_template_directory_uri() . '/img/gravatar.jpg';
-	$avatar_defaults[$myavatar] = "Custom Gravatar";
+	$avatar_defaults[ $myavatar ] = "Custom Gravatar";
 	return $avatar_defaults;
 }
 
 // Threaded Comments
-function enable_threaded_comments()
-{
+function enable_threaded_comments() {
 	if ( ! is_admin() ) {
 		if ( is_singular() AND comments_open() AND ( get_option( 'thread_comments' ) == 1 ) ) {
 			wp_enqueue_script( 'comment-reply' );
@@ -332,8 +311,7 @@ function enable_threaded_comments()
 }
 
 // Custom Comments Callback
-function html5blankcomments( $comment, $args, $depth )
-{
+function html5blankcomments( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	extract( $args, EXTR_SKIP );
 
@@ -432,8 +410,7 @@ add_shortcode( 'html5_shortcode_demo_2', 'html5_shortcode_demo_2' ); // Place [h
 \*------------------------------------*/
 
 // Create 1 Custom Post type for a Demo, called HTML5-Blank
-function create_post_type_html5()
-{
+function create_post_type_html5() {
 	register_taxonomy_for_object_type( 'category', 'html5-blank' ); // Register Taxonomies for Category
 	register_taxonomy_for_object_type( 'post_tag', 'html5-blank' );
 	register_post_type( 'html5-blank', // Register Custom Post Type
@@ -474,13 +451,12 @@ function create_post_type_html5()
 \*------------------------------------*/
 
 // Shortcode Demo with Nested Capability
-function html5_shortcode_demo( $atts, $content = null )
-{
+function html5_shortcode_demo( $atts, $content = null ) {
 	return '<div class="shortcode-demo">' . do_shortcode( $content ) . '</div>'; // do_shortcode allows for nested Shortcodes
 }
 
 // Shortcode Demo with simple <h2> tag
-function html5_shortcode_demo_2( $atts, $content = null ) // Demo Heading H2 shortcode, allows for nesting within above element. Fully expandable.
-{
+// Demo Heading H2 shortcode, allows for nesting within above element. Fully expandable.
+function html5_shortcode_demo_2( $atts, $content = null ) {
 	return '<h2>' . $content . '</h2>';
 }
