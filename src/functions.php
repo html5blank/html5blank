@@ -5,7 +5,7 @@
  * Custom functions, support, custom post types and more.
  */
 
-require_once "modules/is-debug.php";
+require_once 'modules/is-debug.php';
 
 /*------------------------------------*\
 	External Modules/Files
@@ -193,8 +193,8 @@ function add_slug_to_body_class( $classes ) {
 
 // Remove the width and height attributes from inserted images
 function remove_width_attribute( $html ) {
-   $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
-   return $html;
+	$html = preg_replace( '/(width|height)="\d*"\s/', '', $html );
+	return $html;
 }
 
 
@@ -290,14 +290,14 @@ function html5_style_remove( $tag ) {
 
 // Remove thumbnail width and height dimensions that prevent fluid images in the_thumbnail
 function remove_thumbnail_dimensions( $html ) {
-	$html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
+	$html = preg_replace( '/(width|height)=\"\d*\"\s/', '', $html );
 	return $html;
 }
 
 // Custom Gravatar in Settings > Discussion
 function html5blankgravatar ( $avatar_defaults ) {
 	$myavatar = get_template_directory_uri() . '/img/gravatar.jpg';
-	$avatar_defaults[ $myavatar ] = "Custom Gravatar";
+	$avatar_defaults[ $myavatar ] = 'Custom Gravatar';
 	return $avatar_defaults;
 }
 
