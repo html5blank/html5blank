@@ -150,7 +150,7 @@ gulp.task( "watch", [ "template", "styles", "jshint" ], function() {
 
 	/** Watch for autoprefix */
 	gulp.watch( [
-        "src/css/*.css",
+		"src/css/*.css",
 		"src/css/sass/**/*.scss"
 	], [ "styles" ] );
 
