@@ -73,9 +73,9 @@ gulp.task( "copy", function() {
 /** CSS Preprocessors */
 gulp.task( "sass", function () {
 	return gulp.src( "src/css/sass/style.scss" )
-		.pipe($.sourcemaps.init())
-		.pipe($.sass() )
-		.pipe($.sourcemaps.write('./maps'))
+		.pipe( $.sourcemaps.init() )
+		.pipe( $.sass() )
+		.pipe( $.sourcemaps.write( "./maps" ) )
 		.on( "error", function( e ) {
 			console.error( e );
 		})
