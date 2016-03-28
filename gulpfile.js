@@ -75,7 +75,7 @@ gulp.task( "sass", function () {
 	return gulp.src( "src/css/sass/style.scss" )
 		.pipe( $.sourcemaps.init() )
 		.pipe( $.sass() )
-		.pipe( $.sourcemaps.write( "./maps" ) )
+		.pipe( $.sourcemaps.write( "." ) )
 		.on( "error", function( e ) {
 			console.error( e );
 		})
