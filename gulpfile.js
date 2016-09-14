@@ -73,10 +73,9 @@ gulp.task( "copy", function() {
 /** CSS Preprocessors */
 gulp.task( "sass", function () {
 	return gulp.src( "src/css/sass/style.scss" )
-		.pipe( $.rubySass({
-			style: "expanded",
-			precision: 10
-		}))
+		.pipe( $.sourcemaps.init() )
+		.pipe( $.sass() )
+		.pipe( $.sourcemaps.write( "." ) )
 		.on( "error", function( e ) {
 			console.error( e );
 		})
