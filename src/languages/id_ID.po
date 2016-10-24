@@ -54,11 +54,11 @@ msgstr "Kategori untuk"
 
 #: ../comments.php:3
 msgid "Post is password protected. Enter the password to view any comments."
-msgstr "Post diproteksi oleh password. Masukkan password untuk melihat komentar"
+msgstr "Post diproteksi oleh password. Masukkan password untuk melihat komentar."
 
 #: ../comments.php:18
 msgid "Comments are closed here."
-msgstr "Komentar dilarang disini"
+msgstr "Komentar dilarang disini."
 
 #: ../footer.php:6
 msgid "Powered by"
@@ -82,7 +82,7 @@ msgstr "Area Widget 1"
 
 #: ../functions.php:182 ../functions.php:193
 msgid "Description for this widget-area..."
-msgstr "Keterangan untuk area-widget ini"
+msgstr "Keterangan untuk area-widget ini..."
 
 #: ../functions.php:192
 msgid "Widget Area 2"
@@ -98,7 +98,7 @@ msgstr "<cite class=\"fn\">%s</cite> <span class=\"says\">katakan:</span> "
 
 #: ../functions.php:322
 msgid "Your comment is awaiting moderation."
-msgstr "Komentar Anda menunggu persetujuan"
+msgstr "Komentar Anda menunggu persetujuan."
 
 #: ../functions.php:328
 msgid "%1$s at %2$s"
