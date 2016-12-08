@@ -1,4 +1,5 @@
 /* jshint node: true */
+/* global $: true */
 "use strict";
 
 var gulp = require( "gulp" ),
@@ -15,15 +16,42 @@ var gulp = require( "gulp" ),
 		/** Page scripts */
 		"src/js/scripts.js"
 	],
-	/** @type {Array} CSS source files to concatenate and minify */
-	cssminSrc = [
-		/** The banner of `style.css` */
-		"src/css/banner.css",
-		/** Normalize */
-		"src/bower_components/normalize.css/normalize.css",
-		/** Theme style */
-		"src/css/style.css"
-	];
+	/** @type {Object of Array} CSS source files to concatenate and minify */
+	cssminSrc = {
+		development: [
+			/** The banner of `style.css` */
+			"src/css/banner.css",
+			/** Theme style */
+			"src/css/style.css"
+		],
+		production: [
+			/** The banner of `style.css` */
+			"src/css/banner.css",
+			/** Normalize */
+			"src/bower_components/normalize.css/normalize.css",
+			/** Theme style */
+			"src/css/style.css"
+		]
+	},
+	/** @type {String} Used inside task for set the mode to 'development' or 'production' */
+	env = (function() {
+		/** @type {String} Default value of env */
+		var env = "development";
+
+		/** Test if there was a different value from CLI to env
+			Example: gulp styles --env=production
+			When ES6 will be default. `find` will replace `some`  */
+		process.argv.some(function( key ) {
+			var matches = key.match( /^\-{2}env\=([A-Za-z]+)$/ );
+
+			if ( matches && matches.length === 2 ) {
+				env = matches[1];
+				return true;
+			}
+		});
+
+		return env;
+	} ());
 
 /** Clean */
 gulp.task( "clean", require( "del" ).bind( null, [ ".tmp", "dist" ] ) );
@@ -64,27 +92,19 @@ gulp.task( "sass", function () {
 		.pipe( gulp.dest( "src/css" ) );
 });
 
-/** CSS - DEV */
-gulp.task( "stylesDev", [ "sass" ], function() {
-	return gulp.src([
-			"src/css/banner.css",
-			"src/css/style.css"
-		])
-		.pipe( $.concat( "style.css" ))
-		.pipe( $.autoprefixer( "last 2 version" ) )
-		.on( "error", function( e ) {
-			console.error( e );
-		})
-		.pipe( gulp.dest( "src" ) );
-});
+/** STYLES */
+gulp.task( "styles", [ "sass" ], function() {
+	console.log( "`styles` task run in `" + env + "` environment" );
 
-/** CSS - PRODUCTION */
-gulp.task( "stylesProduction", function() {
-	return gulp.src( cssminSrc )
+	var stream = gulp.src( cssminSrc[ env ] )
 		.pipe( $.concat( "style.css" ))
-		.pipe( $.autoprefixer( "last 2 version" ) )
-		.pipe( $.csso() )
-		.on( "error", function( e ) {
+		.pipe( $.autoprefixer( "last 2 version" ) );
+
+	if ( env === "production" ) {
+		stream = stream.pipe( $.csso() );
+	}
+
+	return stream.on( "error", function( e ) {
 			console.error( e );
 		})
 		.pipe( gulp.dest( "src" ) );
@@ -99,18 +119,15 @@ gulp.task( "jshint", function () {
 		.pipe( $.jshint.reporter( "fail" ) );
 });
 
-/** Templates - DEV */
-gulp.task( "templateDev", function() {
-	return gulp.src( "src/dev-templates/is-debug.php" )
-		.pipe( $.template({ is_debug: "true" }) )
-		.pipe( gulp.dest( "src/modules" ) );
-});
+/** Templates */
+gulp.task( "template", function() {
+	console.log( "`template` task run in `" + env + "` environment" );
 
-/** Templates - PRODUCTION */
-gulp.task( "templateProduction", function() {
-	return gulp.src( "src/dev-templates/is-debug.php" )
-		.pipe( $.template({ is_debug: "false" }) )
-		.pipe( gulp.dest( "src/modules" ) );
+    var is_debug = ( env === "production" ? "false" : "true" );
+
+    return gulp.src( "src/dev-templates/is-debug.php" )
+        .pipe( $.template({ is_debug: is_debug }) )
+        .pipe( gulp.dest( "src/modules" ) );
 });
 
 /** Uglify */
@@ -121,8 +138,13 @@ gulp.task( "uglify", function() {
 		.pipe( gulp.dest( "dist/js" ) );
 });
 
+/** `env` to 'production' */
+gulp.task( "envProduction", function() {
+	env = "production";
+});
+
 /** Livereload */
-gulp.task( "watch", [ "templateDev", "stylesDev", "jshint" ], function() {
+gulp.task( "watch", [ "template", "styles", "jshint" ], function() {
 	var server = $.livereload();
 
 	/** Watch for livereoad */
@@ -139,7 +161,7 @@ gulp.task( "watch", [ "templateDev", "stylesDev", "jshint" ], function() {
 	gulp.watch( [
 		"src/css/*.css",
 		"src/css/sass/**/*.scss"
-	], [ "stylesDev" ] );
+	], [ "styles" ] );
 
 	/** Watch for JSHint */
 	gulp.watch( "src/js/{!(lib)/*.js,*.js}", ["jshint"] );
@@ -147,14 +169,14 @@ gulp.task( "watch", [ "templateDev", "stylesDev", "jshint" ], function() {
 
 /** Build */
 gulp.task( "build", [
+	"envProduction",
 	"clean",
-	"templateProduction",
-	"sass",
-	"stylesProduction",
+	"template",
+	"styles",
 	"jshint",
 	"copy",
 	"images",
 	"uglify"
 ], function () {
-  console.log("Build is finished");
+	console.log("Build is finished");
 });

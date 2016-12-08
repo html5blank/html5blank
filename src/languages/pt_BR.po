@@ -53,8 +53,8 @@ msgid "Sorry, nothing to display."
 msgstr "Não encontraram nada que corresponda aos critérios de pesquisa."
 
 #: ../category.php:6
-msgid "Categories for"
-msgstr "Arquivo para a categoria"
+msgid "Category:"
+msgstr "Categoria:"
 
 #: ../comments.php:3
 msgid "Post is password protected. Enter the password to view any comments."
