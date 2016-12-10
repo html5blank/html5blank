@@ -135,7 +135,8 @@ gulp.task( "envProduction", function() {
 
 /** Livereload */
 gulp.task( "watch", [ "template", "styles", "jshint" ], function() {
-	var server = $.livereload();
+	var server = $.livereload;
+	server.listen();
 
 	/** Watch for livereoad */
 	gulp.watch([
