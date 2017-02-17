@@ -190,6 +190,25 @@ input[type="search"] {
   position: relative;
 }
 
+.screen-reader-text, .show-on-focus {
+  position: absolute !important;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+}
+.show-on-focus:active, .show-on-focus:focus {
+	position: static !important;
+	height: auto;
+	width: auto;
+	overflow: visible;
+	clip: auto;
+}
+
+.sticky {}
+.bypostauthor {}
+
+
 /**
  * partial/header
  * ---
