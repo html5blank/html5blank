@@ -2,7 +2,6 @@
 <html <?php language_attributes(); ?> class="no-js">
 	<head>
 		<meta charset="<?php bloginfo('charset'); ?>">
-		<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' : '; } ?><?php bloginfo('name'); ?></title>
 
 		<link href="//www.google-analytics.com" rel="dns-prefetch">
 		<link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon">
@@ -28,6 +27,7 @@
 
 		<!-- wrapper -->
 		<div class="wrapper">
+			<a class="screen-reader-text show-on-focus" href="#main-content"><?php esc_html_e( 'Skip to content', 'html5blank' ); ?></a>
 
 			<!-- header -->
 			<header class="header clear" role="banner">
@@ -49,3 +49,6 @@
 
 			</header>
 			<!-- /header -->
+			
+			<!-- wrap-inner -->
+			<div class="wrap-inner" id="main-content">
