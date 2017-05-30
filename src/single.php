@@ -43,7 +43,9 @@
 
 			<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
 
-			<?php comments_template(); ?>
+			<div id="comments">
+				<?php comments_template(); ?>
+			</div>
 
 		</article>
 		<!-- /article -->
