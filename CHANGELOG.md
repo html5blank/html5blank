@@ -4,6 +4,12 @@
 
 * Remove deprecated actions: (index_rel_link, parent_post_rel_link, start_post_rel_link, adjacent_posts_rel_link, adjacent_posts_rel_link_wp_head)
 
+## FORKED FROM TODD MOTTO, 28 September 2017
+
+## 2.0.0
+* Added flex grid, philipwalton/solved-by-flexbox
+
+
 ## 1.5.0 (10 September, 2014)
 
 * Dates are configure from admin and more semantic
