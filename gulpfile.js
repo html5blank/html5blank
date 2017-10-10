@@ -8,11 +8,11 @@ var gulp = require( "gulp" ),
 	/** @type {Array} JS source files to concatenate and uglify */
 	uglifySrc = [
 		/** Modernizr */
-		"src/bower_components/modernizr/modernizr.js",
+		"src/js/lib/modernizr.js",
 		/** Conditionizr */
 		"src/js/lib/conditionizr-4.3.0.min.js",
 		/** jQuery */
-		"src/bower_components/jquery/dist/jquery.js",
+		"node_modules/jquery/dist/jquery.js",
 		/** Page scripts */
 		"src/js/scripts.js"
 	],
@@ -28,7 +28,7 @@ var gulp = require( "gulp" ),
 			/** The banner of `style.css` */
 			"src/css/banner.css",
 			/** Normalize */
-			"src/bower_components/normalize.css/normalize.css",
+			"node_modules/normalize.css/normalize.css",
 			/** Theme style */
 			"src/css/style.css"
 		]

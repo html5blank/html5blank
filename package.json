@@ -114,7 +114,14 @@
       "url": "https://github.com/weslleih"
     }
   ],
-  "dependencies": {},
+  "scripts": {
+    "modernizr": "cd node_modules/modernizr && ./bin/modernizr -c lib/config-all.json && mv ./modernizr.js ../../src/js/lib/modernizr.js"
+  },
+  "dependencies": {
+    "jquery": "^1.11.1",
+    "modernizr": "^3.5.0",
+    "normalize.css": "^7.0.0"
+  },
   "devDependencies": {
     "del": "^2.2.2",
     "gulp": "^3.6.0",
