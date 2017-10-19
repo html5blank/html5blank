@@ -120,6 +120,17 @@ gulp.task( "template", function() {
         .pipe( gulp.dest( "src/modules" ) );
 });
 
+/** Modernizr **/
+gulp.task( "modernizr", function() {
+	var modernizr = require( "modernizr" ),
+		config = require( "./node_modules/modernizr/lib/config-all"),
+		fs = require( "fs" );
+
+		modernizr.build(config, function(code) {
+			fs.writeFile("./src/js/lib/modernizr.js", code);
+		});
+});
+
 /** Uglify */
 gulp.task( "uglify", function() {
 	return gulp.src( uglifySrc )
@@ -164,6 +175,7 @@ gulp.task( "build", [
 	"clean",
 	"template",
 	"styles",
+	"modernizr",
 	"jshint",
 	"copy",
 	"uglify"
