@@ -115,7 +115,7 @@
     }
   ],
   "scripts": {
-    "modernizr": "cd node_modules/modernizr && ./bin/modernizr -c lib/config-all.json && mv ./modernizr.js ../../src/js/lib/modernizr.js"
+    "modernizr": "gulp modernizr"
   },
   "dependencies": {
     "jquery": "^1.11.1",
@@ -124,7 +124,7 @@
   },
   "devDependencies": {
     "del": "^2.2.2",
-    "gulp": "^3.6.0",
+    "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-concat": "^2.3.4",
     "gulp-csso": "^2.0.0",
