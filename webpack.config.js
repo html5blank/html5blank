@@ -6,8 +6,8 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 module.exports = {
   entry: ['./src/js/scripts.js', './src/css/sass/style.scss'],
   output: {
-    path: path.resolve(__dirname, './src/js/'),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, './dist/js/'),
+    filename: 'scripts.min.js'
   },
   module: {
     rules: [
@@ -32,7 +32,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('../css/style.css'),
+    new ExtractTextPlugin('../style.css'),
     new UglifyJSPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ]
