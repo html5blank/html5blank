@@ -3,3 +3,4 @@ node_modules
 src/bower_components
 src/css/maps
 .idea
+package-lock.json
