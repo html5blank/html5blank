@@ -32,7 +32,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('../css/style.css'),
+    new ExtractTextPlugin('../style.css'),
     new UglifyJSPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ]
