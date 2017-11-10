@@ -4,11 +4,11 @@
 		<!-- section -->
 		<section>
 
-			<h1><?php _e( 'Archives', 'html5blank' ); ?></h1>
+			<h1><?php esc_html_e( 'Archives', 'html5blank' ); ?></h1>
 
-			<?php get_template_part('loop'); ?>
+			<?php get_template_part( 'loop' ); ?>
 
-			<?php get_template_part('pagination'); ?>
+			<?php get_template_part( 'pagination' ); ?>
 
 		</section>
 		<!-- /section -->
