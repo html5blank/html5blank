@@ -36,7 +36,7 @@
 
 <?php endwhile; ?>
 
-<?php else: ?>
+<?php else : ?>
 
 	<!-- article -->
 	<article>
