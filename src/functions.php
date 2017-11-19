@@ -186,9 +186,9 @@ function add_slug_to_body_class( $classes ) {
         if ( $key > -1 ) {
             unset( $classes[$key] );
         }
-    } elseif (is_page()) {
+    } elseif ( is_page() ) {
         $classes[] = sanitize_html_class( $post->post_name );
-    } elseif (is_singular()) {
+    } elseif ( is_singular() ) {
         $classes[] = sanitize_html_class( $post->post_name );
     }
 
@@ -216,7 +216,7 @@ if ( function_exists( 'register_sidebar' ) ) {
     ) );
 
     // Define Sidebar Widget Area 2
-    register_sidebar(array(
+    register_sidebar( array(
         'name'          => esc_html_e( 'Widget Area 2', 'html5blank' ),
         'description'   => esc_html_e( 'Description for this widget-area...', 'html5blank' ),
         'id'            => 'widget-area-2',
@@ -235,7 +235,7 @@ function my_remove_recent_comments_style() {
         remove_action( 'wp_head', array(
             $wp_widget_factory->widgets['WP_Widget_Recent_Comments'],
             'recent_comments_style'
-        ));
+        ) );
     }
 }
 
@@ -244,7 +244,7 @@ function html5wp_pagination() {
     global $wp_query;
     $big = 999999999;
     echo paginate_links( array(
-        'base'    => str_replace( $big, '%#%', get_pagenum_link($big)),
+        'base'    => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
         'format'  => '?paged=%#%',
         'current' => max( 1, get_query_var( 'paged' ) ),
         'total'   => $wp_query->max_num_pages,
@@ -267,14 +267,14 @@ function html5wp_excerpt( $length_callback = '', $more_callback = '' ) {
     if ( function_exists( $length_callback ) ) {
         add_filter( 'excerpt_length', $length_callback );
     }
-    if (function_exists( $more_callback ) ) {
+    if ( function_exists( $more_callback ) ) {
         add_filter( 'excerpt_more', $more_callback );
     }
     $output = get_the_excerpt();
     $output = apply_filters( 'wptexturize', $output );
     $output = apply_filters( 'convert_chars', $output );
     $output = '<p>' . $output . '</p>';
-    echo $output;
+    echo esc_html( $output );
 }
 
 // Custom View Article link to Post
@@ -295,14 +295,14 @@ function html5_style_remove( $tag ) {
 
 // Remove thumbnail width and height dimensions that prevent fluid images in the_thumbnail
 function remove_thumbnail_dimensions( $html ) {
-    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
+    $html = preg_replace( '/(width|height)=\"\d*\"\s/', '', $html );
     return $html;
 }
 
 // Custom Gravatar in Settings > Discussion
 function html5blankgravatar ( $avatar_defaults ) {
-    $myavatar = get_template_directory_uri() . '/img/gravatar.jpg';
-    $avatar_defaults[$myavatar] = "Custom Gravatar";
+    $myavatar                   = get_template_directory_uri() . '/img/gravatar.jpg';
+    $avatar_defaults[$myavatar] = 'Custom Gravatar';
     return $avatar_defaults;
 }
 
@@ -329,13 +329,13 @@ function html5blankcomments( $comment, $args, $depth ) {
     }
 ?>
     <!-- heads up: starting < for the html tag (li or div) in the next line: -->
-    <<?php echo $tag ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent') ?> id="comment-<?php comment_ID() ?>">
+    <<?php echo esc_html( $tag ) ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID(); ?>">
     <?php if ( 'div' != $args['style'] ) : ?>
-    <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+    <div id="div-comment-<?php comment_ID(); ?>" class="comment-body">
     <?php endif; ?>
     <div class="comment-author vcard">
     <?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-    <?php printf( esc_html_e( '<cite class="fn">%s</cite> <span class="says">says:</span>' ), get_comment_author_link() ) ?>
+    <?php printf( esc_html( '<cite class="fn">%s</cite> <span class="says">says:</span>' ), get_comment_author_link() ) ?>
     </div>
 <?php if ( $comment->comment_approved == '0' ) : ?>
     <em class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.' ) ?></em>
@@ -344,7 +344,7 @@ function html5blankcomments( $comment, $args, $depth ) {
 
     <div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
         <?php
-            printf( esc_html_e( '%1$s at %2$s' ), get_comment_date(), get_comment_time() ) ?></a><?php edit_comment_link( esc_html_e( '(Edit)' ), '  ', '' );
+            printf( esc_html( '%1$s at %2$s' ), get_comment_date(), get_comment_time() ) ?></a><?php edit_comment_link( esc_html_e( '(Edit)' ), '  ', '' );
         ?>
     </div>
 
