@@ -10,7 +10,7 @@
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 			<!-- post thumbnail -->
-			<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists. ?>
+			<?php if ( has_post_thumbnail() ) : // Check if Thumbnail exists. ?>
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 					<?php the_post_thumbnail(); // Fullsize image for the single post. ?>
 				</a>
@@ -35,7 +35,7 @@
 
 			<?php the_content(); // Dynamic Content. ?>
 
-			<?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end. ?>
+			<?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>' ); // Separated by commas with a line break at the end. ?>
 
 			<p><?php esc_html_e( 'Categorised in: ', 'html5blank' ); the_category( ', ' ); // Separated by commas. ?></p>
 
@@ -50,7 +50,7 @@
 
 	<?php endwhile; ?>
 
-	<?php else: ?>
+	<?php else : ?>
 
 		<!-- article -->
 		<article>
