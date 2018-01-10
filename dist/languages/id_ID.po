@@ -1,0 +1,181 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: id_ID\n"
+"Language: id\n"
+
+#: ../404.php:9
+msgid "Page not found"
+msgstr "Halaman tidak ditemukan"
+
+#: ../404.php:11
+msgid "Return home?"
+msgstr "Kembali ke awal?"
+
+#: ../archive.php:6
+msgid "Archives"
+msgstr "Arsip"
+
+#: ../author.php:8
+msgid "Author Archives for "
+msgstr "Pemilik arsip untuk "
+
+#: ../author.php:14
+msgid "About "
+msgstr "Tentang "
+
+#: ../author.php:41 ../loop.php:22 ../single.php:27
+msgid "Published by"
+msgstr "Dipublikasikan oleh"
+
+#: ../author.php:42 ../loop.php:23 ../single.php:28
+msgid "Leave your thoughts"
+msgstr "Tinggalkan masukan Anda"
+
+#: ../author.php:42 ../loop.php:23 ../single.php:28
+msgid "1 Comment"
+msgstr "1 Komentar"
+
+#: ../author.php:42 ../loop.php:23 ../single.php:28
+msgid "% Comments"
+msgstr "% Komentar"
+
+#: ../author.php:61 ../loop.php:39 ../page.php:31 ../single.php:53
+#: ../template-demo.php:31
+msgid "Sorry, nothing to display."
+msgstr "Maaf, tidak ada yang bisa ditampilkan."
+
+#: ../category.php:6
+msgid "Categories for"
+msgstr "Kategori untuk"
+
+#: ../comments.php:3
+msgid "Post is password protected. Enter the password to view any comments."
+msgstr "Post diproteksi oleh password. Masukkan password untuk melihat komentar."
+
+#: ../comments.php:18
+msgid "Comments are closed here."
+msgstr "Komentar dilarang disini."
+
+#: ../footer.php:6
+msgid "Powered by"
+msgstr "Ditenagai oleh"
+
+#: ../functions.php:133
+msgid "Header Menu"
+msgstr "Menu Kepala"
+
+#: ../functions.php:134
+msgid "Sidebar Menu"
+msgstr "Menu bar samping"
+
+#: ../functions.php:135
+msgid "Extra Menu"
+msgstr "Menu tambahan"
+
+#: ../functions.php:181
+msgid "Widget Area 1"
+msgstr "Area Widget 1"
+
+#: ../functions.php:182 ../functions.php:193
+msgid "Description for this widget-area..."
+msgstr "Keterangan untuk area-widget ini..."
+
+#: ../functions.php:192
+msgid "Widget Area 2"
+msgstr "Area Widget 2"
+
+#: ../functions.php:258
+msgid "View Article"
+msgstr "Lihat artikel"
+
+#: ../functions.php:319
+msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
+msgstr "<cite class=\"fn\">%s</cite> <span class=\"says\">katakan:</span> "
+
+#: ../functions.php:322
+msgid "Your comment is awaiting moderation."
+msgstr "Komentar Anda menunggu persetujuan."
+
+#: ../functions.php:328
+msgid "%1$s at %2$s"
+msgstr "%1$s di %2$s "
+
+#: ../functions.php:328
+msgid "(Edit)"
+msgstr "(Ubah)"
+
+#: ../functions.php:411 ../functions.php:412
+msgid "HTML5 Blank Custom Post"
+msgstr "Postingan HTML5 custom kosong"
+
+#: ../functions.php:413
+msgid "Add New"
+msgstr "Tambah baru"
+
+#: ../functions.php:414
+msgid "Add New HTML5 Blank Custom Post"
+msgstr "Tambah postingan HTML5 custom kosong baru"
+
+#: ../functions.php:415
+msgid "Edit"
+msgstr "Ubah"
+
+#: ../functions.php:416
+msgid "Edit HTML5 Blank Custom Post"
+msgstr "Ubah Postingan HTML5 custom kosong"
+
+#: ../functions.php:417
+msgid "New HTML5 Blank Custom Post"
+msgstr "Postingan HTML5 custom kosong baru"
+
+#: ../functions.php:418 ../functions.php:419
+msgid "View HTML5 Blank Custom Post"
+msgstr "LIhat postingan HTML5 custom kosong"
+
+#: ../functions.php:420
+msgid "Search HTML5 Blank Custom Post"
+msgstr "Cari postingan HTML5 custom kosong"
+
+#: ../functions.php:421
+msgid "No HTML5 Blank Custom Posts found"
+msgstr "Tidak ada postingan HTML5 custom kosong yang ditemukan"
+
+#: ../functions.php:422
+msgid "No HTML5 Blank Custom Posts found in Trash"
+msgstr "Tidak ada postingan HTML5 custom kosong yang ditemukan yang ditemukan di kotak sampah"
+
+#: ../index.php:6
+msgid "Latest Posts"
+msgstr "Postingan terbaru"
+
+#: ../search.php:6
+msgid "%s Search Results for "
+msgstr "%s Hasil pencarian untuk␣ "
+
+#: ../searchform.php:3
+msgid "To search, type and hit enter."
+msgstr "Untuk mencari, ketik dan tekan enter."
+
+#: ../searchform.php:4
+msgid "Search"
+msgstr "Cari"
+
+#: ../single.php:33
+msgid "Tags: "
+msgstr "Tandai: "
+
+#: ../single.php:35
+msgid "Categorised in: "
+msgstr "Kategori didalam: "
+
+#: ../single.php:37
+msgid "This post was written by "
+msgstr "Postingan ini ditulis oleh "
+
+#: ../tag.php:6
+msgid "Tag Archive: "
+msgstr "Tanda Arsip: "

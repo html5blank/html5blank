@@ -1,0 +1,190 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: HTML5 Blank WordPress Theme\n"
+"POT-Creation-Date: 2012-10-18 00:53+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ioan Virag <ioan@ioanvirag.com>\n"
+"Language-Team: Ioan Virag | www.ioanvirag.com <ioan@ioanvirag.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"Language: Română\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../404.php:9
+msgid "Page not found"
+msgstr "Pagina nu a fost găsită"
+
+#: ../404.php:10
+msgid "Return home?"
+msgstr "Vă întoarceţi la prima pagină?"
+
+#: ../archive.php:6
+msgid "Archives"
+msgstr "Arhive"
+
+#: ../author.php:8
+msgid "Author Archives for "
+msgstr "Autor-Arhive pentru "
+
+#: ../author.php:41 ../loop.php:22 ../single.php:27
+msgid "Published by"
+msgstr "Publicat de"
+
+#: ../author.php:42 ../loop.php:23 ../single.php:28
+msgid "Leave your thoughts"
+msgstr "Lasă un comentariu"
+
+#: ../author.php:42 ../loop.php:23 ../single.php:28
+msgid "1 Comment"
+msgstr "1 Comentariu"
+
+#: ../author.php:42 ../loop.php:23 ../single.php:28
+msgid "% Comments"
+msgstr "% Comentarii"
+
+#: ../author.php:61 ../loop.php:41 ../page.php:31 ../single.php:55
+#: ../template-demo.php:33
+msgid "Sorry, nothing to display."
+msgstr "Ne pare rău, nu există nici un rezultat.."
+
+#: ../category.php:6
+msgid "Category:"
+msgstr "Categorie:"
+
+#: ../comments.php:3
+msgid "Post is password protected. Enter the password to view any comments."
+msgstr ""
+"Postarea necesită o parolă. Introduceţi parola pentru a vedea comentariile."
+
+#: ../comments.php:18
+msgid "Comments are closed here."
+msgstr "Comentariile sunt închise."
+
+#: ../footer.php:6
+msgid "Powered by"
+msgstr "Pus la dispoziţie de "
+
+#: ../functions.php:174
+#, php-format
+msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
+msgstr "<cite class=\"fn\">%s</cite> <span class=\"says\">spune:</span>"
+
+#: ../functions.php:177
+msgid "Your comment is awaiting moderation."
+msgstr "Comentariul dumneavoastră a fost trimis pentru a fi moderat."
+
+#: ../functions.php:184
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s la %2$s"
+
+#: ../functions.php:184
+msgid "(Edit)"
+msgstr "(Editare)"
+
+#: ../functions.php:209
+msgid "Header Menu"
+msgstr "Meniu Header"
+
+#: ../functions.php:210
+msgid "Sidebar Menu"
+msgstr "Meniu Sidebar"
+
+#: ../functions.php:211
+msgid "Extra Menu"
+msgstr "Meniu Extra"
+
+#: ../functions.php:257
+msgid "Widget Area 1"
+msgstr "Zonă Widget 1"
+
+#: ../functions.php:258 ../functions.php:269
+msgid "Description for this widget-area..."
+msgstr "Descriere pentru această zonă-widget..."
+
+#: ../functions.php:268
+msgid "Widget Area 2"
+msgstr "Zonă Widget 2"
+
+#: ../functions.php:333
+msgid "View Article"
+msgstr "Vezi Articol"
+
+#: ../functions.php:438 ../functions.php:439
+msgid "HTML5 Blank Custom Post"
+msgstr "Tip de postare customizată HTML5 Blank"
+
+#: ../functions.php:440
+msgid "Add New"
+msgstr "Adaugă Nou"
+
+#: ../functions.php:441
+msgid "Add New HTML5 Blank Custom Post"
+msgstr "Adaugă un nou tip de postare customizată HTML5 Blank"
+
+#: ../functions.php:442
+msgid "Edit"
+msgstr "Editare"
+
+#: ../functions.php:443
+msgid "Edit HTML5 Blank Custom Post"
+msgstr "Editare postare customizată de tip HTML5 Blank"
+
+#: ../functions.php:444
+msgid "New HTML5 Blank Custom Post"
+msgstr "Nouă postare customizată de tip HTML5 Blank"
+
+#: ../functions.php:445 ../functions.php:446
+msgid "View HTML5 Blank Custom Post"
+msgstr "Vezi postare customizată de tip HTML5 Blank"
+
+#: ../functions.php:447
+msgid "Search HTML5 Blank Custom Post"
+msgstr "Caută postare customizată de tip HTML5 Blank"
+
+#: ../functions.php:448
+msgid "No HTML5 Blank Custom Posts found"
+msgstr "Nu s-a găsit nici o postare customizată de tip HTML5 Blank"
+
+#: ../functions.php:449
+msgid "No HTML5 Blank Custom Posts found in Trash"
+msgstr ""
+"Nu s-a găsit nici o postare customizată de tip HTML5 Blank în coşul de gunoi"
+
+#: ../index.php:6
+msgid "Latest Posts"
+msgstr "Ultima postare"
+
+#: ../search.php:6
+#, php-format
+msgid "%s Search Results for "
+msgstr "%s Rezultatele căutării pentru"
+
+#: ../searchform.php:5
+msgid "Search"
+msgstr "Caută"
+
+#: ../single.php:35
+msgid "Tags: "
+msgstr "Etichete: "
+
+#: ../single.php:37
+msgid "Categorised in: "
+msgstr "Categorisit în: "
+
+#: ../single.php:39
+msgid "This post was written by "
+msgstr "Acest articol a fost scris de "
+
+#: ../tag.php:6
+msgid "Tag Archive: "
+msgstr "Arhivă-Etichete: "
+
+#~ msgid "%s results for "
+#~ msgstr "%s Ergebnisse für "

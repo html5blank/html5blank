@@ -30,6 +30,25 @@ if ( function_exists( 'add_theme_support' ) ) {
     add_image_size( 'small', 120, '', true ); // Small Thumbnail.
     add_image_size( 'custom-size', 700, 200, true ); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 
+    // Add Support for Custom Backgrounds - Uncomment below if you're going to use.
+    /*add_theme_support('custom-background', array(
+    'default-color' => 'FFF',
+    'default-image' => get_template_directory_uri() . '/img/bg.jpg'
+    ));*/
+
+    // Add Support for Custom Header - Uncomment below if you're going to use.
+    /*add_theme_support('custom-header', array(
+    'default-image'          => get_template_directory_uri() . '/img/headers/default.jpg',
+    'header-text'            => false,
+    'default-text-color'     => '000',
+    'width'                  => 1000,
+    'height'                 => 198,
+    'random-default'         => false,
+    'wp-head-callback'       => $wphead_cb,
+    'admin-head-callback'    => $adminhead_cb,
+    'admin-preview-callback' => $adminpreview_cb
+    ));*/
+
     // Enables post and comment RSS feed links to head.
     add_theme_support( 'automatic-feed-links' );
 
@@ -135,7 +154,13 @@ function html5blank_styles() {
 }
 
 // Register HTML5 Blank Navigation
-
+function register_html5_menu() {
+    register_nav_menus( array( // Using array to specify more menus if needed
+        'header-menu'  => esc_html_e( 'Header Menu', 'html5blank' ), // Main Navigation
+        'sidebar-menu' => esc_html_e( 'Sidebar Menu', 'html5blank' ), // Sidebar Navigation
+        'extra-menu'   => esc_html_e( 'Extra Menu', 'html5blank' ) // Extra Navigation if needed (duplicate as many as you need!)
+    ) );
+}
 
 // Remove the <div> surrounding the dynamic navigation to cleanup markup
 function my_wp_nav_menu_args( $args = '' ) {
@@ -176,6 +201,31 @@ function remove_width_attribute( $html ) {
     return $html;
 }
 
+
+// If Dynamic Sidebar Exists
+if ( function_exists( 'register_sidebar' ) ) {
+    // Define Sidebar Widget Area 1
+    register_sidebar( array(
+        'name'          => esc_html_e( 'Widget Area 1', 'html5blank' ),
+        'description'   => esc_html_e( 'Description for this widget-area...', 'html5blank' ),
+        'id'            => 'widget-area-1',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3>',
+        'after_title'   => '</h3>',
+    ) );
+
+    // Define Sidebar Widget Area 2
+    register_sidebar( array(
+        'name'          => esc_html_e( 'Widget Area 2', 'html5blank' ),
+        'description'   => esc_html_e( 'Description for this widget-area...', 'html5blank' ),
+        'id'            => 'widget-area-2',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3>',
+        'after_title'   => '</h3>',
+    ) );
+}
 
 // Remove wp_head() injected Recent Comment styles
 function my_remove_recent_comments_style() {
@@ -317,7 +367,8 @@ add_action( 'wp_enqueue_scripts', 'html5blank_header_scripts' ); // Add Custom S
 add_action( 'wp_print_scripts', 'html5blank_conditional_scripts' ); // Add Conditional Page Scripts
 add_action( 'get_header', 'enable_threaded_comments' ); // Enable Threaded Comments
 add_action( 'wp_enqueue_scripts', 'html5blank_styles' ); // Add Theme Stylesheet
-//add_action( 'init', 'create_post_type_html5' ); // Add our HTML5 Blank Custom Post Type
+add_action( 'init', 'register_html5_menu' ); // Add HTML5 Blank Menu
+add_action( 'init', 'create_post_type_html5' ); // Add our HTML5 Blank Custom Post Type
 add_action( 'widgets_init', 'my_remove_recent_comments_style' ); // Remove inline Recent Comment Styles from wp_head()
 add_action( 'init', 'html5wp_pagination' ); // Add our HTML5 Pagination
 
@@ -363,61 +414,42 @@ add_shortcode( 'html5_shortcode_demo_2', 'html5_shortcode_demo_2' ); // Place [h
     Custom Post Types
 \*------------------------------------*/
 
-// Register Custom Post Type Event
-function smakk() {
-
-    $labels = array(
-        'name'                  => _x( 'SMAKK', 'Post Type General Name', 'text_domain' ),
-        'singular_name'         => _x( 'SMAKK', 'Post Type Singular Name', 'text_domain' ),
-        'menu_name'             => __( 'SMAKK', 'text_domain' ),
-        'name_admin_bar'        => __( 'SMAKK', 'text_domain' ),
-        'archives'              => __( 'SMAKK Archives', 'text_domain' ),
-        'attributes'            => __( 'SMAKK Attributes', 'text_domain' ),
-        'parent_item_colon'     => __( 'Parent Item:', 'text_domain' ),
-        'all_items'             => __( 'SMAKK', 'text_domain' ),
-        'add_new_item'          => __( 'Add New SMAKK', 'text_domain' ),
-        'add_new'               => __( 'Add New', 'text_domain' ),
-        'new_item'              => __( 'New Item', 'text_domain' ),
-        'edit_item'             => __( 'Edit Item', 'text_domain' ),
-        'update_item'           => __( 'Update Item', 'text_domain' ),
-        'view_item'             => __( 'View Item', 'text_domain' ),
-        'view_items'            => __( 'View Items', 'text_domain' ),
-        'search_items'          => __( 'Search Item', 'text_domain' ),
-        'not_found'             => __( 'Not found', 'text_domain' ),
-        'not_found_in_trash'    => __( 'Not found in Trash', 'text_domain' ),
-        'featured_image'        => __( 'Featured Image', 'text_domain' ),
-        'set_featured_image'    => __( 'Set featured image', 'text_domain' ),
-        'remove_featured_image' => __( 'Remove featured image', 'text_domain' ),
-        'use_featured_image'    => __( 'Use as featured image', 'text_domain' ),
-        'insert_into_item'      => __( 'Insert into item', 'text_domain' ),
-        'uploaded_to_this_item' => __( 'Uploaded to this item', 'text_domain' ),
-        'items_list'            => __( 'Items list', 'text_domain' ),
-        'items_list_navigation' => __( 'Items list navigation', 'text_domain' ),
-        'filter_items_list'     => __( 'Filter items list', 'text_domain' ),
-    );
-    $args = array(
-        'label'                 => __( 'SMAKK', 'text_domain' ),
-        'description'           => __( 'SMAKK Post Type', 'text_domain' ),
-        'labels'                => $labels,
-        'supports'              => array('thumbnail','title'),
-        'hierarchical'          => false,
-        'public'                => true,
-        'show_ui'               => true,
-        'show_in_menu'          => true,
-        'menu_position'         => 5,
-        'show_in_admin_bar'     => true,
-        'show_in_nav_menus'     => true,
-        'can_export'            => true,
-        'has_archive'           => true,
-        'exclude_from_search'   => false,
-        'publicly_queryable'    => true,
-        'capability_type'       => 'page',
-        'exclude_from_search' => true
-    );
-    register_post_type( 'smakk', $args );
-
+// Create 1 Custom Post type for a Demo, called HTML5-Blank
+function create_post_type_html5() {
+    register_taxonomy_for_object_type( 'category', 'html5-blank' ); // Register Taxonomies for Category
+    register_taxonomy_for_object_type( 'post_tag', 'html5-blank' );
+    register_post_type( 'html5-blank', // Register Custom Post Type
+        array(
+        'labels'       => array(
+            'name'               => esc_html_e( 'HTML5 Blank Custom Post', 'html5blank' ), // Rename these to suit
+            'singular_name'      => esc_html_e( 'HTML5 Blank Custom Post', 'html5blank' ),
+            'add_new'            => esc_html_e( 'Add New', 'html5blank' ),
+            'add_new_item'       => esc_html_e( 'Add New HTML5 Blank Custom Post', 'html5blank' ),
+            'edit'               => esc_html_e( 'Edit', 'html5blank' ),
+            'edit_item'          => esc_html_e( 'Edit HTML5 Blank Custom Post', 'html5blank' ),
+            'new_item'           => esc_html_e( 'New HTML5 Blank Custom Post', 'html5blank' ),
+            'view'               => esc_html_e( 'View HTML5 Blank Custom Post', 'html5blank' ),
+            'view_item'          => esc_html_e( 'View HTML5 Blank Custom Post', 'html5blank' ),
+            'search_items'       => esc_html_e( 'Search HTML5 Blank Custom Post', 'html5blank' ),
+            'not_found'          => esc_html_e( 'No HTML5 Blank Custom Posts found', 'html5blank' ),
+            'not_found_in_trash' => esc_html_e( 'No HTML5 Blank Custom Posts found in Trash', 'html5blank' ),
+        ),
+        'public'       => true,
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'has_archive'  => true,
+        'supports'     => array(
+            'title',
+            'editor',
+            'excerpt',
+            'thumbnail'
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export'   => true, // Allows export in Tools > Export
+        'taxonomies'   => array(
+            'post_tag',
+            'category'
+        ) // Add Category and Post Tags support
+    ) );
 }
-add_action( 'init', 'smakk', 0 );
 
 /*------------------------------------*\
     ShortCode Functions
