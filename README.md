@@ -14,6 +14,7 @@ See below for tasks + submission, this theme is a direct fork of HTML5Blank so y
 
 ## Tasks
 - Install local development server and import the wordpress install - you will receive an email with a download link for an export from WPEngine, with SQL Dump, plugin files, core Wordpress files & theme files. You will need to, import SQL dump into your local database, rename the wp-url and site-url inside the wp-options table with your local dev url, delete wp-config.php and rename wp-config-sample.php to wp-config.php replacing your local DB values with the placeholder. (This bits a little confusing, shoot me an email if you’re having trouble setting it up)
+- For the above I would also reccomend deleting the themes that will come from the export so that you can get the lastest from github and ensure that node modules will install correctly
 - Create a page template for the home page and extract the content from the ACF repeater and flexible content areas that I have filled with data. (Am not worried at all about styling, can just wrap in html tags)
 - Loop through the SMAKK Custom Post Type and Make a list of the titles and links to the individual posts on a custom archive page.
 
