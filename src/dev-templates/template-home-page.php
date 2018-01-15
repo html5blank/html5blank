@@ -10,6 +10,57 @@
 
       <!-- article -->
       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+      <div class="flex___content">
+
+
+
+
+      <?php
+        if ( have_rows('page_content') ):
+          while (have_rows('page_content') ) : the_row();
+
+
+
+          if ( get_row_layout() == 'text_area' ): ?>
+
+          <section class="text___area">
+            <h1> <?php the_sub_field('text_area'); ?> </h1>
+          </section>
+
+     <?php elseif (get_row_layout() =='hero_image' ) : ?>
+            <?php if( have_rows('gallery') ) : ?>
+            <section class="hero___section">
+              <h1> Gallery Images  </h1>
+            <?php while( have_rows('gallery') ): the_row(); ?>
+              <?php $image = get_sub_field('image'); ?>
+
+              <div>
+              <img class="gallery___img" src ="<?php echo $image; ?>">
+              <h1><?php the_sub_field('caption'); ?></h1>
+               </div>
+               </section>
+             <?php endwhile; ?>
+             <?php endif; ?>
+
+
+
+
+          <?php elseif (get_row_layout() =='cta' ) : ?>
+              <section class="cta___link">
+            <h1> CTA Link: <?php the_sub_field('cta_link'); ?> </h1>
+          </section>
+
+
+
+
+          <?php endif; ?>
+           <?php endwhile; ?>
+            <?php endif; ?>
+
+
+
+
+
 
         <?php the_content(); ?>
 
@@ -18,7 +69,7 @@
         <br class="clear">
 
         <?php edit_post_link(); ?>
-
+        </div>
       </article>
       <!-- /article -->
 
@@ -40,6 +91,6 @@
     <!-- /section -->
   </main>
 
-<?php get_sidebar(); ?>
+
 
 <?php get_footer(); ?>
