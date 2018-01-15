@@ -2,7 +2,7 @@
 
   <main role="main" aria-label="Content">
     <!-- section -->
-    <section>
+    <section class="fc___container">
 
       <h1><?php the_title(); ?></h1>
 
@@ -10,14 +10,14 @@
 
       <!-- article -->
       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-      <div class="flex___content">
+      <div class="fc___content">
 
+        <!-- ACF fields begin  -->
       <?php
         if ( have_rows('page_content') ):
           while (have_rows('page_content') ) : the_row();
 
-
-
+          // text area field begins
           if ( get_row_layout() == 'text_area' ): ?>
 
           <section class="text___area">
@@ -25,16 +25,17 @@
           </section>
 
      <?php elseif (get_row_layout() =='hero_image' ) : ?>
-              <h1> HERO IMAGE </h1>
+           <!-- gets hero_image fields   -->
+             <section class="hero___first">
              <?php $fullWidthImg =  get_sub_field('full_width_image'); ?>
-              <img src="<?php echo $fullWidthImg; ?>">
-             </div>
+              <img class="hero__first--img " src="<?php echo $fullWidthImg; ?>">
+                <h1><?php the_sub_field('caption'); ?></h1>
+             </section>
 
             <?php if( have_rows('gallery') ) : ?>
-            <section class="hero___section">
-
+            <section class="hero___gallery">
               <!-- gallery repeater field begins  -->
-              <h1> Gallery Images  </h1>
+              <h1> GALLERY IMAGES  </h1>
             <?php while( have_rows('gallery') ): the_row(); ?>
               <?php $image = get_sub_field('image'); ?>
 
@@ -43,28 +44,23 @@
               <h1><?php the_sub_field('caption'); ?></h1>
                </div>
                </section>
+                       <!-- gallery repeater field ends  -->
              <?php endwhile; ?>
              <?php endif; ?>
 
 
 
-
+          <!-- CTA field begins  -->
           <?php elseif (get_row_layout() =='cta' ) : ?>
               <section class="cta___link">
             <h1> CTA Link: <?php the_sub_field('cta_link'); ?> </h1>
           </section>
 
-
-
-
+          </section>
           <?php endif; ?>
            <?php endwhile; ?>
             <?php endif; ?>
-
-
-
-
-
+     <!-- ACF fields end  -->
 
         <?php the_content(); ?>
 
