@@ -12,9 +12,6 @@
       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
       <div class="flex___content">
 
-
-
-
       <?php
         if ( have_rows('page_content') ):
           while (have_rows('page_content') ) : the_row();
@@ -28,8 +25,15 @@
           </section>
 
      <?php elseif (get_row_layout() =='hero_image' ) : ?>
+              <h1> HERO IMAGE </h1>
+             <?php $fullWidthImg =  get_sub_field('full_width_image'); ?>
+              <img src="<?php echo $fullWidthImg; ?>">
+             </div>
+
             <?php if( have_rows('gallery') ) : ?>
             <section class="hero___section">
+
+              <!-- gallery repeater field begins  -->
               <h1> Gallery Images  </h1>
             <?php while( have_rows('gallery') ): the_row(); ?>
               <?php $image = get_sub_field('image'); ?>
