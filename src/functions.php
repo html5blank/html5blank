@@ -156,9 +156,8 @@ function html5blank_styles() {
 // Register HTML5 Blank Navigation
 function register_html5_menu() {
     register_nav_menus( array( // Using array to specify more menus if needed
-        'header-menu'  => esc_html_e( 'Header Menu', 'html5blank' ), // Main Navigation
-        'sidebar-menu' => esc_html_e( 'Sidebar Menu', 'html5blank' ), // Sidebar Navigation
-        'extra-menu'   => esc_html_e( 'Extra Menu', 'html5blank' ) // Extra Navigation if needed (duplicate as many as you need!)
+        'header-menu'  => esc_html( 'Header Menu', 'html5blank' ), // Main Navigation
+        'extra-menu'   => esc_html( 'Extra Menu', 'html5blank' ) // Extra Navigation if needed (duplicate as many as you need!)
     ) );
 }
 
@@ -206,8 +205,8 @@ function remove_width_attribute( $html ) {
 if ( function_exists( 'register_sidebar' ) ) {
     // Define Sidebar Widget Area 1
     register_sidebar( array(
-        'name'          => esc_html_e( 'Widget Area 1', 'html5blank' ),
-        'description'   => esc_html_e( 'Description for this widget-area...', 'html5blank' ),
+        'name'          => esc_html( 'Widget Area 1', 'html5blank' ),
+        'description'   => esc_html( 'Description for this widget-area...', 'html5blank' ),
         'id'            => 'widget-area-1',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget'  => '</div>',
@@ -217,8 +216,8 @@ if ( function_exists( 'register_sidebar' ) ) {
 
     // Define Sidebar Widget Area 2
     register_sidebar( array(
-        'name'          => esc_html_e( 'Widget Area 2', 'html5blank' ),
-        'description'   => esc_html_e( 'Description for this widget-area...', 'html5blank' ),
+        'name'          => esc_html( 'Widget Area 2', 'html5blank' ),
+        'description'   => esc_html( 'Description for this widget-area...', 'html5blank' ),
         'id'            => 'widget-area-2',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget'  => '</div>',
@@ -421,18 +420,18 @@ function create_post_type_html5() {
     register_post_type( 'html5-blank', // Register Custom Post Type
         array(
         'labels'       => array(
-            'name'               => esc_html_e( 'HTML5 Blank Custom Post', 'html5blank' ), // Rename these to suit
-            'singular_name'      => esc_html_e( 'HTML5 Blank Custom Post', 'html5blank' ),
-            'add_new'            => esc_html_e( 'Add New', 'html5blank' ),
-            'add_new_item'       => esc_html_e( 'Add New HTML5 Blank Custom Post', 'html5blank' ),
-            'edit'               => esc_html_e( 'Edit', 'html5blank' ),
-            'edit_item'          => esc_html_e( 'Edit HTML5 Blank Custom Post', 'html5blank' ),
-            'new_item'           => esc_html_e( 'New HTML5 Blank Custom Post', 'html5blank' ),
-            'view'               => esc_html_e( 'View HTML5 Blank Custom Post', 'html5blank' ),
-            'view_item'          => esc_html_e( 'View HTML5 Blank Custom Post', 'html5blank' ),
-            'search_items'       => esc_html_e( 'Search HTML5 Blank Custom Post', 'html5blank' ),
-            'not_found'          => esc_html_e( 'No HTML5 Blank Custom Posts found', 'html5blank' ),
-            'not_found_in_trash' => esc_html_e( 'No HTML5 Blank Custom Posts found in Trash', 'html5blank' ),
+            'name'               => esc_html( 'HTML5 Blank Custom Post', 'html5blank' ), // Rename these to suit
+            'singular_name'      => esc_html( 'HTML5 Blank Custom Post', 'html5blank' ),
+            'add_new'            => esc_html( 'Add New', 'html5blank' ),
+            'add_new_item'       => esc_html( 'Add New HTML5 Blank Custom Post', 'html5blank' ),
+            'edit'               => esc_html( 'Edit', 'html5blank' ),
+            'edit_item'          => esc_html( 'Edit HTML5 Blank Custom Post', 'html5blank' ),
+            'new_item'           => esc_html( 'New HTML5 Blank Custom Post', 'html5blank' ),
+            'view'               => esc_html( 'View HTML5 Blank Custom Post', 'html5blank' ),
+            'view_item'          => esc_html( 'View HTML5 Blank Custom Post', 'html5blank' ),
+            'search_items'       => esc_html( 'Search HTML5 Blank Custom Post', 'html5blank' ),
+            'not_found'          => esc_html( 'No HTML5 Blank Custom Posts found', 'html5blank' ),
+            'not_found_in_trash' => esc_html( 'No HTML5 Blank Custom Posts found in Trash', 'html5blank' ),
         ),
         'public'       => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
