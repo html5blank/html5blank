@@ -139,13 +139,26 @@ gulp.task( "uglify", function() {
 		.pipe( gulp.dest( "dist/js" ) );
 });
 
+/** jQuery **/
+gulp.task("jquery", function() {
+	return gulp.src("node_modules/jquery/dist/jquery.js")
+		.pipe( $.sourcemaps.init() )
+		.pipe( $.sourcemaps.write( "." ) )
+		.pipe( gulp.dest( "src/js/lib" ) );
+});
+
+gulp.task("normalize", function() {
+	return gulp.src("node_modules/normalize.css/normalize.css")
+		.pipe( gulp.dest( "src/css/lib" ) );
+});
+
 /** `env` to 'production' */
 gulp.task( "envProduction", function() {
 	env = "production";
 });
 
 /** Livereload */
-gulp.task( "watch", [ "template", "styles", "jshint" ], function() {
+gulp.task( "watch", [ "template", "styles", "jshint", "modernizr", "jquery", "normalize" ], function() {
 	var server = $.livereload;
 	server.listen();
 
