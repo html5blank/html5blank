@@ -3,3 +3,10 @@ node_modules
 src/bower_components
 src/css/maps
 .idea
+src/modules/is-debug.php
+
+# ignore gulp generated files
+src/style.css
+src/js/lib
+src/css/lib
+src/css/style.css*

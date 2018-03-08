@@ -124,20 +124,21 @@
   },
   "devDependencies": {
     "del": "^3.0.0",
+    "eslint": "^4.18.2",
+    "eslint-config-wordpress": "^2.0.0",
     "gulp": "^3.6.0",
     "gulp-autoprefixer": "^4.1.0",
     "gulp-concat": "^2.3.4",
     "gulp-csso": "^3.0.1",
-    "gulp-jshint": "^2.1.0",
+    "gulp-eslint": "^4.0.2",
     "gulp-livereload": "^3.8.1",
     "gulp-load-plugins": "^1.4.0",
+    "gulp-plumber": "^1.2.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-template": "^5.0.0",
     "gulp-uglify": "^3.0.0",
-    "jquery": "^3.3.1",
-    "jshint": "^2.9.4",
-    "jshint-stylish": "^2.2.1"
+    "jquery": "^3.3.1"
   },
   "engines": {
     "node": ">=0.10.0"

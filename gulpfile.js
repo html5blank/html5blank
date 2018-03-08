@@ -1,6 +1,6 @@
-/* jshint node: true */
 /* global $: true */
 "use strict";
+const eslint = require('gulp-eslint');
 
 var gulp = require( "gulp" ),
 	/** @type {Object} Loader of Gulp plugins from `package.json` */
@@ -73,12 +73,11 @@ gulp.task( "copy", function() {
 /** CSS Preprocessors */
 gulp.task( "sass", function () {
 	return gulp.src( "src/css/sass/style.scss" )
+		.pipe( $.plumber() )
 		.pipe( $.sourcemaps.init() )
 		.pipe( $.sass() )
 		.pipe( $.sourcemaps.write( "." ) )
-		.on( "error", function( e ) {
-			console.error( e );
-		})
+		.on( "error", $.sass.logError)
 		.pipe( gulp.dest( "src/css" ) );
 });
 
@@ -100,13 +99,21 @@ gulp.task( "styles", [ "sass" ], function() {
 		.pipe( gulp.dest( "src" ) );
 });
 
-/** JSHint */
-gulp.task( "jshint", function () {
-	/** Test all `js` files exclude those in the `lib` folder */
-	return gulp.src( "src/js/{!(lib)/*.js,*.js}" )
-		.pipe( $.jshint() )
-		.pipe( $.jshint.reporter( "jshint-stylish" ) )
-		.pipe( $.jshint.reporter( "fail" ) );
+gulp.task('lint', () => {
+    // ESLint ignores files with "node_modules" paths.
+    // So, it's best to have gulp ignore the directory as well.
+    // Also, Be sure to return the stream from the task;
+    // Otherwise, the task may end before the stream has finished.
+    return gulp.src(['src/js/{!(lib)/*.js,*.js}','!node_modules/**'])
+        // eslint() attaches the lint output to the "eslint" property
+        // of the file object so it can be used by other modules.
+        .pipe(eslint())
+        // eslint.format() outputs the lint results to the console.
+        // Alternatively use eslint.formatEach() (see Docs).
+        .pipe(eslint.format());
+        // To have the process exit with an error code (1) on
+        // lint error, return the stream and pipe to failAfterError last.
+        // .pipe(eslint.failAfterError());
 });
 
 /** Templates */
@@ -158,7 +165,7 @@ gulp.task( "envProduction", function() {
 });
 
 /** Livereload */
-gulp.task( "watch", [ "template", "styles", "jshint", "modernizr", "jquery", "normalize" ], function() {
+gulp.task( "watch", [ "template", "styles", "lint", "modernizr", "jquery", "normalize" ], function() {
 	var server = $.livereload;
 	server.listen();
 
@@ -179,7 +186,7 @@ gulp.task( "watch", [ "template", "styles", "jshint", "modernizr", "jquery", "no
 	], [ "styles" ] );
 
 	/** Watch for JSHint */
-	gulp.watch( "src/js/{!(lib)/*.js,*.js}", ["jshint"] );
+	gulp.watch( "src/js/{!(lib)/*.js,*.js}", ["lint"] );
 });
 
 /** Build */
@@ -189,7 +196,7 @@ gulp.task( "build", [
 	"template",
 	"styles",
 	"modernizr",
-	"jshint",
+	"lint",
 	"copy",
 	"uglify"
 ], function () {
