@@ -1,0 +1,10 @@
+{
+	"connection": {
+	    "host": "",
+	    "user": "",
+	    "password": "",
+	    "parallel": 10,
+	    "log": "something.log"
+	},
+	"destination": "/public_html/test"
+}

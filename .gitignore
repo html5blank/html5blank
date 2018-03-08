@@ -10,3 +10,9 @@ src/style.css
 src/js/lib
 src/css/lib
 src/css/style.css*
+
+# ignore config files
+ftp.config.json
+
+# ignore build path
+dist/

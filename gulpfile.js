@@ -1,6 +1,8 @@
 /* global $: true */
 "use strict";
 const eslint = require('gulp-eslint');
+const ftp = require( 'vinyl-ftp' );
+const ftpConfig = require('./ftp.config.json');
 
 var gulp = require( "gulp" ),
 	/** @type {Object} Loader of Gulp plugins from `package.json` */
@@ -205,3 +207,90 @@ gulp.task( "build", [
 
 /** Gulp default task */
 gulp.task( "default", ["watch"] );
+
+/** Deploy */
+gulp.task( 'deploy', ["build"], function () {
+ 	if (!ftpConfig) {
+ 		throw new Error('Ftp configuration object does not exist');
+ 	} else if (!ftpConfig.connection) {
+ 		throw new Error('Ftp connection is not defined');
+ 	}
+
+    var conn = ftp.create(ftpConfig.connection);
+ 
+    var globs = [
+        'dist/**'
+    ];
+ 
+    // turn off buffering in gulp.src for best performance
+ 
+    return gulp.src( globs, { base: '.', buffer: false } )
+        .pipe( conn.newer( ftpConfig.destination ) ) // only upload newer files
+        .pipe( conn.dest( ftpConfig.destination ) );
+ 
+});
+
+/* Prepares server for online watch */
+gulp.task('watch:online:init', [ "template", "styles", "lint", "modernizr", "jquery", "normalize" ], function () {
+	 if (!ftpConfig) {
+ 		throw new Error('Ftp configuration object does not exist');
+ 	} else if (!ftpConfig.connection) {
+ 		throw new Error('Ftp connection is not defined');
+ 	}
+
+    var conn = ftp.create(ftpConfig.connection);
+
+    var globs = [
+        'src/**',
+    ];
+
+    return gulp.src( globs, {base: '.', buffer: false} )
+        .pipe(conn.dest(ftpConfig.destination));
+});
+
+/* Watch and deploy to server - use in DEVELOPMENT ONLY */
+gulp.task( "watch:online", [ "template", "styles", "lint", "modernizr", "jquery", "normalize" ], function() {
+	var server = $.livereload;
+	server.listen();
+
+	/** Watch for livereoad */
+	gulp.watch([
+		"src/js/**/*.js",
+		"src/*.php",
+		"src/*.css"
+	]).on( "change", function( file ) {
+		console.log( file.path );
+		server.changed( file.path );
+	});
+
+	/** Watch for autoprefix */
+	gulp.watch( [
+		"src/css/*.css",
+		"src/css/sass/**/*.scss"
+	], [ "styles" ] );
+
+	/** Watch for JSHint */
+	gulp.watch( "src/js/{!(lib)/*.js,*.js}", ["lint"] );
+
+
+	/* Deploy source files to server when they change */
+ 	if (!ftpConfig) {
+ 		throw new Error('Ftp configuration object does not exist');
+ 	} else if (!ftpConfig.connection) {
+ 		throw new Error('Ftp connection is not defined');
+ 	}
+
+ 	 var globs = [
+		"src/**"
+    ];
+    var watcher = gulp.watch(globs);
+    var conn = ftp.create(ftpConfig.connection);
+
+    watcher.on('change', function (event) {
+        console.log(
+            'File "' + event.path + '" ' + event.type + ' - uploading...');
+        return gulp.src([event.path], { base: '.', buffer: false })
+        	.pipe(conn.newer(ftpConfig.destination)) // only upload newer files
+          	.pipe(conn.dest(ftpConfig.destination));
+    });
+});
