@@ -2,7 +2,7 @@
 "use strict";
 const eslint = require('gulp-eslint');
 const ftp = require( 'vinyl-ftp' );
-const ftpConfig = require('./ftp.config.json');
+//const ftpConfig = require('./ftp.config.json');
 
 var gulp = require( "gulp" ),
 	/** @type {Object} Loader of Gulp plugins from `package.json` */

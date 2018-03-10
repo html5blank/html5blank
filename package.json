@@ -120,7 +120,7 @@
   "dependencies": {
     "modernizr": "^3.5.0",
     "normalize.css": "^7.0.0",
-    "npm": "^5.6.0"
+    "npm": "^5.7.1"
   },
   "devDependencies": {
     "del": "^3.0.0",
