@@ -7,6 +7,8 @@ src/modules/is-debug.php
 
 # ignore gulp generated files
 src/style.css
+#src/js/lib	
+#src/css/lib
 src/css/style.css*
 
 # ignore config files
