@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5, h6{
 .gform_ajax_spinner {
   margin-left: 20px;        /* give it some space from the Submit button */
   border: 4px solid rgba(255, 255, 255, 0.3); /* match with border-left */
-  border-left: 4px solid $blue;
+  border-left: 4px solid blue;
   animation: spinner 1.1s infinite linear;
   border-radius: 50%;
   width: 30px;          /* match with height for a circle */
