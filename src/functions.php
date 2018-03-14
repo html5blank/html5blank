@@ -483,6 +483,18 @@ function html5_shortcode_demo_2( $atts, $content = null ) {
 
 
 
+
+
+
+
+/*------------------------------------*\
+    Gravity forms settings
+\*------------------------------------*/
+// Local congif file
+//define( 'GF_THEME_IMPORT_FILE', 'path/to/gf_import.json' );
+
+// Custom gravity forms spinner
+
 function gf_spinner_replace( $image_src, $form ) {
     return  'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'; // relative to you theme images folder
 }
