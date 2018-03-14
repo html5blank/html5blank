@@ -101,6 +101,12 @@ function html5blank_header_scripts() {
             // Modernizr
             wp_register_script( 'modernizr', get_template_directory_uri() . '/js/lib/modernizr.js', array(), '2.8.3' );
 
+            // slickslider
+            wp_register_script( 'slickslider', get_template_directory_uri() . '/js/lib/slick.min.js', array( 'jquery' ), '1.0.0' );
+
+            // fancybox
+            wp_register_script( 'fancybox', get_template_directory_uri() . '/js/lib/jquery.fancybox.min.js', array( 'jquery' ), '1.0.0' );
+
             // Custom scripts
             wp_register_script(
                 'html5blankscripts',
@@ -108,6 +114,8 @@ function html5blank_header_scripts() {
                 array(
                     'conditionizr',
                     'modernizr',
+                    'slickslider',
+                    'fancybox',
                     'jquery'
                 ),
                 '1.0.0' );
@@ -140,8 +148,17 @@ function html5blank_styles() {
         // normalize-css
         wp_register_style( 'normalize', get_template_directory_uri() . '/css/lib/normalize.css', array(), '7.0.0' );
 
+        // slick-css
+        wp_register_style( 'slick', get_template_directory_uri() . '/css/lib/slick.css', array(), '1.0.0' );
+
+        // slick-css
+        wp_register_style( 'slicktheme', get_template_directory_uri() . '/css/lib/slick-theme.css', array(), '1.0.0' );
+
+        // fancybox
+        wp_register_style( 'fancybox', get_template_directory_uri() . '/css/lib/jquery.fancybox.min.css', array(), '1.0.0' );
+
         // Custom CSS
-        wp_register_style( 'html5blank', get_template_directory_uri() . '/style.css', array( 'normalize' ), '1.0' );
+        wp_register_style( 'html5blank', get_template_directory_uri() . '/style.css', array( 'normalize', 'slick', 'slicktheme', 'fancybox' ), '1.0' );
 
         // Register CSS
         wp_enqueue_style( 'html5blank' );
