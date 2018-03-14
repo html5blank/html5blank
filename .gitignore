@@ -7,9 +7,10 @@ src/modules/is-debug.php
 
 # ignore gulp generated files
 src/style.css
-#src/js/lib	
-#src/css/lib
 src/css/style.css*
+src/js/lib/jquery.js
+src/css/lib/normalize.css
+src/js/lib/modernizr.js
 
 # ignore config files
 ftp.config.json
