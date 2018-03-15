@@ -10,11 +10,17 @@ var gulp = require( "gulp" ),
 	/** @type {Array} JS source files to concatenate and uglify */
 	uglifySrc = [
 		/** Modernizr */
-		"src/js/lib/modernizr.js",
+		/*"src/js/lib/modernizr.js",*/
 		/** Conditionizr */
-		"src/js/lib/conditionizr-4.3.0.min.js",
+		/*"src/js/lib/conditionizr-4.3.0.min.js",*/
 		/** jQuery */
-		"node_modules/jquery/dist/jquery.js",
+		/*"node_modules/jquery/dist/jquery.js",*/
+		/** Fancy */
+		"src/js/lib/jquery.fancybox.min.js",
+		/** Marka */
+		"src/js/lib/marka.min.js",
+		/** Slick */
+		"src/js/lib/slick.min.js",
 		/** Page scripts */
 		"src/js/scripts.js"
 	],
@@ -31,6 +37,14 @@ var gulp = require( "gulp" ),
 			"src/css/banner.css",
 			/** Normalize */
 			"node_modules/normalize.css/normalize.css",
+			/** Fancy */
+			"src/css/lib/jquery.fancybox.min.css",
+			/** Marka */
+			"src/css/lib/marka.min.css",
+			/** Slick */
+			"src/css/lib/slick.css",
+			/** Slick-theme */
+			"src/css/lib/slick-theme.css",
 			/** Theme style */
 			"src/css/style.css"
 		]
@@ -61,7 +75,7 @@ gulp.task( "clean", require( "del" ).bind( null, [ ".tmp", "dist" ] ) );
 /** Copy */
 gulp.task( "copy", function() {
 	return gulp.src([
-			"src/*.{php,png,css}",
+			"src/*.{php,png,css,gif}",
 			"src/modules/*.php",
 			"src/img/**/*.{jpg,png,svg,gif,webp,ico}",
 			"src/fonts/*.{woff,woff2,ttf,otf,eot,svg}",
@@ -167,7 +181,7 @@ gulp.task( "envProduction", function() {
 });
 
 /** Livereload */
-gulp.task( "watch", [ "template", "styles", "lint", "modernizr", "jquery", "normalize" ], function() {
+gulp.task( "watch", [ "template", "styles", "lint", /*"modernizr",*/ /*"jquery",*/ "normalize" ], function() {
 	var server = $.livereload;
 	server.listen();
 
@@ -197,7 +211,7 @@ gulp.task( "build", [
 	"clean",
 	"template",
 	"styles",
-	"modernizr",
+	/*"modernizr",*/
 	"lint",
 	"copy",
 	"uglify"
@@ -231,7 +245,7 @@ gulp.task( 'deploy', ["build"], function () {
 });
 
 /* Prepares server for online watch */
-gulp.task('watch:online:init', [ "template", "styles", "lint", "modernizr", "jquery", "normalize" ], function () {
+gulp.task('watch:online:init', [ "template", "styles", "lint", /*"modernizr",*/ /*"jquery",*/ "normalize" ], function () {
 	 if (!ftpConfig) {
  		throw new Error('Ftp configuration object does not exist');
  	} else if (!ftpConfig.connection) {
@@ -249,7 +263,7 @@ gulp.task('watch:online:init', [ "template", "styles", "lint", "modernizr", "jqu
 });
 
 /* Watch and deploy to server - use in DEVELOPMENT ONLY */
-gulp.task( "watch:online", [ "template", "styles", "lint", "modernizr", "jquery", "normalize" ], function() {
+gulp.task( "watch:online", [ "template", "styles", "lint", /*"modernizr",*/ /*"jquery",*/ "normalize" ], function() {
 	var server = $.livereload;
 	server.listen();
 

@@ -17,10 +17,10 @@
 		<script>
 		// conditionizr.com
 		// configure environment tests
-		conditionizr.config({
-			assets: '<?php echo esc_url( get_template_directory_uri() ); ?>',
-			tests: {}
-		});
+		//conditionizr.config({
+		//	assets: '<?php echo esc_url( get_template_directory_uri() ); ?>',
+		//	tests: {}
+		//});
 		</script>
 
 	</head>
@@ -51,15 +51,14 @@
 			<!-- /header -->
 
 
-<!-- Marka icon example. Only awailable Bars and Times for hamburger menu
+<!-- Marka icon example. Only awailable Bars and Times for hamburger menu -->
 
 <i id="menu_icon"></i>
 <script>
-	var m = new Marka('#menu_icon');
-	m.set('bars').size(40);
+	
 </script>
-	-->
-<!--  Example for fancybox and slick slider
+
+<!--  Example for fancybox and slick slider -->
 <div class="your-class">
 	<div>your content</div>
 	<div>your content</div>
@@ -74,4 +73,3 @@
 
 <a data-fancybox="gallery" href="<?php echo esc_url( get_template_directory_uri() ); ?>/img/logo.svg"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/logo.svg"></a>
 <a data-fancybox="gallery" href="<?php echo esc_url( get_template_directory_uri() ); ?>/img/logo.svg"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/logo.svg"></a>
- -->
