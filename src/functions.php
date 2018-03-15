@@ -107,6 +107,9 @@ function html5blank_header_scripts() {
             // fancybox
             wp_register_script( 'fancybox', get_template_directory_uri() . '/js/lib/jquery.fancybox.min.js', array( 'jquery' ), '1.0.0' );
 
+            // marka animated icons
+            wp_register_script( 'markaJs', get_template_directory_uri() . '/js/lib/marka.min.js', array( ), '1.0.0' );
+
             // Custom scripts
             wp_register_script(
                 'html5blankscripts',
@@ -116,6 +119,7 @@ function html5blank_header_scripts() {
                     'modernizr',
                     'slickslider',
                     'fancybox',
+                    'markaJs',
                     'jquery'
                 ),
                 '1.0.0' );
@@ -157,8 +161,11 @@ function html5blank_styles() {
         // fancybox
         wp_register_style( 'fancybox', get_template_directory_uri() . '/css/lib/jquery.fancybox.min.css', array(), '1.0.0' );
 
+        // marka animated icons
+        wp_register_style( 'markaCss', get_template_directory_uri() . '/css/lib/marka.min.css', array(), '1.0.0' );
+
         // Custom CSS
-        wp_register_style( 'html5blank', get_template_directory_uri() . '/style.css', array( 'normalize', 'slick', 'slicktheme', 'fancybox' ), '1.0' );
+        wp_register_style( 'html5blank', get_template_directory_uri() . '/style.css', array( 'normalize', 'slick', 'slicktheme', 'fancybox', 'markaCss' ), '1.0' );
 
         // Register CSS
         wp_enqueue_style( 'html5blank' );

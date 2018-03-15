@@ -49,6 +49,16 @@
 
 			</header>
 			<!-- /header -->
+
+
+<!-- Marka icon example. Only awailable Bars and Times for hamburger menu
+
+<i id="menu_icon"></i>
+<script>
+	var m = new Marka('#menu_icon');
+	m.set('bars').size(40);
+</script>
+	-->
 <!--  Example for fancybox and slick slider
 <div class="your-class">
 	<div>your content</div>
