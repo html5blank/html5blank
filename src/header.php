@@ -49,17 +49,19 @@
 
 			</header>
 			<!-- /header -->
-			<div class="your-class">
-				<div>your content</div>
-				<div>your content</div>
-				<div>your content</div>
-			</div>
-			<script type="text/javascript">
-				jQuery(document).ready(function(){
-					jQuery('.your-class').slick();
-				});
-			</script>
+<!--  Example for fancybox and slick slider
+<div class="your-class">
+	<div>your content</div>
+	<div>your content</div>
+	<div>your content</div>
+</div>
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+		jQuery('.your-class').slick();
+	});
+</script>
 
 
 <a data-fancybox="gallery" href="<?php echo esc_url( get_template_directory_uri() ); ?>/img/logo.svg"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/logo.svg"></a>
 <a data-fancybox="gallery" href="<?php echo esc_url( get_template_directory_uri() ); ?>/img/logo.svg"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/logo.svg"></a>
+ -->
