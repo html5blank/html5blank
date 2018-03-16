@@ -1,3 +1,3 @@
 <?php
-    define('HTML5_DEBUG', <%= is_debug %>);
+    define('HTML5_DEBUG', <%= isDebug %>);
 ?>
