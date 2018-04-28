@@ -5,13 +5,17 @@
   "version": "1.5.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/toddmotto/html5blank.git"
+    "url": "https://github.com/html5blank/html5blank.git"
   },
   "author": "Todd Motto",
   "contributors": [
     {
       "name": "toddmotto",
       "url": "https://github.com/toddmotto"
+    },
+    {
+      "name": "robertdevore",
+      "url": "https://github.com/robertdevore"
     },
     {
       "name": "J-Rabe",
