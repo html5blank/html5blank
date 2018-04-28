@@ -12,15 +12,15 @@ Powerful shell for rapidly deploying your WordPress projects.
 
 * Go to the Wordpress' theme folder (`.../wp-content/themes`)
 * In CLI, run: `git clone https://github.com/toddmotto/html5blank.git`
-* `cd html5blank` and then `npm install` (you'll need gulp install as well)
+* `cd html5blank` and then `npm install` (you'll need gulp installed as well)
 * `gulp watch` will enable `livereload` and development version
 * `gulp build` for distribute version with minified `js` and `css` files
-* NOTE: `src` and `dist` folders can live happily together inside the same folder (`html5blank`) that in the `theme` folder. You'll have two different instances of the theme within `Appearance > Themes` panel inside the admin
+* NOTE: `src` and `dist` folders can live happily together inside the same folder (`html5blank`) that's inside the `theme` folder. You'll have two different instances of the theme within `Appearance > Themes` panel inside the admin
 
 
 ## Get involved! Make HTML5 Blank better
 
-There are a few ways to get involved, submit a Pull Request, or submit a comment on the website - [html5blank.com](http://html5blank.com)
+Help make the code better by submitting a pull request or open an issue.
 
 ## Features
 
