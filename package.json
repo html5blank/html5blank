@@ -115,26 +115,27 @@
     }
   ],
   "scripts": {
+    "watch": "gulp watch",
     "modernizr": "gulp modernizr"
   },
   "dependencies": {
     "modernizr": "^3.6.0",
-    "normalize.css": "^7.0.0",
-    "npm": "^5.10.0"
+    "normalize.css": "^8.0.0",
+    "npm": "^6.4.1"
   },
   "devDependencies": {
     "del": "^3.0.0",
-    "eslint": "^4.19.1",
+    "eslint": "^5.8.0",
     "eslint-config-wordpress": "^2.0.0",
-    "gulp": "^3.6.0",
-    "gulp-autoprefixer": "^4.1.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
     "gulp-concat": "^2.3.4",
     "gulp-csso": "^3.0.1",
-    "gulp-eslint": "^4.0.2",
-    "gulp-livereload": "^3.8.1",
+    "gulp-eslint": "^5.0.0",
+    "gulp-livereload": "^4.0.0",
     "gulp-load-plugins": "^1.4.0",
     "gulp-plumber": "^1.2.0",
-    "gulp-sass": "^3.2.1",
+    "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-template": "^5.0.0",
     "gulp-uglify": "^3.0.1",
@@ -142,6 +143,6 @@
     "vinyl-ftp": "^0.6.1"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=10.13.0"
   }
 }
