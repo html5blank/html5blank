@@ -63,6 +63,12 @@ if ( function_exists( 'add_theme_support' ) ) {
     Functions
 \*------------------------------------*/
 
+//Youtune responsive embed
+add_filter('embed_oembed_html', 'wrap_embed_with_div', 10, 3);
+
+function wrap_embed_with_div($html, $url, $attr) {
+	return "<div class=\"responsive-container\">".$html."</div>";
+}
 // HTML5 Blank navigation
 function html5blank_nav() {
     wp_nav_menu(
