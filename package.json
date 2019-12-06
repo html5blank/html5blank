@@ -116,30 +116,30 @@
   ],
   "scripts": {
     "watch": "gulp watch",
+    "build": "gulp build",
     "modernizr": "gulp modernizr"
   },
   "dependencies": {
-    "modernizr": "^3.6.0",
-    "normalize.css": "^8.0.0",
-    "npm": "^6.4.1"
+    "modernizr": "^3.8.0",
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "del": "^3.0.0",
+    "del": "^5.1.0",
     "eslint": "^5.8.0",
     "eslint-config-wordpress": "^2.0.0",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-concat": "^2.3.4",
-    "gulp-csso": "^3.0.1",
-    "gulp-eslint": "^5.0.0",
-    "gulp-livereload": "^4.0.0",
-    "gulp-load-plugins": "^1.4.0",
-    "gulp-plumber": "^1.2.0",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^4.0.1",
+    "gulp-eslint": "^6.0.0",
+    "gulp-livereload": "^4.0.2",
+    "gulp-load-plugins": "^2.0.1",
+    "gulp-plumber": "^1.2.1",
     "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.4",
+    "gulp-sourcemaps": "^2.6.5",
     "gulp-template": "^5.0.0",
-    "gulp-uglify": "^3.0.1",
-    "jquery": "^3.3.1",
+    "gulp-uglify": "^3.0.2",
+    "jquery": "^3.4.1",
     "vinyl-ftp": "^0.6.1"
   },
   "engines": {
