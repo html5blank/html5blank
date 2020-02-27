@@ -2,6 +2,7 @@
 'use strict';
 const eslint = require( 'gulp-eslint' );
 const ftp = require( 'vinyl-ftp' );
+const del = require( 'del' );
 
 //const ftpConfig = require('./ftp.config.json');
 
@@ -86,27 +87,29 @@ var gulp = require( 'gulp' ),
 		});
 
 		return env;
-	} () );
+	}() );
 
 /** Clean */
-gulp.task( 'clean', require( 'del' ).bind( null, [ '.tmp', 'dist' ]) );
+gulp.task( 'clean', () => {
+	return del([ '.tmp', 'dist' ]);
+});
 
 /** Copy */
-gulp.task( 'copy', function() {
+gulp.task( 'copy', () => {
 	return gulp.src([
-			'src/*.{php,png,css,gif}',
-			'src/modules/*.php',
-			'src/img/**/*.{jpg,png,svg,gif,webp,ico}',
-			'src/fonts/*.{woff,woff2,ttf,otf,eot,svg}',
-			'src/languages/*.{po,mo,pot}'
-		], {
-			base: 'src'
-		})
+		'src/*.{php,png,css,gif}',
+		'src/modules/*.php',
+		'src/img/**/*.{jpg,png,svg,gif,webp,ico}',
+		'src/fonts/*.{woff,woff2,ttf,otf,eot,svg}',
+		'src/languages/*.{po,mo,pot}'
+	], {
+		base: 'src'
+	})
 		.pipe( gulp.dest( 'dist' ) );
 });
 
 /** CSS Preprocessors */
-gulp.task( 'sass', function() {
+gulp.task( 'sass', () => {
 	return gulp.src( 'src/css/sass/style.scss' )
 		.pipe( $.plumber() )
 		.pipe( $.sourcemaps.init() )
@@ -117,11 +120,11 @@ gulp.task( 'sass', function() {
 });
 
 /** STYLES */
-gulp.task( 'styles', [ 'sass' ], function() {
+gulp.task( 'styles', gulp.series( 'sass', () => {
 
-	var stream = gulp.src( cssminSrc[ env ])
-	.pipe( $.concat( 'style.css' ) )
-	.pipe( $.autoprefixer( 'last 2 version' ) );
+	var stream = gulp.src( cssminSrc[env])
+		.pipe( $.concat( 'style.css' ) )
+		.pipe( $.autoprefixer( 'last 2 version' ) );
 
 	console.log( '`styles` task run in `' + env + '` environment' );
 
@@ -129,54 +132,58 @@ gulp.task( 'styles', [ 'sass' ], function() {
 		stream = stream.pipe( $.csso() );
 	}
 
-	return stream.on( 'error', function( e ) {
-			console.error( e );
-		})
+	stream.on( 'error', function( e ) {
+		console.error( 'Error: ', e );
+	})
 		.pipe( gulp.dest( 'src' ) );
-});
+
+	return stream;
+}) );
 
 gulp.task( 'lint', () => {
 
-    // ESLint ignores files with "node_modules" paths.
-    // So, it's best to have gulp ignore the directory as well.
-    // Also, Be sure to return the stream from the task;
-    // Otherwise, the task may end before the stream has finished.
-    return gulp.src([ 'src/js/{!(lib)/*.js,*.js}', '!node_modules/**' ])
-        // eslint() attaches the lint output to the "eslint" property
-        // of the file object so it can be used by other modules.
-        .pipe( eslint() )
-        // eslint.format() outputs the lint results to the console.
-        // Alternatively use eslint.formatEach() (see Docs).
-        .pipe( eslint.format() );
+	// ESLint ignores files with "node_modules" paths.
+	// So, it's best to have gulp ignore the directory as well.
+	// Also, Be sure to return the stream from the task;
+	// Otherwise, the task may end before the stream has finished.
+	return gulp.src([ 'src/js/{!(lib)/*.js,*.js}', '!node_modules/**' ])
+		// eslint() attaches the lint output to the "eslint" property
+		// of the file object so it can be used by other modules.
+		.pipe( eslint() )
+		// eslint.format() outputs the lint results to the console.
+		// Alternatively use eslint.formatEach() (see Docs).
+		.pipe( eslint.format() );
 
-        // To have the process exit with an error code (1) on
-        // lint error, return the stream and pipe to failAfterError last.
-        // .pipe(eslint.failAfterError());
+	// To have the process exit with an error code (1) on
+	// lint error, return the stream and pipe to failAfterError last.
+	// .pipe(eslint.failAfterError());
 });
 
 /** Templates */
-gulp.task( 'template', function() {
+gulp.task( 'template', () => {
 	var isDebug = ( 'production' === env ? 'false' : 'true' );
 	console.log( '`template` task run in `' + env + '` environment' );
 
-    return gulp.src( 'src/dev-templates/is-debug.php' )
-        .pipe( $.template({ isDebug: isDebug }) )
-        .pipe( gulp.dest( 'src/modules' ) );
+	return gulp.src( 'src/dev-templates/is-debug.php' )
+		.pipe( $.template({ isDebug: isDebug }) )
+		.pipe( gulp.dest( 'src/modules' ) );
 });
 
 /** Modernizr **/
-gulp.task( 'modernizr', function() {
+gulp.task( 'modernizr', ( done ) => {
 	var modernizr = require( 'modernizr' ),
 		config = require( './node_modules/modernizr/lib/config-all' ),
 		fs = require( 'fs' );
 
-		modernizr.build( config, function( code ) {
-			fs.writeFile( './src/js/lib/modernizr.js', code );
+	modernizr.build( config, function( code ) {
+		fs.writeFile( './src/js/lib/modernizr.js', code, () => {
+			done();
 		});
+	});
 });
 
 /** Uglify */
-gulp.task( 'uglify', function() {
+gulp.task( 'uglify', () => {
 	return gulp.src( uglifySrc )
 		.pipe( $.concat( 'scripts.min.js' ) )
 		.pipe( $.uglify() )
@@ -184,25 +191,27 @@ gulp.task( 'uglify', function() {
 });
 
 /** jQuery **/
-gulp.task( 'jquery', function() {
+gulp.task( 'jquery', () => {
 	return gulp.src( 'node_modules/jquery/dist/jquery.js' )
 		.pipe( $.sourcemaps.init() )
 		.pipe( $.sourcemaps.write( '.' ) )
 		.pipe( gulp.dest( 'src/js/lib' ) );
 });
 
-gulp.task( 'normalize', function() {
+gulp.task( 'normalize', () => {
 	return gulp.src( 'node_modules/normalize.css/normalize.css' )
 		.pipe( gulp.dest( 'src/css/lib' ) );
 });
 
 /** `env` to 'production' */
-gulp.task( 'envProduction', function() {
+gulp.task( 'envProduction', ( done ) => {
 	env = 'production';
+
+	done();
 });
 
 /** Livereload */
-gulp.task( 'watch', [ 'template', 'styles', 'lint', /*"modernizr",*/ /*"jquery",*/ 'normalize' ], function() {
+gulp.task( 'watch', gulp.series( 'template', 'styles', 'lint', 'normalize', ( done ) => {
 	var server = $.livereload;
 	server.listen();
 
@@ -211,23 +220,26 @@ gulp.task( 'watch', [ 'template', 'styles', 'lint', /*"modernizr",*/ /*"jquery",
 		'src/js/**/*.js',
 		'src/*.php',
 		'src/*.css'
-	]).on( 'change', function( file ) {
-		console.log( file.path );
-		server.changed( file.path );
+	]).on( 'change', ( file ) => {
+		server.changed( file );
 	});
 
 	/** Watch for autoprefix */
 	gulp.watch([
 		'src/css/*.css',
+		'!src/css/style.css',
 		'src/css/sass/**/*.scss'
-	], [ 'styles' ]);
+	], gulp.series( 'styles' ) );
+
 
 	/** Watch for JSHint */
-	gulp.watch( 'src/js/{!(lib)/*.js,*.js}', [ 'lint' ]);
-});
+	gulp.watch( 'src/js/{!(lib)/*.js,*.js}', gulp.series( 'lint' ) );
+
+	done();
+}) );
 
 /** Build */
-gulp.task( 'build', [
+gulp.task( 'build', gulp.series(
 	'envProduction',
 	'clean',
 	'template',
@@ -237,15 +249,17 @@ gulp.task( 'build', [
 	'lint',
 	'copy',
 	'uglify'
-], function() {
-	console.log( 'Build is finished' );
-});
+	, ( done ) => {
+		console.log( 'Build is finished' );
+
+		done();
+	}) );
 
 /** Gulp default task */
-gulp.task( 'default', [ 'watch' ]);
+gulp.task( 'default', gulp.series( 'watch' ) );
 
 /** Deploy */
-gulp.task( 'deploy', [ 'build' ], function() {
+gulp.task( 'deploy', gulp.series( 'build', () => {
 	var conn = ftp.create( ftpConfig.connection );
 	var globs = [ 'dist/**' ];
 
@@ -257,15 +271,14 @@ gulp.task( 'deploy', [ 'build' ], function() {
 
 	// turn off buffering in gulp.src for best performance
 
-    return gulp.src( globs, { base: '.', buffer: false })
-        .pipe( conn.newer( ftpConfig.destination ) ) // only upload newer files
-        .pipe( conn.dest( ftpConfig.destination ) );
-
-});
+	return gulp.src( globs, { base: '.', buffer: false })
+		.pipe( conn.newer( ftpConfig.destination ) ) // only upload newer files
+		.pipe( conn.dest( ftpConfig.destination ) );
+}) );
 
 /* Prepares server for online watch */
-gulp.task( 'watch:online:init', [ 'template', 'styles', 'lint', /*"modernizr",*/ /*"jquery",*/ 'normalize' ], function() {
-    var conn = ftp.create( ftpConfig.connection );
+gulp.task( 'watch:online:init', gulp.series( 'template', 'styles', 'lint', 'normalize', () => {
+	var conn = ftp.create( ftpConfig.connection );
 	var globs = [ 'src/**' ];
 
 	if ( ! ftpConfig ) {
@@ -274,15 +287,15 @@ gulp.task( 'watch:online:init', [ 'template', 'styles', 'lint', /*"modernizr",*/
 		throw new Error( 'Ftp connection is not defined' );
 	}
 
-    return gulp.src( globs, {base: '.', buffer: false})
-        .pipe( conn.dest( ftpConfig.destination ) );
-});
+	return gulp.src( globs, { base: '.', buffer: false })
+		.pipe( conn.dest( ftpConfig.destination ) );
+}) );
 
 /* Watch and deploy to server - use in DEVELOPMENT ONLY */
-gulp.task( 'watch:online', [ 'template', 'styles', 'lint', /*"modernizr",*/ /*"jquery",*/ 'normalize' ], function() {
+gulp.task( 'watch:online', gulp.series( 'template', 'styles', 'lint', 'normalize', ( done ) => {
 
 	var globs = [ 'src/**' ];
-    var watcher = gulp.watch( globs );
+	var watcher = gulp.watch( globs );
 	var conn = ftp.create( ftpConfig.connection );
 	var server = $.livereload;
 	server.listen();
@@ -292,19 +305,19 @@ gulp.task( 'watch:online', [ 'template', 'styles', 'lint', /*"modernizr",*/ /*"j
 		'src/js/**/*.js',
 		'src/*.php',
 		'src/*.css'
-	]).on( 'change', function( file ) {
-		console.log( file.path );
-		server.changed( file.path );
+	]).on( 'change', ( file ) => {
+		server.changed( file );
 	});
 
 	/** Watch for autoprefix */
 	gulp.watch([
 		'src/css/*.css',
+		'!src/css/style.css',
 		'src/css/sass/**/*.scss'
-	], [ 'styles' ]);
+	], gulp.series( 'styles' ) );
 
 	/** Watch for JSHint */
-	gulp.watch( 'src/js/{!(lib)/*.js,*.js}', [ 'lint' ]);
+	gulp.watch( 'src/js/{!(lib)/*.js,*.js}', gulp.series( 'lint' ) );
 
 
 	/* Deploy source files to server when they change */
@@ -313,11 +326,13 @@ gulp.task( 'watch:online', [ 'template', 'styles', 'lint', /*"modernizr",*/ /*"j
 	} else if ( ! ftpConfig.connection ) {
 		throw new Error( 'Ftp connection is not defined' );
 	}
-    watcher.on( 'change', function( event ) {
-        console.log(
-            'File "' + event.path + '" ' + event.type + ' - uploading...' );
-        return gulp.src([ event.path ], { base: '.', buffer: false })
+	watcher.on( 'change', function( event ) {
+		console.log(
+			'File "' + event.path + '" ' + event.type + ' - uploading...' );
+		return gulp.src([ event.path ], { base: '.', buffer: false })
 			.pipe( conn.newer( ftpConfig.destination ) ) // only upload newer files
 			.pipe( conn.dest( ftpConfig.destination ) );
-    });
-});
+	});
+
+	done();
+}) );
