@@ -2,10 +2,14 @@
 			<footer class="footer" role="contentinfo">
 
 				<!-- copyright -->
-				<p class="copyright">
-					&copy; <?php echo esc_html( date( 'Y' ) ); ?> Copyright <?php bloginfo( 'name' ); ?>. <?php esc_html_e( 'Powered by', 'html5blank' ); ?>
-					<a href="//wordpress.org" target="_blank">WordPress</a> &amp; <a href="//html5blank.com" target="_blank">HTML5 Blank</a>.
-				</p>
+			    <?php
+				    printf( '<p class="copyright">' . __( '&copy; %1$s Copyright %2$s. Powered by <a href="%3$s" title="WordPress">WordPress</a> &amp; <a href="%4$s" title="HTML5 Blank">HTML5 Blank</a>.', 'html5blank' ) . '</p>',
+				    	date( 'Y'),
+				    	esc_html( get_bloginfo( 'name' ) ),
+				    	'//wordpress.org',
+				    	'//html5blank.com'
+					);
+				?>
 				<!-- /copyright -->
 
 			</footer>
