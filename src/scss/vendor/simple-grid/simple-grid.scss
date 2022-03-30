@@ -1,0 +1,58 @@
+/**
+ * Default variables and helper mixins
+ */
+
+@import 
+    'defaults',
+    'mixins';
+
+
+/**
+ * Grid scaffolding
+ */
+
+.container {
+    @include clearfix;
+    max-width: $grid-max-width;
+    margin: 0 auto;
+    padding: 0 $grid-gutter;
+}
+
+.row {
+    list-style: none;
+    margin-left: -$grid-gutter;
+    &:not(.row--flex) {
+        @include clearfix;
+    }
+    &.row--gutterless {
+        margin-left: 0;
+    }
+    &.row--flex {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.col {
+    float: left;
+    padding-left: $grid-gutter;
+    box-sizing: border-box;
+    .row--gutterless & {
+        padding-left: 0;
+    }
+}
+
+
+
+/**
+ * Columns generator
+ */
+
+@each $breakpoint in $breakpoints {
+    $name: nth($breakpoint, 1);
+    $declaration: nth($breakpoint, 2);
+
+    @media only screen and #{$declaration} {
+        @include grid-loop($name);
+    }
+}

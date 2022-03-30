@@ -1,0 +1,497 @@
+
+
+/*
+ *  Modern Front-end Boilerplate by @yashi - http://yashiel.com - <yashilanka@gmail.com>
+ *  License - http://yashiel.com/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+
+
+
+$<%= className %>-font-size-base:   14px !default;
+$<%= className %>-line-height-base: 1 !default;
+$<%= className %>-border-color:     #eee !default;
+$<%= className %>-inverse:          #fff !default;
+$<%= className %>-li-width:         (30em / 14) !default;
+
+@font-face {
+  font-family: "<%= fontName %>";
+  src: url('<%= fontPath %><%= fontName %>.eot');
+  src: url('<%= fontPath %><%= fontName %>.eot?#iefix') format('eot'),
+    url('<%= fontPath %><%= fontName %>.woff') format('woff'),
+    url('<%= fontPath %><%= fontName %>.woff2') format('woff2'),
+    url('<%= fontPath %><%= fontName %>.ttf') format('truetype');
+    // url('<%= fontPath %><%= fontName %>.svg#<%= fontName %>') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.<%= className %>:before {
+  display: inline-block;
+  font-family: "<%= fontName %>";
+  font-style: normal;
+  font-weight: normal;
+  // line-height: inherit;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.<%= className %>-lg {
+    font-size: (4em / 3);
+    line-height: (3em / 4);
+    vertical-align: -15%;
+}
+
+@for $l from 0 through 10 {
+.<%= className %>-#{1*$l}x { &:before{font-size: 1em * $l !important;} }
+}
+
+@for $i from 0 through 75 {
+.<%= className %>-#{1*$i} { font-size: 1px * $i; }
+.<%= className %>-l#{1*$i} { padding-left: 1px * $i; }
+.<%= className %>-r#{1*$i} { padding-right: 1px * $i; }
+.<%= className %>-t#{1*$i} { padding-top: 1px * $i; }
+.<%= className %>-b#{1*$i} { padding-bottom: 1px * $i; }
+}
+
+
+.<%= className %>-fw {
+    width: (18em / 14);
+    text-align: center;
+}
+
+.<%= className %>-ul {
+  padding-left: 0;
+  margin-left: $<%= className %>-li-width;
+  list-style-type: none;
+  > li { position: relative; }
+}
+.<%= className %>-li {
+  position: absolute;
+  left: -$<%= className %>-li-width;
+  width: $<%= className %>-li-width;
+  top: (2em / 14);
+  text-align: center;
+  &.<%= className %>-lg {
+    left: -$<%= className %>-li-width + (4em / 14);
+  }
+}
+
+.<%= className %>-border {
+  padding: .2em .25em .15em;
+  border: solid .08em $<%= className %>-border-color;
+  border-radius: .1em;
+}
+
+.<%= className %>-pull-left { float: left; }
+.<%= className %>-pull-right { float: right; }
+
+.<%= className %> {
+  &.<%= className %>-pull-left { margin-right: .3em; }
+  &.<%= className %>-pull-right { margin-left: .3em; }
+}
+
+
+@mixin <%= className %>-icon() {
+  display: inline-block;
+  font: normal normal normal #{$<%= className %>-font-size-base}/#{$<%= className %>-line-height-base} <%= fontName %>; // shortening font declaration
+  font-size: inherit; // can't have font-size inherit on line above, so need to override
+  text-rendering: auto; // optimizelegibility throws things off #1094
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+@mixin <%= className %>-icon-rotate($degrees, $rotation) {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation});
+  -webkit-transform: rotate($degrees);
+      -ms-transform: rotate($degrees);
+          transform: rotate($degrees);
+}
+
+@mixin <%= className %>-icon-flip($horiz, $vert, $rotation) {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation});
+  -webkit-transform: scale($horiz, $vert);
+      -ms-transform: scale($horiz, $vert);
+          transform: scale($horiz, $vert);
+}
+
+
+
+.<%= className %>-rotate-90  { @include <%= className %>-icon-rotate(90deg, 1);  }
+.<%= className %>-rotate-180 { @include <%= className %>-icon-rotate(180deg, 2); }
+.<%= className %>-rotate-270 { @include <%= className %>-icon-rotate(270deg, 3); }
+
+.<%= className %>-flip-horizontal { @include <%= className %>-icon-flip(-1, 1, 0); }
+.<%= className %>-flip-vertical   { @include <%= className %>-icon-flip(1, -1, 2); }
+
+// Hook for IE8-9
+// -------------------------
+
+:root .<%= className %>-rotate-90,
+:root .<%= className %>-rotate-180,
+:root .<%= className %>-rotate-270,
+:root .<%= className %>-flip-horizontal,
+:root .<%= className %>-flip-vertical {
+  filter: none;
+}
+
+
+.<%= className %>-stack {
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  vertical-align: middle;
+}
+.<%= className %>-stack-1x, .<%= className %>-stack-2x {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.<%= className %>-stack-1x { line-height: inherit; }
+.<%= className %>-stack-2x { font-size: 2em; }
+.<%= className %>-inverse { color: $<%= className %>-inverse; }
+
+
+
+
+
+@mixin <%= className %>-style{
+    display: inline-block;
+    font: normal normal normal #{$<%= className %>-font-size-base}/#{$<%= className %>-line-height-base} <%= fontName %>;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: middle;
+    font-variant: normal;
+    font-style: normal;
+    font-weight: normal;
+    // line-height: inherit;
+}
+
+
+
+%<%= className %> {
+  @include <%= className %>-style;
+}
+
+@function <%= className %>-char($icon:null) {
+  $char: "";
+<% _.each(glyphs, function(glyph) { %>
+  @if $icon == <%= glyph.name %> {
+    $char: "\<%= glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase() %>";
+  }<% }); %>
+
+  @return $char;
+}
+
+
+@mixin <%= className %>($icon:null, $insert: null, $extend: true) {
+  @if $insert==before or $insert==after{
+    &:#{$insert} {
+      @if $extend {
+        @extend %<%= className %>;
+      } @else {
+        @include <%= className %>-style;
+      }
+      content: <%= className %>-char($icon);
+    }
+  } @else {
+    @include <%= className %>-style;
+    content: <%= className %>-char($icon);
+  }
+}
+
+<% _.each(glyphs,function(glyph){%>.<%=className%>-<%=glyph.name%>:before{@include <%= className %>(<%=glyph.name%>);}<%});%>
+
+
+
+
+
+
+// Variable
+<% _.each(glyphs,function(glyph){%>$<%=className%>-<%=glyph.name%>:"\<%= glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase() %>";<%});%>
+
+
+// @include padding(size or left/right/top/bottom);
+@mixin <%= className %>-position($pos:null, $size:null, $left:null, $right:null, $top:null, $bottom:null) {
+		    @if $pos==padding {
+						@if $size == null {
+				        #{$pos}-left: #{$left} !important;
+				        #{$pos}-right: #{$right} !important;
+				        #{$pos}-top: #{$top} !important;
+				        #{$pos}-bottom: #{$bottom} !important;
+						} @else {
+						    #{$pos}: $size;
+						}
+		    } @elseif $pos== margin{
+						@if $size == null {
+				        #{$pos}-left: #{$left}!important;
+				        #{$pos}-right: #{$right}!important;
+				        #{$pos}-top: #{$top}!important;
+				        #{$pos}-bottom: #{$bottom}!important;
+						} @else {
+						    #{$pos}: $size;
+						}
+		    }
+}
+
+// String Replace
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+// zIndex
+// @include mi-zIndex(zIndex);
+
+@mixin <%= className %>-zIndex($zIndex) {
+	@if $zIndex {
+		z-index: strip-units($zIndex);
+	}
+}
+
+// size
+// @include size(size);
+
+@mixin <%= className %>-size($size) {
+  @if $size {
+    font-size: 1px * strip-units($size);
+  }
+}
+
+// scale
+// @include scale(scale);
+@mixin <%= className %>-scale($scale) {
+  @if $scale {
+    font-size: 1em * strip-units($scale) !important;
+  }
+}
+
+// Transition
+// @include <%= className %>-transition(transition);
+@mixin <%= className %>-transition($transition) {
+  @include transition(#{$transition});
+}
+
+// color
+// @include color(color);
+@mixin <%= className %>-color($color) {
+  color: $color;
+}
+
+// padding-left
+// @include mi-padding-left(left);
+@mixin <%= className %>-padding-left($pleft) {
+  @if $pleft {
+    padding-left: 1px * strip-units($pleft);
+  }
+}
+
+// padding-top
+// @include mi-padding-top(left);
+@mixin <%= className %>-padding-top($ptop) {
+  @if $ptop {
+    padding-top: 1px * strip-units($ptop);
+  }
+}
+
+// lpadding-eft
+// @include mi-padding-left(left);
+@mixin <%= className %>-padding-bottom($pbottom) {
+  @if $pbottom {
+    padding-bottom: 1px * strip-units($pbottom);
+  }
+}
+
+// padding-right
+// @include mi-padding-right(right);
+@mixin <%= className %>-padding-right($pright) {
+  @if $pright {
+    padding-right: 1px * strip-units($pright);
+  }
+}
+
+// left
+// @include mi-left(left);
+@mixin <%= className %>-left($left) {
+  @if $left {
+    left: $left;
+  }
+}
+
+// top
+// @include mi-top(top);
+@mixin <%= className %>-top($top) {
+  @if $top {
+    top: $top;
+  }
+}
+
+// bottom
+// @include mi-bottom(bottom);
+@mixin <%= className %>-bottom($bottom) {
+  @if $bottom {
+    bottom: $bottom;
+  }
+}
+
+// right
+// @include mi-right(right);
+@mixin <%= className %>-right($right) {
+  @if $right {
+    right: $right;
+  }
+}
+
+// position
+// @include mi-position(right);
+@mixin <%= className %>-position($position) {
+  @if $position {
+    position: $position;
+  }
+}
+
+
+// align
+// @include align(align);
+@mixin <%= className %>-align($align) {
+  vertical-align: $align;
+}
+
+// rotate
+// @include rotate(deg);
+@mixin <%= className %>-rotate($rotate) {
+    -webkit-transform: rotate($rotate);
+    -ms-transform: rotate($rotate);
+    transform: rotate($rotate);
+}
+
+// flip
+// @include flip(flip);
+@mixin <%= className %>-flip($flip) {
+    @if $flip == horizontal {
+    -webkit-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+  }
+  @else if $flip == vertical {
+    -webkit-transform: scale(1, -1);
+    -ms-transform: scale(1, -1);
+    transform: scale(1, -1);
+  }
+}
+
+// spin
+// @include spin(spin);
+@mixin <%= className %>-spin($spin: null) {
+    @if $spin == null {
+    @-webkit-keyframes <%= className %>-spin{
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+      }
+    }
+    @keyframes <%= className %>-spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+      }
+    }
+  }
+  @else {
+    -webkit-animation: <%= className %>-spin #{$spin} infinite linear;
+    animation: <%= className %>-spin #{$spin} infinite linear;
+  }
+}
+
+// Shorthand Mixing
+@mixin <%= className %>-font(
+$insert: null,
+$icon: null,
+$size: 20px,
+$scale: null,
+$color: inherit,
+$padding-left: null,
+$padding-right: null,
+$padding-top: null,
+$padding-bottom:null,
+$left: null,
+$right: null,
+$top: null,
+$bottom: null,
+$align: null,
+$rotate: null,
+$flip: null,
+$spin: null,
+$transition:null,
+$position: relative,
+$zIndex: null
+
+  ){
+
+  @if $insert==before or $insert==after{
+    &:#{$insert} {
+	    // @include <%= className %>;
+	    @include <%= className %>($icon);
+	    @include <%= className %>-size($size);
+	    @include <%= className %>-scale($scale);
+	    @include <%= className %>-color($color);
+	    @include <%= className %>-left($left);
+	    @include <%= className %>-right($right);
+	    @include <%= className %>-bottom($bottom);
+        @include <%= className %>-top($top);
+	    @include <%= className %>-padding-left($padding-left);
+	    @include <%= className %>-padding-right($padding-right);
+	    @include <%= className %>-padding-bottom($padding-bottom);
+	    @include <%= className %>-padding-top($padding-top);
+	    @include <%= className %>-align($align);
+	    @include <%= className %>-rotate($rotate);
+	    @include <%= className %>-flip($flip);
+        @include <%= className %>-spin($spin);
+	    @include <%= className %>-transition($transition);
+	    @include <%= className %>-position($position);
+	    @include <%= className %>-zIndex($zIndex);
+    }
+  } @else {
+	  @extend %<%= className %>;
+	  @include <%= className %>($icon);
+	  @include <%= className %>-size($size);
+	  @include <%= className %>-scale($scale);
+	  @include <%= className %>-color($color);
+	  @include <%= className %>-left($left);
+      @include <%= className %>-right($right);
+	  @include <%= className %>-bottom($bottom);
+      @include <%= className %>-top($top);
+	  @include <%= className %>-padding-left($padding-left);
+	  @include <%= className %>-padding-right($padding-right);
+	  @include <%= className %>-padding-bottom($padding-bottom);
+	  @include <%= className %>-padding-top($padding-top);
+	  @include <%= className %>-align($align);
+	  @include <%= className %>-rotate($rotate);
+	  @include <%= className %>-flip($flip);
+      @include <%= className %>-spin($spin);
+	  @include <%= className %>-transition($transition);
+	  @include <%= className %>-position($position);
+	  @include <%= className %>-zIndex($zIndex);
+  }
+}
+
+
+
+
+
+
+

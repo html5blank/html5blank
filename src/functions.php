@@ -6,7 +6,13 @@
  */
 
 require_once 'modules/is-debug.php';
-
+require_once ( 'inc/Dump.class.php' );
+require_once ( 'inc/acf.php' );
+require_once ( 'inc/backend-removals.php' );
+require_once ( 'inc/custom-functions.php' );
+require_once ( 'inc/enqueues.php' );
+require_once ( 'inc/image-sizes.php' );
+require_once ( 'inc/admin-css.php' );
 /*------------------------------------*\
     External Modules/Files
 \*------------------------------------*/
@@ -29,15 +35,26 @@ if ( function_exists( 'add_theme_support' ) ) {
     add_image_size( 'medium', 250, '', true ); // Medium Thumbnail.
     add_image_size( 'small', 120, '', true ); // Small Thumbnail.
     add_image_size( 'custom-size', 700, 200, true ); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
-
+		add_theme_support( 'menus' );
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use.
-    /*add_theme_support('custom-background', array(
+    add_theme_support('custom-background', array(
     'default-color' => 'FFF',
     'default-image' => get_template_directory_uri() . '/img/bg.jpg'
     ));*/
 
+add_theme_support(
+  'html5',
+  array(
+    'search-form',
+    'comment-form',
+    'comment-list',
+    'gallery',
+    'caption',
+    'style',
+    'script',
+  )
     // Add Support for Custom Header - Uncomment below if you're going to use.
-    /*add_theme_support('custom-header', array(
+    add_theme_support('custom-header', array(
     'default-image'          => get_template_directory_uri() . '/img/headers/default.jpg',
     'header-text'            => false,
     'default-text-color'     => '000',

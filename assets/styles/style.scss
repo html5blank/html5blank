@@ -1,0 +1,47 @@
+/*!
+Theme Name: Barebones
+Theme URI: https://benchmark.co.uk/barebones
+Author: Benchmark Studios
+Author URI: https://benchmark.co.uk/
+Description: A lightweight and skeletal WordPress boilerplate theme for HTML5 and beyond
+Version: 3.X
+License: MIT
+License URI: https://mit-license.org/
+Text Domain: barebones
+*/
+
+@charset 'UTF-8';
+
+// 1. Configuration
+@import 'config/variables';
+@import 'config/mixins';
+
+// 2. Vendors
+@import 'vendor/simple-grid/simple-grid';
+
+// 3. Utilities
+@import 'utils/reset';
+@import 'utils/responsive';
+@import 'utils/helpers';
+
+// 4. Base stuff
+@import 'base/base';
+@import 'base/grid';
+@import 'base/fonts';
+@import 'base/images';
+@import 'base/forms';
+@import 'base/lists';
+@import 'base/typography';
+
+// 5. Layout-related sections
+@import 'layout/main';
+@import 'layout/header';
+@import 'layout/footer';
+
+// 6 .Components
+@import 'components/buttons';
+@import 'components/nav';
+@import 'components/alerts';
+
+// 7. Page-specific styles
+@import 'pages/home';

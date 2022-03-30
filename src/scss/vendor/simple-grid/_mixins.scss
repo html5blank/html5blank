@@ -1,0 +1,38 @@
+/**
+ * Grid loop mixin
+ */
+
+@mixin grid-loop($name){
+    @for $i from 0 through $grid-columns {
+        @if $i != 0 {
+            .col--#{$name}-#{$i} {
+                width: percentage($i/$grid-columns);
+                .row--flex & {
+                    flex-basis: percentage($i/$grid-columns);
+                    max-width: percentage($i/$grid-columns);
+                    width: auto;
+                    float: none;
+                }
+            }
+        }
+        .col--#{$name}-offset-#{$i} {
+            margin-left: percentage($i/$grid-columns);
+        }
+    }
+}
+
+
+/**
+ * Clearfix
+ */
+
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}

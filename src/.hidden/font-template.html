@@ -1,0 +1,729 @@
+<html>
+
+<head>
+    <title>
+        <!-- @echo name --> | <%= fontName %> - Icon-Font Preview
+    </title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/paraiso-dark.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.buttons.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.nonblock.css" />
+    <!-- @if !isProduction -->
+    <link href="css/<!-- @echo css -->.css" rel="stylesheet" type="text/css">
+    <!-- @endif -->
+    <!-- @if isProduction -->
+    <link href="css/<!-- @echo css -->.min.css" rel="stylesheet" type="text/css">
+    <!-- @endif -->
+    <style>
+        *:focus,
+        textarea:focus,
+        input:focus {
+            outline: none;
+        }
+
+        .flex-parent {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            flex-wrap: no-wrap;
+
+        }
+
+        .flex-parent.ffrw {
+            flex-flow: row wrap;
+        }
+
+        .flex-parent.ffcw {
+            flex-flow: column wrap;
+        }
+
+        .flex-parent.ais {
+            align-items: stretch;
+        }
+
+        .flex-parent.ac {
+            align-content: flex-start;
+        }
+
+        .flex-child {
+            align-self: stretch;
+        }
+
+        body {
+            font-family: 'Roboto', arial, helvetica, sans-serif;
+            text-align: center;
+            /* background: #f7f7f7; */
+            /* background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%); */
+            background: linear-gradient(141deg, #fdfcfb 0%, #e2d1c3 75%);
+        }
+
+        body>h1 {
+            /*color: #666;*/
+            margin: 1em 0 5px;
+            font-weight: 700;
+            color: #343a40;
+        }
+
+        /*color #19ADA1 */
+
+        h2 {
+            margin: 0px;
+            font-weight: 300;
+            /* color: #685da8; */
+            color: #343a40;
+        }
+
+        .font-name {
+            font-weight: 400;
+            font-size: 12px;
+            color: #f36161;
+        }
+
+        h5 {
+            /*padding:15px 20px;*/
+            margin: 0px;
+            padding: 15px;
+            /* background: #685da8; */
+            background: #f36161;
+            background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            -webkit-border-radius: 10px;
+            /* Safari */
+            -moz-border-radius: 10px;
+            /* Safari */
+            -o-border-radius: 10px;
+            /* Safari */
+            border-radius: 10px;
+            box-shadow: rgba(254, 154, 139, 0.45) 0px 14px 22px -2px;
+        }
+
+        .glyph {
+            padding: 0;
+            width: 94%;
+            margin: auto;
+        }
+
+        .glyph>li {
+            display: inline-block;
+            margin: .5em .4em;
+            width: 6.5em;
+            height: 9.5em;
+            background: #fff;
+            border-radius: .5em;
+            position: relative;
+            padding: 7px 0px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            /* box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 7px; */
+            box-shadow: rgba(254, 154, 139, 0.2) 0px 14px 34px -2px;
+            -webkit-transition: all 0.3s ease-in-out;
+            /* Safari */
+            -moz-transition: all 0.3s ease-in-out;
+            /* Safari */
+            -o-transition: all 0.3s ease-in-out;
+            /* Safari */
+            transition: all 0.3s ease-in-out;
+        }
+
+        .glyph>li i {
+            -webkit-transition: all 0.3s ease-in-out;
+            /* Safari */
+            -moz-transition: all 0.3s ease-in-out;
+            /* Safari */
+            -o-transition: all 0.3s ease-in-out;
+            /* Safari */
+            transition: all 0.3s ease-in-out;
+        }
+
+        .glyph>li:hover,
+        .glyph>li.zeroclipboard-is-hover,
+        .glyph>.li:hover,
+        .glyph>.li.zeroclipboard-is-hover {
+            border-radius: .5em;
+            border: 2px solid #f36161;
+        }
+
+        .glyph>li:hover i,
+        .glyph>li.zeroclipboard-is-hover i,
+        .glyph>.li:hover i,
+        .glyph>.li.zeroclipboard-is-hover i {
+            color: #f36161;
+        }
+
+        .addborder {
+            border: 2px solid #f36161;
+        }
+
+        .glyph>li .s {
+            display: block;
+            margin-top: .1em;
+            line-height: 0;
+        }
+
+        .glyph-name {
+            font-size: .8em;
+            color: #f36161;
+            display: block;
+            padding-top: 15px;
+        }
+
+        .glyph-codepoint {
+            color: #999;
+            font-family: monospace;
+        }
+
+        .wrap {
+            padding: 15px 20px;
+            /* border: 1px dashed; */
+            margin: 2em 0 2em;
+            display: inline-block;
+            width: 90%;
+            background: #fff;
+            -webkit-border-radius: 10px;
+            /* Safari */
+            -moz-border-radius: 10px;
+            /* Safari */
+            -o-border-radius: 10px;
+            /* Safari */
+            border-radius: 10px;
+            /* box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 7px; */
+            box-shadow: rgba(254, 154, 139, 0.11) 0px 14px 42px -2px;
+        }
+
+        .block {
+            display: inline-block;
+            vertical-align: baseline;
+            text-align: left !important;
+            margin: 0 5px;
+            width: 50% !important;
+        }
+
+        hr {
+            margin-top: 17px;
+            margin-bottom: 17px;
+            border: 0;
+            border-top: 1px solid #f36161;
+        }
+
+        p {
+            text-align: center;
+            font-size: 11px;
+            font-weight: 400;
+            line-height: 18px;
+            padding: 20px;
+        }
+
+        .pspan {
+            font-size: 10px;
+            font-weight: 300;
+        }
+
+        a {
+            text-decoration: none !important;
+            color: inherit;
+        }
+
+        .hljs {
+            padding: 30px !important;
+        }
+
+        .search {
+            padding: 5px 10px;
+            width: 400px;
+            background: none;
+            border: none;
+            /* border-bottom: 1px solid #685da8; */
+            border-bottom: 1px solid #f36161;
+            font-size: 25px;
+            font-family: 'Roboto', arial, helvetica, sans-serif;
+            font-weight: 300 !important;
+            display: inline-block;
+        }
+
+        .sort {
+            padding: 13px 20px;
+            background: #f36161;
+            background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+            border: none;
+            color: white;
+            font-size: 10px;
+            -webkit-border-radius: 100px;
+            /* Safari */
+            -moz-border-radius: 100px;
+            /* Safari */
+            -o-border-radius: 100px;
+            /* Safari */
+            border-radius: 100px;
+        }
+
+        .doc-radio-check {
+            display: inline-block;
+            color: #f36161;
+        }
+
+        .search::-webkit-input-placeholder {
+            font-family: 'Roboto', arial, helvetica, sans-serif;
+            font-weight: 300 !important;
+            font-size: 25px;
+        }
+
+        .search:-moz-placeholder {
+            font-family: 'Roboto', arial, helvetica, sans-serif;
+            font-weight: 300 !important;
+            font-size: 25px;
+        }
+
+        .search::-moz-placeholder {
+            font-family: 'Roboto', arial, helvetica, sans-serif;
+            font-weight: 300 !important;
+            font-size: 25px;
+        }
+
+        .search:-ms-input-placeholder {
+            font-family: 'Roboto', arial, helvetica, sans-serif;
+            font-weight: 300 !important;
+            font-size: 25px;
+        }
+
+        .stack-center {
+            text-align: left !important;
+        }
+
+        .stick-wrap {
+            display: block;
+            width: 100%;
+        }
+
+        .--pinned {
+            /*position: fixed;
+        top: 0px;*/
+            background: #ffffff;
+            /* border-bottom: 1px solid #ccc; */
+            z-index: 9999;
+            padding: 20px;
+            box-shadow: rgba(254, 154, 139, 0.45) 0px 0px 48px;
+        }
+
+        .copy-to-clip {
+            display: inline-block;
+            margin-right: 7px;
+            font-size: 13px;
+            font-weight: 500;
+            vertical-align: middle;
+            margin-left: 30px;
+            color: #343a40;
+        }
+
+        table>* {
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        table td {
+            margin: 10px 0px;
+            color: #a39e9b;
+        }
+
+        code {
+            width: 100% !important;
+            height: 430px;
+            overflow: hidden;
+        }
+
+        .pagination li {
+            display: inline-block;
+            padding: 5px;
+        }
+
+        .pagination li a {
+            /* color: #685da8 !important; */
+            color: #ffffff !important;
+            color: #f36161 !important;
+            display: block;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .pagination li.active a {
+            background: #685da8 !important;
+            background: #f36161 !important;
+            background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%) !important;
+            border-color: #685da8 !important;
+            border-color: #f36161 !important;
+            color: #fff !important;
+            display: block;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .titems {
+            color: #685da8 !important;
+            color: #f36161 !important;
+        }
+
+        .icon-notice {
+            text-align: left;
+        }
+
+        .icon-notice .var {
+            color: #df5000;
+        }
+
+        .icon-notice .point,
+        .point {
+            color: #685da8;
+            font-weight: bold;
+        }
+
+        .icon-notice .note {
+            font-weight: bold;
+        }
+
+        pre {
+            font-family: "Roboto", Helvetica, Arial, sans-serif !important;
+            font-size: 12px;
+            font-style: normal !important;
+            speak: none;
+            font-variant: normal;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            white-space: pre-wrap;
+            /* Since CSS 2.1 */
+            white-space: -moz-pre-wrap;
+            /* Mozilla, since 1999 */
+            white-space: -pre-wrap;
+            /* Opera 4-6 */
+            white-space: -o-pre-wrap;
+            /* Opera 7 */
+            word-wrap: break-word;
+        }
+
+        label {
+            font-family: "Roboto", Helvetica, Arial, sans-serif !important;
+            font-weight: 500 !important;
+
+
+            font-size: 12px;
+            color: #675ca7;
+            color: #f36161;
+            font-style: normal !important;
+            speak: none;
+            font-variant: normal;
+            /* text-transform: uppercase; */
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            /* // -webkit-text-stroke: 1px rgba(0,0,0,0.1);
+	// text-shadow: 0 0 1px rgba(51,51,51,0.1); */
+            -moz-osx-font-smoothing: grayscale;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        <!-- @echo name -->
+    </h1>
+    <h2>Icon-Font Preview</h2>
+    <h4 class="font-name">Font Name :
+        <%= fontName %>
+    </h4>
+    <div class="wrap">
+        <h5>How to Use</h5>
+        <br>
+        <div class="flex-parent">
+            <div class="block">
+                <strong>HTML</strong>
+                <pre class="flex-parent"><code class="xml"><strong>Class name with Icon name: (prefix : <%= className %>)</strong>
+===========================================
+
+Eg: &lt;i class=&quot;<%= className %>-<%= glyphs[0].name %>&quot;&gt; &lt;/i&gt;
+
+<strong>Other Useful Classes :</strong>
+--------------------------
+
+<strong>large</strong> : .<%= className %>-lg, 
+<strong>Scale</strong> : .<%= className %>-1x,
+<strong>Size</strong> : .<%= className %>-20, [.<%= className %>- Desire Value (max : 75) but don't use scale and size both]
+<strong>Fullwidth</strong> : .<%= className %>-fw
+<strong>List Item</strong> : .<%= className %>-ul, .<%= className %>-li
+<strong>Icon Border</strong>: .<%= className %>-border
+<strong>Float</strong> : .<%= className %>-pull-left, .<%= className %>-pull-right
+<strong>Rotation</strong> : .<%= className %>-rotate-90, .<%= className %>-rotate-180, .<%= className %>-rotate-270
+<strong>Flip</strong> : .<%= className %>-flip-horizontal, .<%= className %>-flip-vertical 
+<strong>Stack</strong> : .<%= className %>-stack, .<%= className %>-stack-1x, .<%= className %>-stack-2x
+<strong>Push Left/Right/Top/Bottom</strong> : .<%= className %>-l20 [.<%= className %>-use l,r,t,b for left,right,top,bottom and a desire value to push (max : 75)]
+          </code></pre>
+            </div>
+            <div class="block">
+                <strong>SCSS</strong>
+                <pre class="flex-parent"><code class="scss"><strong>Use with Sass @include property,</strong>
+==============================================
+
+<caption>There are two ways to use SCSS attributes</caption>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Individual Value</th>
+            <th>Shorthanding Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                Eg: <br>
+&nbsp;&nbsp;.my_class{<br>
+&nbsp;&nbsp;&nbsp;@include <%= className %>(<%= glyphs[0].name %>); <span class="point">**.2</span><br>
+&nbsp;&nbsp;&nbsp;@include <%= className %>-size(14px);<br>
+&nbsp;&nbsp;&nbsp;@include <%= className %>-scale(3x); //Max 10x<br>
+&nbsp;&nbsp;&nbsp;@include <%= className %>-color(red);<br>
+&nbsp;&nbsp;&nbsp;@include <%= className %>-left(14px);<br>
+&nbsp;&nbsp;&nbsp;@include <%= className %>-right(14px);<br>
+&nbsp;&nbsp;&nbsp;@include <%= className %>-top(14px);<br>
+&nbsp;&nbsp;&nbsp;@include <%= className %>-bottom(14px);<br>
+&nbsp;&nbsp;&nbsp;@include <%= className %>-align(middle);<br>
+&nbsp;&nbsp;&nbsp;@include <%= className %>-rotate(45deg);<br>
+&nbsp;&nbsp;&nbsp;@include <%= className %>-flip(verticle);<br>
+&nbsp;&nbsp;&nbsp;@include <%= className %>-spin(spin);<br>
+&nbsp;&nbsp;&nbsp;@include <%= className %>-transition(transition);<br>
+&nbsp;&nbsp;}
+            </td>
+            <td>
+                Eg: <br>
+&nbsp;&nbsp;.my_class{<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;@include <%= className %>-font(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$insert:before, <span class="point">**.1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$icon:<%= glyphs[0].name %>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$size:14px,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$scale:3x,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$color:red,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$left:5px,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$right:5px,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$top:5px,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$bottom:5px,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$align:middle,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$rotate:45deg,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$flip:verticle,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$spin:spin);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$transition:all 300ms ease);<br>
+&nbsp;&nbsp;}
+            </td>
+        </tr>
+    </tbody>
+</table></code></pre>
+            </div>
+        </div>
+        <p class="icon-notice">
+            <span class="note">NOTE</span> : Don't use Size &amp; Scale both h
+            <br>
+            <span class="point">**.1</span> This
+            <span class="var">$insert</span> value only need if you want to add an icon to the pseudo class. (before/after) default is none
+            or without specifying
+            <span class="var">$insert</span> or blank. --
+            <i>!optional </i>
+            <br>
+            <span class="point">**.2</span> By default, you can use the icon name for this value, if you want more specific you can specify
+            <span class="var">$icon</span>,
+            <span class="var">$insert</span>(before/after or blank) and
+            <span class="var">$extend</span>(boolean) but we recommend to use
+            <span class="var">$icon</span> only. --
+            <i>!optional </i>
+        </p>
+    </div>
+    <br>
+    <br>
+    <h2>Icon Reference</h2>
+    <br>
+    <div id="icons">
+        <div class="stick-wrap">
+            <input class="search" placeholder="Search Icon" />
+            <button class="sort" data-sort="glyph-name">Sort by ASC/DESC</button>
+            <div class="doc-radio-check">
+                <div class="copy-to-clip">Copy to Clipboard as :</div>
+                <input type="radio" name="html" value="html" id="htmltype" placeholder="Html" checked>
+                <label for="htmltype" tip="Copy as HTML Class">HTML (CSS Class)</label>
+                <input type="radio" name="html" value="icon" id="icontype" placeholder="Icon">
+                <label for="icontype" tip="Copy as Icon Name">Icon Name</label>
+                <input type="radio" name="html" value="scss" id="scsstype" placeholder="Scss">
+                <label for="scsstype" tip="Copy as SCSS Property">SCSS</label>
+                <input type="radio" name="html" value="scssshort" id="scssshorttype" placeholder="Scss Shorthand">
+                <label for="scssshorttype" tip="Copy as Scss (Shorthand) Value">SCSS (Shorthand)</label>
+                <input type="radio" name="html" value="scssvar" id="scssvar" placeholder="Scss Variable">
+                <label for="scssvar" tip="Copy as Scss Unicode Variable">SCSS Unicode Variable</label>
+            </div>
+        </div>
+        <hr>
+        <h3 class="<%= className %>-total">
+            <span class='matching'>Total icons</span> :
+            <span class="titems">0</span>
+        </h3>
+        <ul class="glyph list">
+            <% _.each(glyphs, function(glyph) { %>
+                <li class="clipboard" data-clipboard-text="<%= className %>-<%= glyph.name %>">
+                    <i tip="Copy to Clipboard" class="<%= className %> <%= className %>-<%= glyph.name %> <%= className %>-4x"></i>
+                    <span class="glyph-name">
+                        <%= glyph.name %>
+                    </span>
+                    <span class="glyph-codepoint">
+                        <%= glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase() %>
+                    </span>
+                </li>
+                <% }); %>
+        </ul>
+        <hr>
+        <ul class="pagination"></ul>
+    </div>
+    <br>
+    <br>
+    <p>&copy;2018
+        <!-- @echo name -->, All Rights reserved
+        <br>
+        <span class="pspan"> Creator : Yashi
+            <a href="http://twitter.com/yashilanka" target="_blank">@yashiel</a> [yashilanka@gmail.com ]</span>
+    </p>
+    <!-- @if isProduction -->
+    <!-- @endif -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scss.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.nonblock.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.callbacks.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.animate.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/pnotify/3.2.1/pnotify.buttons.js"></script>
+
+
+    <script>
+        var client = new ClipboardJS('.clipboard');
+        // hljs.initHighlightingOnLoad();
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+
+        function notice(isTitle, isText, isType) {
+            PNotify.prototype.options.delay = 2000;
+            // PNotify.desktop.permission();
+            var not = new PNotify({
+                title: isTitle,
+                text: isText,
+                textTrusted: false,
+                icon: false,
+                width: "350px",
+                auto_display: true,
+                hide: true,
+                addclass: 'stack-center',
+                type: isType,
+                insert_brs: false,
+                mouse_reset: true,
+                buttons: {
+                    closer: true,
+                    sticker: false
+                }
+            });
+            return not;
+            not.get().click(function() {
+                not.remove();
+            });
+        }
+
+
+        client.on("success", function(e) {
+            // console.log((e.success["text/plain"] ? "Copied" : "FAILED to copy") + ": " + e.data["text/plain"]);
+            notice('Copy to Clipboard Success !', 'Copied Icon : <br> <span style="color:#685da8;">' + e.text +
+                '</span>', 'success');
+        });
+
+        client.on("error", function(e) {
+            // console.log((e.success["text/plain"] ? "Copied" : "FAILED to copy") + ": " + e.data["text/plain"]);
+            notice('Copy to Clipboard Failed !', 'Your icon is not been copied. : <br> <span>' + e.text +
+                '</span>', 'error');
+
+        });
+
+
+
+
+
+        jQuery(document).ready(function($) {
+
+            var radio = $('.doc-radio-check').find("input:radio");
+            var radioValue = $("input[name='html']:checked").val();
+            var icon = $('.list').find('li');
+            icon.each(function(index, el) {
+                var text = $(el).find('.glyph-name').text();
+                $(el).find('i').attr('data-clipboard-text', '<%= className %>-' + text);
+            });
+
+            var userList = new List('icons', {
+                valueNames: ['glyph-name'],
+                page: 30,
+                sort: 'asc',
+                pagination: true
+            });
+
+            var total = $('.<%= className %>-total');
+            total.find('.titems').text(userList.matchingItems.length);
+            userList.on('updated', function() {
+                if ($('.search').val().length === 0) {
+                    total.find('.matching').text(' Total icons');
+                    total.find('.titems').text(userList.matchingItems.length);
+                } else {
+                    total.find('.matching').text(' Matching icons');
+                    total.find('.titems').text(userList.matchingItems.length);
+                }
+            });
+
+
+
+
+            $("input[name='html']").click(function(event) {
+                if ($(this).val() == 'html') {
+                    icon.each(function(index, el) {
+                        var text = $(this).find('.glyph-name').text();
+                        $(this).attr('data-clipboard-text', '<%= className %>-' + text);
+                    });
+                } else if ($(this).val() == 'scssvar') {
+                    icon.each(function(index, el) {
+                        var text = $(this).find('.glyph-name').text();
+                        $(this).attr('data-clipboard-text', '$<%= className %>-' + text);
+                    });
+                } else if ($(this).val() == 'scssshort') {
+                    icon.each(function(index, el) {
+                        var text = $(this).find('.glyph-name').text();
+                        $(this).attr('data-clipboard-text',
+                            '@include <%= className %>-font($icon:' + text + ');');
+                    });
+                } else if ($(this).val() == 'icon') {
+                    icon.each(function(index, el) {
+                        var text = $(this).find('.glyph-name').text();
+                        $(this).attr('data-clipboard-text', text);
+                    });
+                } else {
+                    icon.each(function(index, el) {
+                        var text = $(this).find('.glyph-name').text();
+                        $(this).attr('data-clipboard-text', '@include <%= className %>(' + text +
+                            ');');
+                    });
+                }
+            });
+            $(".stick-wrap").stick_in_parent({
+                sticky_class: '--pinned'
+            });
+
+
+
+
+        });
+    </script>
+
+</body>
+
+</html>

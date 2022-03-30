@@ -1,0 +1,20 @@
+.grid {
+    display: grid;
+    grid-gap: $base-spacing-unit;
+    @include resp-max($breakpoint-sm) {
+        grid-gap: $base-spacing-unit / 2;
+    }
+    
+    @each $breakpoint in $breakpoints {
+        $name: nth($breakpoint, 1);
+        $declaration: nth($breakpoint, 2);
+    
+        @media only screen and #{$declaration} {
+            @for $i from 1 through 6 {
+                &.grid--#{$name}-#{$i}x {
+                    grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+                }
+            }
+        }
+    }
+}

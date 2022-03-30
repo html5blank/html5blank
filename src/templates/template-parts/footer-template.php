@@ -1,0 +1,6 @@
+<?php
+/**
+ * Footer Template
+*/
+?>
+

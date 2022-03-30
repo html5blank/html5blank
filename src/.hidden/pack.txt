@@ -1,0 +1,20 @@
+/**                                                     
+  Powered By            @version - v<%= pkg.version %> 
+                                                        
+      ________________ ___         _______              
+     / ____/ ___/ ___/( _ )       / / ___/              
+    / /    \__ \\__ \/ __ \/|__  / /\__ \               
+   / /___ ___/ /__/ / /_/  </ /_/ /___/ /               
+   \____//____/____/\____/\/\____//____/                
+  +--------------------------------------+              
+  |     Optimized & Shared with Love     |              
+  +--------------------------------------+              
+                                                        
+  Site Name - <%= pkg.sitename %>                               
+  Description - <%= pkg.description %>                  
+                                                        
+  @link - <%= pkg.homepage %>                           
+  @author - <%= pkg.author %>                           
+  @license - <%= pkg.license %>                         
+                                                        
+*/

@@ -1,0 +1,16 @@
+@each $breakpoint in $breakpoints {
+    $key   : nth($breakpoint, 1);
+    $value : nth($breakpoint, 2);
+
+    .visible-#{$key} {
+        @media only screen and #{$value} {
+            display: block !important;
+        }
+    }
+
+    .hidden-#{$key} {
+        @media only screen and #{$value} {
+            display: none !important;
+        }
+    }
+}
