@@ -1,0 +1,157 @@
+/**
+* mixins
+* ---
+*/
+
+
+
+// Media Queries (Bootstrap 4 Breakpoints)
+// ----------------------------------------------
+
+@mixin reset-box {
+  padding: 0;
+  margin: 0;
+}
+
+
+@mixin responsive($breakpoint) {
+
+    @if $breakpoint == xs { //up to 420px
+        @media only screen and (max-width: 26.25em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == xs { //up to 575px
+        @media only screen and (max-width: 35.94em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == sm { //up to 767px
+        @media only screen and (max-width: 47.94em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == md { //up to 991px
+        @media only screen and (max-width: 61.94em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == lg { //up to 1199px
+        @media only screen and (max-width: 74.94em) {
+            @content;
+        }
+    }
+}
+
+@mixin responsive_min($breakpoint) {
+
+    @if $breakpoint == xs { //from 0px
+        @media only screen and (min-width: 0em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == sm { //from 576px
+        @media only screen and (min-width: 36em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == md { //from 768px
+        @media only screen and (min-width: 48em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == lg { //from 992px
+        @media only screen and (min-width: 62em) {
+            @content;
+        }
+    }
+    @if $breakpoint == xl { //from 1200px
+        @media only screen and (min-width: 75em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == xxl { //from 1350px
+        @media only screen and (min-width: 84.37em) {
+            @content;
+        }
+    }
+}
+
+@mixin responsive($breakpoint) {
+
+    @if $breakpoint == xs { //up to 420px
+        @media only screen and (max-width: 26.25em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == xs { //up to 575px
+        @media only screen and (max-width: 35.94em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == sm { //up to 767px
+        @media only screen and (max-width: 47.94em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == md { //up to 991px
+        @media only screen and (max-width: 61.94em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == lg { //up to 1199px
+        @media only screen and (max-width: 74.94em) {
+            @content;
+        }
+    }
+}
+
+@mixin responsive_min($breakpoint) {
+
+    @if $breakpoint == xs { //from 0px
+        @media only screen and (min-width: 0em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == sm { //from 576px
+        @media only screen and (min-width: 36em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == md { //from 768px
+        @media only screen and (min-width: 48em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == lg { //from 992px
+        @media only screen and (min-width: 62em) {
+            @content;
+        }
+    }
+    @if $breakpoint == xl { //from 1200px
+        @media only screen and (min-width: 75em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == xxl { //from 1350px
+        @media only screen and (min-width: 84.37em) {
+            @content;
+        }
+    }
+}

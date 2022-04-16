@@ -1,0 +1,190 @@
+.ui-pnotify .ui-pnotify-shadow {
+    @include border-radius(10px);
+	border:1px solid transparent;
+	@include box-shadow(rgba(0,0,0,0.16) 0px 20px 25px);
+
+}
+.ui-pnotify-container {
+    padding: 1.9em !important;
+    background: #FFFFFF;
+    border:none;
+
+}
+.ui-pnotify-title {
+	font-family: 'Roboto', arial, helvetica, sans-serif;
+    // padding-left: 56px;
+    color:#02cfb3;
+	margin-bottom: .2em;
+	font-size: 18px;
+}
+.ui-pnotify-text {
+	font-family: 'Roboto', arial, helvetica, sans-serif;
+    // padding-left: 56px;
+	color:#53697e;
+	font-size: 14px;
+	font-weight:bold;
+	span{
+		padding: 10px;
+		background: #f9dddd;
+		font-size: 12px;
+		width:100%;
+		display:block;
+		color:#343a40;
+		@include clearfix;
+		@include border-radius(6px);
+		margin-top:10px;
+		font-weight:500;
+	}
+}
+
+
+.ui-pnotify-icon{
+	@include clearfix;
+}
+
+.ui-pnotify-icon .success-icon {
+    display: inline-block;
+    float: none;
+    position: absolute;
+    width: 75px;
+    top:0px;
+    bottom: 0px;
+    left: 0px;
+    right: auto;
+    text-align: center;
+    vertical-align: middle;
+    &::before{
+		// @include util(16px, #FFFFFF);
+		content: 'c';
+    	position: absolute;
+	    top:0px;
+	    bottom: 0px;
+	    left: 0px;
+	    right: 0px;
+	    margin:auto;
+	    line-height: 20px;
+        padding: 10px;
+	    background-color: #02cfb3;
+	    @include border-radius(50px);
+	    height: 50px;
+	    width: 50px;
+	    border:5px solid darken(#FFFFFF, 10%);
+	    box-sizing:border-box;
+    }
+    // &.gap{
+    // 	padding-top: 2em;
+    // 	padding-bottom: 2em;
+    // }
+}
+.ui-pnotify-icon .error-icon {
+    @extend .success-icon;
+    &::before{
+		content: 'X';
+	    background-color: #f36861;
+    }
+}
+.ui-pnotify-icon .info-icon {
+    @extend .success-icon;
+    &::before{
+		content: 'i';
+	    background-color: #00b8d4;
+    }
+}
+.ui-pnotify-icon .notice-icon {
+    @extend .success-icon;
+    &::before{
+		content: 'i';
+	    background-color: #57899d;
+    }
+}
+
+.ui-pnotify.stack-center,
+.ui-pnotify.stack-center {
+    left: 0px;
+    right: 0px;
+    top: 30px;
+    margin: auto;
+    .alert{
+    	@include border-radius(10px);
+    	border:1px solid transparent;
+    }
+    .alert-success {
+	    background-color: white;
+		border-color:#e1e1e1;
+		@include box-shadow(rgba(0,0,0,0.16) 0px 20px 25px);
+    	@include transform(translateY(-4px));
+	    color: #02cfb3;
+	}
+	.alert-danger {
+	    background-color: white;
+		border-color:#e1e1e1;
+		@include box-shadow(rgba(0,0,0,0.16) 0px 20px 25px);
+    	@include transform(translateY(-4px));
+	    color: #f36861;
+	}
+	.alert-info {
+	    background-color: white;
+		border-color:#e1e1e1;
+		@include box-shadow(rgba(0,0,0,0.16) 0px 20px 25px);
+    	@include transform(translateY(-4px));
+	    color: #00b8d4;
+	}
+	.alert-warning {
+	    background-color: white;
+		border-color:#e1e1e1;
+		@include box-shadow(rgba(0,0,0,0.16) 0px 20px 25px);
+    	@include transform(translateY(-4px));
+	    color: #57899d;
+	}
+}
+.brighttheme-icon-closer{
+	color:#53697e;
+}
+
+.brighttheme-icon-sticker{
+	&:after, &::after{
+		// @include fa;
+		// @include fa(pause);
+		// @include fa-size(11px);
+		@include transform(rotate(0)!important);
+		color:lighten(#53697e, 20%);
+	}
+}
+.brighttheme-icon-stuck{
+	&:after, &::after{
+		// @include fa;
+		// @include fa(play);
+		// @include fa-size(11px);
+		@include transform(rotate(0)!important);
+		color:lighten(#53697e, 20%);
+	}
+}
+.brighttheme-icon-sticker .brighttheme-icon-stuck{
+	&:after, &::after{
+		@include transform(rotate(0)!important);
+	}
+}
+.brighttheme-icon-closer:after{
+	// @include fa;
+	// @include fa(times);
+	// @include fa-size(14px);
+	color:lighten(#53697e, 20%);
+	top:-7px;
+    margin-top: -2px;
+}
+.brighttheme-success{
+	border:2px solid #f36161 !important;
+}
+.brighttheme-error{
+	border:2px solid #f36861 !important;
+}
+.brighttheme-info{
+	border:2px solid #00b8d4 !important;
+}
+.brighttheme-notice{
+	border:2px solid #57899d !important;
+}
+.ui-pnotify-closer, .ui-pnotify-sticker {
+    margin-left: .4em;
+    margin-top: -10px;
+}

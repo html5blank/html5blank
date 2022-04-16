@@ -1,0 +1,76 @@
+*:focus {
+    outline: 0;
+}
+
+input,
+select,
+textarea {
+    background-color: $base-background-colour;
+    border: solid 1px $base-colour;
+    border-radius: 0;
+    color: $base-colour;
+    line-height: $base-spacing-unit * 1.5;
+    height: $base-spacing-unit * 1.5;
+    padding: 0 #{$base-spacing-unit / 2};
+    width: 100%;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    background: transparent;
+    border: 0;
+    line-height: normal;
+    height: auto;
+    width: auto;
+}
+
+input[type="file"] {
+    line-height: normal;
+    height: auto;
+    padding: #{$base-spacing-unit / 4} #{$base-spacing-unit / 2};
+}
+
+input[type="submit"] {
+    border-radius: 0;
+}
+
+input[disabled] {
+    background-color: whitesmoke;
+    cursor: not-allowed;
+}
+
+select {
+    line-height: normal;
+    padding: 0;
+    padding-left: $base-spacing-unit / 2;
+}
+
+textarea {
+    min-height: $base-spacing-unit * 4;
+    overflow: auto;
+    vertical-align: top;
+    resize: vertical;
+}
+
+
+
+/**
+ * Form utility classes
+ */
+
+.form--inline {
+    .form__group {
+        display: inline-block;
+    }
+}
+
+.form {
+    .form__group {
+        display: block;
+        margin-bottom: $base-spacing-unit;
+        .form__label {
+            display: block;
+            margin-bottom: ($base-spacing-unit / 2);
+        }
+    }
+}

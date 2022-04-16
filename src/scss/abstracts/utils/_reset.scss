@@ -1,0 +1,44 @@
+* {
+    background-color: transparent;
+    border: 0;
+    box-sizing: border-box;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: white;
+    font-size: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+}
+
+input,
+select,
+textarea,
+button {
+    color: inherit;
+    display: inline-block;
+
+    &[disabled] {
+        cursor: not-allowed;
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    th,
+    td {
+        text-align: left;
+    }
+}

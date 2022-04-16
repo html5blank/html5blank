@@ -1,0 +1,488 @@
+/**
+ * partials/wordpress
+ * ---
+ * Wordpess core classes
+ */
+
+.post {
+
+  &-id {
+
+  }
+}
+
+.page {}
+
+.attachment {}
+
+.sticky {}
+
+.hentry {}
+
+.category {
+
+  &-misc {}
+
+  &-example {}
+
+}
+
+.tag {
+
+  &-news {}
+
+  &-wordpress {}
+
+  &-markup {}
+}
+
+.format {
+
+  &-image {}
+
+  &-gallery {}
+
+  &-chat {}
+
+  &-link {}
+
+  &-quote {}
+
+  &-status {}
+
+  &-video {}
+}
+
+
+// * Default Menu Styles
+
+.current {
+
+  &_page_item {}         // Class for Current Page
+
+  &-cat {}               // Class for Current Category
+
+  &-menu-item {}         // Class for any other current Menu Item
+}
+
+.menu-item {
+
+  &-type-taxonomy {}   // Class for a Category
+
+  &-type-post_type {}  // Class for Pages
+
+  &-type-custom {}     // Class for any custom item that you added
+
+  &-home {}            // Class for the Home Link
+}
+
+
+// * Default WISIWYG Editor Styles
+
+.entry-content {
+  margin: 1.5em 0 0;
+}
+
+.alignleft, img.alignleft {
+  float: left;
+  margin: $margin-vertical-base $margin-horizontal-large $margin-vertical-large 0;
+}
+
+.alignright, img.alignright {
+  float: right;
+  margin: $margin-vertical-base 0 $margin-vertical-large $margin-horizontal-large;
+}
+
+.aligncenter, img.aligncenter {
+  display: block;
+  margin: $margin-vertical-base auto;
+}
+
+.alignnone, img.alignnone {
+  margin: $margin-vertical-base $margin-horizontal-large $margin-vertical-large 0;
+}
+
+.wp-caption {
+  background: $body-bg;
+  border: thin solid #F0F0F0;
+  max-width: 95%;
+  padding: $padding-horizontal-base $padding-vertical-base;
+  text-align: center;
+
+  img {
+    width: auto;
+    max-width: 98.5%;
+    height: auto;
+    border: 0 none;
+    @include reset-box;
+  }
+
+  .wp-caption .wp-caption-text,
+  p.wp-caption-text,
+  .gallery-caption {
+    margin: 0;
+    padding: 0 $padding-horizontal-base $padding-vertical-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;    
+  }
+}
+
+.wp-smiley {}
+
+blockquote {
+
+  &.left {}
+
+  &.right {}
+}
+
+.gallery {
+
+  dl {
+
+    a {}
+
+    img {}
+  }
+
+  dt {}
+
+  dd {}
+
+  &-caption {}
+}
+
+.size {
+
+  &-full {}
+
+  &-large {}
+
+  &-medium {}
+
+  &-thumbnail {}
+}
+
+
+// * Default WordPress Widget Styles
+
+.widget {
+
+  &_search {}
+
+  &_meta {
+
+    ul {
+
+      li {
+
+        a {
+
+        }
+      }
+    }
+  }
+
+  &_links {
+
+    ul {
+
+      li {
+
+        a {
+
+        }
+      }
+    }
+  }
+
+  &_archive {
+
+    ul {
+
+      li {
+
+        a {
+
+        }
+      }
+    }
+
+    select {}
+
+    option {}
+  }
+
+  &_pages {
+
+    ul {
+
+      li {
+
+        a {
+
+        }
+      }
+    }
+  }
+
+  &_links {
+
+    li {
+
+      &:after {}
+
+      &:before {}
+    }
+  }
+
+  &_tag_cloud {
+
+    a {
+
+      &:after {}
+
+      &:before {}
+    }
+  }
+
+  &_categories {
+
+    ul {
+
+      li {}
+
+      &.children {}
+    }
+
+    a {}
+
+    select {
+
+      &#cat {}
+
+      .postform {}
+    }
+
+    option {}
+
+    .level-0 {}
+
+    .level-1 {}
+
+    .level-2 {}
+
+    .level-3 {}
+  }
+
+  &_recent_comments {}
+
+  &_recent_entries {
+
+    ul {
+
+      li {
+
+        a {}
+      }
+    }
+  }
+
+  &_text {}
+
+}
+
+.screen-reader-text {}
+
+#searchform {}
+
+#calendar_wrap {
+
+  caption {}
+
+  th {}
+
+  tr {
+
+    td {
+
+    }
+  }
+
+  td {
+
+  }
+
+  a {}
+
+  #today {}
+
+  #prev {
+
+    a {}
+  }
+
+  #next {
+
+    a {}
+  }
+}
+
+
+.recentcomments {}
+
+#recentcomments {
+
+  li {
+
+    a {}
+  }
+}
+
+.textwidget {
+
+  p {}
+}
+
+
+// * Default Comment Form Styles
+.commentlist {
+
+  li {
+
+    p {}
+
+    ul {
+
+      &.children {
+
+        li {
+
+          &.alt {}
+
+          &.byuser {}
+
+          &.comment {}
+
+          &.bypostauthor {}
+
+          &.comment-author-admin {}
+        }
+
+        .alt {}
+
+        .odd {}
+
+        .even {}
+      }
+    }
+  }
+
+  .reply {
+
+    a {}
+  }
+
+  .alt {}
+
+  .odd {}
+
+  .even {}
+
+  .thread {
+
+    &-alt {}
+
+    &-odd {}
+
+    &-even {}
+  }
+
+  .vcard {
+
+    cite.fn {
+
+      a.url {}
+    }
+
+    span.says {}
+
+    img {
+
+      &.photo {}
+
+      &.avatar {}
+    }
+  }
+
+  .comment-meta {
+
+    a {}
+  }
+
+  .commentmetadata {
+
+    a {}
+  }
+
+  .parent {}
+
+  .comment {}
+
+  .children {}
+
+  .pingback {}
+
+  .bypostauthor {}
+
+  .comment-author {}
+
+  .comment-author-admin {}
+
+}
+
+
+#cancel-comment-reply {
+
+  a {}
+}
+
+
+// Comment Form
+
+#respond {}
+
+#reply-title {}
+
+#cancel-comment-reply-link {}
+
+#commentform {}
+
+#author {}
+
+#email {}
+
+#url {}
+
+#comment {}
+
+#submit {}
+
+.comment-notes {}
+
+.required {}
+
+.comment-form {
+
+  &-author {}
+
+  &-email {}
+
+  &-url {}
+
+  &-comment {}
+}
+
+.form-allowed-tags {}
+
+.form-submit {}

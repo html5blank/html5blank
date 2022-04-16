@@ -1,21 +1,21 @@
-# [HTML5 Blank](http://html5blank.com)
+# [HTML5 Blank](http://thecreativityarchitect.com)
 
 Powerful shell for rapidly deploying your WordPress projects.
 
-* Project: [github.com/html5blank/html5blank](https://github.com/html5blank/html5blank)
-* Website: [html5blank.com](http://html5blank.com)
-* Twitter: [@html5blank](http://twitter.com/html5blank)
+* Project: [github.com/creativitycore/creativitycore](https://github.com/creativitycore/creativitycore)
+* Website: [thecreativityarchitect.com](http://thecreativityarchitect.com)
+* Twitter: [@creativitycore](http://twitter.com/creativitycore)
 * Author : [Robert DeVore](http://robertdevore.com) // [@deviorobert](https://twitter.com/deviorobert)
 
 
 ## Getting Started with HTML5 Blank
 
 * Go to the Wordpress' theme folder (`.../wp-content/themes`)
-* In CLI, run: `git clone https://github.com/html5blank/html5blank.git`
-* `cd html5blank` and then `npm install` (you'll need gulp installed as well)
+* In CLI, run: `git clone https://github.com/creativitycore/creativitycore.git`
+* `cd creativitycore` and then `npm install` (you'll need gulp installed as well)
 * `gulp watch` will enable `livereload` and development version
 * `gulp build` for distribute version with minified `js` and `css` files
-* NOTE: `src` and `dist` folders can live happily together inside the same folder (`html5blank`) that's inside the `theme` folder. You'll have two different instances of the theme within `Appearance > Themes` panel inside the admin
+* NOTE: `src` and `dist` folders can live happily together inside the same folder (`creativitycore`) that's inside the `theme` folder. You'll have two different instances of the theme within `Appearance > Themes` panel inside the admin
 
 
 ## Get involved! Make HTML5 Blank better
@@ -77,4 +77,4 @@ Help make the code better by submitting a pull request or open an issue.
 * Demo Custom Page Template for expansion
 
 ## Contributors
-Thanks to all the awesome [contributors](https://github.com/html5blank/html5blank/graphs/contributors)!
+Thanks to all the awesome [contributors](https://github.com/creativitycore/creativitycore/graphs/contributors)!

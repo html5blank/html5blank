@@ -1,0 +1,59 @@
+.btn {
+    background-color: $brand-colour;
+    color: $base-background-colour;
+    border: 1px solid transparent;
+    display: inline-block;
+    padding: #{$base-spacing-unit / 4} $base-spacing-unit;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    width: auto;
+    transition: all .5s;
+
+    &::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+
+    &:hover {
+        text-decoration: none;
+        background-color: $base-background-colour;
+        color: $brand-colour;
+        border-color: $brand-colour;
+    }
+
+    &.is-disabled,
+    &:disabled {
+        pointer-events: none;
+        opacity: .65;
+    }
+}
+
+.btn--inverse {
+    background-color: $base-background-colour;
+    color: $brand-colour;
+    border: 1px solid $brand-colour;
+
+    &:hover {
+        background-color: $brand-colour;
+        color: $base-background-colour;
+        border-color: transparent;
+    }
+}
+
+.btn--block {
+    display: block;
+    width: 100%;
+
+    + .btn--block {
+        margin-top: $base-spacing-unit / 4;
+    }
+}
+
+.btn--link {
+    background-color: transparent;
+    color: $brand-colour;
+}

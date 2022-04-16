@@ -1,0 +1,64 @@
+/**
+ * Colours
+ */
+
+$base-colour:            #444;
+$base-background-colour: #fff;
+
+$brand-colour:           #444; // Example
+$success-colour:         #5CB85C;
+$info-colour:            $brand-colour;
+$warning-colour:         #F0AD4E;
+$danger-colour:          #D9534F;
+
+
+/**
+ * Typography
+ */
+
+$sans-serif-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$serif-font-family:       Georgia, "Times New Roman", Times, serif;
+$base-font-family:        $sans-serif-font-family;
+
+$base-font-size:          16;
+$base-line-height:        1.5;
+$base-spacing-unit:       ($base-font-size * $base-line-height) * 1px;
+
+
+/**
+ * Breakpoints
+ */
+
+$breakpoint-lg: 1280px;
+$breakpoint-md: 1024px;
+$breakpoint-sm: 768px;
+$breakpoint-xs: 480px;
+
+$breakpoints: (
+    'lg' '(min-width: ' + ($breakpoint-md + 1) + ')',
+    'md' '(min-width: ' + ($breakpoint-sm + 1) + ') and (max-width: ' + $breakpoint-md + ')',
+    'sm' '(min-width: ' + ($breakpoint-xs + 1) + ') and (max-width:'  + $breakpoint-sm + ')',
+    'xs' '(max-width: ' + $breakpoint-xs + ')'
+);
+
+
+/**
+ * Grid
+ */
+
+$grid-max-width: 1200px;
+$grid-columns:   12;
+$grid-gutter:    $base-spacing-unit;
+
+
+/**
+ * Components
+ */
+
+$border-radius: 3px;
+
+/**
+ * Animations
+ */
+$animation-speed: 250ms;
+$animation: ease-in-out;

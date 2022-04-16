@@ -1,0 +1,1933 @@
+
+
+/*
+ *  Modern Front-end Boilerplate by @yashi - http://yashiel.com - <yashilanka@gmail.com>
+ *  License - http://yashiel.com/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+
+
+
+$mfb-font-size-base:   14px !default;
+$mfb-line-height-base: 1 !default;
+$mfb-border-color:     #eee !default;
+$mfb-inverse:          #fff !default;
+$mfb-li-width:         (30em / 14) !default;
+
+@font-face {
+  font-family: "ModernFramework";
+  src: url('fonts/ModernFramework.eot');
+  src: url('fonts/ModernFramework.eot?#iefix') format('eot'),
+    url('fonts/ModernFramework.woff') format('woff'),
+    url('fonts/ModernFramework.woff2') format('woff2'),
+    url('fonts/ModernFramework.ttf') format('truetype');
+    // url('fonts/ModernFramework.svg#ModernFramework') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.mfb:before {
+  display: inline-block;
+  font-family: "ModernFramework";
+  font-style: normal;
+  font-weight: normal;
+  // line-height: inherit;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.mfb-lg {
+    font-size: (4em / 3);
+    line-height: (3em / 4);
+    vertical-align: -15%;
+}
+
+@for $l from 0 through 10 {
+.mfb-#{1*$l}x { &:before{font-size: 1em * $l !important;} }
+}
+
+@for $i from 0 through 75 {
+.mfb-#{1*$i} { font-size: 1px * $i; }
+.mfb-l#{1*$i} { padding-left: 1px * $i; }
+.mfb-r#{1*$i} { padding-right: 1px * $i; }
+.mfb-t#{1*$i} { padding-top: 1px * $i; }
+.mfb-b#{1*$i} { padding-bottom: 1px * $i; }
+}
+
+
+.mfb-fw {
+    width: (18em / 14);
+    text-align: center;
+}
+
+.mfb-ul {
+  padding-left: 0;
+  margin-left: $mfb-li-width;
+  list-style-type: none;
+  > li { position: relative; }
+}
+.mfb-li {
+  position: absolute;
+  left: -$mfb-li-width;
+  width: $mfb-li-width;
+  top: (2em / 14);
+  text-align: center;
+  &.mfb-lg {
+    left: -$mfb-li-width + (4em / 14);
+  }
+}
+
+.mfb-border {
+  padding: .2em .25em .15em;
+  border: solid .08em $mfb-border-color;
+  border-radius: .1em;
+}
+
+.mfb-pull-left { float: left; }
+.mfb-pull-right { float: right; }
+
+.mfb {
+  &.mfb-pull-left { margin-right: .3em; }
+  &.mfb-pull-right { margin-left: .3em; }
+}
+
+
+@mixin mfb-icon() {
+  display: inline-block;
+  font: normal normal normal #{$mfb-font-size-base}/#{$mfb-line-height-base} ModernFramework; // shortening font declaration
+  font-size: inherit; // can't have font-size inherit on line above, so need to override
+  text-rendering: auto; // optimizelegibility throws things off #1094
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+@mixin mfb-icon-rotate($degrees, $rotation) {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation});
+  -webkit-transform: rotate($degrees);
+      -ms-transform: rotate($degrees);
+          transform: rotate($degrees);
+}
+
+@mixin mfb-icon-flip($horiz, $vert, $rotation) {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation});
+  -webkit-transform: scale($horiz, $vert);
+      -ms-transform: scale($horiz, $vert);
+          transform: scale($horiz, $vert);
+}
+
+
+
+.mfb-rotate-90  { @include mfb-icon-rotate(90deg, 1);  }
+.mfb-rotate-180 { @include mfb-icon-rotate(180deg, 2); }
+.mfb-rotate-270 { @include mfb-icon-rotate(270deg, 3); }
+
+.mfb-flip-horizontal { @include mfb-icon-flip(-1, 1, 0); }
+.mfb-flip-vertical   { @include mfb-icon-flip(1, -1, 2); }
+
+// Hook for IE8-9
+// -------------------------
+
+:root .mfb-rotate-90,
+:root .mfb-rotate-180,
+:root .mfb-rotate-270,
+:root .mfb-flip-horizontal,
+:root .mfb-flip-vertical {
+  filter: none;
+}
+
+
+.mfb-stack {
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  vertical-align: middle;
+}
+.mfb-stack-1x, .mfb-stack-2x {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.mfb-stack-1x { line-height: inherit; }
+.mfb-stack-2x { font-size: 2em; }
+.mfb-inverse { color: $mfb-inverse; }
+
+
+
+
+
+@mixin mfb-style{
+    display: inline-block;
+    font: normal normal normal #{$mfb-font-size-base}/#{$mfb-line-height-base} ModernFramework;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: middle;
+    font-variant: normal;
+    font-style: normal;
+    font-weight: normal;
+    // line-height: inherit;
+}
+
+
+
+%mfb {
+  @include mfb-style;
+}
+
+@function mfb-char($icon:null) {
+  $char: "";
+
+  @if $icon == add {
+    $char: "\EA01";
+  }
+  @if $icon == analytics-t {
+    $char: "\EA02";
+  }
+  @if $icon == archive-1 {
+    $char: "\EA03";
+  }
+  @if $icon == archive {
+    $char: "\EA04";
+  }
+  @if $icon == arrow-down-2 {
+    $char: "\EA05";
+  }
+  @if $icon == arrow-down-3 {
+    $char: "\EA06";
+  }
+  @if $icon == arrow-down {
+    $char: "\EA07";
+  }
+  @if $icon == arrow-l-1 {
+    $char: "\EA08";
+  }
+  @if $icon == arrow-l-3 {
+    $char: "\EA09";
+  }
+  @if $icon == arrow-l-4 {
+    $char: "\EA0A";
+  }
+  @if $icon == arrow-l-6 {
+    $char: "\EA0B";
+  }
+  @if $icon == arrow-l-5 {
+    $char: "\EA0C";
+  }
+  @if $icon == arrow-l-7 {
+    $char: "\EA0D";
+  }
+  @if $icon == arrow-l-8 {
+    $char: "\EA0E";
+  }
+  @if $icon == arrow-l-9 {
+    $char: "\EA0F";
+  }
+  @if $icon == arrow-l {
+    $char: "\EA10";
+  }
+  @if $icon == arrow-r-2 {
+    $char: "\EA11";
+  }
+  @if $icon == arrow-r-1 {
+    $char: "\EA12";
+  }
+  @if $icon == arrow-r-3 {
+    $char: "\EA13";
+  }
+  @if $icon == arrow-r-4 {
+    $char: "\EA14";
+  }
+  @if $icon == arrow-r-5 {
+    $char: "\EA15";
+  }
+  @if $icon == arrow-r-6 {
+    $char: "\EA16";
+  }
+  @if $icon == arrow-r-7 {
+    $char: "\EA17";
+  }
+  @if $icon == arrow-r-8 {
+    $char: "\EA18";
+  }
+  @if $icon == arrow-r-9 {
+    $char: "\EA19";
+  }
+  @if $icon == arrow-up-1 {
+    $char: "\EA1A";
+  }
+  @if $icon == arrow-up-2 {
+    $char: "\EA1B";
+  }
+  @if $icon == arrow-up-3 {
+    $char: "\EA1C";
+  }
+  @if $icon == arrow-up {
+    $char: "\EA1D";
+  }
+  @if $icon == attachment {
+    $char: "\EA1E";
+  }
+  @if $icon == award-10 {
+    $char: "\EA1F";
+  }
+  @if $icon == award-2 {
+    $char: "\EA20";
+  }
+  @if $icon == award-3 {
+    $char: "\EA21";
+  }
+  @if $icon == award-4 {
+    $char: "\EA22";
+  }
+  @if $icon == award-5 {
+    $char: "\EA23";
+  }
+  @if $icon == award-6 {
+    $char: "\EA24";
+  }
+  @if $icon == award-7 {
+    $char: "\EA25";
+  }
+  @if $icon == award-8 {
+    $char: "\EA26";
+  }
+  @if $icon == award-9 {
+    $char: "\EA27";
+  }
+  @if $icon == award {
+    $char: "\EA28";
+  }
+  @if $icon == back-time {
+    $char: "\EA29";
+  }
+  @if $icon == back {
+    $char: "\EA2A";
+  }
+  @if $icon == bell {
+    $char: "\EA2B";
+  }
+  @if $icon == block-1 {
+    $char: "\EA2C";
+  }
+  @if $icon == block-2 {
+    $char: "\EA2D";
+  }
+  @if $icon == book-1 {
+    $char: "\EA2E";
+  }
+  @if $icon == azure-ad {
+    $char: "\EA2F";
+  }
+  @if $icon == block {
+    $char: "\EA30";
+  }
+  @if $icon == book-2 {
+    $char: "\EA31";
+  }
+  @if $icon == book-3 {
+    $char: "\EA32";
+  }
+  @if $icon == book-4 {
+    $char: "\EA33";
+  }
+  @if $icon == book-5 {
+    $char: "\EA34";
+  }
+  @if $icon == book {
+    $char: "\EA35";
+  }
+  @if $icon == bookmark {
+    $char: "\EA36";
+  }
+  @if $icon == box-1 {
+    $char: "\EA37";
+  }
+  @if $icon == box-2 {
+    $char: "\EA38";
+  }
+  @if $icon == box {
+    $char: "\EA39";
+  }
+  @if $icon == boy {
+    $char: "\EA3A";
+  }
+  @if $icon == building-1 {
+    $char: "\EA3B";
+  }
+  @if $icon == brightness {
+    $char: "\EA3C";
+  }
+  @if $icon == building {
+    $char: "\EA3D";
+  }
+  @if $icon == building-2 {
+    $char: "\EA3E";
+  }
+  @if $icon == box-3 {
+    $char: "\EA3F";
+  }
+  @if $icon == calender-1 {
+    $char: "\EA40";
+  }
+  @if $icon == calender-2 {
+    $char: "\EA41";
+  }
+  @if $icon == calender-3 {
+    $char: "\EA42";
+  }
+  @if $icon == calender-4 {
+    $char: "\EA43";
+  }
+  @if $icon == calender-6 {
+    $char: "\EA44";
+  }
+  @if $icon == calender-5 {
+    $char: "\EA45";
+  }
+  @if $icon == calender-7 {
+    $char: "\EA46";
+  }
+  @if $icon == calender {
+    $char: "\EA47";
+  }
+  @if $icon == cancel-1 {
+    $char: "\EA48";
+  }
+  @if $icon == cancel-2 {
+    $char: "\EA49";
+  }
+  @if $icon == cancel {
+    $char: "\EA4A";
+  }
+  @if $icon == caret-down {
+    $char: "\EA4B";
+  }
+  @if $icon == caret-up {
+    $char: "\EA4C";
+  }
+  @if $icon == chart-1 {
+    $char: "\EA4D";
+  }
+  @if $icon == chart-2 {
+    $char: "\EA4E";
+  }
+  @if $icon == cancel-3 {
+    $char: "\EA4F";
+  }
+  @if $icon == chart-3 {
+    $char: "\EA50";
+  }
+  @if $icon == chart-4 {
+    $char: "\EA51";
+  }
+  @if $icon == chart-5 {
+    $char: "\EA52";
+  }
+  @if $icon == chart-6 {
+    $char: "\EA53";
+  }
+  @if $icon == chart-7 {
+    $char: "\EA54";
+  }
+  @if $icon == chart-circuar {
+    $char: "\EA55";
+  }
+  @if $icon == chart-pie {
+    $char: "\EA56";
+  }
+  @if $icon == chart {
+    $char: "\EA57";
+  }
+  @if $icon == chat-1 {
+    $char: "\EA58";
+  }
+  @if $icon == chat-11 {
+    $char: "\EA59";
+  }
+  @if $icon == chat-12 {
+    $char: "\EA5A";
+  }
+  @if $icon == chat-2 {
+    $char: "\EA5B";
+  }
+  @if $icon == chat-4 {
+    $char: "\EA5C";
+  }
+  @if $icon == chat-3 {
+    $char: "\EA5D";
+  }
+  @if $icon == chat-5 {
+    $char: "\EA5E";
+  }
+  @if $icon == chat-10 {
+    $char: "\EA5F";
+  }
+  @if $icon == chat-6 {
+    $char: "\EA60";
+  }
+  @if $icon == chat-7 {
+    $char: "\EA61";
+  }
+  @if $icon == chat-8 {
+    $char: "\EA62";
+  }
+  @if $icon == chat-9 {
+    $char: "\EA63";
+  }
+  @if $icon == chat {
+    $char: "\EA64";
+  }
+  @if $icon == check-1 {
+    $char: "\EA65";
+  }
+  @if $icon == check-3 {
+    $char: "\EA66";
+  }
+  @if $icon == check-2 {
+    $char: "\EA67";
+  }
+  @if $icon == check-4 {
+    $char: "\EA68";
+  }
+  @if $icon == check-line {
+    $char: "\EA69";
+  }
+  @if $icon == check {
+    $char: "\EA6A";
+  }
+  @if $icon == checkbox-fill-1 {
+    $char: "\EA6B";
+  }
+  @if $icon == checkbox-fill {
+    $char: "\EA6C";
+  }
+  @if $icon == checkbox-line {
+    $char: "\EA6D";
+  }
+  @if $icon == circle {
+    $char: "\EA6E";
+  }
+  @if $icon == check-fill {
+    $char: "\EA6F";
+  }
+  @if $icon == city-1 {
+    $char: "\EA70";
+  }
+  @if $icon == city-2 {
+    $char: "\EA71";
+  }
+  @if $icon == city-3 {
+    $char: "\EA72";
+  }
+  @if $icon == city-4 {
+    $char: "\EA73";
+  }
+  @if $icon == city-5 {
+    $char: "\EA74";
+  }
+  @if $icon == city-6 {
+    $char: "\EA75";
+  }
+  @if $icon == city-7 {
+    $char: "\EA76";
+  }
+  @if $icon == city {
+    $char: "\EA77";
+  }
+  @if $icon == city-8 {
+    $char: "\EA78";
+  }
+  @if $icon == clock-2 {
+    $char: "\EA79";
+  }
+  @if $icon == clock-1 {
+    $char: "\EA7A";
+  }
+  @if $icon == clock-3 {
+    $char: "\EA7B";
+  }
+  @if $icon == clock-4 {
+    $char: "\EA7C";
+  }
+  @if $icon == clock-5 {
+    $char: "\EA7D";
+  }
+  @if $icon == clock-6 {
+    $char: "\EA7E";
+  }
+  @if $icon == clap {
+    $char: "\EA7F";
+  }
+  @if $icon == clock-7 {
+    $char: "\EA80";
+  }
+  @if $icon == clock-8 {
+    $char: "\EA81";
+  }
+  @if $icon == close-1 {
+    $char: "\EA82";
+  }
+  @if $icon == close-2 {
+    $char: "\EA83";
+  }
+  @if $icon == close {
+    $char: "\EA84";
+  }
+  @if $icon == cloud {
+    $char: "\EA85";
+  }
+  @if $icon == cog {
+    $char: "\EA86";
+  }
+  @if $icon == collapse {
+    $char: "\EA87";
+  }
+  @if $icon == collapse-1 {
+    $char: "\EA88";
+  }
+  @if $icon == comment {
+    $char: "\EA89";
+  }
+  @if $icon == competency {
+    $char: "\EA8A";
+  }
+  @if $icon == computer {
+    $char: "\EA8B";
+  }
+  @if $icon == config-1 {
+    $char: "\EA8C";
+  }
+  @if $icon == config-2 {
+    $char: "\EA8D";
+  }
+  @if $icon == config-3 {
+    $char: "\EA8E";
+  }
+  @if $icon == commands {
+    $char: "\EA8F";
+  }
+  @if $icon == config-4 {
+    $char: "\EA90";
+  }
+  @if $icon == config {
+    $char: "\EA91";
+  }
+  @if $icon == confirmation {
+    $char: "\EA92";
+  }
+  @if $icon == contrast {
+    $char: "\EA93";
+  }
+  @if $icon == conversation {
+    $char: "\EA94";
+  }
+  @if $icon == copy-1 {
+    $char: "\EA95";
+  }
+  @if $icon == copy-2 {
+    $char: "\EA96";
+  }
+  @if $icon == copy {
+    $char: "\EA97";
+  }
+  @if $icon == crop {
+    $char: "\EA98";
+  }
+  @if $icon == crossover {
+    $char: "\EA99";
+  }
+  @if $icon == current-2 {
+    $char: "\EA9A";
+  }
+  @if $icon == current-1 {
+    $char: "\EA9B";
+  }
+  @if $icon == current-3 {
+    $char: "\EA9C";
+  }
+  @if $icon == current {
+    $char: "\EA9D";
+  }
+  @if $icon == cv-2 {
+    $char: "\EA9E";
+  }
+  @if $icon == correct {
+    $char: "\EA9F";
+  }
+  @if $icon == cv {
+    $char: "\EAA0";
+  }
+  @if $icon == dashboard-1 {
+    $char: "\EAA1";
+  }
+  @if $icon == dashboard {
+    $char: "\EAA2";
+  }
+  @if $icon == diamond {
+    $char: "\EAA3";
+  }
+  @if $icon == doc-duplicate-1 {
+    $char: "\EAA4";
+  }
+  @if $icon == doc-duplicate {
+    $char: "\EAA5";
+  }
+  @if $icon == doc-edit-2 {
+    $char: "\EAA6";
+  }
+  @if $icon == doc-edit-3 {
+    $char: "\EAA7";
+  }
+  @if $icon == doc-file {
+    $char: "\EAA8";
+  }
+  @if $icon == doc-stack {
+    $char: "\EAA9";
+  }
+  @if $icon == documents {
+    $char: "\EAAA";
+  }
+  @if $icon == document {
+    $char: "\EAAB";
+  }
+  @if $icon == document-edit {
+    $char: "\EAAC";
+  }
+  @if $icon == edit-1 {
+    $char: "\EAAD";
+  }
+  @if $icon == edit {
+    $char: "\EAAE";
+  }
+  @if $icon == doc-right {
+    $char: "\EAAF";
+  }
+  @if $icon == emoji-smile {
+    $char: "\EAB0";
+  }
+  @if $icon == emoji-surprised {
+    $char: "\EAB1";
+  }
+  @if $icon == enter-door {
+    $char: "\EAB2";
+  }
+  @if $icon == enter {
+    $char: "\EAB3";
+  }
+  @if $icon == equal {
+    $char: "\EAB4";
+  }
+  @if $icon == evaluation {
+    $char: "\EAB5";
+  }
+  @if $icon == exit-door {
+    $char: "\EAB6";
+  }
+  @if $icon == expand-1 {
+    $char: "\EAB7";
+  }
+  @if $icon == expand-2 {
+    $char: "\EAB8";
+  }
+  @if $icon == export {
+    $char: "\EAB9";
+  }
+  @if $icon == eye-1 {
+    $char: "\EABA";
+  }
+  @if $icon == eye-block {
+    $char: "\EABB";
+  }
+  @if $icon == eye {
+    $char: "\EABC";
+  }
+  @if $icon == facebook {
+    $char: "\EABD";
+  }
+  @if $icon == favourite {
+    $char: "\EABE";
+  }
+  @if $icon == expand {
+    $char: "\EABF";
+  }
+  @if $icon == feed {
+    $char: "\EAC0";
+  }
+  @if $icon == feedback-2 {
+    $char: "\EAC1";
+  }
+  @if $icon == feedback {
+    $char: "\EAC2";
+  }
+  @if $icon == female {
+    $char: "\EAC3";
+  }
+  @if $icon == fill-dot-1 {
+    $char: "\EAC4";
+  }
+  @if $icon == files {
+    $char: "\EAC5";
+  }
+  @if $icon == fill-dot {
+    $char: "\EAC6";
+  }
+  @if $icon == filter-1 {
+    $char: "\EAC7";
+  }
+  @if $icon == filter {
+    $char: "\EAC8";
+  }
+  @if $icon == flag {
+    $char: "\EAC9";
+  }
+  @if $icon == fingerprint-1 {
+    $char: "\EACA";
+  }
+  @if $icon == folder-add {
+    $char: "\EACB";
+  }
+  @if $icon == folder {
+    $char: "\EACC";
+  }
+  @if $icon == food-1 {
+    $char: "\EACD";
+  }
+  @if $icon == food-2 {
+    $char: "\EACE";
+  }
+  @if $icon == finger-print {
+    $char: "\EACF";
+  }
+  @if $icon == food-3 {
+    $char: "\EAD0";
+  }
+  @if $icon == food-4 {
+    $char: "\EAD1";
+  }
+  @if $icon == food-6 {
+    $char: "\EAD2";
+  }
+  @if $icon == food-5 {
+    $char: "\EAD3";
+  }
+  @if $icon == food-7 {
+    $char: "\EAD4";
+  }
+  @if $icon == food {
+    $char: "\EAD5";
+  }
+  @if $icon == girl {
+    $char: "\EAD6";
+  }
+  @if $icon == glass-1 {
+    $char: "\EAD7";
+  }
+  @if $icon == girl-1 {
+    $char: "\EAD8";
+  }
+  @if $icon == glass-2 {
+    $char: "\EAD9";
+  }
+  @if $icon == glass-5 {
+    $char: "\EADA";
+  }
+  @if $icon == glass-3 {
+    $char: "\EADB";
+  }
+  @if $icon == glass-4 {
+    $char: "\EADC";
+  }
+  @if $icon == glass-7 {
+    $char: "\EADD";
+  }
+  @if $icon == glass {
+    $char: "\EADE";
+  }
+  @if $icon == gender {
+    $char: "\EADF";
+  }
+  @if $icon == google {
+    $char: "\EAE0";
+  }
+  @if $icon == globe {
+    $char: "\EAE1";
+  }
+  @if $icon == greater-equal {
+    $char: "\EAE2";
+  }
+  @if $icon == greater-than {
+    $char: "\EAE3";
+  }
+  @if $icon == half-moon {
+    $char: "\EAE4";
+  }
+  @if $icon == hand-2 {
+    $char: "\EAE5";
+  }
+  @if $icon == hand-1 {
+    $char: "\EAE6";
+  }
+  @if $icon == hammer {
+    $char: "\EAE7";
+  }
+  @if $icon == hand-4 {
+    $char: "\EAE8";
+  }
+  @if $icon == hand-3 {
+    $char: "\EAE9";
+  }
+  @if $icon == hand-6 {
+    $char: "\EAEA";
+  }
+  @if $icon == handshake-1 {
+    $char: "\EAEB";
+  }
+  @if $icon == hand {
+    $char: "\EAEC";
+  }
+  @if $icon == head-count {
+    $char: "\EAED";
+  }
+  @if $icon == handshake {
+    $char: "\EAEE";
+  }
+  @if $icon == hand-5 {
+    $char: "\EAEF";
+  }
+  @if $icon == head-hunt {
+    $char: "\EAF0";
+  }
+  @if $icon == heart-1 {
+    $char: "\EAF1";
+  }
+  @if $icon == heart-2 {
+    $char: "\EAF2";
+  }
+  @if $icon == holyday-1 {
+    $char: "\EAF3";
+  }
+  @if $icon == heart {
+    $char: "\EAF4";
+  }
+  @if $icon == holyday-2 {
+    $char: "\EAF5";
+  }
+  @if $icon == holyday-4 {
+    $char: "\EAF6";
+  }
+  @if $icon == holyday-3 {
+    $char: "\EAF7";
+  }
+  @if $icon == home-2 {
+    $char: "\EAF8";
+  }
+  @if $icon == info {
+    $char: "\EAF9";
+  }
+  @if $icon == idea {
+    $char: "\EAFA";
+  }
+  @if $icon == hr {
+    $char: "\EAFB";
+  }
+  @if $icon == job-hiring {
+    $char: "\EAFC";
+  }
+  @if $icon == keyboard {
+    $char: "\EAFD";
+  }
+  @if $icon == knowledge-sharing {
+    $char: "\EAFE";
+  }
+  @if $icon == home {
+    $char: "\EAFF";
+  }
+  @if $icon == job {
+    $char: "\EB00";
+  }
+  @if $icon == jpg-file {
+    $char: "\EB01";
+  }
+  @if $icon == lab {
+    $char: "\EB02";
+  }
+  @if $icon == law-1 {
+    $char: "\EB03";
+  }
+  @if $icon == left {
+    $char: "\EB04";
+  }
+  @if $icon == less-equal {
+    $char: "\EB05";
+  }
+  @if $icon == law {
+    $char: "\EB06";
+  }
+  @if $icon == less-than {
+    $char: "\EB07";
+  }
+  @if $icon == lightning-1 {
+    $char: "\EB08";
+  }
+  @if $icon == lightning {
+    $char: "\EB09";
+  }
+  @if $icon == linkedin {
+    $char: "\EB0A";
+  }
+  @if $icon == like {
+    $char: "\EB0B";
+  }
+  @if $icon == list-3 {
+    $char: "\EB0C";
+  }
+  @if $icon == list-1 {
+    $char: "\EB0D";
+  }
+  @if $icon == loading {
+    $char: "\EB0E";
+  }
+  @if $icon == letter {
+    $char: "\EB0F";
+  }
+  @if $icon == list {
+    $char: "\EB10";
+  }
+  @if $icon == lock-1 {
+    $char: "\EB11";
+  }
+  @if $icon == login {
+    $char: "\EB12";
+  }
+  @if $icon == logout {
+    $char: "\EB13";
+  }
+  @if $icon == loop-2 {
+    $char: "\EB14";
+  }
+  @if $icon == loop-3 {
+    $char: "\EB15";
+  }
+  @if $icon == lock {
+    $char: "\EB16";
+  }
+  @if $icon == loop {
+    $char: "\EB17";
+  }
+  @if $icon == lost-hours {
+    $char: "\EB18";
+  }
+  @if $icon == mail-2 {
+    $char: "\EB19";
+  }
+  @if $icon == map-pin-1 {
+    $char: "\EB1A";
+  }
+  @if $icon == male {
+    $char: "\EB1B";
+  }
+  @if $icon == map-pin-2 {
+    $char: "\EB1C";
+  }
+  @if $icon == mail {
+    $char: "\EB1D";
+  }
+  @if $icon == math-sets-1 {
+    $char: "\EB1E";
+  }
+  @if $icon == mail-1 {
+    $char: "\EB1F";
+  }
+  @if $icon == math-sets-2 {
+    $char: "\EB20";
+  }
+  @if $icon == math-sets-3 {
+    $char: "\EB21";
+  }
+  @if $icon == math-sets-4 {
+    $char: "\EB22";
+  }
+  @if $icon == maximize {
+    $char: "\EB23";
+  }
+  @if $icon == menu-1 {
+    $char: "\EB24";
+  }
+  @if $icon == menu {
+    $char: "\EB25";
+  }
+  @if $icon == milestones {
+    $char: "\EB26";
+  }
+  @if $icon == minimize {
+    $char: "\EB27";
+  }
+  @if $icon == minus-1 {
+    $char: "\EB28";
+  }
+  @if $icon == minus {
+    $char: "\EB29";
+  }
+  @if $icon == minus-3 {
+    $char: "\EB2A";
+  }
+  @if $icon == mobile {
+    $char: "\EB2B";
+  }
+  @if $icon == money-10 {
+    $char: "\EB2C";
+  }
+  @if $icon == money-1 {
+    $char: "\EB2D";
+  }
+  @if $icon == money-11 {
+    $char: "\EB2E";
+  }
+  @if $icon == minus-2 {
+    $char: "\EB2F";
+  }
+  @if $icon == money-12 {
+    $char: "\EB30";
+  }
+  @if $icon == money-2 {
+    $char: "\EB31";
+  }
+  @if $icon == money-3 {
+    $char: "\EB32";
+  }
+  @if $icon == money-5 {
+    $char: "\EB33";
+  }
+  @if $icon == money-4 {
+    $char: "\EB34";
+  }
+  @if $icon == money-6 {
+    $char: "\EB35";
+  }
+  @if $icon == money-8 {
+    $char: "\EB36";
+  }
+  @if $icon == money-7 {
+    $char: "\EB37";
+  }
+  @if $icon == money-9 {
+    $char: "\EB38";
+  }
+  @if $icon == more-2 {
+    $char: "\EB39";
+  }
+  @if $icon == move-2 {
+    $char: "\EB3A";
+  }
+  @if $icon == more {
+    $char: "\EB3B";
+  }
+  @if $icon == move-1 {
+    $char: "\EB3C";
+  }
+  @if $icon == new {
+    $char: "\EB3D";
+  }
+  @if $icon == move {
+    $char: "\EB3E";
+  }
+  @if $icon == money {
+    $char: "\EB3F";
+  }
+  @if $icon == not-equal {
+    $char: "\EB40";
+  }
+  @if $icon == notice-line {
+    $char: "\EB41";
+  }
+  @if $icon == notice-board {
+    $char: "\EB42";
+  }
+  @if $icon == onboard-task-2 {
+    $char: "\EB43";
+  }
+  @if $icon == notice {
+    $char: "\EB44";
+  }
+  @if $icon == onboard-task {
+    $char: "\EB45";
+  }
+  @if $icon == org-level {
+    $char: "\EB46";
+  }
+  @if $icon == owl {
+    $char: "\EB47";
+  }
+  @if $icon == page-break-1 {
+    $char: "\EB48";
+  }
+  @if $icon == pause-1 {
+    $char: "\EB49";
+  }
+  @if $icon == pause {
+    $char: "\EB4A";
+  }
+  @if $icon == payment {
+    $char: "\EB4B";
+  }
+  @if $icon == pdf-file {
+    $char: "\EB4C";
+  }
+  @if $icon == people-1 {
+    $char: "\EB4D";
+  }
+  @if $icon == people-2 {
+    $char: "\EB4E";
+  }
+  @if $icon == page-break {
+    $char: "\EB4F";
+  }
+  @if $icon == people-3 {
+    $char: "\EB50";
+  }
+  @if $icon == people-4 {
+    $char: "\EB51";
+  }
+  @if $icon == people-5 {
+    $char: "\EB52";
+  }
+  @if $icon == people {
+    $char: "\EB53";
+  }
+  @if $icon == play-1 {
+    $char: "\EB54";
+  }
+  @if $icon == play {
+    $char: "\EB55";
+  }
+  @if $icon == plus-1 {
+    $char: "\EB56";
+  }
+  @if $icon == plus-line {
+    $char: "\EB57";
+  }
+  @if $icon == plus {
+    $char: "\EB58";
+  }
+  @if $icon == post {
+    $char: "\EB59";
+  }
+  @if $icon == potential {
+    $char: "\EB5A";
+  }
+  @if $icon == ppt-file {
+    $char: "\EB5B";
+  }
+  @if $icon == present {
+    $char: "\EB5C";
+  }
+  @if $icon == profile-1 {
+    $char: "\EB5D";
+  }
+  @if $icon == print {
+    $char: "\EB5E";
+  }
+  @if $icon == png-file {
+    $char: "\EB5F";
+  }
+  @if $icon == profile-2 {
+    $char: "\EB60";
+  }
+  @if $icon == profile-3 {
+    $char: "\EB61";
+  }
+  @if $icon == profiles {
+    $char: "\EB62";
+  }
+  @if $icon == protential {
+    $char: "\EB63";
+  }
+  @if $icon == puzzle {
+    $char: "\EB64";
+  }
+  @if $icon == radio-off-1 {
+    $char: "\EB65";
+  }
+  @if $icon == quote-r {
+    $char: "\EB66";
+  }
+  @if $icon == quote-l {
+    $char: "\EB67";
+  }
+  @if $icon == radio-off {
+    $char: "\EB68";
+  }
+  @if $icon == redu-1 {
+    $char: "\EB69";
+  }
+  @if $icon == radio-on-2 {
+    $char: "\EB6A";
+  }
+  @if $icon == radio-on {
+    $char: "\EB6B";
+  }
+  @if $icon == redu-2 {
+    $char: "\EB6C";
+  }
+  @if $icon == redu {
+    $char: "\EB6D";
+  }
+  @if $icon == resize-window {
+    $char: "\EB6E";
+  }
+  @if $icon == radio-on-1 {
+    $char: "\EB6F";
+  }
+  @if $icon == requisition {
+    $char: "\EB70";
+  }
+  @if $icon == rocket-1 {
+    $char: "\EB71";
+  }
+  @if $icon == save-1 {
+    $char: "\EB72";
+  }
+  @if $icon == restore-window {
+    $char: "\EB73";
+  }
+  @if $icon == rocket-2 {
+    $char: "\EB74";
+  }
+  @if $icon == rocket {
+    $char: "\EB75";
+  }
+  @if $icon == separator {
+    $char: "\EB76";
+  }
+  @if $icon == service {
+    $char: "\EB77";
+  }
+  @if $icon == service-1 {
+    $char: "\EB78";
+  }
+  @if $icon == social-1 {
+    $char: "\EB79";
+  }
+  @if $icon == shield {
+    $char: "\EB7A";
+  }
+  @if $icon == shuffle {
+    $char: "\EB7B";
+  }
+  @if $icon == shortlist {
+    $char: "\EB7C";
+  }
+  @if $icon == social-network {
+    $char: "\EB7D";
+  }
+  @if $icon == social {
+    $char: "\EB7E";
+  }
+  @if $icon == save {
+    $char: "\EB7F";
+  }
+  @if $icon == sort-up {
+    $char: "\EB80";
+  }
+  @if $icon == sort-down {
+    $char: "\EB81";
+  }
+  @if $icon == spinner-1 {
+    $char: "\EB82";
+  }
+  @if $icon == spinner-2 {
+    $char: "\EB83";
+  }
+  @if $icon == spinner-3 {
+    $char: "\EB84";
+  }
+  @if $icon == spinner-4 {
+    $char: "\EB85";
+  }
+  @if $icon == spinner-5 {
+    $char: "\EB86";
+  }
+  @if $icon == spinner-6 {
+    $char: "\EB87";
+  }
+  @if $icon == star {
+    $char: "\EB88";
+  }
+  @if $icon == spinner-7 {
+    $char: "\EB89";
+  }
+  @if $icon == star-1 {
+    $char: "\EB8A";
+  }
+  @if $icon == stopwatch {
+    $char: "\EB8B";
+  }
+  @if $icon == storage-2 {
+    $char: "\EB8C";
+  }
+  @if $icon == suggetion {
+    $char: "\EB8D";
+  }
+  @if $icon == storage {
+    $char: "\EB8E";
+  }
+  @if $icon == spinner-8 {
+    $char: "\EB8F";
+  }
+  @if $icon == storage-1 {
+    $char: "\EB90";
+  }
+  @if $icon == sun-half {
+    $char: "\EB91";
+  }
+  @if $icon == switch {
+    $char: "\EB92";
+  }
+  @if $icon == support {
+    $char: "\EB93";
+  }
+  @if $icon == swap {
+    $char: "\EB94";
+  }
+  @if $icon == sun {
+    $char: "\EB95";
+  }
+  @if $icon == tactics {
+    $char: "\EB96";
+  }
+  @if $icon == team {
+    $char: "\EB97";
+  }
+  @if $icon == target {
+    $char: "\EB98";
+  }
+  @if $icon == thumb-down {
+    $char: "\EB99";
+  }
+  @if $icon == thumb-up {
+    $char: "\EB9A";
+  }
+  @if $icon == total-expected {
+    $char: "\EB9B";
+  }
+  @if $icon == transfer_learning {
+    $char: "\EB9C";
+  }
+  @if $icon == toggle-off {
+    $char: "\EB9D";
+  }
+  @if $icon == toggle-on {
+    $char: "\EB9E";
+  }
+  @if $icon == template {
+    $char: "\EB9F";
+  }
+  @if $icon == trash {
+    $char: "\EBA0";
+  }
+  @if $icon == transmission {
+    $char: "\EBA1";
+  }
+  @if $icon == twitter {
+    $char: "\EBA2";
+  }
+  @if $icon == tube {
+    $char: "\EBA3";
+  }
+  @if $icon == txt-file {
+    $char: "\EBA4";
+  }
+  @if $icon == undo-1 {
+    $char: "\EBA5";
+  }
+  @if $icon == undo {
+    $char: "\EBA6";
+  }
+  @if $icon == unlock {
+    $char: "\EBA7";
+  }
+  @if $icon == upload {
+    $char: "\EBA8";
+  }
+  @if $icon == usb {
+    $char: "\EBA9";
+  }
+  @if $icon == usb-1 {
+    $char: "\EBAA";
+  }
+  @if $icon == user-2 {
+    $char: "\EBAB";
+  }
+  @if $icon == user-1 {
+    $char: "\EBAC";
+  }
+  @if $icon == user-3 {
+    $char: "\EBAD";
+  }
+  @if $icon == user-6 {
+    $char: "\EBAE";
+  }
+  @if $icon == unlock-1 {
+    $char: "\EBAF";
+  }
+  @if $icon == user-4 {
+    $char: "\EBB0";
+  }
+  @if $icon == user-7 {
+    $char: "\EBB1";
+  }
+  @if $icon == user-5 {
+    $char: "\EBB2";
+  }
+  @if $icon == user-8 {
+    $char: "\EBB3";
+  }
+  @if $icon == user-add {
+    $char: "\EBB4";
+  }
+  @if $icon == user-9 {
+    $char: "\EBB5";
+  }
+  @if $icon == user-group-1 {
+    $char: "\EBB6";
+  }
+  @if $icon == user-check {
+    $char: "\EBB7";
+  }
+  @if $icon == user-group-10 {
+    $char: "\EBB8";
+  }
+  @if $icon == user-group-5 {
+    $char: "\EBB9";
+  }
+  @if $icon == user-group-2 {
+    $char: "\EBBA";
+  }
+  @if $icon == user-group-4 {
+    $char: "\EBBB";
+  }
+  @if $icon == user-group-6 {
+    $char: "\EBBC";
+  }
+  @if $icon == user-group-7 {
+    $char: "\EBBD";
+  }
+  @if $icon == user-group-9 {
+    $char: "\EBBE";
+  }
+  @if $icon == user-group-3 {
+    $char: "\EBBF";
+  }
+  @if $icon == user-group-8 {
+    $char: "\EBC0";
+  }
+  @if $icon == user-group {
+    $char: "\EBC1";
+  }
+  @if $icon == user-line {
+    $char: "\EBC2";
+  }
+  @if $icon == user-switch-1 {
+    $char: "\EBC3";
+  }
+  @if $icon == user-settings {
+    $char: "\EBC4";
+  }
+  @if $icon == user-plus {
+    $char: "\EBC5";
+  }
+  @if $icon == user-minus {
+    $char: "\EBC6";
+  }
+  @if $icon == user-switch-2 {
+    $char: "\EBC7";
+  }
+  @if $icon == user-switch-3 {
+    $char: "\EBC8";
+  }
+  @if $icon == user-time {
+    $char: "\EBC9";
+  }
+  @if $icon == user-work-1 {
+    $char: "\EBCA";
+  }
+  @if $icon == user-work-4 {
+    $char: "\EBCB";
+  }
+  @if $icon == user-work-5 {
+    $char: "\EBCC";
+  }
+  @if $icon == user {
+    $char: "\EBCD";
+  }
+  @if $icon == value {
+    $char: "\EBCE";
+  }
+  @if $icon == user-switch {
+    $char: "\EBCF";
+  }
+  @if $icon == user-work {
+    $char: "\EBD0";
+  }
+  @if $icon == view_all {
+    $char: "\EBD1";
+  }
+  @if $icon == values {
+    $char: "\EBD2";
+  }
+  @if $icon == wallet-1 {
+    $char: "\EBD3";
+  }
+  @if $icon == wallet {
+    $char: "\EBD4";
+  }
+  @if $icon == warning-1 {
+    $char: "\EBD5";
+  }
+  @if $icon == web {
+    $char: "\EBD6";
+  }
+  @if $icon == warning {
+    $char: "\EBD7";
+  }
+  @if $icon == wheel {
+    $char: "\EBD8";
+  }
+  @if $icon == widget {
+    $char: "\EBD9";
+  }
+  @if $icon == wheel-1 {
+    $char: "\EBDA";
+  }
+  @if $icon == zip-file {
+    $char: "\EBDB";
+  }
+  @if $icon == zoom-out {
+    $char: "\EBDC";
+  }
+  @if $icon == zoom-out-1 {
+    $char: "\EBDD";
+  }
+  @if $icon == zoom-in-1 {
+    $char: "\EBDE";
+  }
+  @if $icon == xls-file {
+    $char: "\EBDF";
+  }
+  @if $icon == zoom-in {
+    $char: "\EBE0";
+  }
+
+  @return $char;
+}
+
+
+@mixin mfb($icon:null, $insert: null, $extend: true) {
+  @if $insert==before or $insert==after{
+    &:#{$insert} {
+      @if $extend {
+        @extend %mfb;
+      } @else {
+        @include mfb-style;
+      }
+      content: mfb-char($icon);
+    }
+  } @else {
+    @include mfb-style;
+    content: mfb-char($icon);
+  }
+}
+
+.mfb-add:before{@include mfb(add);}.mfb-analytics-t:before{@include mfb(analytics-t);}.mfb-archive-1:before{@include mfb(archive-1);}.mfb-archive:before{@include mfb(archive);}.mfb-arrow-down-2:before{@include mfb(arrow-down-2);}.mfb-arrow-down-3:before{@include mfb(arrow-down-3);}.mfb-arrow-down:before{@include mfb(arrow-down);}.mfb-arrow-l-1:before{@include mfb(arrow-l-1);}.mfb-arrow-l-3:before{@include mfb(arrow-l-3);}.mfb-arrow-l-4:before{@include mfb(arrow-l-4);}.mfb-arrow-l-6:before{@include mfb(arrow-l-6);}.mfb-arrow-l-5:before{@include mfb(arrow-l-5);}.mfb-arrow-l-7:before{@include mfb(arrow-l-7);}.mfb-arrow-l-8:before{@include mfb(arrow-l-8);}.mfb-arrow-l-9:before{@include mfb(arrow-l-9);}.mfb-arrow-l:before{@include mfb(arrow-l);}.mfb-arrow-r-2:before{@include mfb(arrow-r-2);}.mfb-arrow-r-1:before{@include mfb(arrow-r-1);}.mfb-arrow-r-3:before{@include mfb(arrow-r-3);}.mfb-arrow-r-4:before{@include mfb(arrow-r-4);}.mfb-arrow-r-5:before{@include mfb(arrow-r-5);}.mfb-arrow-r-6:before{@include mfb(arrow-r-6);}.mfb-arrow-r-7:before{@include mfb(arrow-r-7);}.mfb-arrow-r-8:before{@include mfb(arrow-r-8);}.mfb-arrow-r-9:before{@include mfb(arrow-r-9);}.mfb-arrow-up-1:before{@include mfb(arrow-up-1);}.mfb-arrow-up-2:before{@include mfb(arrow-up-2);}.mfb-arrow-up-3:before{@include mfb(arrow-up-3);}.mfb-arrow-up:before{@include mfb(arrow-up);}.mfb-attachment:before{@include mfb(attachment);}.mfb-award-10:before{@include mfb(award-10);}.mfb-award-2:before{@include mfb(award-2);}.mfb-award-3:before{@include mfb(award-3);}.mfb-award-4:before{@include mfb(award-4);}.mfb-award-5:before{@include mfb(award-5);}.mfb-award-6:before{@include mfb(award-6);}.mfb-award-7:before{@include mfb(award-7);}.mfb-award-8:before{@include mfb(award-8);}.mfb-award-9:before{@include mfb(award-9);}.mfb-award:before{@include mfb(award);}.mfb-back-time:before{@include mfb(back-time);}.mfb-back:before{@include mfb(back);}.mfb-bell:before{@include mfb(bell);}.mfb-block-1:before{@include mfb(block-1);}.mfb-block-2:before{@include mfb(block-2);}.mfb-book-1:before{@include mfb(book-1);}.mfb-azure-ad:before{@include mfb(azure-ad);}.mfb-block:before{@include mfb(block);}.mfb-book-2:before{@include mfb(book-2);}.mfb-book-3:before{@include mfb(book-3);}.mfb-book-4:before{@include mfb(book-4);}.mfb-book-5:before{@include mfb(book-5);}.mfb-book:before{@include mfb(book);}.mfb-bookmark:before{@include mfb(bookmark);}.mfb-box-1:before{@include mfb(box-1);}.mfb-box-2:before{@include mfb(box-2);}.mfb-box:before{@include mfb(box);}.mfb-boy:before{@include mfb(boy);}.mfb-building-1:before{@include mfb(building-1);}.mfb-brightness:before{@include mfb(brightness);}.mfb-building:before{@include mfb(building);}.mfb-building-2:before{@include mfb(building-2);}.mfb-box-3:before{@include mfb(box-3);}.mfb-calender-1:before{@include mfb(calender-1);}.mfb-calender-2:before{@include mfb(calender-2);}.mfb-calender-3:before{@include mfb(calender-3);}.mfb-calender-4:before{@include mfb(calender-4);}.mfb-calender-6:before{@include mfb(calender-6);}.mfb-calender-5:before{@include mfb(calender-5);}.mfb-calender-7:before{@include mfb(calender-7);}.mfb-calender:before{@include mfb(calender);}.mfb-cancel-1:before{@include mfb(cancel-1);}.mfb-cancel-2:before{@include mfb(cancel-2);}.mfb-cancel:before{@include mfb(cancel);}.mfb-caret-down:before{@include mfb(caret-down);}.mfb-caret-up:before{@include mfb(caret-up);}.mfb-chart-1:before{@include mfb(chart-1);}.mfb-chart-2:before{@include mfb(chart-2);}.mfb-cancel-3:before{@include mfb(cancel-3);}.mfb-chart-3:before{@include mfb(chart-3);}.mfb-chart-4:before{@include mfb(chart-4);}.mfb-chart-5:before{@include mfb(chart-5);}.mfb-chart-6:before{@include mfb(chart-6);}.mfb-chart-7:before{@include mfb(chart-7);}.mfb-chart-circuar:before{@include mfb(chart-circuar);}.mfb-chart-pie:before{@include mfb(chart-pie);}.mfb-chart:before{@include mfb(chart);}.mfb-chat-1:before{@include mfb(chat-1);}.mfb-chat-11:before{@include mfb(chat-11);}.mfb-chat-12:before{@include mfb(chat-12);}.mfb-chat-2:before{@include mfb(chat-2);}.mfb-chat-4:before{@include mfb(chat-4);}.mfb-chat-3:before{@include mfb(chat-3);}.mfb-chat-5:before{@include mfb(chat-5);}.mfb-chat-10:before{@include mfb(chat-10);}.mfb-chat-6:before{@include mfb(chat-6);}.mfb-chat-7:before{@include mfb(chat-7);}.mfb-chat-8:before{@include mfb(chat-8);}.mfb-chat-9:before{@include mfb(chat-9);}.mfb-chat:before{@include mfb(chat);}.mfb-check-1:before{@include mfb(check-1);}.mfb-check-3:before{@include mfb(check-3);}.mfb-check-2:before{@include mfb(check-2);}.mfb-check-4:before{@include mfb(check-4);}.mfb-check-line:before{@include mfb(check-line);}.mfb-check:before{@include mfb(check);}.mfb-checkbox-fill-1:before{@include mfb(checkbox-fill-1);}.mfb-checkbox-fill:before{@include mfb(checkbox-fill);}.mfb-checkbox-line:before{@include mfb(checkbox-line);}.mfb-circle:before{@include mfb(circle);}.mfb-check-fill:before{@include mfb(check-fill);}.mfb-city-1:before{@include mfb(city-1);}.mfb-city-2:before{@include mfb(city-2);}.mfb-city-3:before{@include mfb(city-3);}.mfb-city-4:before{@include mfb(city-4);}.mfb-city-5:before{@include mfb(city-5);}.mfb-city-6:before{@include mfb(city-6);}.mfb-city-7:before{@include mfb(city-7);}.mfb-city:before{@include mfb(city);}.mfb-city-8:before{@include mfb(city-8);}.mfb-clock-2:before{@include mfb(clock-2);}.mfb-clock-1:before{@include mfb(clock-1);}.mfb-clock-3:before{@include mfb(clock-3);}.mfb-clock-4:before{@include mfb(clock-4);}.mfb-clock-5:before{@include mfb(clock-5);}.mfb-clock-6:before{@include mfb(clock-6);}.mfb-clap:before{@include mfb(clap);}.mfb-clock-7:before{@include mfb(clock-7);}.mfb-clock-8:before{@include mfb(clock-8);}.mfb-close-1:before{@include mfb(close-1);}.mfb-close-2:before{@include mfb(close-2);}.mfb-close:before{@include mfb(close);}.mfb-cloud:before{@include mfb(cloud);}.mfb-cog:before{@include mfb(cog);}.mfb-collapse:before{@include mfb(collapse);}.mfb-collapse-1:before{@include mfb(collapse-1);}.mfb-comment:before{@include mfb(comment);}.mfb-competency:before{@include mfb(competency);}.mfb-computer:before{@include mfb(computer);}.mfb-config-1:before{@include mfb(config-1);}.mfb-config-2:before{@include mfb(config-2);}.mfb-config-3:before{@include mfb(config-3);}.mfb-commands:before{@include mfb(commands);}.mfb-config-4:before{@include mfb(config-4);}.mfb-config:before{@include mfb(config);}.mfb-confirmation:before{@include mfb(confirmation);}.mfb-contrast:before{@include mfb(contrast);}.mfb-conversation:before{@include mfb(conversation);}.mfb-copy-1:before{@include mfb(copy-1);}.mfb-copy-2:before{@include mfb(copy-2);}.mfb-copy:before{@include mfb(copy);}.mfb-crop:before{@include mfb(crop);}.mfb-crossover:before{@include mfb(crossover);}.mfb-current-2:before{@include mfb(current-2);}.mfb-current-1:before{@include mfb(current-1);}.mfb-current-3:before{@include mfb(current-3);}.mfb-current:before{@include mfb(current);}.mfb-cv-2:before{@include mfb(cv-2);}.mfb-correct:before{@include mfb(correct);}.mfb-cv:before{@include mfb(cv);}.mfb-dashboard-1:before{@include mfb(dashboard-1);}.mfb-dashboard:before{@include mfb(dashboard);}.mfb-diamond:before{@include mfb(diamond);}.mfb-doc-duplicate-1:before{@include mfb(doc-duplicate-1);}.mfb-doc-duplicate:before{@include mfb(doc-duplicate);}.mfb-doc-edit-2:before{@include mfb(doc-edit-2);}.mfb-doc-edit-3:before{@include mfb(doc-edit-3);}.mfb-doc-file:before{@include mfb(doc-file);}.mfb-doc-stack:before{@include mfb(doc-stack);}.mfb-documents:before{@include mfb(documents);}.mfb-document:before{@include mfb(document);}.mfb-document-edit:before{@include mfb(document-edit);}.mfb-edit-1:before{@include mfb(edit-1);}.mfb-edit:before{@include mfb(edit);}.mfb-doc-right:before{@include mfb(doc-right);}.mfb-emoji-smile:before{@include mfb(emoji-smile);}.mfb-emoji-surprised:before{@include mfb(emoji-surprised);}.mfb-enter-door:before{@include mfb(enter-door);}.mfb-enter:before{@include mfb(enter);}.mfb-equal:before{@include mfb(equal);}.mfb-evaluation:before{@include mfb(evaluation);}.mfb-exit-door:before{@include mfb(exit-door);}.mfb-expand-1:before{@include mfb(expand-1);}.mfb-expand-2:before{@include mfb(expand-2);}.mfb-export:before{@include mfb(export);}.mfb-eye-1:before{@include mfb(eye-1);}.mfb-eye-block:before{@include mfb(eye-block);}.mfb-eye:before{@include mfb(eye);}.mfb-facebook:before{@include mfb(facebook);}.mfb-favourite:before{@include mfb(favourite);}.mfb-expand:before{@include mfb(expand);}.mfb-feed:before{@include mfb(feed);}.mfb-feedback-2:before{@include mfb(feedback-2);}.mfb-feedback:before{@include mfb(feedback);}.mfb-female:before{@include mfb(female);}.mfb-fill-dot-1:before{@include mfb(fill-dot-1);}.mfb-files:before{@include mfb(files);}.mfb-fill-dot:before{@include mfb(fill-dot);}.mfb-filter-1:before{@include mfb(filter-1);}.mfb-filter:before{@include mfb(filter);}.mfb-flag:before{@include mfb(flag);}.mfb-fingerprint-1:before{@include mfb(fingerprint-1);}.mfb-folder-add:before{@include mfb(folder-add);}.mfb-folder:before{@include mfb(folder);}.mfb-food-1:before{@include mfb(food-1);}.mfb-food-2:before{@include mfb(food-2);}.mfb-finger-print:before{@include mfb(finger-print);}.mfb-food-3:before{@include mfb(food-3);}.mfb-food-4:before{@include mfb(food-4);}.mfb-food-6:before{@include mfb(food-6);}.mfb-food-5:before{@include mfb(food-5);}.mfb-food-7:before{@include mfb(food-7);}.mfb-food:before{@include mfb(food);}.mfb-girl:before{@include mfb(girl);}.mfb-glass-1:before{@include mfb(glass-1);}.mfb-girl-1:before{@include mfb(girl-1);}.mfb-glass-2:before{@include mfb(glass-2);}.mfb-glass-5:before{@include mfb(glass-5);}.mfb-glass-3:before{@include mfb(glass-3);}.mfb-glass-4:before{@include mfb(glass-4);}.mfb-glass-7:before{@include mfb(glass-7);}.mfb-glass:before{@include mfb(glass);}.mfb-gender:before{@include mfb(gender);}.mfb-google:before{@include mfb(google);}.mfb-globe:before{@include mfb(globe);}.mfb-greater-equal:before{@include mfb(greater-equal);}.mfb-greater-than:before{@include mfb(greater-than);}.mfb-half-moon:before{@include mfb(half-moon);}.mfb-hand-2:before{@include mfb(hand-2);}.mfb-hand-1:before{@include mfb(hand-1);}.mfb-hammer:before{@include mfb(hammer);}.mfb-hand-4:before{@include mfb(hand-4);}.mfb-hand-3:before{@include mfb(hand-3);}.mfb-hand-6:before{@include mfb(hand-6);}.mfb-handshake-1:before{@include mfb(handshake-1);}.mfb-hand:before{@include mfb(hand);}.mfb-head-count:before{@include mfb(head-count);}.mfb-handshake:before{@include mfb(handshake);}.mfb-hand-5:before{@include mfb(hand-5);}.mfb-head-hunt:before{@include mfb(head-hunt);}.mfb-heart-1:before{@include mfb(heart-1);}.mfb-heart-2:before{@include mfb(heart-2);}.mfb-holyday-1:before{@include mfb(holyday-1);}.mfb-heart:before{@include mfb(heart);}.mfb-holyday-2:before{@include mfb(holyday-2);}.mfb-holyday-4:before{@include mfb(holyday-4);}.mfb-holyday-3:before{@include mfb(holyday-3);}.mfb-home-2:before{@include mfb(home-2);}.mfb-info:before{@include mfb(info);}.mfb-idea:before{@include mfb(idea);}.mfb-hr:before{@include mfb(hr);}.mfb-job-hiring:before{@include mfb(job-hiring);}.mfb-keyboard:before{@include mfb(keyboard);}.mfb-knowledge-sharing:before{@include mfb(knowledge-sharing);}.mfb-home:before{@include mfb(home);}.mfb-job:before{@include mfb(job);}.mfb-jpg-file:before{@include mfb(jpg-file);}.mfb-lab:before{@include mfb(lab);}.mfb-law-1:before{@include mfb(law-1);}.mfb-left:before{@include mfb(left);}.mfb-less-equal:before{@include mfb(less-equal);}.mfb-law:before{@include mfb(law);}.mfb-less-than:before{@include mfb(less-than);}.mfb-lightning-1:before{@include mfb(lightning-1);}.mfb-lightning:before{@include mfb(lightning);}.mfb-linkedin:before{@include mfb(linkedin);}.mfb-like:before{@include mfb(like);}.mfb-list-3:before{@include mfb(list-3);}.mfb-list-1:before{@include mfb(list-1);}.mfb-loading:before{@include mfb(loading);}.mfb-letter:before{@include mfb(letter);}.mfb-list:before{@include mfb(list);}.mfb-lock-1:before{@include mfb(lock-1);}.mfb-login:before{@include mfb(login);}.mfb-logout:before{@include mfb(logout);}.mfb-loop-2:before{@include mfb(loop-2);}.mfb-loop-3:before{@include mfb(loop-3);}.mfb-lock:before{@include mfb(lock);}.mfb-loop:before{@include mfb(loop);}.mfb-lost-hours:before{@include mfb(lost-hours);}.mfb-mail-2:before{@include mfb(mail-2);}.mfb-map-pin-1:before{@include mfb(map-pin-1);}.mfb-male:before{@include mfb(male);}.mfb-map-pin-2:before{@include mfb(map-pin-2);}.mfb-mail:before{@include mfb(mail);}.mfb-math-sets-1:before{@include mfb(math-sets-1);}.mfb-mail-1:before{@include mfb(mail-1);}.mfb-math-sets-2:before{@include mfb(math-sets-2);}.mfb-math-sets-3:before{@include mfb(math-sets-3);}.mfb-math-sets-4:before{@include mfb(math-sets-4);}.mfb-maximize:before{@include mfb(maximize);}.mfb-menu-1:before{@include mfb(menu-1);}.mfb-menu:before{@include mfb(menu);}.mfb-milestones:before{@include mfb(milestones);}.mfb-minimize:before{@include mfb(minimize);}.mfb-minus-1:before{@include mfb(minus-1);}.mfb-minus:before{@include mfb(minus);}.mfb-minus-3:before{@include mfb(minus-3);}.mfb-mobile:before{@include mfb(mobile);}.mfb-money-10:before{@include mfb(money-10);}.mfb-money-1:before{@include mfb(money-1);}.mfb-money-11:before{@include mfb(money-11);}.mfb-minus-2:before{@include mfb(minus-2);}.mfb-money-12:before{@include mfb(money-12);}.mfb-money-2:before{@include mfb(money-2);}.mfb-money-3:before{@include mfb(money-3);}.mfb-money-5:before{@include mfb(money-5);}.mfb-money-4:before{@include mfb(money-4);}.mfb-money-6:before{@include mfb(money-6);}.mfb-money-8:before{@include mfb(money-8);}.mfb-money-7:before{@include mfb(money-7);}.mfb-money-9:before{@include mfb(money-9);}.mfb-more-2:before{@include mfb(more-2);}.mfb-move-2:before{@include mfb(move-2);}.mfb-more:before{@include mfb(more);}.mfb-move-1:before{@include mfb(move-1);}.mfb-new:before{@include mfb(new);}.mfb-move:before{@include mfb(move);}.mfb-money:before{@include mfb(money);}.mfb-not-equal:before{@include mfb(not-equal);}.mfb-notice-line:before{@include mfb(notice-line);}.mfb-notice-board:before{@include mfb(notice-board);}.mfb-onboard-task-2:before{@include mfb(onboard-task-2);}.mfb-notice:before{@include mfb(notice);}.mfb-onboard-task:before{@include mfb(onboard-task);}.mfb-org-level:before{@include mfb(org-level);}.mfb-owl:before{@include mfb(owl);}.mfb-page-break-1:before{@include mfb(page-break-1);}.mfb-pause-1:before{@include mfb(pause-1);}.mfb-pause:before{@include mfb(pause);}.mfb-payment:before{@include mfb(payment);}.mfb-pdf-file:before{@include mfb(pdf-file);}.mfb-people-1:before{@include mfb(people-1);}.mfb-people-2:before{@include mfb(people-2);}.mfb-page-break:before{@include mfb(page-break);}.mfb-people-3:before{@include mfb(people-3);}.mfb-people-4:before{@include mfb(people-4);}.mfb-people-5:before{@include mfb(people-5);}.mfb-people:before{@include mfb(people);}.mfb-play-1:before{@include mfb(play-1);}.mfb-play:before{@include mfb(play);}.mfb-plus-1:before{@include mfb(plus-1);}.mfb-plus-line:before{@include mfb(plus-line);}.mfb-plus:before{@include mfb(plus);}.mfb-post:before{@include mfb(post);}.mfb-potential:before{@include mfb(potential);}.mfb-ppt-file:before{@include mfb(ppt-file);}.mfb-present:before{@include mfb(present);}.mfb-profile-1:before{@include mfb(profile-1);}.mfb-print:before{@include mfb(print);}.mfb-png-file:before{@include mfb(png-file);}.mfb-profile-2:before{@include mfb(profile-2);}.mfb-profile-3:before{@include mfb(profile-3);}.mfb-profiles:before{@include mfb(profiles);}.mfb-protential:before{@include mfb(protential);}.mfb-puzzle:before{@include mfb(puzzle);}.mfb-radio-off-1:before{@include mfb(radio-off-1);}.mfb-quote-r:before{@include mfb(quote-r);}.mfb-quote-l:before{@include mfb(quote-l);}.mfb-radio-off:before{@include mfb(radio-off);}.mfb-redu-1:before{@include mfb(redu-1);}.mfb-radio-on-2:before{@include mfb(radio-on-2);}.mfb-radio-on:before{@include mfb(radio-on);}.mfb-redu-2:before{@include mfb(redu-2);}.mfb-redu:before{@include mfb(redu);}.mfb-resize-window:before{@include mfb(resize-window);}.mfb-radio-on-1:before{@include mfb(radio-on-1);}.mfb-requisition:before{@include mfb(requisition);}.mfb-rocket-1:before{@include mfb(rocket-1);}.mfb-save-1:before{@include mfb(save-1);}.mfb-restore-window:before{@include mfb(restore-window);}.mfb-rocket-2:before{@include mfb(rocket-2);}.mfb-rocket:before{@include mfb(rocket);}.mfb-separator:before{@include mfb(separator);}.mfb-service:before{@include mfb(service);}.mfb-service-1:before{@include mfb(service-1);}.mfb-social-1:before{@include mfb(social-1);}.mfb-shield:before{@include mfb(shield);}.mfb-shuffle:before{@include mfb(shuffle);}.mfb-shortlist:before{@include mfb(shortlist);}.mfb-social-network:before{@include mfb(social-network);}.mfb-social:before{@include mfb(social);}.mfb-save:before{@include mfb(save);}.mfb-sort-up:before{@include mfb(sort-up);}.mfb-sort-down:before{@include mfb(sort-down);}.mfb-spinner-1:before{@include mfb(spinner-1);}.mfb-spinner-2:before{@include mfb(spinner-2);}.mfb-spinner-3:before{@include mfb(spinner-3);}.mfb-spinner-4:before{@include mfb(spinner-4);}.mfb-spinner-5:before{@include mfb(spinner-5);}.mfb-spinner-6:before{@include mfb(spinner-6);}.mfb-star:before{@include mfb(star);}.mfb-spinner-7:before{@include mfb(spinner-7);}.mfb-star-1:before{@include mfb(star-1);}.mfb-stopwatch:before{@include mfb(stopwatch);}.mfb-storage-2:before{@include mfb(storage-2);}.mfb-suggetion:before{@include mfb(suggetion);}.mfb-storage:before{@include mfb(storage);}.mfb-spinner-8:before{@include mfb(spinner-8);}.mfb-storage-1:before{@include mfb(storage-1);}.mfb-sun-half:before{@include mfb(sun-half);}.mfb-switch:before{@include mfb(switch);}.mfb-support:before{@include mfb(support);}.mfb-swap:before{@include mfb(swap);}.mfb-sun:before{@include mfb(sun);}.mfb-tactics:before{@include mfb(tactics);}.mfb-team:before{@include mfb(team);}.mfb-target:before{@include mfb(target);}.mfb-thumb-down:before{@include mfb(thumb-down);}.mfb-thumb-up:before{@include mfb(thumb-up);}.mfb-total-expected:before{@include mfb(total-expected);}.mfb-transfer_learning:before{@include mfb(transfer_learning);}.mfb-toggle-off:before{@include mfb(toggle-off);}.mfb-toggle-on:before{@include mfb(toggle-on);}.mfb-template:before{@include mfb(template);}.mfb-trash:before{@include mfb(trash);}.mfb-transmission:before{@include mfb(transmission);}.mfb-twitter:before{@include mfb(twitter);}.mfb-tube:before{@include mfb(tube);}.mfb-txt-file:before{@include mfb(txt-file);}.mfb-undo-1:before{@include mfb(undo-1);}.mfb-undo:before{@include mfb(undo);}.mfb-unlock:before{@include mfb(unlock);}.mfb-upload:before{@include mfb(upload);}.mfb-usb:before{@include mfb(usb);}.mfb-usb-1:before{@include mfb(usb-1);}.mfb-user-2:before{@include mfb(user-2);}.mfb-user-1:before{@include mfb(user-1);}.mfb-user-3:before{@include mfb(user-3);}.mfb-user-6:before{@include mfb(user-6);}.mfb-unlock-1:before{@include mfb(unlock-1);}.mfb-user-4:before{@include mfb(user-4);}.mfb-user-7:before{@include mfb(user-7);}.mfb-user-5:before{@include mfb(user-5);}.mfb-user-8:before{@include mfb(user-8);}.mfb-user-add:before{@include mfb(user-add);}.mfb-user-9:before{@include mfb(user-9);}.mfb-user-group-1:before{@include mfb(user-group-1);}.mfb-user-check:before{@include mfb(user-check);}.mfb-user-group-10:before{@include mfb(user-group-10);}.mfb-user-group-5:before{@include mfb(user-group-5);}.mfb-user-group-2:before{@include mfb(user-group-2);}.mfb-user-group-4:before{@include mfb(user-group-4);}.mfb-user-group-6:before{@include mfb(user-group-6);}.mfb-user-group-7:before{@include mfb(user-group-7);}.mfb-user-group-9:before{@include mfb(user-group-9);}.mfb-user-group-3:before{@include mfb(user-group-3);}.mfb-user-group-8:before{@include mfb(user-group-8);}.mfb-user-group:before{@include mfb(user-group);}.mfb-user-line:before{@include mfb(user-line);}.mfb-user-switch-1:before{@include mfb(user-switch-1);}.mfb-user-settings:before{@include mfb(user-settings);}.mfb-user-plus:before{@include mfb(user-plus);}.mfb-user-minus:before{@include mfb(user-minus);}.mfb-user-switch-2:before{@include mfb(user-switch-2);}.mfb-user-switch-3:before{@include mfb(user-switch-3);}.mfb-user-time:before{@include mfb(user-time);}.mfb-user-work-1:before{@include mfb(user-work-1);}.mfb-user-work-4:before{@include mfb(user-work-4);}.mfb-user-work-5:before{@include mfb(user-work-5);}.mfb-user:before{@include mfb(user);}.mfb-value:before{@include mfb(value);}.mfb-user-switch:before{@include mfb(user-switch);}.mfb-user-work:before{@include mfb(user-work);}.mfb-view_all:before{@include mfb(view_all);}.mfb-values:before{@include mfb(values);}.mfb-wallet-1:before{@include mfb(wallet-1);}.mfb-wallet:before{@include mfb(wallet);}.mfb-warning-1:before{@include mfb(warning-1);}.mfb-web:before{@include mfb(web);}.mfb-warning:before{@include mfb(warning);}.mfb-wheel:before{@include mfb(wheel);}.mfb-widget:before{@include mfb(widget);}.mfb-wheel-1:before{@include mfb(wheel-1);}.mfb-zip-file:before{@include mfb(zip-file);}.mfb-zoom-out:before{@include mfb(zoom-out);}.mfb-zoom-out-1:before{@include mfb(zoom-out-1);}.mfb-zoom-in-1:before{@include mfb(zoom-in-1);}.mfb-xls-file:before{@include mfb(xls-file);}.mfb-zoom-in:before{@include mfb(zoom-in);}
+
+
+
+
+
+
+// Variable
+$mfb-add:"\EA01";$mfb-analytics-t:"\EA02";$mfb-archive-1:"\EA03";$mfb-archive:"\EA04";$mfb-arrow-down-2:"\EA05";$mfb-arrow-down-3:"\EA06";$mfb-arrow-down:"\EA07";$mfb-arrow-l-1:"\EA08";$mfb-arrow-l-3:"\EA09";$mfb-arrow-l-4:"\EA0A";$mfb-arrow-l-6:"\EA0B";$mfb-arrow-l-5:"\EA0C";$mfb-arrow-l-7:"\EA0D";$mfb-arrow-l-8:"\EA0E";$mfb-arrow-l-9:"\EA0F";$mfb-arrow-l:"\EA10";$mfb-arrow-r-2:"\EA11";$mfb-arrow-r-1:"\EA12";$mfb-arrow-r-3:"\EA13";$mfb-arrow-r-4:"\EA14";$mfb-arrow-r-5:"\EA15";$mfb-arrow-r-6:"\EA16";$mfb-arrow-r-7:"\EA17";$mfb-arrow-r-8:"\EA18";$mfb-arrow-r-9:"\EA19";$mfb-arrow-up-1:"\EA1A";$mfb-arrow-up-2:"\EA1B";$mfb-arrow-up-3:"\EA1C";$mfb-arrow-up:"\EA1D";$mfb-attachment:"\EA1E";$mfb-award-10:"\EA1F";$mfb-award-2:"\EA20";$mfb-award-3:"\EA21";$mfb-award-4:"\EA22";$mfb-award-5:"\EA23";$mfb-award-6:"\EA24";$mfb-award-7:"\EA25";$mfb-award-8:"\EA26";$mfb-award-9:"\EA27";$mfb-award:"\EA28";$mfb-back-time:"\EA29";$mfb-back:"\EA2A";$mfb-bell:"\EA2B";$mfb-block-1:"\EA2C";$mfb-block-2:"\EA2D";$mfb-book-1:"\EA2E";$mfb-azure-ad:"\EA2F";$mfb-block:"\EA30";$mfb-book-2:"\EA31";$mfb-book-3:"\EA32";$mfb-book-4:"\EA33";$mfb-book-5:"\EA34";$mfb-book:"\EA35";$mfb-bookmark:"\EA36";$mfb-box-1:"\EA37";$mfb-box-2:"\EA38";$mfb-box:"\EA39";$mfb-boy:"\EA3A";$mfb-building-1:"\EA3B";$mfb-brightness:"\EA3C";$mfb-building:"\EA3D";$mfb-building-2:"\EA3E";$mfb-box-3:"\EA3F";$mfb-calender-1:"\EA40";$mfb-calender-2:"\EA41";$mfb-calender-3:"\EA42";$mfb-calender-4:"\EA43";$mfb-calender-6:"\EA44";$mfb-calender-5:"\EA45";$mfb-calender-7:"\EA46";$mfb-calender:"\EA47";$mfb-cancel-1:"\EA48";$mfb-cancel-2:"\EA49";$mfb-cancel:"\EA4A";$mfb-caret-down:"\EA4B";$mfb-caret-up:"\EA4C";$mfb-chart-1:"\EA4D";$mfb-chart-2:"\EA4E";$mfb-cancel-3:"\EA4F";$mfb-chart-3:"\EA50";$mfb-chart-4:"\EA51";$mfb-chart-5:"\EA52";$mfb-chart-6:"\EA53";$mfb-chart-7:"\EA54";$mfb-chart-circuar:"\EA55";$mfb-chart-pie:"\EA56";$mfb-chart:"\EA57";$mfb-chat-1:"\EA58";$mfb-chat-11:"\EA59";$mfb-chat-12:"\EA5A";$mfb-chat-2:"\EA5B";$mfb-chat-4:"\EA5C";$mfb-chat-3:"\EA5D";$mfb-chat-5:"\EA5E";$mfb-chat-10:"\EA5F";$mfb-chat-6:"\EA60";$mfb-chat-7:"\EA61";$mfb-chat-8:"\EA62";$mfb-chat-9:"\EA63";$mfb-chat:"\EA64";$mfb-check-1:"\EA65";$mfb-check-3:"\EA66";$mfb-check-2:"\EA67";$mfb-check-4:"\EA68";$mfb-check-line:"\EA69";$mfb-check:"\EA6A";$mfb-checkbox-fill-1:"\EA6B";$mfb-checkbox-fill:"\EA6C";$mfb-checkbox-line:"\EA6D";$mfb-circle:"\EA6E";$mfb-check-fill:"\EA6F";$mfb-city-1:"\EA70";$mfb-city-2:"\EA71";$mfb-city-3:"\EA72";$mfb-city-4:"\EA73";$mfb-city-5:"\EA74";$mfb-city-6:"\EA75";$mfb-city-7:"\EA76";$mfb-city:"\EA77";$mfb-city-8:"\EA78";$mfb-clock-2:"\EA79";$mfb-clock-1:"\EA7A";$mfb-clock-3:"\EA7B";$mfb-clock-4:"\EA7C";$mfb-clock-5:"\EA7D";$mfb-clock-6:"\EA7E";$mfb-clap:"\EA7F";$mfb-clock-7:"\EA80";$mfb-clock-8:"\EA81";$mfb-close-1:"\EA82";$mfb-close-2:"\EA83";$mfb-close:"\EA84";$mfb-cloud:"\EA85";$mfb-cog:"\EA86";$mfb-collapse:"\EA87";$mfb-collapse-1:"\EA88";$mfb-comment:"\EA89";$mfb-competency:"\EA8A";$mfb-computer:"\EA8B";$mfb-config-1:"\EA8C";$mfb-config-2:"\EA8D";$mfb-config-3:"\EA8E";$mfb-commands:"\EA8F";$mfb-config-4:"\EA90";$mfb-config:"\EA91";$mfb-confirmation:"\EA92";$mfb-contrast:"\EA93";$mfb-conversation:"\EA94";$mfb-copy-1:"\EA95";$mfb-copy-2:"\EA96";$mfb-copy:"\EA97";$mfb-crop:"\EA98";$mfb-crossover:"\EA99";$mfb-current-2:"\EA9A";$mfb-current-1:"\EA9B";$mfb-current-3:"\EA9C";$mfb-current:"\EA9D";$mfb-cv-2:"\EA9E";$mfb-correct:"\EA9F";$mfb-cv:"\EAA0";$mfb-dashboard-1:"\EAA1";$mfb-dashboard:"\EAA2";$mfb-diamond:"\EAA3";$mfb-doc-duplicate-1:"\EAA4";$mfb-doc-duplicate:"\EAA5";$mfb-doc-edit-2:"\EAA6";$mfb-doc-edit-3:"\EAA7";$mfb-doc-file:"\EAA8";$mfb-doc-stack:"\EAA9";$mfb-documents:"\EAAA";$mfb-document:"\EAAB";$mfb-document-edit:"\EAAC";$mfb-edit-1:"\EAAD";$mfb-edit:"\EAAE";$mfb-doc-right:"\EAAF";$mfb-emoji-smile:"\EAB0";$mfb-emoji-surprised:"\EAB1";$mfb-enter-door:"\EAB2";$mfb-enter:"\EAB3";$mfb-equal:"\EAB4";$mfb-evaluation:"\EAB5";$mfb-exit-door:"\EAB6";$mfb-expand-1:"\EAB7";$mfb-expand-2:"\EAB8";$mfb-export:"\EAB9";$mfb-eye-1:"\EABA";$mfb-eye-block:"\EABB";$mfb-eye:"\EABC";$mfb-facebook:"\EABD";$mfb-favourite:"\EABE";$mfb-expand:"\EABF";$mfb-feed:"\EAC0";$mfb-feedback-2:"\EAC1";$mfb-feedback:"\EAC2";$mfb-female:"\EAC3";$mfb-fill-dot-1:"\EAC4";$mfb-files:"\EAC5";$mfb-fill-dot:"\EAC6";$mfb-filter-1:"\EAC7";$mfb-filter:"\EAC8";$mfb-flag:"\EAC9";$mfb-fingerprint-1:"\EACA";$mfb-folder-add:"\EACB";$mfb-folder:"\EACC";$mfb-food-1:"\EACD";$mfb-food-2:"\EACE";$mfb-finger-print:"\EACF";$mfb-food-3:"\EAD0";$mfb-food-4:"\EAD1";$mfb-food-6:"\EAD2";$mfb-food-5:"\EAD3";$mfb-food-7:"\EAD4";$mfb-food:"\EAD5";$mfb-girl:"\EAD6";$mfb-glass-1:"\EAD7";$mfb-girl-1:"\EAD8";$mfb-glass-2:"\EAD9";$mfb-glass-5:"\EADA";$mfb-glass-3:"\EADB";$mfb-glass-4:"\EADC";$mfb-glass-7:"\EADD";$mfb-glass:"\EADE";$mfb-gender:"\EADF";$mfb-google:"\EAE0";$mfb-globe:"\EAE1";$mfb-greater-equal:"\EAE2";$mfb-greater-than:"\EAE3";$mfb-half-moon:"\EAE4";$mfb-hand-2:"\EAE5";$mfb-hand-1:"\EAE6";$mfb-hammer:"\EAE7";$mfb-hand-4:"\EAE8";$mfb-hand-3:"\EAE9";$mfb-hand-6:"\EAEA";$mfb-handshake-1:"\EAEB";$mfb-hand:"\EAEC";$mfb-head-count:"\EAED";$mfb-handshake:"\EAEE";$mfb-hand-5:"\EAEF";$mfb-head-hunt:"\EAF0";$mfb-heart-1:"\EAF1";$mfb-heart-2:"\EAF2";$mfb-holyday-1:"\EAF3";$mfb-heart:"\EAF4";$mfb-holyday-2:"\EAF5";$mfb-holyday-4:"\EAF6";$mfb-holyday-3:"\EAF7";$mfb-home-2:"\EAF8";$mfb-info:"\EAF9";$mfb-idea:"\EAFA";$mfb-hr:"\EAFB";$mfb-job-hiring:"\EAFC";$mfb-keyboard:"\EAFD";$mfb-knowledge-sharing:"\EAFE";$mfb-home:"\EAFF";$mfb-job:"\EB00";$mfb-jpg-file:"\EB01";$mfb-lab:"\EB02";$mfb-law-1:"\EB03";$mfb-left:"\EB04";$mfb-less-equal:"\EB05";$mfb-law:"\EB06";$mfb-less-than:"\EB07";$mfb-lightning-1:"\EB08";$mfb-lightning:"\EB09";$mfb-linkedin:"\EB0A";$mfb-like:"\EB0B";$mfb-list-3:"\EB0C";$mfb-list-1:"\EB0D";$mfb-loading:"\EB0E";$mfb-letter:"\EB0F";$mfb-list:"\EB10";$mfb-lock-1:"\EB11";$mfb-login:"\EB12";$mfb-logout:"\EB13";$mfb-loop-2:"\EB14";$mfb-loop-3:"\EB15";$mfb-lock:"\EB16";$mfb-loop:"\EB17";$mfb-lost-hours:"\EB18";$mfb-mail-2:"\EB19";$mfb-map-pin-1:"\EB1A";$mfb-male:"\EB1B";$mfb-map-pin-2:"\EB1C";$mfb-mail:"\EB1D";$mfb-math-sets-1:"\EB1E";$mfb-mail-1:"\EB1F";$mfb-math-sets-2:"\EB20";$mfb-math-sets-3:"\EB21";$mfb-math-sets-4:"\EB22";$mfb-maximize:"\EB23";$mfb-menu-1:"\EB24";$mfb-menu:"\EB25";$mfb-milestones:"\EB26";$mfb-minimize:"\EB27";$mfb-minus-1:"\EB28";$mfb-minus:"\EB29";$mfb-minus-3:"\EB2A";$mfb-mobile:"\EB2B";$mfb-money-10:"\EB2C";$mfb-money-1:"\EB2D";$mfb-money-11:"\EB2E";$mfb-minus-2:"\EB2F";$mfb-money-12:"\EB30";$mfb-money-2:"\EB31";$mfb-money-3:"\EB32";$mfb-money-5:"\EB33";$mfb-money-4:"\EB34";$mfb-money-6:"\EB35";$mfb-money-8:"\EB36";$mfb-money-7:"\EB37";$mfb-money-9:"\EB38";$mfb-more-2:"\EB39";$mfb-move-2:"\EB3A";$mfb-more:"\EB3B";$mfb-move-1:"\EB3C";$mfb-new:"\EB3D";$mfb-move:"\EB3E";$mfb-money:"\EB3F";$mfb-not-equal:"\EB40";$mfb-notice-line:"\EB41";$mfb-notice-board:"\EB42";$mfb-onboard-task-2:"\EB43";$mfb-notice:"\EB44";$mfb-onboard-task:"\EB45";$mfb-org-level:"\EB46";$mfb-owl:"\EB47";$mfb-page-break-1:"\EB48";$mfb-pause-1:"\EB49";$mfb-pause:"\EB4A";$mfb-payment:"\EB4B";$mfb-pdf-file:"\EB4C";$mfb-people-1:"\EB4D";$mfb-people-2:"\EB4E";$mfb-page-break:"\EB4F";$mfb-people-3:"\EB50";$mfb-people-4:"\EB51";$mfb-people-5:"\EB52";$mfb-people:"\EB53";$mfb-play-1:"\EB54";$mfb-play:"\EB55";$mfb-plus-1:"\EB56";$mfb-plus-line:"\EB57";$mfb-plus:"\EB58";$mfb-post:"\EB59";$mfb-potential:"\EB5A";$mfb-ppt-file:"\EB5B";$mfb-present:"\EB5C";$mfb-profile-1:"\EB5D";$mfb-print:"\EB5E";$mfb-png-file:"\EB5F";$mfb-profile-2:"\EB60";$mfb-profile-3:"\EB61";$mfb-profiles:"\EB62";$mfb-protential:"\EB63";$mfb-puzzle:"\EB64";$mfb-radio-off-1:"\EB65";$mfb-quote-r:"\EB66";$mfb-quote-l:"\EB67";$mfb-radio-off:"\EB68";$mfb-redu-1:"\EB69";$mfb-radio-on-2:"\EB6A";$mfb-radio-on:"\EB6B";$mfb-redu-2:"\EB6C";$mfb-redu:"\EB6D";$mfb-resize-window:"\EB6E";$mfb-radio-on-1:"\EB6F";$mfb-requisition:"\EB70";$mfb-rocket-1:"\EB71";$mfb-save-1:"\EB72";$mfb-restore-window:"\EB73";$mfb-rocket-2:"\EB74";$mfb-rocket:"\EB75";$mfb-separator:"\EB76";$mfb-service:"\EB77";$mfb-service-1:"\EB78";$mfb-social-1:"\EB79";$mfb-shield:"\EB7A";$mfb-shuffle:"\EB7B";$mfb-shortlist:"\EB7C";$mfb-social-network:"\EB7D";$mfb-social:"\EB7E";$mfb-save:"\EB7F";$mfb-sort-up:"\EB80";$mfb-sort-down:"\EB81";$mfb-spinner-1:"\EB82";$mfb-spinner-2:"\EB83";$mfb-spinner-3:"\EB84";$mfb-spinner-4:"\EB85";$mfb-spinner-5:"\EB86";$mfb-spinner-6:"\EB87";$mfb-star:"\EB88";$mfb-spinner-7:"\EB89";$mfb-star-1:"\EB8A";$mfb-stopwatch:"\EB8B";$mfb-storage-2:"\EB8C";$mfb-suggetion:"\EB8D";$mfb-storage:"\EB8E";$mfb-spinner-8:"\EB8F";$mfb-storage-1:"\EB90";$mfb-sun-half:"\EB91";$mfb-switch:"\EB92";$mfb-support:"\EB93";$mfb-swap:"\EB94";$mfb-sun:"\EB95";$mfb-tactics:"\EB96";$mfb-team:"\EB97";$mfb-target:"\EB98";$mfb-thumb-down:"\EB99";$mfb-thumb-up:"\EB9A";$mfb-total-expected:"\EB9B";$mfb-transfer_learning:"\EB9C";$mfb-toggle-off:"\EB9D";$mfb-toggle-on:"\EB9E";$mfb-template:"\EB9F";$mfb-trash:"\EBA0";$mfb-transmission:"\EBA1";$mfb-twitter:"\EBA2";$mfb-tube:"\EBA3";$mfb-txt-file:"\EBA4";$mfb-undo-1:"\EBA5";$mfb-undo:"\EBA6";$mfb-unlock:"\EBA7";$mfb-upload:"\EBA8";$mfb-usb:"\EBA9";$mfb-usb-1:"\EBAA";$mfb-user-2:"\EBAB";$mfb-user-1:"\EBAC";$mfb-user-3:"\EBAD";$mfb-user-6:"\EBAE";$mfb-unlock-1:"\EBAF";$mfb-user-4:"\EBB0";$mfb-user-7:"\EBB1";$mfb-user-5:"\EBB2";$mfb-user-8:"\EBB3";$mfb-user-add:"\EBB4";$mfb-user-9:"\EBB5";$mfb-user-group-1:"\EBB6";$mfb-user-check:"\EBB7";$mfb-user-group-10:"\EBB8";$mfb-user-group-5:"\EBB9";$mfb-user-group-2:"\EBBA";$mfb-user-group-4:"\EBBB";$mfb-user-group-6:"\EBBC";$mfb-user-group-7:"\EBBD";$mfb-user-group-9:"\EBBE";$mfb-user-group-3:"\EBBF";$mfb-user-group-8:"\EBC0";$mfb-user-group:"\EBC1";$mfb-user-line:"\EBC2";$mfb-user-switch-1:"\EBC3";$mfb-user-settings:"\EBC4";$mfb-user-plus:"\EBC5";$mfb-user-minus:"\EBC6";$mfb-user-switch-2:"\EBC7";$mfb-user-switch-3:"\EBC8";$mfb-user-time:"\EBC9";$mfb-user-work-1:"\EBCA";$mfb-user-work-4:"\EBCB";$mfb-user-work-5:"\EBCC";$mfb-user:"\EBCD";$mfb-value:"\EBCE";$mfb-user-switch:"\EBCF";$mfb-user-work:"\EBD0";$mfb-view_all:"\EBD1";$mfb-values:"\EBD2";$mfb-wallet-1:"\EBD3";$mfb-wallet:"\EBD4";$mfb-warning-1:"\EBD5";$mfb-web:"\EBD6";$mfb-warning:"\EBD7";$mfb-wheel:"\EBD8";$mfb-widget:"\EBD9";$mfb-wheel-1:"\EBDA";$mfb-zip-file:"\EBDB";$mfb-zoom-out:"\EBDC";$mfb-zoom-out-1:"\EBDD";$mfb-zoom-in-1:"\EBDE";$mfb-xls-file:"\EBDF";$mfb-zoom-in:"\EBE0";
+
+
+// @include padding(size or left/right/top/bottom);
+@mixin mfb-position($pos:null, $size:null, $left:null, $right:null, $top:null, $bottom:null) {
+		    @if $pos==padding {
+						@if $size == null {
+				        #{$pos}-left: #{$left} !important;
+				        #{$pos}-right: #{$right} !important;
+				        #{$pos}-top: #{$top} !important;
+				        #{$pos}-bottom: #{$bottom} !important;
+						} @else {
+						    #{$pos}: $size;
+						}
+		    } @elseif $pos== margin{
+						@if $size == null {
+				        #{$pos}-left: #{$left}!important;
+				        #{$pos}-right: #{$right}!important;
+				        #{$pos}-top: #{$top}!important;
+				        #{$pos}-bottom: #{$bottom}!important;
+						} @else {
+						    #{$pos}: $size;
+						}
+		    }
+}
+
+// String Replace
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+// zIndex
+// @include mi-zIndex(zIndex);
+
+@mixin mfb-zIndex($zIndex) {
+	@if $zIndex {
+		z-index: strip-units($zIndex);
+	}
+}
+
+// size
+// @include size(size);
+
+@mixin mfb-size($size) {
+  @if $size {
+    font-size: 1px * strip-units($size);
+  }
+}
+
+// scale
+// @include scale(scale);
+@mixin mfb-scale($scale) {
+  @if $scale {
+    font-size: 1em * strip-units($scale) !important;
+  }
+}
+
+// Transition
+// @include mfb-transition(transition);
+@mixin mfb-transition($transition) {
+  @include transition(#{$transition});
+}
+
+// color
+// @include color(color);
+@mixin mfb-color($color) {
+  color: $color;
+}
+
+// padding-left
+// @include mi-padding-left(left);
+@mixin mfb-padding-left($pleft) {
+  @if $pleft {
+    padding-left: 1px * strip-units($pleft);
+  }
+}
+
+// padding-top
+// @include mi-padding-top(left);
+@mixin mfb-padding-top($ptop) {
+  @if $ptop {
+    padding-top: 1px * strip-units($ptop);
+  }
+}
+
+// lpadding-eft
+// @include mi-padding-left(left);
+@mixin mfb-padding-bottom($pbottom) {
+  @if $pbottom {
+    padding-bottom: 1px * strip-units($pbottom);
+  }
+}
+
+// padding-right
+// @include mi-padding-right(right);
+@mixin mfb-padding-right($pright) {
+  @if $pright {
+    padding-right: 1px * strip-units($pright);
+  }
+}
+
+// left
+// @include mi-left(left);
+@mixin mfb-left($left) {
+  @if $left {
+    left: $left;
+  }
+}
+
+// top
+// @include mi-top(top);
+@mixin mfb-top($top) {
+  @if $top {
+    top: $top;
+  }
+}
+
+// bottom
+// @include mi-bottom(bottom);
+@mixin mfb-bottom($bottom) {
+  @if $bottom {
+    bottom: $bottom;
+  }
+}
+
+// right
+// @include mi-right(right);
+@mixin mfb-right($right) {
+  @if $right {
+    right: $right;
+  }
+}
+
+// position
+// @include mi-position(right);
+@mixin mfb-position($position) {
+  @if $position {
+    position: $position;
+  }
+}
+
+
+// align
+// @include align(align);
+@mixin mfb-align($align) {
+  vertical-align: $align;
+}
+
+// rotate
+// @include rotate(deg);
+@mixin mfb-rotate($rotate) {
+    -webkit-transform: rotate($rotate);
+    -ms-transform: rotate($rotate);
+    transform: rotate($rotate);
+}
+
+// flip
+// @include flip(flip);
+@mixin mfb-flip($flip) {
+    @if $flip == horizontal {
+    -webkit-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+  }
+  @else if $flip == vertical {
+    -webkit-transform: scale(1, -1);
+    -ms-transform: scale(1, -1);
+    transform: scale(1, -1);
+  }
+}
+
+// spin
+// @include spin(spin);
+@mixin mfb-spin($spin: null) {
+    @if $spin == null {
+    @-webkit-keyframes mfb-spin{
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+      }
+    }
+    @keyframes mfb-spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+      }
+    }
+  }
+  @else {
+    -webkit-animation: mfb-spin #{$spin} infinite linear;
+    animation: mfb-spin #{$spin} infinite linear;
+  }
+}
+
+// Shorthand Mixing
+@mixin mfb-font(
+$insert: null,
+$icon: null,
+$size: 20px,
+$scale: null,
+$color: inherit,
+$padding-left: null,
+$padding-right: null,
+$padding-top: null,
+$padding-bottom:null,
+$left: null,
+$right: null,
+$top: null,
+$bottom: null,
+$align: null,
+$rotate: null,
+$flip: null,
+$spin: null,
+$transition:null,
+$position: relative,
+$zIndex: null
+
+  ){
+
+  @if $insert==before or $insert==after{
+    &:#{$insert} {
+	    // @include mfb;
+	    @include mfb($icon);
+	    @include mfb-size($size);
+	    @include mfb-scale($scale);
+	    @include mfb-color($color);
+	    @include mfb-left($left);
+	    @include mfb-right($right);
+	    @include mfb-bottom($bottom);
+        @include mfb-top($top);
+	    @include mfb-padding-left($padding-left);
+	    @include mfb-padding-right($padding-right);
+	    @include mfb-padding-bottom($padding-bottom);
+	    @include mfb-padding-top($padding-top);
+	    @include mfb-align($align);
+	    @include mfb-rotate($rotate);
+	    @include mfb-flip($flip);
+        @include mfb-spin($spin);
+	    @include mfb-transition($transition);
+	    @include mfb-position($position);
+	    @include mfb-zIndex($zIndex);
+    }
+  } @else {
+	  @extend %mfb;
+	  @include mfb($icon);
+	  @include mfb-size($size);
+	  @include mfb-scale($scale);
+	  @include mfb-color($color);
+	  @include mfb-left($left);
+      @include mfb-right($right);
+	  @include mfb-bottom($bottom);
+      @include mfb-top($top);
+	  @include mfb-padding-left($padding-left);
+	  @include mfb-padding-right($padding-right);
+	  @include mfb-padding-bottom($padding-bottom);
+	  @include mfb-padding-top($padding-top);
+	  @include mfb-align($align);
+	  @include mfb-rotate($rotate);
+	  @include mfb-flip($flip);
+      @include mfb-spin($spin);
+	  @include mfb-transition($transition);
+	  @include mfb-position($position);
+	  @include mfb-zIndex($zIndex);
+  }
+}
+
+
+
+
+
+

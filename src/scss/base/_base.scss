@@ -1,0 +1,54 @@
+body {
+    color: $base-colour;
+    font-family: $base-font-family;
+    line-height: $base-line-height;
+    text-size-adjust: none;
+    @include font-size($base-font-size);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+hr,
+ul,
+ol,
+dl {
+    margin-bottom: $base-spacing-unit;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/**
+ * Basic styles for links
+ */
+
+a {
+    color: $brand-colour;
+    text-decoration: none;
+    &:hover {
+        color: $base-colour;
+        text-decoration: underline;
+    }
+}
+
+a[href^="tel"] {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    text-decoration: none;
+    font-style: inherit;
+}
+
+/**
+ * Rules
+ */
+
+hr {
+    height: 1px;
+    background-color: $base-colour;
+}

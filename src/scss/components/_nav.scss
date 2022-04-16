@@ -1,0 +1,107 @@
+/**
+ * Hamburger menu
+ */
+
+.nav-burger {
+    position: fixed;
+    top: $base-spacing-unit;
+    right: $base-spacing-unit;
+    z-index: 550;
+    transition: all $animation-speed $animation;
+}
+
+.nav-burger__line {
+    width: 35px;
+    height: 3px;
+    background-color: $brand-colour;
+    display: none;
+    margin: 8px auto;
+    transition: all $animation-speed $animation;
+
+    @include resp-max($breakpoint-md) {
+        display: block;
+    }
+
+    .nav-burger.open & {
+        &:nth-child(2) {
+            opacity: 0;
+        }
+
+        &:nth-child(1) {
+            transform: translateY(11px) rotate(45deg);
+        }
+
+        &:nth-child(3) {
+            transform: translateY(-11px) rotate(-45deg);
+        }
+    }
+}
+
+
+/**
+ * Navs
+ */
+
+.nav {
+    list-style: none;
+    margin: 0;
+
+    > li {
+        display: inline-block;
+        margin-right: $base-spacing-unit;
+
+        &:last-child {
+            margin-right: 0;
+        }
+        > a {
+            display: block;
+        }
+    }
+}
+
+.nav--header {
+
+    // mobile nav
+    @include resp-max($breakpoint-md) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        visibility: hidden;
+        width: 0;
+        height: 100%;
+        margin: 0;
+        transition: opacity 500ms ease;
+        transition: opacity .35s ease, visibility .35s ease, width .35s ease;
+        text-align: center;
+        opacity: 0;
+        background: $base-background-colour;
+        -webkit-overflow-scrolling: touch;
+
+        &.open {
+            z-index: 500;
+            visibility: visible;
+            width: 100%;
+            opacity: 1;
+
+            ul {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                overflow: auto;
+                width: 100%;
+                max-height: 100%;
+                margin: 0;
+                padding: 0;
+                user-select: none;
+                transform: translateY(-50%);
+                -webkit-touch-callout: none;
+                -webkit-overflow-scrolling: touch;
+
+                > li {
+                    width: 100%;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

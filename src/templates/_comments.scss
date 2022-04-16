@@ -1,0 +1,56 @@
+//--------------------------------------------------------------
+// Post Comments
+//--------------------------------------------------------------
+.comments-link {
+	@apply mt-16;
+}
+
+.comments-area {
+	@apply mt-24;
+}
+
+.comment-author {
+	@apply mb-16 items-center flex;
+
+	.avatar {
+		@apply mr-16;
+	}
+
+	.fn {
+		@apply mr-8;
+	}
+}
+
+.comment-metadata {
+	@apply mb-16;
+}
+
+.comment-body {
+	@apply py-8;
+}
+
+.comment-content {
+	@apply bg-black bg-opacity-10 p-16;
+
+	.bypostauthor & {
+		@apply border-2 border-black border-solid;
+	}
+}
+
+.comment-list {
+
+	.children {
+		@apply ml-16;
+	}
+}
+
+.reply {
+	@apply pt-8;
+}
+
+.comment-reply-title {
+
+	a {
+		@apply block text-sm;
+	}
+}
