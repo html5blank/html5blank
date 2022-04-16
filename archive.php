@@ -4,7 +4,7 @@
 		<!-- section -->
 		<section>
 
-			<h1><?php esc_html_e( 'Category: ', 'html5blank' ); single_cat_title(); ?></h1>
+			<h1><?php esc_html_e( 'Archives', 'creativitycore' ); ?></h1>
 
 			<?php get_template_part( 'loop' ); ?>
 

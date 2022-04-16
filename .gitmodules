@@ -1,9 +1,6 @@
 [submodule "src/toolkit/vendors/bootstrap"]
 	path = src/toolkit/vendors/bootstrap
 	url = https://github.com/figmentdragon/bootstrap.git
-[submodule "src/core/customizer-library"]
-	path = src/core/inc/customizer-library
-	url = http://github.com/devinsays/customizer-library
 [submodule "src/core/vendors/customizer-library"]
 	path = src/core/vendors/customizer-library
 	url = http://github.com/devinsays/customizer-library
