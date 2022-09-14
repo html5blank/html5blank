@@ -140,7 +140,7 @@
     "gulp-template": "^5.0.0",
     "gulp-uglify": "^3.0.0",
     "jquery": "^3.5.0",
-    "jshint": "^2.9.4",
+    "jshint": "^2.13.5",
     "jshint-stylish": "^2.2.1"
   },
   "engines": {
