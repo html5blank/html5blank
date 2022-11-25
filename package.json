@@ -123,24 +123,24 @@
   },
   "dependencies": {
     "modernizr": "^3.12.0",
-    "normalize.css": "^7.0.0",
-    "npm": "^8.19.2"
+    "normalize.css": "^8.0.1",
+    "npm": "^9.1.2"
   },
   "devDependencies": {
-    "del": "^3.0.0",
+    "del": "^7.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
-    "gulp-concat": "^2.3.4",
-    "gulp-csso": "^3.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^4.0.1",
     "gulp-jshint": "^2.1.0",
-    "gulp-livereload": "^3.8.1",
-    "gulp-load-plugins": "^1.4.0",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.4",
+    "gulp-livereload": "^4.0.2",
+    "gulp-load-plugins": "^2.0.8",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-template": "^5.0.0",
-    "gulp-uglify": "^3.0.0",
-    "jquery": "^3.5.0",
-    "jshint": "^2.13.5",
+    "gulp-uglify": "^3.0.2",
+    "jquery": "^3.6.1",
+    "jshint": "^2.13.6",
     "jshint-stylish": "^2.2.1"
   },
   "engines": {
