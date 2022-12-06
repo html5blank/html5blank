@@ -133,7 +133,7 @@
     "gulp-concat": "^2.3.4",
     "gulp-csso": "^3.0.1",
     "gulp-jshint": "^2.1.0",
-    "gulp-livereload": "^3.8.1",
+    "gulp-livereload": "^4.0.2",
     "gulp-load-plugins": "^1.4.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.4",
